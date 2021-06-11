@@ -1,5 +1,5 @@
 <?php
-    $this->assign('title', __('Explorer').' - ');
+    $this->assign('title', __('Home').' - ');
 ?>
         <main>
             <div class="container px-4 py-5">
