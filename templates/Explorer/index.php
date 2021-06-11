@@ -22,7 +22,7 @@
                                 <td><?= __('Number') ?></td>
                                 <td><?= __('Time End') ?></td>
                                 <td><?= __('Time Total') ?></td>
-                                <td><?= __('Total Trx') ?></td>
+                                <td><?= __('Orders') ?></td>
                                 <td><?= __('Difficulty') ?></td>
                                 <td><?= __('Reward') ?></td>
                                 <td><?= __('Fees') ?></td>
