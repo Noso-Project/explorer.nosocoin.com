@@ -32,3 +32,7 @@
     color: #606c76;
 }
 */
+
+.hidden {
+  display: none !important;
+}

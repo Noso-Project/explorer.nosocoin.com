@@ -60,6 +60,16 @@
             "logo": "img/N3256x256.png"
         }</script>
 
+        <script>
+            function doSearch(){
+                let query = document.getElementById('query').value;
+                if (query.length > 0) {
+                    window.location.href = '<?= $this->Url->build('/search') ?>/'+query;
+                }
+                return false;
+            }
+        </script>
+
         <?= $this->fetch('script') ?>
 
     </head>
@@ -98,6 +108,10 @@
                                 ['class'=>'nav-link px-2 '. $css_class]
                             ) ?></li>
                     </ul>
+
+                    <form class="col-5 mb-3 mb-lg-0 me-lg-3" onsubmit="return doSearch()">
+                        <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="Block,Order,Address" aria-label="Search">
+                    </form>
 
                     <div class="text-end">
                         <a href="https://nosocoin.com" class="text-white px-1" target="_blank"><svg class="svg-icon" viewBox="0 0 496 512">

@@ -172,4 +172,36 @@ class ExplorerController extends AppController
 
         $this->set(compact('orders'));
     }
+    /**
+     * Block Orders method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function search($query = null)
+    {
+        if (isset($query)) {
+            if (is_numeric($query)) {
+
+                $query = intval($query);
+                $this->redirect(['action'=>'block', $query]);
+
+            } elseif (substr($query, 0, 1) == 'N') {
+
+                $this->redirect(['action'=>'address', $query]);
+
+            } elseif (substr($query, 0, 2) == 'OR') {
+
+                $this->redirect(['action'=>'order', $query]);
+
+            } else {
+
+                $this->Flash->error(__('Query not understood'));
+                $this->redirect(['action'=>'index']);
+
+            }
+        } else {
+            $this->Flash->error(__('Need to provide a query'));
+            $this->redirect(['action'=>'index']);
+        }
+    }
 }
