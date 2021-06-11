@@ -110,7 +110,7 @@
                     </ul>
 
                     <form class="col-5 mb-3 mb-lg-0 me-lg-3" onsubmit="return doSearch()">
-                        <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="Block,Order,Address" aria-label="Search">
+                        <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="Block,Order,Address,Alias" aria-label="Search">
                     </form>
 
                     <div class="text-end">

@@ -195,8 +195,7 @@ class ExplorerController extends AppController
 
             } else {
 
-                $this->Flash->error(__('Query not understood'));
-                $this->redirect(['action'=>'index']);
+                $this->redirect(['action'=>'address', $query]);
 
             }
         } else {
