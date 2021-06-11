@@ -24,7 +24,7 @@ class Explorer {
 
     public function getBlock(int $block){
         try {
-            $response = $this->_fetch('getblockinfo', [$block], 1);
+            $response = $this->_fetch('getblocksinfo', [$block], 1);
             //echo json_encode($response->getJson()) . "\n";
             if ($response->isOk()) {
                 $block = $response->getJson();
@@ -64,7 +64,7 @@ class Explorer {
 
     public function getBlocks(array $blocks){
         try {
-            $response = $this->_fetch('getblockinfo', $blocks, 1);
+            $response = $this->_fetch('getblocksinfo', $blocks, 1);
             //echo json_encode($response->getJson()) . "\n";
             if ($response->isOk()) {
                 $blocks = $response->getJson();
@@ -188,29 +188,34 @@ class Explorer {
     public function getBlockOrders(int $block){
         try {
             $response = $this->_fetch('getblockorders', [$block], 1);
-            echo json_encode($response->getJson()) . "\n";
+            //echo json_encode($response->getJson()) . "\n";
             if ($response->isOk()) {
                 $orders = $response->getJson();
                 if (isset($orders['result']) && count($orders['result']) > 0) {
-                    $orders = $orders['result'];
+                    if ($orders['result'][0]['valid']) {
+                        $orders = $orders['result'][0]['orders'];
 
-                    $ordersInfo = [];
-                    foreach ($orders as $order) {
-                        $orderInfo = new Order();
+                        $ordersInfo = [];
+                        foreach ($orders as $order) {
+                            $orderInfo = new Order();
 
-                        $orderInfo->valid =     isset($order['valid'])?$order['valid']:false;
-                        $orderInfo->orderID =   isset($order['orderid'])?$order['orderid']:'';
-                        $orderInfo->block =     isset($order['block'])?$order['block']:-1;
-                        $orderInfo->timestamp = isset($order['timestamp'])?$order['timestamp']:'';
-                        $orderInfo->reference = isset($order['reference'])?$order['reference']:'';
-                        $orderInfo->receiver =  isset($order['receiver'])?$order['receiver']:'';
-                        $orderInfo->amount =    isset($order['amount'])?$order['amount']:'';
+                            $orderInfo->orderID =   isset($order['orderid'])?$order['orderid']:'';
+                            $orderInfo->block =     isset($order['block'])?$order['block']:-1;
+                            $orderInfo->type =      isset($order['type'])?$order['type']:'';
+                            $orderInfo->transfers = isset($order['trfrs'])?$order['trfrs']:-1;
+                            $orderInfo->timestamp = isset($order['timestamp'])?$order['timestamp']:'';
+                            $orderInfo->reference = isset($order['reference'])?$order['reference']:'';
+                            $orderInfo->receiver =  isset($order['receiver'])?$order['receiver']:'';
+                            $orderInfo->fee =       isset($order['fee'])?$order['fee']:'';
+                            $orderInfo->amount =    isset($order['amount'])?$order['amount']:'';
 
-                        $ordersInfo[] = $orderInfo;
+                            $ordersInfo[] = $orderInfo;
+                        }
+
+                        return $ordersInfo;
+                    } else {
+                        return null;
                     }
-
-
-                    return $ordersInfo;
                 } else{
                     return null;
                 }

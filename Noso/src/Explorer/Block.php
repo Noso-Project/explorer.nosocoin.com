@@ -35,7 +35,7 @@ class Block{
     }
 
     private function FormattedDate($timestamp) {
-        return gmdate("Y-m-d\TH:i:s\Z", $timestamp);
+        return gmdate("Y-m-d H:i:s", $timestamp);
     }
 
     public function __get($name) {

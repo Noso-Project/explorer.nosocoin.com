@@ -19,7 +19,10 @@
                     <dt><?= __('Reference') ?></dt>
                     <dd class="text-break"><?= $order->reference ?></dd>
                     <dt><?= __('Receiver') ?></dt>
-                    <dd class="text-break"><?= $order->receiver ?></dd>
+                    <dd class="text-break"><?= $this->Html->link(
+                        $order->receiver,
+                        ['controller'=>'Explorer','action'=>'address',$order->receiver]
+                    ) ?></dd>
                     <dt><?= __('Fee') ?></dt>
                     <dd class="text-break"><?= $order->Fee ?></dd>
                     <dt><?= __('Amount') ?></dt>

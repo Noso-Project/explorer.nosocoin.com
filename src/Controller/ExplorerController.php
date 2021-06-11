@@ -22,16 +22,50 @@ class ExplorerController extends AppController
      */
     public function index()
     {
+        $from = $this->request->getParam('id');
+
         $explorer = new Explorer($this->host, $this->port);
         $mainnet = $explorer->getMainnet();
-        $blocks = [];
 
-        for ($index=$mainnet->lastBlock;$index>$mainnet->lastBlock-10;$index--){
-            $blocks[] = $index;
+        if (isset($mainnet)) {
+            if (isset($from)) {
+                if ($from>=0 && $from<=$mainnet->lastBlock) {
+                    if (($from-10) < 0) {
+                        $previous = null;
+                    } else {
+                        $previous = $from - 10;
+                    }
+                    if (($from+10) > $mainnet->lastBlock) {
+                        $next = null;
+                    } else {
+                        $next = $from + 10;
+                    }
+                } else {
+                    $from = $mainnet->lastBlock;
+                    $previous = $from - 10;
+                    $next = null;
+                }
+            } else {
+                $from = $mainnet->lastBlock;
+                $previous = $from - 10;
+                $next = null;
+            }
+
+            $blocks = [];
+            for ($index=$from;$index>$from-10;$index--){
+                if ($index >= 0) {
+                    $blocks[] = $index;
+                }
+            }
+            $blocksInfo = $explorer->getBlocks($blocks);
+
+        } else {
+            $blocksInfo = null;
+            $previous = null;
+            $next = null;
         }
-        $blocksInfo = $explorer->getBlocks($blocks);
 
-        $this->set(compact('mainnet', 'blocksInfo'));
+        $this->set(compact('mainnet', 'blocksInfo', 'previous', 'next', 'blocks'));
     }
 
     /**
@@ -110,5 +144,32 @@ class ExplorerController extends AppController
         }
 
         $this->set(compact('order'));
+    }
+
+    /**
+     * Block Orders method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function blockorders($block = null)
+    {
+        $explorer = new Explorer($this->host, $this->port);
+
+        if (isset($block)) {
+            $orders = $explorer->getBlockOrders(intval($block));
+
+            if (isset($orders)) {
+                // Do nothing
+                // The logic negative of then above conditional is ugly
+            } else {
+                //$order = null;
+                $this->Flash->error(__('Need to provide a valid block'));
+            }
+        } else {
+            $orders = null;
+            $this->Flash->error(__('Need to provide an block'));
+        }
+
+        $this->set(compact('orders'));
     }
 }

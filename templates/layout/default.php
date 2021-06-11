@@ -22,7 +22,7 @@
 
         <?= $this->Html->meta('keywords', '​Noso, Coin, Project, PoW, ProofOfWork, CPU, Mining, new, latest, scratch, blockchain, technology, blockexplorer, exchange') ?>
 
-        <?= $this->Html->meta('description', 'Noso is a cryptocurrency, created entirely from scratch, using the knowledge learned from more than a decade of blockchain technology. With Noso, all users can manage their own wallet without intermediaries or heavy blockchains.') ?>
+        <?= $this->Html->meta('description', 'On this site you can explore the contents of the Nosocoin blockchain.') ?>
 
 
         <meta http-equiv="cache-control" content="no-cache">
@@ -54,7 +54,7 @@
         <?= $this->fetch('script') ?>
 
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column">
 
         <header class="p-3 bg-dark text-white">
             <div class="container">

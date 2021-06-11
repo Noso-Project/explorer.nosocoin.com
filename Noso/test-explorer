@@ -6,8 +6,8 @@ include __DIR__ . '/../vendor/autoload.php';
 $host = '192.210.226.118';
 $port = 8078;
 
-$block = 666;
-$blocks = [69, 666];
+$block = 69;
+$blocks = [69, 666, 12000];
 $address = 'N3RicsZoDsDsNhnt2qirkR2HwVC3GFZ';
 $order = 'OR3nltrwd5k58kskw1ef7lq8011lhzqw8d8m6bsriub91s3iuk1f';
 
@@ -53,9 +53,9 @@ if ($blockInfo) {
     echo "Error getting block\n";
 }
 echo "\n";
-
+*/
 echo "== Blocks ==\n";
-$blocksInfo = $be->getBlocks($blocks);
+$blocksInfo = $be->getBlocks([0,1]);
 if ($blocksInfo) {
     foreach ($blocksInfo as $blockInfo) {
         echo "------------------------------\n";
@@ -83,7 +83,7 @@ if ($blocksInfo) {
     echo "Error getting block\n";
 }
 echo "\n";
-*/
+/*
 echo "== Order ==\n";
 $orderInfo = $be->getOrder($order);
 if ($orderInfo) {
@@ -103,7 +103,7 @@ if ($orderInfo) {
     echo "Error getting order\n";
 }
 echo "\n";
-/*
+
 echo "== Block Orders ==\n";
 $ordersInfo = $be->getBlockOrders($block);
 if ($ordersInfo) {
@@ -111,15 +111,19 @@ if ($ordersInfo) {
         echo "------------------------------\n";
         echo "OrderID   : {$orderInfo->orderID}\n";
         echo "Block     : {$orderInfo->block}\n";
+        echo "Type      : {$orderInfo->type}\n";
+        echo "Transfers : {$orderInfo->transfers}\n";
         echo "Timestamp : {$orderInfo->timestamp}\n";
         echo "Timestamp : {$orderInfo->Timestamp}\n";
         echo "Reference : {$orderInfo->reference}\n";
         echo "Receiver  : {$orderInfo->receiver}\n";
+        echo "Fee       : {$orderInfo->fee}\n";
+        echo "Fee       : {$orderInfo->Fee}\n";
         echo "Amount    : {$orderInfo->amount}\n";
         echo "Amount    : {$orderInfo->Amount}\n";
     }
 } else {
-    echo "Error getting order\n";
+    echo "Error getting orders\n";
 }
 echo "\n";
 

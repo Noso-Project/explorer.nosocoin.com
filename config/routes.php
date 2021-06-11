@@ -55,6 +55,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
     $builder->connect('/order/*', ['controller' => 'Explorer', 'action' => 'order']);
     $builder->connect('/address/*', ['controller' => 'Explorer', 'action' => 'address']);
+    $builder->connect('/from/:id', ['controller' => 'Explorer', 'action' => 'index']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.
