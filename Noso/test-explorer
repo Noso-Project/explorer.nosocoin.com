@@ -1,0 +1,142 @@
+#!/usr/bin/env php
+<?php
+
+include __DIR__ . '/../vendor/autoload.php';
+
+$host = '192.210.226.118';
+$port = 8078;
+
+$block = 666;
+$blocks = [69, 666];
+$address = 'N3RicsZoDsDsNhnt2qirkR2HwVC3GFZ';
+$order = 'OR3nltrwd5k58kskw1ef7lq8011lhzqw8d8m6bsriub91s3iuk1f';
+
+use Noso\Explorer;
+
+$be = new Explorer($host, $port);
+/*
+echo "== MainNet ==\n";
+$mainnetInfo = $be->getMainnet();
+if ($mainnetInfo) {
+    echo "Last Block      : {$mainnetInfo->lastBlock}\n";
+    echo "Last Block Hash : {$mainnetInfo->lastBlockHash}\n";
+    echo "Headers Hash    : {$mainnetInfo->headersHash}\n";
+    echo "Summary Hash    : {$mainnetInfo->summaryHash}\n";
+} else {
+    echo "Error getting mainnet\n";
+}
+echo "\n";
+
+echo "== Block ==\n";
+$blockInfo = $be->getBlock($block);
+if ($blockInfo) {
+    echo "Number     : {$blockInfo->number}\n";
+    echo "Time Start : {$blockInfo->timeStart}\n";
+    echo "Time Start : {$blockInfo->TimeStart}\n";
+    echo "Time End   : {$blockInfo->timeEnd}\n";
+    echo "Time End   : {$blockInfo->TimeEnd}\n";
+    echo "Time Total : {$blockInfo->timeTotal}s\n";
+    echo "Last 20    : {$blockInfo->last20}\n";
+    echo "Total Trx  : {$blockInfo->totalTransactions}\n";
+    echo "Difficulty : {$blockInfo->difficulty}\n";
+    echo "Target     : {$blockInfo->target}\n";
+    echo "Solution   : {$blockInfo->solution}\n";
+    echo "Last Hash  : {$blockInfo->lastBlockHash}\n";
+    echo "Next Diff  : {$blockInfo->nextDifficulty}\n";
+    echo "Miner      : {$blockInfo->miner}\n";
+    echo "Fee        : {$blockInfo->feesPaid}\n";
+    echo "Fee        : {$blockInfo->FeesPaid}\n";
+    echo "Reward     : {$blockInfo->reward}\n";
+    echo "Reward     : {$blockInfo->Reward}\n";
+    echo "Hash       : {$blockInfo->hash}\n";
+} else {
+    echo "Error getting block\n";
+}
+echo "\n";
+
+echo "== Blocks ==\n";
+$blocksInfo = $be->getBlocks($blocks);
+if ($blocksInfo) {
+    foreach ($blocksInfo as $blockInfo) {
+        echo "------------------------------\n";
+        echo "Number     : {$blockInfo->number}\n";
+        echo "Time Start : {$blockInfo->timeStart}\n";
+        echo "Time Start : {$blockInfo->TimeStart}\n";
+        echo "Time End   : {$blockInfo->timeEnd}\n";
+        echo "Time End   : {$blockInfo->TimeEnd}\n";
+        echo "Time Total : {$blockInfo->timeTotal}s\n";
+        echo "Last 20    : {$blockInfo->last20}\n";
+        echo "Total Trx  : {$blockInfo->totalTransactions}\n";
+        echo "Difficulty : {$blockInfo->difficulty}\n";
+        echo "Target     : {$blockInfo->target}\n";
+        echo "Solution   : {$blockInfo->solution}\n";
+        echo "Last Hash  : {$blockInfo->lastBlockHash}\n";
+        echo "Next Diff  : {$blockInfo->nextDifficulty}\n";
+        echo "Miner      : {$blockInfo->miner}\n";
+        echo "Fee        : {$blockInfo->feesPaid}\n";
+        echo "Fee        : {$blockInfo->FeesPaid}\n";
+        echo "Reward     : {$blockInfo->reward}\n";
+        echo "Reward     : {$blockInfo->Reward}\n";
+        echo "Hash       : {$blockInfo->hash}\n";
+    }
+} else {
+    echo "Error getting block\n";
+}
+echo "\n";
+*/
+echo "== Order ==\n";
+$orderInfo = $be->getOrder($order);
+if ($orderInfo) {
+    echo "OrderID   : {$orderInfo->orderID}\n";
+    echo "Block     : {$orderInfo->block}\n";
+    echo "Type      : {$orderInfo->type}\n";
+    echo "Transfers : {$orderInfo->transfers}\n";
+    echo "Timestamp : {$orderInfo->timestamp}\n";
+    echo "Timestamp : {$orderInfo->Timestamp}\n";
+    echo "Reference : {$orderInfo->reference}\n";
+    echo "Receiver  : {$orderInfo->receiver}\n";
+    echo "Fee       : {$orderInfo->fee}\n";
+    echo "Fee       : {$orderInfo->Fee}\n";
+    echo "Amount    : {$orderInfo->amount}\n";
+    echo "Amount    : {$orderInfo->Amount}\n";
+} else {
+    echo "Error getting order\n";
+}
+echo "\n";
+/*
+echo "== Block Orders ==\n";
+$ordersInfo = $be->getBlockOrders($block);
+if ($ordersInfo) {
+    foreach ($ordersInfo as $orderInfo) {
+        echo "------------------------------\n";
+        echo "OrderID   : {$orderInfo->orderID}\n";
+        echo "Block     : {$orderInfo->block}\n";
+        echo "Timestamp : {$orderInfo->timestamp}\n";
+        echo "Timestamp : {$orderInfo->Timestamp}\n";
+        echo "Reference : {$orderInfo->reference}\n";
+        echo "Receiver  : {$orderInfo->receiver}\n";
+        echo "Amount    : {$orderInfo->amount}\n";
+        echo "Amount    : {$orderInfo->Amount}\n";
+    }
+} else {
+    echo "Error getting order\n";
+}
+echo "\n";
+
+echo "== Address ==\n";
+$addressInfo = $be->getAddress($address);
+if ($addressInfo) {
+    echo 'Valid    : '.($addressInfo->valid?'true':'false')."\n";
+    echo "Address  : {$addressInfo->address}\n";
+    echo "Alias    : {$addressInfo->alias}\n";
+    echo "Balance  : {$addressInfo->balance}\n";
+    echo "Balance  : {$addressInfo->Balance}\n";
+    echo "Incoming : {$addressInfo->incoming}\n";
+    echo "Incoming : {$addressInfo->Incoming}\n";
+    echo "Outgoing : {$addressInfo->outgoing}\n";
+    echo "Outgoing : {$addressInfo->Outgoing}\n";
+} else {
+    echo "Error getting address\n";
+}
+echo "\n";
+*/

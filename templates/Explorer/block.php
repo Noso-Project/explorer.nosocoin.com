@@ -1,0 +1,58 @@
+<?php
+    $this->assign('title', __('Block').' - ');
+?>
+        <main>
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom"><?= __('Block') ?></h2>
+                <?php if ($block): ?>
+                <dl>
+                    <dt><?= __('Number') ?></dt>
+                    <dd class="text-break"><?= $block->number ?></dd>
+                    <dt><?= __('Hash') ?></dt>
+                    <dd class="text-break"><?= $block->hash ?></dd>
+                    <dt><?= __('Time End') ?></dt>
+                    <dd class="text-break"><?= $block->timeEnd ?></dd>
+                    <dt><?= __('Time Start') ?></dt>
+                    <dd class="text-break"><?= $block->timeStart ?></dd>
+                    <dt><?= __('Time Total') ?></dt>
+                    <dd class="text-break"><?= $block->timeTotal ?>s</dd>
+                    <dt><?= __('Last 20') ?></dt>
+                    <dd class="text-break"><?= $block->last20 ?></dd>
+                    <dt><?= __('Total Transactions') ?></dt>
+                    <dd class="text-break"><?= $this->Html->link(
+                        $block->totalTransactions,
+                        [
+                            'controller'=>'Explorer',
+                            'action'=>'blockorders',
+                            $block->number
+                        ]
+                    ) ?></dd>
+                    <dt><?= __('Difficulty') ?></dt>
+                    <dd class="text-break"><?= $block->difficulty ?></dd>
+                    <dt><?= __('Target') ?></dt>
+                    <dd class="text-break"><?= $block->target ?></dd>
+                    <dt><?= __('Solution') ?></dt>
+                    <dd class="text-break"><?= $block->solution ?></dd>
+                    <dt><?= __('Last Block Hash') ?></dt>
+                    <dd class="text-break"><?= $block->lastBlockHash ?></dd>
+                    <dt><?= __('Next Difficulty') ?></dt>
+                    <dd class="text-break"><?= $block->nextDifficulty ?></dd>
+                    <dt><?= __('Miner') ?></dt>
+                    <dd class="text-break"><?= $this->Html->link(
+                        $block->miner,
+                        [
+                            'controller'=>'Explorer',
+                            'action'=>'address',
+                            $block->miner
+                        ]
+                    ) ?></dd>
+                    <dt><?= __('Fees') ?></dt>
+                    <dd class="text-break"><?= $block->FeesPaid ?></dd>
+                    <dt><?= __('Reward') ?></dt>
+                    <dd class="text-break"><?= $block->Reward ?></dd>
+                </dl>
+                <?php else: ?>
+                <p><?= __('Something went wrong') ?></p>
+                <?php endif; ?>
+            </div>
+        </main>

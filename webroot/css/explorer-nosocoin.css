@@ -1,0 +1,11 @@
+.svg-icon {
+  width: 30px;
+  height: 30px;
+  vertical-align: text-bottom;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
