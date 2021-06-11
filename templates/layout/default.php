@@ -42,6 +42,15 @@
 
         <?= $this->fetch('css') ?>
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG475L8YD6"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-RG475L8YD6');
+        </script>
 
         <script type="application/ld+json">{
             "@context": "http://schema.org",
