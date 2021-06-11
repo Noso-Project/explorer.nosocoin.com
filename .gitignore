@@ -1,5 +1,7 @@
 # CakePHP specific files #
 ##########################
+/error_log
+/webroot/error_log
 /config/app_local.php
 /config/.env
 /logs/*
