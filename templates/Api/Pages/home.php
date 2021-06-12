@@ -1,0 +1,267 @@
+<?php
+    $this->assign('title', __('API').' - ');
+    $domain = $this->request->getEnv('HTTP_HOST');
+    $protocol = ($domain=='explorer.nosocoin.com')?'http':'http';
+?>
+        <main>
+            <div class="container px-4 py-5">
+                <h2 class="pb-2 border-bottom"><?= __('API') ?></h2>
+                <div class="row">
+                    <div class="col col-3">
+                        <h4>Table of Contents</h4>
+                        <ul>
+                            <li><a href="#introduction">Introduction</a></li>
+                            <li><a href="#last-block">Last Block</a></li>
+                            <li><a href="#block">Block</a></li>
+                            <li><a href="#block-orders">Block Orders</a></li>
+                            <li><a href="#order">Order</a></li>
+                            <li><a href="#address">Address</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+
+                        <h3><a name="introduction">Introduction</a></h3>
+                        <p>It's very important that you set the the header Accept to <code>application/json</code> or append <code>.json</code> to your URL.</p>
+                        <p>Otherwise the system will return an HTML response.</p>
+
+                        <h3><a name="last-block">Last Block</a></h3>
+                        <p>Returns the last block on the blockchain.</p>
+                        <p>Example with extension:</p>
+                        <p><?php
+                            $url = $protocol.'://'.$domain.$this->Url->build(
+                                [
+                                    'controller'=>'Explorer',
+                                    'action'=>'lastblock',
+                                    'prefix'=>'Api'
+                                ]
+                            );
+                            echo "<a class=\"text-break\" href=\"{$url}.json\" target=\"_blank\">{$url}.json</a>";
+                        ?></p>
+                        <p>Example using cURL:</p>
+                        <pre><code class="language-shell">$ curl \
+-H 'Accept: application/json' \
+"<?= $url ?>"</code></pre>
+                        <p>Resturns:</p>
+                        <pre><code class="language-json">{
+    "code": 200,
+    "message": "Ok",
+    "lastblock": 13005
+}</code></pre>
+
+                        <h3><a name="block">Block</a></h3>
+                        <p>Returns a block on the blockchain.</p>
+                        <p>Example with extension:</p>
+                        <p><?php
+                            $url = $protocol.'://'.$domain.$this->Url->build(
+                                [
+                                    'controller'=>'Explorer',
+                                    'action'=>'block',
+                                    'prefix'=>'Api',
+                                    '666'
+                                ]
+                            );
+                            echo "<a class=\"text-break\" href=\"{$url}.json\" target=\"_blank\">{$url}.json</a>";
+                        ?></p>
+                        <p>Example using cURL:</p>
+                        <pre><code class="language-shell">$ curl \
+-H 'Accept: application/json' \
+"<?= $url ?>"</code></pre>
+                        <p>Resturns:</p>
+                        <pre><code class="language-json">{
+  "code": 200,
+  "message": "Ok",
+  "block": {
+    "valid": true,
+    "number": 666,
+    "timeStart": 1615539692,
+    "timeEnd": 1615540374,
+    "timeTotal": 682,
+    "last20": 587,
+    "totalTransactions": 0,
+    "difficulty": 84,
+    "target": "F6FCE7108",
+    "solution": "!!!!!!!!!530887901{...};!!!651726821!!!!\";!!!65",
+    "lastBlockHash": "F6FCE71081EB7A05133A2F7214582FAA",
+    "nextDifficulty": 84,
+    "miner": "NEgcLA1epRw5HgbBGNFiWCLMMWmSCX",
+    "feesPaid": 0,
+    "reward": 5000000000,
+    "hash": "780E4A7F9D5AAA1E94E2CFCECA2D9500"
+  }
+}</code></pre>
+                        <p>Errors:</p>
+                        <pre><code class="language-json">{
+  "code": 400,
+  "message": "Need to provide a block",
+  "block": null
+}</code></pre>
+                        <pre><code class="language-json">{
+  "code": 404,
+  "message": "Need to provide a valid block",
+  "block": null
+}</code></pre>
+
+                        <h3><a name="block=orders">Block Orders</a></h3>
+                        <p>Returns the orders contained in a block of the blockchain.</p>
+                        <p>Example with extension:</p>
+                        <p><?php
+                            $url = $protocol.'://'.$domain.$this->Url->build(
+                                [
+                                    'controller'=>'Explorer',
+                                    'action'=>'blockorders',
+                                    'prefix'=>'Api',
+                                    '12000'
+                                ]
+                            );
+                            echo "<a class=\"text-break\" href=\"{$url}.json\" target=\"_blank\">{$url}.json</a>";
+                        ?></p>
+                        <p>Example using cURL:</p>
+                        <pre><code class="language-shell">$ curl \
+-H 'Accept: application/json' \
+"<?= $url ?>"</code></pre>
+                        <p>Resturns:</p>
+                        <pre><code class="language-json">{
+  "code": 200,
+  "message": "Ok",
+  "block": 12000,
+  "orders": [
+    {
+      "orderID": "OR3w6l3g3i349eaaqkra8gmcxg0du92jxc7t0y5otp7hsjyxb5b2",
+      "block": 12000,
+      "type": "TRFR",
+      "transfers": 1,
+      "timestamp": 1622839520,
+      "reference": "POOLPAYMENT_DevNosoEU",
+      "receiver": "N264UuquNSAUb2EaUis9Znxb6SteKES",
+      "fee": 74201,
+      "amount": 742018885
+    },
+    {
+      "orderID": "OR51win5vx6b5zpqcqqzvh01liv3vixyxkn8my79796x2yiuj32w",
+      "block": 12000,
+      "type": "TRFR",
+      "transfers": 1,
+      "timestamp": 1622839520,
+      "reference": "POOLPAYMENT_DevNosoEU",
+      "receiver": "N3zL5pbJoYwJ28dRhuZGo5pmzL7xcFd",
+      "fee": 66713,
+      "amount": 667131643
+    },
+    {
+      "orderID": "OR522sxqg2vy4dql4178prt22epupmb37s7bxsrc8t0b55bhd31w",
+      "block": 12000,
+      "type": "TRFR",
+      "transfers": 1,
+      "timestamp": 1622839520,
+      "reference": "POOLPAYMENT_DevNosoEU",
+      "receiver": "N2KLx886FLbZMMhFqHAFrgxKqxXvWEF",
+      "fee": 23768,
+      "amount": 237688938
+    }
+  ]
+}</code></pre>
+                        <p>Errors:</p>
+                        <pre><code class="language-json">{
+  "code": 400,
+  "message": "Need to provide a block",
+  "block": null
+}</code></pre>
+                        <pre><code class="language-json">{
+  "code": 404,
+  "message": "Need to provide a valid block",
+  "block": null
+}</code></pre>
+
+                        <h3><a name="order">Order</a></h3>
+                        <p>Returns an order on the blockchain.</p>
+                        <p>Example with extension:</p>
+                        <p><?php
+                            $url = $protocol.'://'.$domain.$this->Url->build(
+                                [
+                                    'controller'=>'Explorer',
+                                    'action'=>'order',
+                                    'prefix'=>'Api',
+                                    'OR3w6l3g3i349eaaqkra8gmcxg0du92jxc7t0y5otp7hsjyxb5b2'
+                                ]
+                            );
+                            echo "<a class=\"text-break\" href=\"{$url}.json\" target=\"_blank\">{$url}.json</a>";
+                        ?></p>
+                        <p>Example using cURL:</p>
+                        <pre><code class="language-shell">$ curl \
+-H 'Accept: application/json' \
+"<?= $url ?>"</code></pre>
+                        <p>Resturns:</p>
+                        <pre><code class="language-json">{
+  "code": 200,
+  "message": "Ok",
+  "order": {
+    "orderID": "OR3w6l3g3i349eaaqkra8gmcxg0du92jxc7t0y5otp7hsjyxb5b2",
+    "block": 12000,
+    "type": "TRFR",
+    "transfers": 1,
+    "timestamp": 1622839520,
+    "reference": "POOLPAYMENT_DevNosoEU",
+    "receiver": "N264UuquNSAUb2EaUis9Znxb6SteKES",
+    "fee": 74201,
+    "amount": 742018885
+  }
+}</code></pre>
+                        <p>Errors:</p>
+                        <pre><code class="language-json">{
+  "code": 400,
+  "message": "Need to provide an order",
+  "block": null
+}</code></pre>
+                        <pre><code class="language-json">{
+  "code": 404,
+  "message": "Need to provide a valid order",
+  "block": null
+}</code></pre>
+
+                        <h3><a name="address">Address</a></h3>
+                        <p>Returns an address on the blockchain.</p>
+                        <p>Example with extension:</p>
+                        <p><?php
+                            $url = $protocol.'://'.$domain.$this->Url->build(
+                                [
+                                    'controller'=>'Explorer',
+                                    'action'=>'address',
+                                    'prefix'=>'Api',
+                                    'N2RKVvyf254FFSR7BZgduCkNEbzizE2'
+                                ]
+                            );
+                            echo "<a class=\"text-break\" href=\"{$url}.json\" target=\"_blank\">{$url}.json</a>";
+                        ?></p>
+                        <p>Example using cURL:</p>
+                        <pre><code class="language-shell">$ curl \
+-H 'Accept: application/json' \
+"<?= $url ?>"</code></pre>
+                        <p>Resturns:</p>
+                        <pre><code class="language-json">{
+  "code": 200,
+  "message": "Ok",
+  "address": {
+    "valid": true,
+    "address": "N2RKVvyf254FFSR7BZgduCkNEbzizE2",
+    "alias": "",
+    "balance": 70856219430,
+    "incoming": 0,
+    "outgoing": 6343695395
+  }
+}</code></pre>
+                        <p>Errors:</p>
+                        <pre><code class="language-json">{
+  "code": 400,
+  "message": "Need to provide an address",
+  "block": null
+}</code></pre>
+                        <pre><code class="language-json">{
+  "code": 404,
+  "message": "Need to provide a valid address",
+  "block": null
+}</code></pre>
+
+                    </div>
+                </div>
+            </div>
+        </main>

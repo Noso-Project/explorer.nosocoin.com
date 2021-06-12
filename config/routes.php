@@ -77,6 +77,24 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * routes you want in your application.
      */
     $builder->fallbacks();
+
+    $builder->prefix('api', function (RouteBuilder $builder) {
+        $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
+
+        $builder->fallbacks();
+
+        $builder->scope('/v1', function (RouteBuilder $builder) {
+            $builder->setExtensions(['json']);
+
+            $builder->connect('/lastblock', ['controller' => 'Explorer', 'action' => 'lastblock']);
+            $builder->connect('/block/*', ['controller' => 'Explorer', 'action' => 'block']);
+            $builder->connect('/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
+            $builder->connect('/order/*', ['controller' => 'Explorer', 'action' => 'order']);
+            $builder->connect('/address/*', ['controller' => 'Explorer', 'action' => 'address']);
+
+            $builder->fallbacks();
+        });
+    });
 });
 
 /*

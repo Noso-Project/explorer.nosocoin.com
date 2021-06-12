@@ -1,4 +1,19 @@
-<!DOCTYPE html>
+<?php
+
+    $https = $this->request->getEnv('HTTPS');
+    $protocol = $https == 'on' ? 'https' : 'http';
+    $domain = $this->request->getEnv('HTTP_HOST');
+    $path = $this->request->getPath();
+
+    $controller = $this->request->getParam('controller');
+    $action = $this->request->getParam('action');
+    $page = '';
+    if ($controller == 'Pages' && $action == 'display') {
+        $page = $this->request->getParam('pass')[0];
+    }
+    $prefix = $this->request->getParam('prefix');
+
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <?= $this->Html->charset() ?>
@@ -6,12 +21,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title><?= $this->fetch('title') ?>NosoCoin Blockchain Explorer</title>
-        <?php
-            $https = $this->request->getEnv('HTTPS');
-            $protocol = $https == 'on' ? 'https' : 'http';
-            $domain = $this->request->domain();
-            $path = $this->request->getPath();
-        ?>
 
         <link rel="canonical" href="<?= $protocol ?>://<?= $domain ?><?= $path ?>">
 
@@ -38,9 +47,21 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+        <?php if ($prefix == 'Api' && $page == 'home'): ?>
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+
+        <?php endif; ?>
+
         <?= $this->Html->css('explorer-nosocoin') ?>
 
         <?= $this->fetch('css') ?>
+
+        <?php if ($prefix == 'Api' && $page == 'home'): ?>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+
+        <?php endif; ?>
 
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG475L8YD6"></script>
@@ -61,6 +82,7 @@
         }</script>
 
         <script>
+            // Search function
             function doSearch(){
                 let query = document.getElementById('query').value;
                 if (query.length > 0) {
@@ -68,6 +90,9 @@
                 }
                 return false;
             }
+
+            // Syntax highlighting
+            hljs.highlightAll();
         </script>
 
         <?= $this->fetch('script') ?>
@@ -83,28 +108,23 @@
                             'N3256x256.png',
                             ['class'=>'bi me-2', 'width'=>'40', 'height'=>'40', 'alt'=>'NosoCoin']
                         ),
-                        ['controller'=>'Explorer', 'action'=>'index'],
+                        ['controller'=>'Explorer', 'action'=>'index', 'prefix'=>false],
                         ['class'=>'d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none', 'escape'=>false]
                     ) ?>
-
-                    <?php
-                        $controller = $this->request->getParam('controller');
-                        //debug($controller);
-                        $action = $this->request->getParam('action');
-                        //debug($action);
-                        $page = '';
-                        if ($controller == 'Pages' && $action == 'display') {
-                            $page = $this->request->getParam('pass')[0];
-                            //debug($page);
-                        }
-                    ?>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                         <li class="nav-item"><?php
                             $css_class = ($controller == 'Explorer' && $action == 'index')?'text-warning':'text-white';
                             echo $this->Html->link(
                                 __('Home'),
-                                ['controller'=>'Explorer', 'action'=>'index'],
+                                ['controller'=>'Explorer', 'action'=>'index', 'prefix'=>false],
+                                ['class'=>'nav-link px-2 '. $css_class]
+                            ) ?></li>
+                        <li class="nav-item"><?php
+                            $css_class = ($page == 'home' || ($controller=='Explorer' && $prefix=='Api' ))?'text-warning':'text-white';
+                            echo $this->Html->link(
+                                __('API'),
+                                ['controller'=>'Pages', 'action'=>'display', 'prefix'=>'Api', 'home'],
                                 ['class'=>'nav-link px-2 '. $css_class]
                             ) ?></li>
                     </ul>
