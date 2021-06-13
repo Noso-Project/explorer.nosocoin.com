@@ -101,13 +101,11 @@
                         <p>Errors:</p>
                         <pre><code class="language-json">{
   "code": 400,
-  "message": "Need to provide a block",
-  "block": null
+  "message": "Need to provide a block"
 }</code></pre>
                         <pre><code class="language-json">{
   "code": 404,
-  "message": "Need to provide a valid block",
-  "block": null
+  "message": "Need to provide a valid block"
 }</code></pre>
 
                         <h3><a name="block=orders">Block Orders</a></h3>
@@ -175,13 +173,11 @@
                         <p>Errors:</p>
                         <pre><code class="language-json">{
   "code": 400,
-  "message": "Need to provide a block",
-  "block": null
+  "message": "Need to provide a block"
 }</code></pre>
                         <pre><code class="language-json">{
   "code": 404,
-  "message": "Need to provide a valid block",
-  "block": null
+  "message": "Need to provide a valid block"
 }</code></pre>
 
                         <h3><a name="order">Order</a></h3>
@@ -222,13 +218,11 @@
                         <p>Errors:</p>
                         <pre><code class="language-json">{
   "code": 400,
-  "message": "Need to provide an order",
-  "block": null
+  "message": "Need to provide an order"
 }</code></pre>
                         <pre><code class="language-json">{
   "code": 404,
-  "message": "Need to provide a valid order",
-  "block": null
+  "message": "Need to provide a valid order"
 }</code></pre>
 
                         <h3><a name="address">Address</a></h3>
@@ -264,13 +258,11 @@
                         <p>Errors:</p>
                         <pre><code class="language-json">{
   "code": 400,
-  "message": "Need to provide an address",
-  "block": null
+  "message": "Need to provide an address"
 }</code></pre>
                         <pre><code class="language-json">{
   "code": 404,
-  "message": "Need to provide a valid address",
-  "block": null
+  "message": "Need to provide a valid address"
 }</code></pre>
 
                     </div>

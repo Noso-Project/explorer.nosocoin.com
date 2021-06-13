@@ -7,26 +7,26 @@
                 <?php if ($order): ?>
                 <dl>
                     <dt><?= __('Order') ?></dt>
-                    <dd class="text-break"><?= $order->orderID ?></dd>
+                    <dd class="text-break"><?= h($order->orderID) ?></dd>
                     <dt><?= __('Block') ?></dt>
-                    <dd class="text-break"><?= ($order->pending)?__('Pending'):$order->block ?></dd>
+                    <dd class="text-break"><?= ($order->pending)?__('Pending'):h($order->block) ?></dd>
                     <dt><?= __('Type') ?></dt>
-                    <dd class="text-break"><?= $order->type ?></dd>
+                    <dd class="text-break"><?= h($order->type) ?></dd>
                     <dt><?= __('Transfers') ?></dt>
-                    <dd class="text-break"><?= $order->transfers ?></dd>
+                    <dd class="text-break"><?= h($order->transfers) ?></dd>
                     <dt><?= __('Timestamp') ?></dt>
-                    <dd class="text-break"><?= $order->Timestamp ?></dd>
+                    <dd class="text-break"><?= h($order->Timestamp) ?></dd>
                     <dt><?= __('Reference') ?></dt>
-                    <dd class="text-break"><?= $order->reference ?></dd>
+                    <dd class="text-break"><?= h($order->reference) ?></dd>
                     <dt><?= __('Receiver') ?></dt>
                     <dd class="text-break"><?= $this->Html->link(
                         $order->receiver,
                         ['controller'=>'Explorer','action'=>'address',$order->receiver]
                     ) ?></dd>
                     <dt><?= __('Fee') ?></dt>
-                    <dd class="text-break"><?= $order->Fee ?></dd>
+                    <dd class="text-break"><?= h($order->Fee) ?></dd>
                     <dt><?= __('Amount') ?></dt>
-                    <dd class="text-break"><?= $order->Amount ?></dd>
+                    <dd class="text-break"><?= h($order->Amount) ?></dd>
                 </dl>
                 <?php else: ?>
                 <p><?= __('Something went wrong') ?></p>

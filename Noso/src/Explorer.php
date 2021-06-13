@@ -127,7 +127,6 @@ class Explorer {
                         $blocksInfo[] = $this->_parseBlock($block);
                     }
 
-
                     return $blocksInfo;
                 } else{
                     return null;

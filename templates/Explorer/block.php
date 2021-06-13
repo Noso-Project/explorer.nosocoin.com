@@ -7,17 +7,17 @@
                 <?php if ($block): ?>
                 <dl>
                     <dt><?= __('Number') ?></dt>
-                    <dd class="text-break"><?= $block->number ?></dd>
+                    <dd class="text-break"><?= h($block->number) ?></dd>
                     <dt><?= __('Hash') ?></dt>
-                    <dd class="text-break"><?= $block->hash ?></dd>
+                    <dd class="text-break"><?= h($block->hash) ?></dd>
                     <dt><?= __('Time End') ?></dt>
-                    <dd class="text-break"><?= $block->timeEnd ?></dd>
+                    <dd class="text-break"><?= h($block->timeEnd) ?></dd>
                     <dt><?= __('Time Start') ?></dt>
-                    <dd class="text-break"><?= $block->timeStart ?></dd>
+                    <dd class="text-break"><?= h($block->timeStart) ?></dd>
                     <dt><?= __('Time Total') ?></dt>
-                    <dd class="text-break"><?= $block->timeTotal ?>s</dd>
+                    <dd class="text-break"><?= h($block->timeTotal) ?>s</dd>
                     <dt><?= __('Last 20') ?></dt>
-                    <dd class="text-break"><?= $block->last20 ?></dd>
+                    <dd class="text-break"><?= h($block->last20) ?></dd>
                     <dt><?= __('Total Transactions') ?></dt>
                     <dd class="text-break"><?= $this->Html->link(
                         $block->totalTransactions,
@@ -28,15 +28,15 @@
                         ]
                     ) ?></dd>
                     <dt><?= __('Difficulty') ?></dt>
-                    <dd class="text-break"><?= $block->difficulty ?></dd>
+                    <dd class="text-break"><?= h($block->difficulty) ?></dd>
                     <dt><?= __('Target') ?></dt>
-                    <dd class="text-break"><?= $block->target ?></dd>
+                    <dd class="text-break"><?= h($block->target) ?></dd>
                     <dt><?= __('Solution') ?></dt>
-                    <dd class="text-break"><?= $block->solution ?></dd>
+                    <dd class="text-break"><?= h($block->solution) ?></dd>
                     <dt><?= __('Last Block Hash') ?></dt>
-                    <dd class="text-break"><?= $block->lastBlockHash ?></dd>
+                    <dd class="text-break"><?= h($block->lastBlockHash) ?></dd>
                     <dt><?= __('Next Difficulty') ?></dt>
-                    <dd class="text-break"><?= $block->nextDifficulty ?></dd>
+                    <dd class="text-break"><?= h($block->nextDifficulty) ?></dd>
                     <dt><?= __('Miner') ?></dt>
                     <dd class="text-break"><?= $this->Html->link(
                         $block->miner,
@@ -47,9 +47,9 @@
                         ]
                     ) ?></dd>
                     <dt><?= __('Fees') ?></dt>
-                    <dd class="text-break"><?= $block->FeesPaid ?></dd>
+                    <dd class="text-break"><?= h($block->FeesPaid) ?></dd>
                     <dt><?= __('Reward') ?></dt>
-                    <dd class="text-break"><?= $block->Reward ?></dd>
+                    <dd class="text-break"><?= h($block->Reward) ?></dd>
                 </dl>
                 <?php else: ?>
                 <p><?= __('Something went wrong') ?></p>

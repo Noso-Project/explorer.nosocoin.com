@@ -50,11 +50,18 @@ class ExplorerController extends AppController
         $explorer = new Explorer($this->host, $this->port);
 
         if (isset($blockNumber)) {
-            $block = $explorer->getBlock(intval($blockNumber));
-            if (isset($block) && isset($block->valid) && $block->valid) {
-                $code = 200;
-                $message = 'Ok';
-                unset($block->valid);
+            if (is_numeric($blockNumber) and intval($blockNumber >= 0)) {
+                $block = $explorer->getBlock(intval($blockNumber));
+                if (isset($block) && isset($block->valid) && $block->valid) {
+                    $code = 200;
+                    $message = 'Ok';
+                    unset($block->valid);
+                } else {
+                    $code = 404;
+                    $message = __('Need to provide a valid block');
+                    $block = null;
+                    $this->Flash->error(__('Need to provide a valid block'));
+                }
             } else {
                 $code = 404;
                 $message = __('Need to provide a valid block');
@@ -131,8 +138,13 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an order'));
         }
 
-        $this->set(compact('code', 'message', 'order'));
-        $this->viewBuilder()->setOption('serialize', ['code', 'message', 'order']);
+        if($code == 200) {
+            $this->set(compact('code', 'message', 'order'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'order']);
+        } else {
+            $this->set(compact('code', 'message'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message']);
+        }
     }
 
     /**
@@ -140,17 +152,25 @@ class ExplorerController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function blockorders($block = null)
+    public function blockorders($blockNumber = null)
     {
         $explorer = new Explorer($this->host, $this->port);
 
-        if (isset($block)) {
-            $orders = $explorer->getBlockOrders(intval($block));
+        if (isset($blockNumber)) {
+            if (is_numeric($blockNumber) and intval($blockNumber >= 0)) {
+                $orders = $explorer->getBlockOrders(intval($block));
 
-            if (isset($orders)) {
-                $code = 200;
-                $message = 'Ok';
-                $block = intval($block);
+                if (isset($orders)) {
+                    $code = 200;
+                    $message = 'Ok';
+                    $block = intval($blockNumber);
+                } else {
+                    $code = 404;
+                    $message = __('Need to provide a valid block');
+                    $block = null;
+                    $orders = null;
+                    $this->Flash->error(__('Need to provide a valid block'));
+                }
             } else {
                 $code = 404;
                 $message = __('Need to provide a valid block');
@@ -165,8 +185,12 @@ class ExplorerController extends AppController
             $orders = null;
             $this->Flash->error(__('Need to provide a block'));
         }
-
-        $this->set(compact('code', 'message', 'block', 'orders'));
-        $this->viewBuilder()->setOption('serialize', ['code', 'message', 'block', 'orders']);
+        if ($code == 200) {
+            $this->set(compact('code', 'message', 'blockNumber', 'orders'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'blockNumber', 'orders']);
+        } else {
+            $this->set(compact('code', 'message'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message']);
+        }
     }
 }

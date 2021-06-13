@@ -40,8 +40,8 @@
                                         $block->number
                                     ]
                                 ) ?></td>
-                                <td><?= $block->TimeEnd ?></td>
-                                <td><?= $block->timeTotal ?>s</td>
+                                <td><?= h($block->TimeEnd) ?></td>
+                                <td><?= h($block->timeTotal) ?>s</td>
                                 <td><?= $this->Html->link(
                                     $block->totalTransactions,
                                     [
@@ -50,9 +50,9 @@
                                         $block->number
                                     ]
                                 ) ?></td>
-                                <td><?= $block->difficulty ?></td>
-                                <td><?= $block->Reward ?></td>
-                                <td><?= $block->FeesPaid ?></td>
+                                <td><?= h($block->difficulty) ?></td>
+                                <td><?= h($block->Reward) ?></td>
+                                <td><?= h($block->FeesPaid) ?></td>
                                 <td><?= $this->Html->link(
                                     $block->miner,
                                     [

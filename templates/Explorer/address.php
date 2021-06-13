@@ -7,17 +7,17 @@
                 <?php if ($address): ?>
                 <dl>
                     <dt><?= __('Address') ?></dt>
-                    <dd class="text-break"><?= $address->address ?></dd>
+                    <dd class="text-break"><?= h($address->address) ?></dd>
                     <?php if ($address->alias): ?>
                     <dt><?= __('Alias') ?></dt>
-                    <dd class="text-break"><?= $address->alias ?></dd>
+                    <dd class="text-break"><?= h($address->alias) ?></dd>
                     <?php endif; ?>
                     <dt><?= __('Incoming') ?></dt>
-                    <dd class="text-break"><?= $address->Incoming ?></dd>
+                    <dd class="text-break"><?= h($address->Incoming) ?></dd>
                     <dt><?= __('Outgoing') ?></dt>
-                    <dd class="text-break"><?= $address->Outgoing ?></dd>
+                    <dd class="text-break"><?= h($address->Outgoing) ?></dd>
                     <dt><?= __('Balance') ?></dt>
-                    <dd class="text-break"><?= $address->Balance ?></dd>
+                    <dd class="text-break"><?= h($address->Balance) ?></dd>
                 </dl>
                 <?php else: ?>
                 <p><?= __('Something went wrong') ?></p>

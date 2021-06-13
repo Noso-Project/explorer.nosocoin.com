@@ -32,10 +32,10 @@
                                     $order->orderID,
                                     ['controller'=>'Explorer', 'action'=>'order', $order->orderID]
                                 ) ?></td>
-                                <td><?= $order->Timestamp ?></td>
-                                <td><?= $order->reference ?></td>
-                                <td><?= $order->Fee ?></td>
-                                <td><?= $order->Amount ?></td>
+                                <td><?= h($order->Timestamp) ?></td>
+                                <td><?= h($order->reference) ?></td>
+                                <td><?= h($order->Fee) ?></td>
+                                <td><?= h($order->Amount) ?></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>

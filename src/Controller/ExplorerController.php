@@ -78,10 +78,14 @@ class ExplorerController extends AppController
         $explorer = new Explorer($this->host, $this->port);
 
         if (isset($blockNumber)) {
-            $block = $explorer->getBlock(intval($blockNumber));
-            if (isset($block) && isset($block->valid) && $block->valid) {
-                // Do nothing
-                // The logic negative of then above conditional is ugly
+            if (is_numeric($blockNumber) and intval($blockNumber >= 0)) {
+                $block = $explorer->getBlock(intval($blockNumber));
+                if (isset($block) && isset($block->valid) && $block->valid) {
+                    unset($block->valid);
+                } else {
+                    $block = null;
+                    $this->Flash->error(__('Need to provide a valid block'));
+                }
             } else {
                 $block = null;
                 $this->Flash->error(__('Need to provide a valid block'));
@@ -106,8 +110,7 @@ class ExplorerController extends AppController
         if (isset($address)) {
             $address = $explorer->getAddress($address);
             if (isset($address) && isset($address->valid) && $address->valid) {
-                // Do nothing
-                // The logic negative of then above conditional is ugly
+                unset($address->valid);
             } else {
                 $address = null;
                 $this->Flash->error(__('Need to provide a valid address'));
@@ -133,7 +136,7 @@ class ExplorerController extends AppController
             $order = $explorer->getOrder($order);
             if (isset($order)) {
                 // Do nothing
-                // The logic negative of then above conditional is ugly
+                // The logic negative of the above conditional is ugly
             } else {
                 $order = null;
                 $this->Flash->error(__('Need to provide a valid order'));
@@ -151,16 +154,21 @@ class ExplorerController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function blockorders($block = null)
+    public function blockorders($blockNumber = null)
     {
         $explorer = new Explorer($this->host, $this->port);
 
-        if (isset($block)) {
-            $orders = $explorer->getBlockOrders(intval($block));
+        if (isset($blockNumber)) {
+            if (is_numeric($blockNumber) and intval($blockNumber >= 0)) {
+                $orders = $explorer->getBlockOrders(intval($blockNumber));
 
-            if (isset($orders)) {
-                // Do nothing
-                // The logic negative of then above conditional is ugly
+                if (isset($orders)) {
+                    // Do nothing
+                    // The logic negative of the above conditional is ugly
+                } else {
+                    $orders = null;
+                    $this->Flash->error(__('Need to provide a valid block'));
+                }
             } else {
                 $orders = null;
                 $this->Flash->error(__('Need to provide a valid block'));
