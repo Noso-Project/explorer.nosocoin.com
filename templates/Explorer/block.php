@@ -19,14 +19,14 @@
                     <dt><?= __('Last 20') ?></dt>
                     <dd class="text-break"><?= h($block->last20) ?></dd>
                     <dt><?= __('Total Transactions') ?></dt>
-                    <dd class="text-break"><?= $this->Html->link(
+                    <dd class="text-break"><?= ($block->totalTransactions > 0)?$this->Html->link(
                         $block->totalTransactions,
                         [
                             'controller'=>'Explorer',
                             'action'=>'blockorders',
                             $block->number
                         ]
-                    ) ?></dd>
+                    ):h($block->totalTransactions) ?></dd>
                     <dt><?= __('Difficulty') ?></dt>
                     <dd class="text-break"><?= h($block->difficulty) ?></dd>
                     <dt><?= __('Target') ?></dt>

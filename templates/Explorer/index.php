@@ -72,14 +72,14 @@
                                 ) ?></td>
                                 <td><?= h($block->TimeEnd) ?></td>
                                 <td><?= h($block->timeTotal) ?>s</td>
-                                <td><?= $this->Html->link(
+                                <td><?= ($block->totalTransactions > 0)?$this->Html->link(
                                     $block->totalTransactions,
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'blockorders',
                                         $block->number
                                     ]
-                                ) ?></td>
+                                ):h($block->totalTransactions) ?></td>
                                 <td><?= h($block->difficulty) ?></td>
                                 <td><?= h($block->Reward) ?></td>
                                 <td><?= h($block->FeesPaid) ?></td>
