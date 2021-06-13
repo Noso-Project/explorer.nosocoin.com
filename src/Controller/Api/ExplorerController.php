@@ -54,6 +54,7 @@ class ExplorerController extends AppController
             if (isset($block) && isset($block->valid) && $block->valid) {
                 $code = 200;
                 $message = 'Ok';
+                unset($block->valid);
             } else {
                 $code = 404;
                 $message = __('Need to provide a valid block');
@@ -85,6 +86,7 @@ class ExplorerController extends AppController
             if (isset($address) && isset($address->valid) && $address->valid) {
                 $code = 200;
                 $message = 'Ok';
+                unset($address->valid);
             } else {
                 $code = 404;
                 $message = __('Need to provide a valid address');

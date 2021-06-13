@@ -9,7 +9,7 @@
                     <dt><?= __('Order') ?></dt>
                     <dd class="text-break"><?= $order->orderID ?></dd>
                     <dt><?= __('Block') ?></dt>
-                    <dd class="text-break"><?= $order->block ?></dd>
+                    <dd class="text-break"><?= ($order->pending)?__('Pending'):$order->block ?></dd>
                     <dt><?= __('Type') ?></dt>
                     <dd class="text-break"><?= $order->type ?></dd>
                     <dt><?= __('Transfers') ?></dt>

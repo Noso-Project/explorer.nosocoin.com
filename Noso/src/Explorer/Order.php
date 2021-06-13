@@ -7,6 +7,7 @@ namespace Noso\Explorer;
 class Order{
     public $orderID;
     public $block;
+    public $pending;
     public $type;
     public $transfers;
     public $timestamp;
