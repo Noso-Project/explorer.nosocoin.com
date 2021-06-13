@@ -36,8 +36,13 @@ class ExplorerController extends AppController
             $lastblock = null;
         }
 
-        $this->set(compact('code', 'message', 'lastblock'));
-        $this->viewBuilder()->setOption('serialize', ['code', 'message', 'lastblock']);
+        if($code == 200) {
+            $this->set(compact('code', 'message', 'lastblock'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'lastblock']);
+        } else {
+            $this->set(compact('code', 'message'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message']);
+        }
     }
 
     /**
@@ -75,8 +80,13 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide a block number'));
         }
 
-        $this->set(compact('code', 'message', 'block'));
-        $this->viewBuilder()->setOption('serialize', ['code', 'message', 'block']);
+        if ($code == 200) {
+            $this->set(compact('code', 'message', 'block'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'block']);
+        } else {
+            $this->set(compact('code', 'message'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message']);
+        }
     }
 
     /**
@@ -107,8 +117,13 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an address'));
         }
 
-        $this->set(compact('code', 'message', 'address'));
-        $this->viewBuilder()->setOption('serialize', ['code', 'message', 'address']);
+        if ($code == 200) {
+            $this->set(compact('code', 'message', 'address'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'address']);
+        } else {
+            $this->set(compact('code', 'message'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message']);
+        }
     }
 
     /**
@@ -185,6 +200,7 @@ class ExplorerController extends AppController
             $orders = null;
             $this->Flash->error(__('Need to provide a block'));
         }
+
         if ($code == 200) {
             $this->set(compact('code', 'message', 'blockNumber', 'orders'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'blockNumber', 'orders']);
