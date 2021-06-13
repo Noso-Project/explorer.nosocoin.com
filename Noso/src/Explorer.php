@@ -230,8 +230,8 @@ class Explorer {
 
     public function getPendingOrders(){
         try {
-            $response = $this->_fetch('getpendingorders', [$block], 1);
-            echo json_encode($response->getJson()) . "\n";
+            $response = $this->_fetch('getpendingorders', [], 1);
+            //echo json_encode($response->getJson()) . "\n";
             if ($response->isOk()) {
                 $orders = $response->getJson();
                 if (isset($orders['result']) && count($orders['result']) > 0) {
@@ -239,19 +239,9 @@ class Explorer {
 
                     $ordersInfo = [];
                     foreach ($orders as $order) {
-                        $orderInfo = new Order();
 
-                        $orderInfo->valid =     isset($order['valid'])?$order['valid']:false;
-                        $orderInfo->orderID =   isset($order['orderid'])?$order['orderid']:'';
-                        $orderInfo->block =     isset($order['block'])?$order['block']:-1;
-                        $orderInfo->timestamp = isset($order['timestamp'])?$order['timestamp']:'';
-                        $orderInfo->reference = isset($order['reference'])?$order['reference']:'';
-                        $orderInfo->receiver =  isset($order['receiver'])?$order['receiver']:'';
-                        $orderInfo->amount =    isset($order['amount'])?$order['amount']:'';
-
-                        $ordersInfo[] = $orderInfo;
+                        $ordersInfo[] = $this->_parseOrder($order);
                     }
-
 
                     return $ordersInfo;
                 } else{

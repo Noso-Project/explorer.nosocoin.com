@@ -14,13 +14,14 @@ $order = 'OR3nltrwd5k58kskw1ef7lq8011lhzqw8d8m6bsriub91s3iuk1f';
 use Noso\Explorer;
 
 $be = new Explorer($host, $port);
-
+/*
 echo "== MainNet ==\n";
 $mainnetInfo = $be->getMainnet();
 if ($mainnetInfo) {
     echo "Last Block      : {$mainnetInfo->lastBlock}\n";
     echo "Pending         : {$mainnetInfo->pending}\n";
     echo "Supply          : {$mainnetInfo->supply}\n";
+    echo "Supply          : {$mainnetInfo->Supply}\n";
     echo "Last Block      : {$mainnetInfo->lastBlock}\n";
     echo "Last Block Hash : {$mainnetInfo->lastBlockHash}\n";
     echo "Headers Hash    : {$mainnetInfo->headersHash}\n";
@@ -29,7 +30,7 @@ if ($mainnetInfo) {
     echo "Error getting mainnet\n";
 }
 echo "\n";
-/*
+
 echo "== Block ==\n";
 $blockInfo = $be->getBlock($block);
 if ($blockInfo) {
@@ -92,6 +93,7 @@ $orderInfo = $be->getOrder($order);
 if ($orderInfo) {
     echo "OrderID   : {$orderInfo->orderID}\n";
     echo "Block     : {$orderInfo->block}\n";
+    echo "Pending   : ".($orderInfo->pending)?'Yes':'No'."\n";
     echo "Type      : {$orderInfo->type}\n";
     echo "Transfers : {$orderInfo->transfers}\n";
     echo "Timestamp : {$orderInfo->timestamp}\n";
@@ -114,6 +116,7 @@ if ($ordersInfo) {
         echo "------------------------------\n";
         echo "OrderID   : {$orderInfo->orderID}\n";
         echo "Block     : {$orderInfo->block}\n";
+        echo "Pending   : ".($orderInfo->pending)?'Yes':'No'."\n";
         echo "Type      : {$orderInfo->type}\n";
         echo "Transfers : {$orderInfo->transfers}\n";
         echo "Timestamp : {$orderInfo->timestamp}\n";
@@ -129,7 +132,31 @@ if ($ordersInfo) {
     echo "Error getting orders\n";
 }
 echo "\n";
-
+*/
+echo "== Pending Orders ==\n";
+$ordersInfo = $be->getPendingOrders();
+if ($ordersInfo) {
+    foreach ($ordersInfo as $orderInfo) {
+        echo "------------------------------\n";
+        echo "OrderID   : {$orderInfo->orderID}\n";
+        echo "Block     : {$orderInfo->block}\n";
+        echo "Pending   : ".($orderInfo->pending)?'Yes':'No'."\n";
+        echo "Type      : {$orderInfo->type}\n";
+        echo "Transfers : {$orderInfo->transfers}\n";
+        echo "Timestamp : {$orderInfo->timestamp}\n";
+        echo "Timestamp : {$orderInfo->Timestamp}\n";
+        echo "Reference : {$orderInfo->reference}\n";
+        echo "Receiver  : {$orderInfo->receiver}\n";
+        echo "Fee       : {$orderInfo->fee}\n";
+        echo "Fee       : {$orderInfo->Fee}\n";
+        echo "Amount    : {$orderInfo->amount}\n";
+        echo "Amount    : {$orderInfo->Amount}\n";
+    }
+} else {
+    echo "Error getting orders\n";
+}
+echo "\n";
+/*
 echo "== Address ==\n";
 $addressInfo = $be->getAddress($address);
 if ($addressInfo) {

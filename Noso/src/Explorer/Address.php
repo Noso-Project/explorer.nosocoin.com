@@ -12,14 +12,17 @@ class Address{
     public $incoming;
     public $outgoing;
 
-    private function Formatted($noso){
+    private function Formatted(int $noso){
+        if ($noso < 0) {
+            return "Error: Negative number";
+        }
         if ($noso == 0) {
             return '0.00000000';
         }
         if ($noso < 100000000) {
             return '0.' . sprintf('%08d', $noso);
         }
-        return  substr(strval($noso), 0, strlen(strval($noso)) - 8) .
+        return  number_format(floatval(substr(strval($noso), 0, strlen(strval($noso)) - 8))) .
             '.' .
             substr(strval($noso), -8);
     }
