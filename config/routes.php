@@ -86,7 +86,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
         $builder->scope('/v1', function (RouteBuilder $builder) {
             $builder->setExtensions(['json']);
 
-            $builder->connect('/lastblock', ['controller' => 'Explorer', 'action' => 'lastblock']);
+            $builder->connect('/mainnet', ['controller' => 'Explorer', 'action' => 'mainnet']);
             $builder->connect('/block/*', ['controller' => 'Explorer', 'action' => 'block']);
             $builder->connect('/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
             $builder->connect('/order/*', ['controller' => 'Explorer', 'action' => 'order']);

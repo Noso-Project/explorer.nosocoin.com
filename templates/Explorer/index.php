@@ -23,22 +23,24 @@
                             <dd><?= h($mainnet->Supply) ?></dd>
                         </dl>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <dl>
                             <dt><?= __('Last Block Hash') ?></dt>
-                            <dd><?= h($mainnet->lastBlockHash) ?></dd>
+                            <dd class="text-break"><?= h($mainnet->lastBlockHash) ?></dd>
                         </dl>
                     </div>
                     <div class="col">
                         <dl>
                             <dt><?= __('Headers Hash') ?></dt>
-                            <dd><?= h($mainnet->headersHash) ?></dd>
+                            <dd class="text-break"><?= h($mainnet->headersHash) ?></dd>
                         </dl>
                     </div>
                     <div class="col">
                         <dl>
                             <dt><?= __('Summary Hash') ?></dt>
-                            <dd><?= h($mainnet->summaryHash) ?></dd>
+                            <dd class="text-break"><?= h($mainnet->summaryHash) ?></dd>
                         </dl>
                     </div>
                 </div>

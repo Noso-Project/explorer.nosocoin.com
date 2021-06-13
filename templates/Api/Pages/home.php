@@ -11,7 +11,7 @@
                         <h4>Table of Contents</h4>
                         <ul>
                             <li><a href="#introduction">Introduction</a></li>
-                            <li><a href="#last-block">Last Block</a></li>
+                            <li><a href="#mainnet">Main Net</a></li>
                             <li><a href="#block">Block</a></li>
                             <li><a href="#block-orders">Block Orders</a></li>
                             <li><a href="#order">Order</a></li>
@@ -34,14 +34,14 @@
                                 <div>This API is still in Alpha and will change on a regular basis.<br/>Please refer to this page on a regular basis.</div>
                             </div>
                         </div>
-                        <h3><a name="last-block">Last Block</a></h3>
-                        <p>Returns the last block on the blockchain.</p>
+                        <h3><a name="mainnet">Main Net</a></h3>
+                        <p>Returns the Main Net status.</p>
                         <p>Example with extension:</p>
                         <p><?php
                             $url = $protocol.'://'.$domain.$this->Url->build(
                                 [
                                     'controller'=>'Explorer',
-                                    'action'=>'lastblock',
+                                    'action'=>'mainnet',
                                     'prefix'=>'Api'
                                 ]
                             );
@@ -55,7 +55,14 @@
                         <pre><code class="language-json">{
     "code": 200,
     "message": "Ok",
-    "lastblock": 13005
+    "mainnet": {
+        "lastBlock": 13236,
+        "pending": 6,
+        "supply": 67210390730000,
+        "lastBlockHash": "564E0BA10FA265FEBFCB51AF9310A940",
+        "headersHash": "235E6AF9B671E1AA3A8B7D25604FD4B4",
+        "summaryHash": "2861856B17FCAC8E4A4157E5C24ECB20"
+    }
 }</code></pre>
 
                         <h3><a name="block">Block</a></h3>
@@ -108,7 +115,7 @@
   "message": "Need to provide a valid block"
 }</code></pre>
 
-                        <h3><a name="block=orders">Block Orders</a></h3>
+                        <h3><a name="block-orders">Block Orders</a></h3>
                         <p>Returns the orders contained in a block of the blockchain.</p>
                         <p>Example with extension:</p>
                         <p><?php

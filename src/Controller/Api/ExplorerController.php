@@ -17,11 +17,11 @@ class ExplorerController extends AppController
     private $port = 8078;
 
     /**
-     * Index lastblock
+     * Index mainnet
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function lastblock()
+    public function mainnet()
     {
         $explorer = new Explorer($this->host, $this->port);
         $mainnet = $explorer->getMainnet();
@@ -29,16 +29,15 @@ class ExplorerController extends AppController
         if (isset($mainnet)) {
             $code = 200;
             $message = 'Ok';
-            $lastblock = $mainnet->lastBlock;
         } else {
             $code = 500;
             $message = 'Could not retrieve main net data';
-            $lastblock = null;
+            $mainnet = null;
         }
 
         if($code == 200) {
-            $this->set(compact('code', 'message', 'lastblock'));
-            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'lastblock']);
+            $this->set(compact('code', 'message', 'mainnet'));
+            $this->viewBuilder()->setOption('serialize', ['code', 'message', 'mainnet']);
         } else {
             $this->set(compact('code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
