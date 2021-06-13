@@ -82,6 +82,8 @@ class Explorer {
         $mainnetInfo = new Mainnet();
 
         $mainnetInfo->lastBlock =     isset($mainnet['lastblock'])?$mainnet['lastblock']:'';
+        $mainnetInfo->pending =       isset($mainnet['pending'])?$mainnet['pending']:-1;
+        $mainnetInfo->supply =        isset($mainnet['supply'])?$mainnet['supply']:-1;
         $mainnetInfo->lastBlockHash = isset($mainnet['lastblockhash'])?$mainnet['lastblockhash']:'';
         $mainnetInfo->headersHash =   isset($mainnet['headershash'])?$mainnet['headershash']:'';
         $mainnetInfo->summaryHash =   isset($mainnet['sumaryhash'])?$mainnet['sumaryhash']:'';

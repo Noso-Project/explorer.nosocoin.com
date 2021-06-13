@@ -14,10 +14,13 @@ $order = 'OR3nltrwd5k58kskw1ef7lq8011lhzqw8d8m6bsriub91s3iuk1f';
 use Noso\Explorer;
 
 $be = new Explorer($host, $port);
-/*
+
 echo "== MainNet ==\n";
 $mainnetInfo = $be->getMainnet();
 if ($mainnetInfo) {
+    echo "Last Block      : {$mainnetInfo->lastBlock}\n";
+    echo "Pending         : {$mainnetInfo->pending}\n";
+    echo "Supply          : {$mainnetInfo->supply}\n";
     echo "Last Block      : {$mainnetInfo->lastBlock}\n";
     echo "Last Block Hash : {$mainnetInfo->lastBlockHash}\n";
     echo "Headers Hash    : {$mainnetInfo->headersHash}\n";
@@ -26,7 +29,7 @@ if ($mainnetInfo) {
     echo "Error getting mainnet\n";
 }
 echo "\n";
-
+/*
 echo "== Block ==\n";
 $blockInfo = $be->getBlock($block);
 if ($blockInfo) {
@@ -53,7 +56,7 @@ if ($blockInfo) {
     echo "Error getting block\n";
 }
 echo "\n";
-*/
+
 echo "== Blocks ==\n";
 $blocksInfo = $be->getBlocks([0,1]);
 if ($blocksInfo) {
@@ -83,7 +86,7 @@ if ($blocksInfo) {
     echo "Error getting block\n";
 }
 echo "\n";
-/*
+
 echo "== Order ==\n";
 $orderInfo = $be->getOrder($order);
 if ($orderInfo) {

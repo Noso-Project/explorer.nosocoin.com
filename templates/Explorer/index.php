@@ -4,16 +4,44 @@
         <main>
             <div class="container px-4 py-5">
                 <?php if(isset($mainnet)): ?>
-                <dl>
-                    <dt><?= __('Last Block') ?></dt>
-                    <dd><?= $mainnet->lastBlock ?></dd>
-                    <dt><?= __('Last Block Hash') ?></dt>
-                    <dd><?= $mainnet->lastBlockHash ?></dd>
-                    <dt><?= __('Headers Hash') ?></dt>
-                    <dd><?= $mainnet->headersHash ?></dd>
-                    <dt><?= __('Summary Hash') ?></dt>
-                    <dd><?= $mainnet->summaryHash ?></dd>
-                </dl>
+                <div class="row">
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Last Block') ?></dt>
+                            <dd><?= h($mainnet->lastBlock) ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Pending Orders') ?></dt>
+                            <dd><?= h($mainnet->pending) ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Supply') ?></dt>
+                            <dd><?= h($mainnet->Supply) ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Last Block Hash') ?></dt>
+                            <dd><?= h($mainnet->lastBlockHash) ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Headers Hash') ?></dt>
+                            <dd><?= h($mainnet->headersHash) ?></dd>
+                        </dl>
+                    </div>
+                    <div class="col">
+                        <dl>
+                            <dt><?= __('Summary Hash') ?></dt>
+                            <dd><?= h($mainnet->summaryHash) ?></dd>
+                        </dl>
+                    </div>
+                </div>
                 <?php if (isset($blocksInfo) && count($blocksInfo)>0): ?>
                 <div class="table-responsive">
                     <table class="table table-striped">
