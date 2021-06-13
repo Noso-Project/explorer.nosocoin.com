@@ -97,13 +97,13 @@
                     </table>
                     <div class="paginator">
                         <ul class="pagination">
-                            <?php if ($previous): ?>
+                            <?php if (isset($previous)): ?>
                             <li><a class="btn btn-primary" href="<?= $this->Url->build('/from') . "/{$previous}" ?>">&lt; previous</a></li>
                             <?php else: ?>
                             <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">&lt; previous</a></li>
                             <?php endif; ?>
 
-                            <?php if($next): ?>
+                            <?php if(isset($next)): ?>
                             <li><a class="btn btn-primary" href="<?= $this->Url->build('/from') . "/{$next}" ?>">next &gt;</a></li>
                             <?php else: ?>
                             <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">next &gt;</a></li>
