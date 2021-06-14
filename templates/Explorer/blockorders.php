@@ -21,6 +21,7 @@
                                 <th>Order</th>
                                 <th>Timestamp</th>
                                 <th>Reference</th>
+                                <th>Transfers</th>
                                 <th>Fee</th>
                                 <th>Amount</th>
                             </tr>
@@ -34,6 +35,7 @@
                                 ) ?></td>
                                 <td><?= h($order->Timestamp) ?></td>
                                 <td><?= h($order->reference) ?></td>
+                                <td><?= h($order->transfers) ?></td>
                                 <td><?= h($order->Fee) ?></td>
                                 <td><?= h($order->Amount) ?></td>
                             </tr>
