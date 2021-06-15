@@ -33,11 +33,6 @@
 
         <?= $this->Html->meta('description', 'On this site you can explore the contents of the Nosocoin blockchain.') ?>
 
-
-        <meta http-equiv="cache-control" content="no-cache">
-        <meta http-equiv="pragma" content="no-cache">
-        <meta http-equiv="expires" content="0">
-
         <meta property="og:title" content="NosoCoin Blockchain Explorer">
         <meta property="og:type" content="website">
         <meta property="og:description" content="On this site you can explore the contents of the Nosocoin blockchain.">
