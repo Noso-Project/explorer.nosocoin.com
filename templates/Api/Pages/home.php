@@ -1,7 +1,8 @@
 <?php
     $this->assign('title', __('API').' - ');
     $domain = $this->request->getEnv('HTTP_HOST');
-    $protocol = ($domain=='explorer.nosocoin.com')?'https':'http';
+    $https = $this->request->getEnv('HTTPS');
+    $protocol = $https == 'on' ? 'https' : 'http';
 ?>
         <main>
             <div class="container px-4 py-5">
