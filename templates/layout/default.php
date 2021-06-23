@@ -1,4 +1,5 @@
 <?php
+use Cake\Core\Configure;
 
     $https = $this->request->getEnv('HTTPS');
     $protocol = $https == 'on' ? 'https' : 'http';
@@ -12,6 +13,8 @@
         $page = $this->request->getParam('pass')[0];
     }
     $prefix = $this->request->getParam('prefix');
+
+    $chinese = Configure::read('China.serial');
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -154,5 +157,8 @@
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <?php if (!empty($chinese)): ?>
+        <div class="container"><?= $chinese ?></div>
+        <?php endif; ?>
     </body>
 </html>
