@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2021-06-24 02:26+0000\n"
-"PO-Revision-Date: 2021-06-24 09:54+0200\n"
+"PO-Revision-Date: 2021-06-24 10:15+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -90,8 +90,9 @@ msgstr "Bloc"
 
 #: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
 #: Explorer/blockorders.php:2 Explorer/blockorders.php:6
+#, fuzzy
 msgid "Block Orders"
-msgstr "Ordre des blocs"
+msgstr "Ordre de paiement du bloc"
 
 #: Api/Explorer/mainnet.php:2
 msgid "Main Net"
@@ -99,8 +100,9 @@ msgstr "Réseau Principal"
 
 #: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
 #: Explorer/order.php:6 Explorer/order.php:9
+#, fuzzy
 msgid "Order"
-msgstr "Ordre"
+msgstr "Ordre de paiement"
 
 #: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
 msgid "API"
@@ -185,7 +187,7 @@ msgstr "Récompense"
 #: Explorer/blockorders.php:47
 #, fuzzy
 msgid "No orders on this block"
-msgstr "Pas de commande sur ce bloc"
+msgstr "Pas d'ordres de paiement  sur ce bloc"
 
 #: Explorer/index.php:2 layout/default.php:117
 msgid "Home"
@@ -198,7 +200,7 @@ msgstr "Dernier bloc"
 #: Explorer/index.php:16
 #, fuzzy
 msgid "Pending Orders"
-msgstr "Commande en attente"
+msgstr "Ordres de paiement en attente"
 
 #: Explorer/index.php:22
 msgid "Supply"
@@ -215,7 +217,7 @@ msgstr ""
 #: Explorer/index.php:55
 #, fuzzy
 msgid "Orders"
-msgstr "Commandes"
+msgstr "Ordres de paiment"
 
 #: Explorer/index.php:105 Explorer/index.php:107
 msgid "previous"
