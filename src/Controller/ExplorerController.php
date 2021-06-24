@@ -101,7 +101,7 @@ class ExplorerController extends AppController
      */
     public function toen()
     {
-        return $this->redirect(['controller'=>'Explorer', 'action'=>'index', 'lang'=>'en']);
+        return $this->redirect(['controller'=>'Explorer', 'action'=>'index', 'lang'=>'en'], 301);
     }
 
     /**
