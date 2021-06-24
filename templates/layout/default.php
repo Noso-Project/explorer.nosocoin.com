@@ -25,7 +25,7 @@ use Cake\Core\Configure;
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title><?= $this->fetch('title') ?>NosoCoin Blockchain Explorer</title>
+        <title><?= $this->fetch('title') . __('NosoCoin Blockchain Explorer') ?></title>
 
         <link rel="canonical" href="<?= $protocol ?>://<?= $domain ?><?= $path ?>">
 

@@ -260,6 +260,10 @@ msgstr "Taxa"
 msgid "Amount"
 msgstr "Quantidade"
 
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr "Explorador de Cadeia de Blocos NosoCoin"
+
 #: layout/error.php:38
 msgid "Back"
 msgstr "Trás"

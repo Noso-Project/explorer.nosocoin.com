@@ -290,6 +290,10 @@ msgstr ""
 msgid "Amount"
 msgstr ""
 
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr ""
+
 #: layout/error.php:38
 msgid "Back"
 msgstr ""
