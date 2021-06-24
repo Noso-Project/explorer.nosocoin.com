@@ -176,7 +176,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'English']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'en']:['controller'=>$controller, 'action'=>$action, 'lang'=>'en', $pass]),
-                ['escape'=>false]
+                ['title'=>'English', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
@@ -185,7 +185,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'Portuguese']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
-                ['escape'=>false]
+                ['title'=>'Portugu&ecirc;s', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
@@ -203,7 +203,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'French']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'fr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'fr', $pass]),
-                ['escape'=>false]
+                ['title'=>'Fran&ccedil;ais', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
@@ -212,7 +212,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'German']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'de']:['controller'=>$controller, 'action'=>$action, 'lang'=>'de', $pass]),
-                ['escape'=>false]
+                ['title'=>'Deutch','escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
