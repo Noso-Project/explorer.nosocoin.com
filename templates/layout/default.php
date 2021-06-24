@@ -185,7 +185,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'Chinese']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'zh']:['controller'=>$controller, 'action'=>$action, 'lang'=>'zh', $pass]),
-                ['title'=>'Cantonese','escape'=>false]
+                ['title'=>'中文','escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
