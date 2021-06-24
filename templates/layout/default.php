@@ -231,14 +231,20 @@ use Cake\Core\Configure;
         <?= $this->fetch('content') ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <?php if (!empty($chinese)): ?>
-        <div style="margin:0 auto; padding: 20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?= $chinese ?>" style="display: inline-block; text-decoration: none; height: 20px; line-height: 20px;">
-                <?= $this->Html->image(
-                    'chinese-seal.png',
-                    ['style'=>'float:left;']
-                ) ?>
-                <p style="float: left; height: 20px; line-height: 20px; margin: 0px 0px 0px 5px; color: #939393;">Su Gong Net Security No. <?= $chinese ?></p>
+        <div class="container">
+             <a target="_blank"
+             href="https://beian.miit.gov.cn/Integrated/index"
+             class="text-decoration-none">
+             备案号：苏ICP备19014705号-1</a>
+             <a target="_blank"
+             href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?= $chinese ?>"
+             class="text-decoration-none">
+                 <?= $this->Html->image(
+                    'chinese-seal.png'
+                 ) ?>
+                 苏公网安备<?= $chinese ?>号
             </a>
+            (已编辑)
         </div>
         <?php endif; ?>
     </body>
