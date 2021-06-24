@@ -128,7 +128,7 @@ msgstr "Número"
 
 #: Explorer/block.php:11
 msgid "Hash"
-msgstr "Hash"
+msgstr "Cifra"
 
 #: Explorer/block.php:13 Explorer/index.php:53
 msgid "Time End"
@@ -164,7 +164,7 @@ msgstr "Solução"
 
 #: Explorer/block.php:36 Explorer/index.php:30
 msgid "Last Block Hash"
-msgstr "Hash do Último Bloco"
+msgstr "Cifra do Último Bloco"
 
 #: Explorer/block.php:38
 msgid "Next Difficulty"
@@ -204,11 +204,11 @@ msgstr "Fornecimento"
 
 #: Explorer/index.php:36
 msgid "Headers Hash"
-msgstr "Hash de Cabeçalhos"
+msgstr "Cifra de Cabeçalhos"
 
 #: Explorer/index.php:42
 msgid "Summary Hash"
-msgstr "Hash do Sumario"
+msgstr "Cifra do Sumario"
 
 #: Explorer/index.php:55
 msgid "Orders"
