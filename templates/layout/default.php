@@ -194,7 +194,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'Chinese']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'zh']:['controller'=>$controller, 'action'=>$action, 'lang'=>'zh', $pass]),
-                ['escape'=>false]
+                ['title'=>'Cantonese','escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
@@ -221,7 +221,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'Romanian']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'ro']:['controller'=>$controller, 'action'=>$action, 'lang'=>'ro', $pass]),
-                ['escape'=>false]
+                ['title'=>'Română', 'escape'=>false]
             ) ?>
 
         </div>
