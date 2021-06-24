@@ -156,7 +156,7 @@ msgstr "Dificuldade"
 
 #: Explorer/block.php:32
 msgid "Target"
-msgstr "Alvo"
+msgstr "Objectivo"
 
 #: Explorer/block.php:34
 msgid "Solution"
