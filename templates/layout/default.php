@@ -234,13 +234,16 @@ use Cake\Core\Configure;
         <div class="container">
              <a target="_blank"
              href="https://beian.miit.gov.cn/Integrated/index"
-             class="text-decoration-none">
+             class="text-decoration-none"
+             style="font-size: 10px;">
              备案号：苏ICP备19014705号-1</a>
              <a target="_blank"
              href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<?= $chinese ?>"
-             class="text-decoration-none">
+             class="text-decoration-none"
+             style="font-size: 10px;">
                  <?= $this->Html->image(
-                    'chinese-seal.png'
+                    'chinese-seal.png',
+                    ['height'=>10]
                  ) ?>
                  苏公网安备<?= $chinese ?>号
             </a>
