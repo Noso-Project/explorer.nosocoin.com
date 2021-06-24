@@ -104,11 +104,11 @@ use Cake\Core\Configure;
     </head>
 <!--
     Translation Team:
-        Portuguese: Gustavo 'Gus' Carreno
         Chinese: YZ
         French: Fury
         German: Fechi92
         Romanian: niko666
+        Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
 
@@ -181,15 +181,6 @@ use Cake\Core\Configure;
 
             <?= $this->Html->link(
                 $this->Html->image(
-                    'pt.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Portuguese']
-                ),
-                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
-                ['title'=>'Portugu&ecirc;s', 'escape'=>false]
-            ) ?>
-
-            <?= $this->Html->link(
-                $this->Html->image(
                     'cn.svg',
                     ['class'=>'flag px-1', 'alt'=>'Chinese']
                 ),
@@ -222,6 +213,15 @@ use Cake\Core\Configure;
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'ro']:['controller'=>$controller, 'action'=>$action, 'lang'=>'ro', $pass]),
                 ['title'=>'Română', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'pt.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Portuguese']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
+                ['title'=>'Portugu&ecirc;s', 'escape'=>false]
             ) ?>
 
         </div>
