@@ -170,9 +170,18 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'pt.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Portug&ecirc;s', 'escape'=>false]
+                    ['class'=>'flag px-1', 'alt'=>'Portuguese']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
+                ['escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'cn.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Chinese']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'zh']:['controller'=>$controller, 'action'=>$action, 'lang'=>'zh', $pass]),
                 ['escape'=>false]
             ) ?>
 

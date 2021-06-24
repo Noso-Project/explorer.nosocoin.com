@@ -50,7 +50,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
-    $langs = 'en|pt';
+    $langs = 'en|pt|zh';
     $builder->connect('/', ['controller' => 'Explorer', 'action' => 'toen']);
     $builder->connect('/{lang}/', ['controller' => 'Explorer', 'action' => 'index'])
     ->setPatterns(['lang'=>$langs]);
