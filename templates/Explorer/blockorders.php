@@ -20,12 +20,12 @@
                     <table class="table table-triped">
                         <thead>
                             <tr>
-                                <th>Order</th>
-                                <th>Timestamp</th>
-                                <th>Reference</th>
-                                <th>Transfers</th>
-                                <th>Fee</th>
-                                <th>Amount</th>
+                                <th><?= __('Order') ?></th>
+                                <th><?= __('Timestamp') ?></th>
+                                <th><?= __('Reference') ?></th>
+                                <th><?= __('Transfers') ?></th>
+                                <th><?= __('Fee') ?></th>
+                                <th><?= __('Amount') ?></th>
                             </tr>
                         </thead>
                         <tbody>
