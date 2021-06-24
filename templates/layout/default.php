@@ -16,6 +16,8 @@ use Cake\Core\Configure;
     }
     $prefix = $this->request->getParam('prefix');
 
+    $g_analytics = Configure::read('Google.analytics');
+
     $chinese = Configure::read('China.serial');
 
 ?><!DOCTYPE html>
@@ -63,15 +65,17 @@ use Cake\Core\Configure;
 
         <?php endif; ?>
 
+        <?php if (!empty($g_analytics)): ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-RG475L8YD6"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?= $g_analytics ?>"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-RG475L8YD6');
+          gtag('config', '<?= $g_analytics ?>');
         </script>
+        <?php endif; ?>
 
         <script type="application/ld+json">{
             "@context": "http://schema.org",
