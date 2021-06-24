@@ -6,6 +6,7 @@ namespace App\Controller;
 use App\Model\Entity\Block as BlockEntity;
 use App\Model\Table\BlocksTable;
 use Cake\Core\Configure;
+use Cake\I18n\I18n;
 use Noso\Explorer;
 use Noso\Explorer\Block;
 
@@ -84,6 +85,21 @@ class ExplorerController extends AppController
         $this->host = Configure::read('RPC.host');
         $this->port = Configure::read('RPC.port');
         $this->table = new BlocksTable();
+
+        $lang = $this->request->getParam('lang');
+        if (isset($lang)) {
+            I18n::setLocale($lang);
+        }
+    }
+
+    /**
+     * Redirect method
+     *
+     * @return \Cake\Http\Response|null|void Renders view
+     */
+    public function toen()
+    {
+        return $this->redirect(['controller'=>'Explorer', 'action'=>'index', 'lang'=>'en']);
     }
 
     /**
@@ -265,7 +281,7 @@ class ExplorerController extends AppController
             }
         } else {
             $orders = null;
-            $this->Flash->error(__('Need to provide an block'));
+            $this->Flash->error(__('Need to provide a block'));
         }
 
         $this->set(compact('orders'));
@@ -282,24 +298,24 @@ class ExplorerController extends AppController
             if (is_numeric($query)) {
 
                 $query = intval($query);
-                $this->redirect(['action'=>'block', $query]);
+                return $this->redirect(['action'=>'block', $query]);
 
             } elseif (substr($query, 0, 1) == 'N') {
 
-                $this->redirect(['action'=>'address', $query]);
+                return $this->redirect(['action'=>'address', $query]);
 
             } elseif (substr($query, 0, 2) == 'OR') {
 
-                $this->redirect(['action'=>'order', $query]);
+                return $this->redirect(['action'=>'order', $query]);
 
             } else {
 
-                $this->redirect(['action'=>'address', $query]);
+                return $this->redirect(['action'=>'address', $query]);
 
             }
         } else {
             $this->Flash->error(__('Need to provide a query'));
-            $this->redirect(['action'=>'index']);
+            return $this->redirect(['action'=>'index']);
         }
     }
 }

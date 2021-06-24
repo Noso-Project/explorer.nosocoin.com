@@ -106,7 +106,7 @@ use Cake\Core\Configure;
                             'N3256x256.png',
                             ['class'=>'bi me-2', 'width'=>'40', 'height'=>'40', 'alt'=>'NosoCoin']
                         ),
-                        ['controller'=>'Explorer', 'action'=>'index', 'prefix'=>false],
+                        ['controller'=>'Explorer', 'action'=>'index', 'lang'=>$this->request->getParam('lang'), 'prefix'=>false],
                         ['class'=>'d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none', 'escape'=>false]
                     ) ?>
 
@@ -115,7 +115,7 @@ use Cake\Core\Configure;
                             $css_class = ($controller == 'Explorer' && $action == 'index')?'text-warning':'text-white';
                             echo $this->Html->link(
                                 __('Home'),
-                                ['controller'=>'Explorer', 'action'=>'index', 'prefix'=>false],
+                                ['controller'=>'Explorer', 'action'=>'index', 'lang'=>$this->request->getParam('lang'), 'prefix'=>false],
                                 ['class'=>'nav-link px-2 '. $css_class]
                             ) ?></li>
                         <li class="nav-item"><?php
@@ -127,8 +127,29 @@ use Cake\Core\Configure;
                             ) ?></li>
                     </ul>
 
+                    <div class="px-2">
+                        <?= $this->Html->link(
+                            $this->Html->image(
+                                'gb.svg',
+                                ['class'=>'flag px-1', 'alt'=>'English']
+                            ),
+                            ['controller'=>'Explorer', 'action'=>'index', 'lang'=>'en'],
+                            ['escape'=>false]
+                        ) ?>
+
+                        <?= $this->Html->link(
+                            $this->Html->image(
+                                'pt.svg',
+                                ['class'=>'flag px-1', 'alt'=>'Portug&ecirc;s', 'escape'=>false]
+                            ),
+                            ['controller'=>'Explorer', 'action'=>'index', 'lang'=>'pt'],
+                            ['escape'=>false]
+                        ) ?>
+
+                    </div>
+
                     <form class="col-5 mb-3 mb-lg-0 me-lg-3" onsubmit="return doSearch()">
-                        <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="Block,Order,Address,Alias" aria-label="Search">
+                        <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="<?= __('Block') ?>,<?= __('Order') ?>,<?= __('Address') ?>,<?= __('Alias') ?>" aria-label="Search">
                     </form>
 
                     <div class="text-end">

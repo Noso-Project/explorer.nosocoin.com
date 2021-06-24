@@ -50,13 +50,14 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
-    $builder->connect('/', ['controller' => 'Explorer', 'action' => 'index']);
-    $builder->connect('/block/*', ['controller' => 'Explorer', 'action' => 'block']);
-    $builder->connect('/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
-    $builder->connect('/order/*', ['controller' => 'Explorer', 'action' => 'order']);
-    $builder->connect('/address/*', ['controller' => 'Explorer', 'action' => 'address']);
-    $builder->connect('/search/*', ['controller' => 'Explorer', 'action' => 'search']);
-    $builder->connect('/from/:id', ['controller' => 'Explorer', 'action' => 'index']);
+    $builder->connect('/', ['controller' => 'Explorer', 'action' => 'toen']);
+    $builder->connect('/{lang}/', ['controller' => 'Explorer', 'action' => 'index']);
+    $builder->connect('/{lang}/block/*', ['controller' => 'Explorer', 'action' => 'block']);
+    $builder->connect('/{lang}/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
+    $builder->connect('/{lang}/order/*', ['controller' => 'Explorer', 'action' => 'order']);
+    $builder->connect('/{lang}/address/*', ['controller' => 'Explorer', 'action' => 'address']);
+    $builder->connect('/{lang}/search/*', ['controller' => 'Explorer', 'action' => 'search']);
+    $builder->connect('/{lang}/from/{id}', ['controller' => 'Explorer', 'action' => 'index']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.

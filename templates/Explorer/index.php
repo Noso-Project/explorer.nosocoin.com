@@ -49,14 +49,14 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <td><?= __('Number') ?></td>
-                                <td><?= __('Time End') ?></td>
-                                <td><?= __('Time Total') ?></td>
-                                <td><?= __('Orders') ?></td>
-                                <td><?= __('Difficulty') ?></td>
-                                <td><?= __('Reward') ?></td>
-                                <td><?= __('Fees') ?></td>
-                                <td><?= __('Miner') ?></td>
+                                <th><?= __('Number') ?></th>
+                                <th><?= __('Time End') ?></th>
+                                <th><?= __('Time Total') ?></th>
+                                <th><?= __('Orders') ?></th>
+                                <th><?= __('Difficulty') ?></th>
+                                <th><?= __('Reward') ?></th>
+                                <th><?= __('Fees') ?></th>
+                                <th><?= __('Miner') ?></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -67,6 +67,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'block',
+                                        'lang'=>$this->request->getParam('lang'),
                                         $block->number
                                     ]
                                 ) ?></td>
@@ -77,6 +78,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'blockorders',
+                                        'lang'=>$this->request->getParam('lang'),
                                         $block->number
                                     ]
                                 ):h($block->totalTransactions) ?></td>
@@ -88,6 +90,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'address',
+                                        'lang' => $this->request->getParam('lang'),
                                         $block->miner
                                     ]
                                 ) ?></td>
@@ -98,13 +101,13 @@
                     <div class="paginator">
                         <ul class="pagination">
                             <?php if (isset($previous)): ?>
-                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/from') . "/{$previous}" ?>">&lt; previous</a></li>
+                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$this->request->getParam('lang').'/from') . "/{$previous}" ?>">&lt; previous</a></li>
                             <?php else: ?>
                             <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">&lt; previous</a></li>
                             <?php endif; ?>
 
                             <?php if(isset($next)): ?>
-                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/from') . "/{$next}" ?>">next &gt;</a></li>
+                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$this->request->getParam('lang').'/from') . "/{$next}" ?>">next &gt;</a></li>
                             <?php else: ?>
                             <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">next &gt;</a></li>
                             <?php endif; ?>

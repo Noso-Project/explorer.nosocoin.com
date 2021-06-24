@@ -207,7 +207,7 @@ class ExplorerController extends AppController
             }
         } else {
             $code = 400;
-            $message = __('Need to provide a address');
+            $message = __('Need to provide an address');
             $address = null;
             $this->Flash->error(__('Need to provide an address'));
         }
@@ -243,7 +243,7 @@ class ExplorerController extends AppController
             }
         } else {
             $code = 400;
-            $message = __('Need to provide a order');
+            $message = __('Need to provide an order');
             $order = null;
             $this->Flash->error(__('Need to provide an order'));
         }
