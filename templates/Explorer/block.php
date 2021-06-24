@@ -55,4 +55,6 @@
                 <p><?= __('Something went wrong') ?></p>
                 <?php endif; ?>
             </div>
+            <div class="container"><?php debug($dbBlock) ?></div>
+            <div class="container"><?php debug($block) ?></div>
         </main>
