@@ -1,5 +1,6 @@
 <?php
     $this->assign('title', __('Address').' - ');
+    $lang=$this->request->getParam('lang');
 ?>
         <main>
             <div class="container px-4 py-5">

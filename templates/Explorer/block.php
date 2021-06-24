@@ -1,5 +1,6 @@
 <?php
     $this->assign('title', __('Block').' - ');
+    $lang=$this->request->getParam('lang');
 ?>
         <main>
             <div class="container px-4 py-5">
@@ -24,6 +25,7 @@
                         [
                             'controller'=>'Explorer',
                             'action'=>'blockorders',
+                            'lang'=>$lang,
                             $block->number
                         ]
                     ):h($block->totalTransactions) ?></dd>
@@ -43,6 +45,7 @@
                         [
                             'controller'=>'Explorer',
                             'action'=>'address',
+                            'lang'=>$lang,
                             $block->miner
                         ]
                     ) ?></dd>

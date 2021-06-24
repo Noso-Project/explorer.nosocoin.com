@@ -1,5 +1,6 @@
 <?php
     $this->assign('title', __('Home').' - ');
+    $lang=$this->request->getParam('lang');
 ?>
         <main>
             <div class="container px-4 py-5">
@@ -67,7 +68,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'block',
-                                        'lang'=>$this->request->getParam('lang'),
+                                        'lang'=>$lang,
                                         $block->number
                                     ]
                                 ) ?></td>
@@ -78,7 +79,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'blockorders',
-                                        'lang'=>$this->request->getParam('lang'),
+                                        'lang'=>$lang,
                                         $block->number
                                     ]
                                 ):h($block->totalTransactions) ?></td>
@@ -90,7 +91,7 @@
                                     [
                                         'controller'=>'Explorer',
                                         'action'=>'address',
-                                        'lang' => $this->request->getParam('lang'),
+                                        'lang' => $lang,
                                         $block->miner
                                     ]
                                 ) ?></td>
@@ -101,15 +102,15 @@
                     <div class="paginator">
                         <ul class="pagination">
                             <?php if (isset($previous)): ?>
-                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$this->request->getParam('lang').'/from') . "/{$previous}" ?>">&lt; previous</a></li>
+                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$lang.'/from') . "/{$previous}" ?>">&lt; <?= __('previous') ?></a></li>
                             <?php else: ?>
-                            <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">&lt; previous</a></li>
+                            <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">&lt; <?= __('previous') ?></a></li>
                             <?php endif; ?>
 
                             <?php if(isset($next)): ?>
-                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$this->request->getParam('lang').'/from') . "/{$next}" ?>">next &gt;</a></li>
+                            <li><a class="btn btn-primary" href="<?= $this->Url->build('/'.$lang.'/from') . "/{$next}" ?>"><?= __('next') ?> &gt;</a></li>
                             <?php else: ?>
-                            <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;">next &gt;</a></li>
+                            <li><a class="btn btn-danger disabled" role="button" aria-disabled="true" href="" onclick="return false;"><?= __('next') ?> &gt;</a></li>
                             <?php endif; ?>
                         </ul>
                     </div>

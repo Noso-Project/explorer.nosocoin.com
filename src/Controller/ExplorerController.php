@@ -107,9 +107,8 @@ class ExplorerController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function index()
+    public function index($from = null)
     {
-        $from = $this->request->getParam('id');
 
         $explorer = new Explorer($this->host, $this->port);
         $mainnet = $explorer->getMainnet();
@@ -170,7 +169,7 @@ class ExplorerController extends AppController
                         'conditions'=>['number'=>intval($blockNumber)]
                     ]
                 );
-                $dbBlock = $query->first();
+                $dbBlock = null;//$query->first();
 
                 if (is_null($dbBlock)) {
                     $explorer = new Explorer($this->host, $this->port);
@@ -182,9 +181,9 @@ class ExplorerController extends AppController
 
                         $dbBlock = $this->_getFilledBlockEntity($block);
 
-                        if (!$this->table->save($dbBlock)) {
-                            $this->Flash->error(__('Error while saving block to database'));
-                        }
+                        //if (!$this->table->save($dbBlock)) {
+                        //    $this->Flash->error(__('Error while saving block to database'));
+                        //}
                     } else {
                         $block = null;
                         $this->Flash->error(__('Need to provide a valid block'));

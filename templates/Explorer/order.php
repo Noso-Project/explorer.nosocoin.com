@@ -1,5 +1,6 @@
 <?php
     $this->assign('title', __('Order').' - ');
+    $lang=$this->request->getParam('lang');
 ?>
         <main>
             <div class="container px-4 py-5">
@@ -21,7 +22,7 @@
                     <dt><?= __('Receiver') ?></dt>
                     <dd class="text-break"><?= $this->Html->link(
                         $order->receiver,
-                        ['controller'=>'Explorer','action'=>'address',$order->receiver]
+                        ['controller'=>'Explorer','action'=>'address','lang'=>$lang,$order->receiver]
                     ) ?></dd>
                     <dt><?= __('Fee') ?></dt>
                     <dd class="text-break"><?= h($order->Fee) ?></dd>

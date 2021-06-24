@@ -8,6 +8,7 @@ use Cake\Core\Configure;
 
     $controller = $this->request->getParam('controller');
     $action = $this->request->getParam('action');
+    $pass = isset($this->request->getParam('pass')[0])?$this->request->getParam('pass')[0]:null;
     $page = '';
     if ($controller == 'Pages' && $action == 'display') {
         $page = $this->request->getParam('pass')[0];
@@ -127,27 +128,6 @@ use Cake\Core\Configure;
                             ) ?></li>
                     </ul>
 
-                    <div class="px-2">
-                        <?= $this->Html->link(
-                            $this->Html->image(
-                                'gb.svg',
-                                ['class'=>'flag px-1', 'alt'=>'English']
-                            ),
-                            ['controller'=>'Explorer', 'action'=>'index', 'lang'=>'en'],
-                            ['escape'=>false]
-                        ) ?>
-
-                        <?= $this->Html->link(
-                            $this->Html->image(
-                                'pt.svg',
-                                ['class'=>'flag px-1', 'alt'=>'Portug&ecirc;s', 'escape'=>false]
-                            ),
-                            ['controller'=>'Explorer', 'action'=>'index', 'lang'=>'pt'],
-                            ['escape'=>false]
-                        ) ?>
-
-                    </div>
-
                     <form class="col-5 mb-3 mb-lg-0 me-lg-3" onsubmit="return doSearch()">
                         <input id="query" name="query" type="search" class="form-control form-control-dark" placeholder="<?= __('Block') ?>,<?= __('Order') ?>,<?= __('Address') ?>,<?= __('Alias') ?>" aria-label="Search">
                     </form>
@@ -175,6 +155,29 @@ use Cake\Core\Configure;
                 </div>
             </div>
         </header>
+        <?php if ($prefix != 'Api'): ?>
+        <div class="container px-2 py-1 text-end">
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'gb.svg',
+                    ['class'=>'flag px-1', 'alt'=>'English']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'en']:['controller'=>$controller, 'action'=>$action, 'lang'=>'en', $pass]),
+                ['escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'pt.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Portug&ecirc;s', 'escape'=>false]
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
+                ['escape'=>false]
+            ) ?>
+
+        </div>
+        <?php endif; ?>
+
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>

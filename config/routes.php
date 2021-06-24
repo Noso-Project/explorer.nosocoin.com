@@ -50,14 +50,23 @@ $routes->scope('/', function (RouteBuilder $builder) {
      * its action called 'display', and we pass a param to select the view file
      * to use (in this case, templates/Pages/home.php)...
      */
+    $langs = 'en|pt';
     $builder->connect('/', ['controller' => 'Explorer', 'action' => 'toen']);
-    $builder->connect('/{lang}/', ['controller' => 'Explorer', 'action' => 'index']);
-    $builder->connect('/{lang}/block/*', ['controller' => 'Explorer', 'action' => 'block']);
-    $builder->connect('/{lang}/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders']);
-    $builder->connect('/{lang}/order/*', ['controller' => 'Explorer', 'action' => 'order']);
-    $builder->connect('/{lang}/address/*', ['controller' => 'Explorer', 'action' => 'address']);
-    $builder->connect('/{lang}/search/*', ['controller' => 'Explorer', 'action' => 'search']);
-    $builder->connect('/{lang}/from/{id}', ['controller' => 'Explorer', 'action' => 'index']);
+    $builder->connect('/{lang}/', ['controller' => 'Explorer', 'action' => 'index'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/block/*', ['controller' => 'Explorer', 'action' => 'block'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/blockorders/*', ['controller' => 'Explorer', 'action' => 'blockorders'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/order/*', ['controller' => 'Explorer', 'action' => 'order'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/address/*', ['controller' => 'Explorer', 'action' => 'address'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/search/*', ['controller' => 'Explorer', 'action' => 'search'])
+    ->setPatterns(['lang'=>$langs]);
+    $builder->connect('/{lang}/from/{id}', ['controller' => 'Explorer', 'action' => 'index'])
+    ->setPatterns(['lang'=>$langs, 'id'=>'\d+'])
+    ->setPass(['id']);
 
     /*
      * ...and connect the rest of 'Pages' controller's URLs.

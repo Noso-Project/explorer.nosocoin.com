@@ -1,5 +1,6 @@
 <?php
     $this->assign('title', __('Block Orders').' - ');
+    $lang=$this->request->getParam('lang');
 ?>
         <main>
             <div class="container px-4 py-5">
@@ -10,6 +11,7 @@
                     [
                         'controller'=>'Explorer',
                         'action'=>'block',
+                        'lang'=>$lang,
                         ($this->request->getParam('pass')[0])
                     ]
                 ) ?></p>
@@ -31,7 +33,7 @@
                             <tr>
                                 <td><?= $this->Html->link(
                                     $order->orderID,
-                                    ['controller'=>'Explorer', 'action'=>'order', $order->orderID]
+                                    ['controller'=>'Explorer', 'action'=>'order', 'lang'=>$lang, $order->orderID]
                                 ) ?></td>
                                 <td><?= h($order->Timestamp) ?></td>
                                 <td><?= h($order->reference) ?></td>

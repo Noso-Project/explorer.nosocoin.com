@@ -130,7 +130,7 @@ class ExplorerController extends AppController
                         'conditions'=>['number'=>intval($blockNumber)]
                     ]
                 );
-                $dbBlock = $query->first();
+                $dbBlock = null; //$query->first();
 
                 if (is_null($dbBlock)) {
                     $explorer = new Explorer($this->host, $this->port);
@@ -144,12 +144,12 @@ class ExplorerController extends AppController
 
                         $dbBlock = $this->_getFilledBlockEntity($block);
 
-                        if (!$this->table->save($dbBlock)) {
-                            $code = 500;
-                            $message = 'Error while saving block to database';
-                            $block = null;
-                            $this->Flash->error(__('Error while saving block to database'));
-                        }
+                        //if (!$this->table->save($dbBlock)) {
+                        //    $code = 500;
+                        //    $message = 'Error while saving block to database';
+                        //    $block = null;
+                        //    $this->Flash->error(__('Error while saving block to database'));
+                        //}
                     } else {
                         $code = 404;
                         $message = __('Need to provide a valid block');

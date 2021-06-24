@@ -244,6 +244,16 @@ msgstr ""
 msgid "Orders"
 msgstr ""
 
+#: Explorer/index.php:105
+#: Explorer/index.php:107
+msgid "previous"
+msgstr ""
+
+#: Explorer/index.php:111
+#: Explorer/index.php:113
+msgid "next"
+msgstr ""
+
 #: Explorer/index.php:115
 msgid "No blocks"
 msgstr ""
