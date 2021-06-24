@@ -185,6 +185,15 @@ use Cake\Core\Configure;
                 ['escape'=>false]
             ) ?>
 
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'fr.svg',
+                    ['class'=>'flag px-1', 'alt'=>'French']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'fr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'fr', $pass]),
+                ['escape'=>false]
+            ) ?>
+
         </div>
         <?php endif; ?>
 
