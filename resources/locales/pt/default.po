@@ -242,7 +242,7 @@ msgstr "Transferências"
 
 #: Explorer/order.php:17
 msgid "Timestamp"
-msgstr "Timestamp"
+msgstr "Data/Hora"
 
 #: Explorer/order.php:19
 msgid "Reference"
