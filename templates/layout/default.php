@@ -244,7 +244,6 @@ use Cake\Core\Configure;
                  ) ?>
                  苏公网安备<?= $chinese ?>号
             </a>
-            (已编辑)
         </div>
         <?php endif; ?>
     </body>
