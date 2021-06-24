@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Language: zh\n"
+"Language: zh_CN\n"
 "X-Generator: Poedit 3.0\n"
 
 #: Error/error400.php:39 Error/error500.php:43
