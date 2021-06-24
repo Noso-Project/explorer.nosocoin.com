@@ -260,7 +260,7 @@ msgstr "数量"
 
 #: layout/default.php:28
 msgid "NosoCoin Blockchain Explorer"
-msgstr ""
+msgstr "Noso区块浏览器"
 
 #: layout/error.php:38
 msgid "Back"
