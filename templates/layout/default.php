@@ -8,6 +8,7 @@ use Cake\Core\Configure;
 
     $controller = $this->request->getParam('controller');
     $action = $this->request->getParam('action');
+    $lang = $this->request->getParam('lang');
     $pass = isset($this->request->getParam('pass')[0])?$this->request->getParam('pass')[0]:null;
     $page = '';
     if ($controller == 'Pages' && $action == 'display') {
@@ -85,7 +86,7 @@ use Cake\Core\Configure;
             function doSearch(){
                 let query = document.getElementById('query').value;
                 if (query.length > 0) {
-                    window.location.href = '<?= $this->Url->build('/search') ?>/'+query;
+                    window.location.href = '<?= $this->Url->build("/{$lang}/search") ?>/'+query;
                 }
                 return false;
             }

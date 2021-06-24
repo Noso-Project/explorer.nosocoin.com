@@ -19,6 +19,7 @@ class ExplorerController extends AppController
 {
     private $host = 'localhost';
     private $port = 8078;
+    private $lang = 'en';
     private BlocksTable $table;
 
     /**
@@ -88,6 +89,7 @@ class ExplorerController extends AppController
 
         $lang = $this->request->getParam('lang');
         if (isset($lang)) {
+            $this->lang = $lang;
             I18n::setLocale($lang);
         }
     }
@@ -297,24 +299,24 @@ class ExplorerController extends AppController
             if (is_numeric($query)) {
 
                 $query = intval($query);
-                return $this->redirect(['action'=>'block', $query]);
+                return $this->redirect(['action'=>'block', 'lang'=>$this->lang, $query]);
 
             } elseif (substr($query, 0, 1) == 'N') {
 
-                return $this->redirect(['action'=>'address', $query]);
+                return $this->redirect(['action'=>'address', 'lang'=>$this->lang, $query]);
 
             } elseif (substr($query, 0, 2) == 'OR') {
 
-                return $this->redirect(['action'=>'order', $query]);
+                return $this->redirect(['action'=>'order', 'lang'=>$this->lang, $query]);
 
             } else {
 
-                return $this->redirect(['action'=>'address', $query]);
+                return $this->redirect(['action'=>'address', 'lang'=>$this->lang, $query]);
 
             }
         } else {
             $this->Flash->error(__('Need to provide a query'));
-            return $this->redirect(['action'=>'index']);
+            return $this->redirect(['action'=>'index', 'lang'=>$this->lang]);
         }
     }
 }
