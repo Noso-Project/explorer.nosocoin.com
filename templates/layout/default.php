@@ -98,6 +98,14 @@ use Cake\Core\Configure;
         <?= $this->fetch('script') ?>
 
     </head>
+<!--
+    Translation Team:
+        Portuguese: Gustavo 'Gus' Carreno
+        Chinese: YZ
+        French: Fury
+        German: Fechi92
+        Romanian: niko666
+-->
     <body class="d-flex flex-column">
 
         <header class="p-3 bg-dark text-white">
@@ -191,6 +199,24 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'French']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'fr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'fr', $pass]),
+                ['escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'de.svg',
+                    ['class'=>'flag px-1', 'alt'=>'German']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'de']:['controller'=>$controller, 'action'=>$action, 'lang'=>'de', $pass]),
+                ['escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'ro.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Romanian']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'ro']:['controller'=>$controller, 'action'=>$action, 'lang'=>'ro', $pass]),
                 ['escape'=>false]
             ) ?>
 

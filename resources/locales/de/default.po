@@ -1,0 +1,267 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-06-24 02:26+0000\n"
+"PO-Revision-Date: 2021-06-24 14:25+0200\n"
+"Last-Translator: Fechi92 <fechi1712@gmail.com>\n"
+"Language-Team: Fechi92\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de_DE\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#: Controller/Api/ExplorerController.php:151
+#: Controller/ExplorerController.php:170
+msgid "Error while saving block to database"
+msgstr "Fehler beim Speichern des Blocks in der Datenbank"
+
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181
+#: Controller/ExplorerController.php:260 Controller/ExplorerController.php:264
+msgid "Need to provide a valid block"
+msgstr "Sie müssen einen gültigen Block bereitstellen"
+
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
+#: Controller/Api/ExplorerController.php:296
+msgid "Need to provide a block"
+msgstr "Notwendigkeit, einen Block bereitzustellen"
+
+#: Controller/Api/ExplorerController.php:175
+#: Controller/ExplorerController.php:185
+msgid "Need to provide a block number"
+msgstr "Sie müssen eine Blocknummer angeben"
+
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
+#: Controller/ExplorerController.php:206
+msgid "Need to provide a valid address"
+msgstr "Sie müssen eine gültige Adresse angeben"
+
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
+#: Controller/ExplorerController.php:210
+msgid "Need to provide an address"
+msgstr "Sie müssen eine Adresse angeben"
+
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
+#: Controller/ExplorerController.php:232
+msgid "Need to provide a valid order"
+msgstr "Sie müssen einen gültigen Auftrag vorlegen"
+
+#: Controller/Api/ExplorerController.php:248
+#: Controller/ExplorerController.php:236
+msgid "Need to provide an order"
+msgstr "Sie müssen eine Bestellung aufgeben"
+
+#: Controller/ExplorerController.php:301
+msgid "Need to provide a query"
+msgstr "Sie müssen eine Abfrage stellen"
+
+#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 Explorer/address.php:2
+#: Explorer/address.php:6 Explorer/address.php:9
+msgid "Address"
+msgstr "Adresse"
+
+#: Api/Explorer/address.php:10 Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
+#: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
+msgid "Something went wrong"
+msgstr "Etwas ist schief gelaufen"
+
+#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
+#: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
+msgid "Block"
+msgstr "Block"
+
+#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
+#: Explorer/blockorders.php:2 Explorer/blockorders.php:6
+msgid "Block Orders"
+msgstr "Blockaufträge"
+
+#: Api/Explorer/mainnet.php:2
+msgid "Main Net"
+msgstr "Hauptnetz"
+
+#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
+#: Explorer/order.php:6 Explorer/order.php:9
+msgid "Order"
+msgstr "Auftrag"
+
+#: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
+msgid "API"
+msgstr "API"
+
+#: Explorer/address.php:12
+msgid "Alias"
+msgstr "Alias"
+
+#: Explorer/address.php:15
+msgid "Incoming"
+msgstr "Eingehend"
+
+#: Explorer/address.php:17
+msgid "Outgoing"
+msgstr "Ausgehend"
+
+#: Explorer/address.php:19
+msgid "Balance"
+msgstr "Balance"
+
+#: Explorer/block.php:9 Explorer/index.php:52
+msgid "Number"
+msgstr "Nummer"
+
+#: Explorer/block.php:11
+msgid "Hash"
+msgstr "Hash"
+
+#: Explorer/block.php:13 Explorer/index.php:53
+msgid "Time End"
+msgstr "Zeit Ende"
+
+#: Explorer/block.php:15
+msgid "Time Start"
+msgstr "Zeit Start"
+
+#: Explorer/block.php:17 Explorer/index.php:54
+msgid "Time Total"
+msgstr "Zeit Gesamt"
+
+#: Explorer/block.php:19
+msgid "Last 20"
+msgstr "Letzte 20"
+
+#: Explorer/block.php:21
+msgid "Total Transactions"
+msgstr "Transaktionen insgesamt"
+
+#: Explorer/block.php:30 Explorer/index.php:56
+msgid "Difficulty"
+msgstr "Schwierigkeit"
+
+#: Explorer/block.php:32
+msgid "Target"
+msgstr "Ziel"
+
+#: Explorer/block.php:34
+msgid "Solution"
+msgstr "Lösung"
+
+#: Explorer/block.php:36 Explorer/index.php:30
+msgid "Last Block Hash"
+msgstr "Letzter Block Hash"
+
+#: Explorer/block.php:38
+msgid "Next Difficulty"
+msgstr "Nächste Schwierigkeit"
+
+#: Explorer/block.php:40 Explorer/index.php:59
+msgid "Miner"
+msgstr "Miner"
+
+#: Explorer/block.php:49 Explorer/index.php:58
+msgid "Fees"
+msgstr "Gebühren"
+
+#: Explorer/block.php:51 Explorer/index.php:57
+msgid "Reward"
+msgstr "Belohnung"
+
+#: Explorer/blockorders.php:47
+msgid "No orders on this block"
+msgstr "Keine Aufträge in diesem Block"
+
+#: Explorer/index.php:2 layout/default.php:117
+msgid "Home"
+msgstr "Startseite"
+
+#: Explorer/index.php:10
+msgid "Last Block"
+msgstr "Letzter Block"
+
+#: Explorer/index.php:16
+msgid "Pending Orders"
+msgstr "Ausstehende Aufträge"
+
+#: Explorer/index.php:22
+msgid "Supply"
+msgstr "Versorgung"
+
+#: Explorer/index.php:36
+msgid "Headers Hash"
+msgstr "Kopfzeilen Hash"
+
+#: Explorer/index.php:42
+msgid "Summary Hash"
+msgstr "Zusammenfassung Hash"
+
+#: Explorer/index.php:55
+msgid "Orders"
+msgstr "Aufträge"
+
+#: Explorer/index.php:105 Explorer/index.php:107
+msgid "previous"
+msgstr "vorherige"
+
+#: Explorer/index.php:111 Explorer/index.php:113
+msgid "next"
+msgstr "nächste"
+
+#: Explorer/index.php:115
+msgid "No blocks"
+msgstr "Keine Blöcke"
+
+#: Explorer/order.php:12
+msgid "Pending"
+msgstr "Ausstehend"
+
+#: Explorer/order.php:13
+msgid "Type"
+msgstr "Art"
+
+#: Explorer/order.php:15
+msgid "Transfers"
+msgstr "Übertragungen"
+
+#: Explorer/order.php:17
+msgid "Timestamp"
+msgstr "Zeitstempel"
+
+#: Explorer/order.php:19
+msgid "Reference"
+msgstr "Referenz"
+
+#: Explorer/order.php:21
+msgid "Receiver"
+msgstr "Empfänger"
+
+#: Explorer/order.php:26
+msgid "Fee"
+msgstr "Gebühr"
+
+#: Explorer/order.php:28
+msgid "Amount"
+msgstr "Betrag"
+
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr "NosoCoin Blockchain-Explorer"
+
+#: layout/error.php:38
+msgid "Back"
+msgstr "Zurück"
