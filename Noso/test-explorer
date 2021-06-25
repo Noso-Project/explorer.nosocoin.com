@@ -3,7 +3,8 @@
 
 include __DIR__ . '/../vendor/autoload.php';
 
-$host = '192.210.226.118';
+//$host = '192.210.226.118';
+$host = 'localhost';
 $port = 8078;
 
 $block = 69;
@@ -14,7 +15,7 @@ $order = 'OR3nltrwd5k58kskw1ef7lq8011lhzqw8d8m6bsriub91s3iuk1f';
 use Noso\Explorer;
 
 $be = new Explorer($host, $port);
-/*
+
 echo "== MainNet ==\n";
 $mainnetInfo = $be->getMainnet();
 if ($mainnetInfo) {
@@ -132,7 +133,7 @@ if ($ordersInfo) {
     echo "Error getting orders\n";
 }
 echo "\n";
-*/
+
 echo "== Pending Orders ==\n";
 $ordersInfo = $be->getPendingOrders();
 if ($ordersInfo) {
@@ -156,7 +157,7 @@ if ($ordersInfo) {
     echo "Error getting orders\n";
 }
 echo "\n";
-/*
+
 echo "== Address ==\n";
 $addressInfo = $be->getAddress($address);
 if ($addressInfo) {
@@ -173,4 +174,4 @@ if ($addressInfo) {
     echo "Error getting address\n";
 }
 echo "\n";
-*/
+
