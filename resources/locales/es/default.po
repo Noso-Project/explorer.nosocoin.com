@@ -1,0 +1,300 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-06-24 02:26+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Controller/Api/ExplorerController.php:151
+#: Controller/ExplorerController.php:170
+msgid "Error while saving block to database"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174
+#: Controller/ExplorerController.php:181
+#: Controller/ExplorerController.php:260
+#: Controller/ExplorerController.php:264
+msgid "Need to provide a valid block"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
+#: Controller/Api/ExplorerController.php:296
+msgid "Need to provide a block"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:175
+#: Controller/ExplorerController.php:185
+msgid "Need to provide a block number"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
+#: Controller/ExplorerController.php:206
+msgid "Need to provide a valid address"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
+#: Controller/ExplorerController.php:210
+msgid "Need to provide an address"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
+#: Controller/ExplorerController.php:232
+msgid "Need to provide a valid order"
+msgstr ""
+
+#: Controller/Api/ExplorerController.php:248
+#: Controller/ExplorerController.php:236
+msgid "Need to provide an order"
+msgstr ""
+
+#: Controller/ExplorerController.php:301
+msgid "Need to provide a query"
+msgstr ""
+
+#: Api/Explorer/address.php:2
+#: Api/Explorer/address.php:6
+#: Explorer/address.php:2
+#: Explorer/address.php:6
+#: Explorer/address.php:9
+msgid "Address"
+msgstr ""
+
+#: Api/Explorer/address.php:10
+#: Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10
+#: Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10
+#: Explorer/address.php:23
+#: Explorer/block.php:55
+#: Explorer/blockorders.php:50
+#: Explorer/index.php:119
+#: Explorer/order.php:32
+msgid "Something went wrong"
+msgstr ""
+
+#: Api/Explorer/block.php:2
+#: Api/Explorer/block.php:6
+#: Explorer/block.php:2
+#: Explorer/block.php:6
+#: Explorer/blockorders.php:8
+#: Explorer/order.php:11
+msgid "Block"
+msgstr ""
+
+#: Api/Explorer/blockorders.php:2
+#: Api/Explorer/blockorders.php:6
+#: Explorer/blockorders.php:2
+#: Explorer/blockorders.php:6
+msgid "Block Orders"
+msgstr ""
+
+#: Api/Explorer/mainnet.php:2
+msgid "Main Net"
+msgstr ""
+
+#: Api/Explorer/order.php:2
+#: Api/Explorer/order.php:6
+#: Explorer/order.php:2
+#: Explorer/order.php:6
+#: Explorer/order.php:9
+msgid "Order"
+msgstr ""
+
+#: Api/Pages/home.php:2
+#: Api/Pages/home.php:9
+#: layout/default.php:124
+msgid "API"
+msgstr ""
+
+#: Explorer/address.php:12
+msgid "Alias"
+msgstr ""
+
+#: Explorer/address.php:15
+msgid "Incoming"
+msgstr ""
+
+#: Explorer/address.php:17
+msgid "Outgoing"
+msgstr ""
+
+#: Explorer/address.php:19
+msgid "Balance"
+msgstr ""
+
+#: Explorer/block.php:9
+#: Explorer/index.php:52
+msgid "Number"
+msgstr ""
+
+#: Explorer/block.php:11
+msgid "Hash"
+msgstr ""
+
+#: Explorer/block.php:13
+#: Explorer/index.php:53
+msgid "Time End"
+msgstr ""
+
+#: Explorer/block.php:15
+msgid "Time Start"
+msgstr ""
+
+#: Explorer/block.php:17
+#: Explorer/index.php:54
+msgid "Time Total"
+msgstr ""
+
+#: Explorer/block.php:19
+msgid "Last 20"
+msgstr ""
+
+#: Explorer/block.php:21
+msgid "Total Transactions"
+msgstr ""
+
+#: Explorer/block.php:30
+#: Explorer/index.php:56
+msgid "Difficulty"
+msgstr ""
+
+#: Explorer/block.php:32
+msgid "Target"
+msgstr ""
+
+#: Explorer/block.php:34
+msgid "Solution"
+msgstr ""
+
+#: Explorer/block.php:36
+#: Explorer/index.php:30
+msgid "Last Block Hash"
+msgstr ""
+
+#: Explorer/block.php:38
+msgid "Next Difficulty"
+msgstr ""
+
+#: Explorer/block.php:40
+#: Explorer/index.php:59
+msgid "Miner"
+msgstr ""
+
+#: Explorer/block.php:49
+#: Explorer/index.php:58
+msgid "Fees"
+msgstr ""
+
+#: Explorer/block.php:51
+#: Explorer/index.php:57
+msgid "Reward"
+msgstr ""
+
+#: Explorer/blockorders.php:47
+msgid "No orders on this block"
+msgstr ""
+
+#: Explorer/index.php:2
+#: layout/default.php:117
+msgid "Home"
+msgstr ""
+
+#: Explorer/index.php:10
+msgid "Last Block"
+msgstr ""
+
+#: Explorer/index.php:16
+msgid "Pending Orders"
+msgstr ""
+
+#: Explorer/index.php:22
+msgid "Supply"
+msgstr ""
+
+#: Explorer/index.php:36
+msgid "Headers Hash"
+msgstr ""
+
+#: Explorer/index.php:42
+msgid "Summary Hash"
+msgstr ""
+
+#: Explorer/index.php:55
+msgid "Orders"
+msgstr ""
+
+#: Explorer/index.php:105
+#: Explorer/index.php:107
+msgid "previous"
+msgstr ""
+
+#: Explorer/index.php:111
+#: Explorer/index.php:113
+msgid "next"
+msgstr ""
+
+#: Explorer/index.php:115
+msgid "No blocks"
+msgstr ""
+
+#: Explorer/order.php:12
+msgid "Pending"
+msgstr ""
+
+#: Explorer/order.php:13
+msgid "Type"
+msgstr ""
+
+#: Explorer/order.php:15
+msgid "Transfers"
+msgstr ""
+
+#: Explorer/order.php:17
+msgid "Timestamp"
+msgstr ""
+
+#: Explorer/order.php:19
+msgid "Reference"
+msgstr ""
+
+#: Explorer/order.php:21
+msgid "Receiver"
+msgstr ""
+
+#: Explorer/order.php:26
+msgid "Fee"
+msgstr ""
+
+#: Explorer/order.php:28
+msgid "Amount"
+msgstr ""
+
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr ""
+
+#: layout/error.php:38
+msgid "Back"
+msgstr ""
+
