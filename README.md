@@ -15,9 +15,25 @@ Regarding the paths of this deployment:
 
 This deployment depends on having a Noso Wallet node reachable to this Apache instance
 
+### Necessary Apache modules
+
+```console
+$ sudo a2enmod rewrite ssl
+$ sudo systemctl restart apache2
+```
+
 ### Virtual Host config, no SSL
 
-This config file includes a redirect to `HTTPS`
+This config file includes a redirect to `HTTPS`.
+
+This file should reside on `/etc/apache2/sites-available` and should be named something like `001-nosoexplorer.conf`
+
+To enable this site:  
+
+```console
+$ sudo a2ensite 001-nosoexplorer
+$ sudo systemctl reload apache2
+```
 
 ```apache
 <VirtualHost *:80>
@@ -42,6 +58,15 @@ This config file includes a redirect to `HTTPS`
 ```
 
 ### Virtual Host config  SSL
+
+This file should reside on `/etc/apache2/sites-available` and should be named something like `001-nosoexplorer-ssl.conf`
+
+To enable this site:  
+
+```console
+$ sudo a2ensite 001-nosoexplorer-ssl
+$ sudo systemctl reload apache2
+```
 
 ```apache
 <IfModule mod_ssl.c>
@@ -70,9 +95,24 @@ This config file includes a redirect to `HTTPS`
 </IfModule>
 ```
 
+### Necessary PHP modules
+
+```console
+# JSON packege's version may differ
+$ sudo apt install php7.4-json php-mysql php-mbstring php-intl
+```
+
+There may be some I'm forgetting. I'm sure either `composer` or `CakePHP` will prompt any other that I've missed.
+
 ### CakePHP app_local.php config
 
-This file should reside on `/var/www/explorer/config/app_local.php`
+This file should reside on `/var/www/explorer/config/app_local.php`.
+
+You should fill in the RPC `host`, at least, and the RPC `port` if it's different from the default value.
+
+If you have a Google Analytics `G-` code, please provide that on the Google section. If not, please leave it blank and no code is added to the page.
+
+The values you'll have to change are `USERNAME`, `PASSWORD` and `DATABASE` for the Database. This will be needed when the caching of request is finished being implemented.
 
 ```php
 <?php
@@ -174,7 +214,7 @@ return [
      *
      */
     'Google' => [
-        'analytics' => 'Google Analytics G- code'
+        'analytics' => ''
     ],
 
     /*
