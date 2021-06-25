@@ -17,7 +17,7 @@ This deployment depends on having a Noso Wallet node reachable to this Apache in
 
 ### Necessary Apache modules
 
-```console
+```bash
 $ sudo a2enmod rewrite ssl
 $ sudo systemctl restart apache2
 ```
@@ -27,13 +27,6 @@ $ sudo systemctl restart apache2
 This config file includes a redirect to `HTTPS`.
 
 This file should reside on `/etc/apache2/sites-available` and should be named something like `001-nosoexplorer.conf`
-
-To enable this site:  
-
-```console
-$ sudo a2ensite 001-nosoexplorer
-$ sudo systemctl reload apache2
-```
 
 ```apache
 <VirtualHost *:80>
@@ -57,16 +50,16 @@ $ sudo systemctl reload apache2
 </VirtualHost>
 ```
 
+To enable this site:  
+
+```bash
+$ sudo a2ensite 001-nosoexplorer
+$ sudo systemctl reload apache2
+```
+
 ### Virtual Host config  SSL
 
 This file should reside on `/etc/apache2/sites-available` and should be named something like `001-nosoexplorer-ssl.conf`
-
-To enable this site:  
-
-```console
-$ sudo a2ensite 001-nosoexplorer-ssl
-$ sudo systemctl reload apache2
-```
 
 ```apache
 <IfModule mod_ssl.c>
@@ -95,9 +88,16 @@ $ sudo systemctl reload apache2
 </IfModule>
 ```
 
+To enable this site:  
+
+```bash
+$ sudo a2ensite 001-nosoexplorer-ssl
+$ sudo systemctl reload apache2
+```
+
 ### Necessary PHP modules
 
-```console
+```bash
 # JSON packege's version may differ
 $ sudo apt install php7.4-json php-mysql php-mbstring php-intl
 ```
