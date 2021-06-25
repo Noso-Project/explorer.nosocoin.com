@@ -239,7 +239,7 @@ return [
 - `cd /var/www`
 - `git clone git@github.com:Noso-Project/explorer.nosocoin.com.git explorer`
 - `composer install`
-- Under `/config` create `app_local.php` with the content above
+- Under folder `config` create `app_local.php` with the content above
 - Make sure there are no DB issues
 - `bin/cake migrations migrate`
 
