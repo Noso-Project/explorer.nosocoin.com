@@ -200,7 +200,7 @@ msgstr "Ordens Pendentes"
 
 #: Explorer/index.php:22
 msgid "Supply"
-msgstr "Fornecimento"
+msgstr "Em Circulação"
 
 #: Explorer/index.php:36
 msgid "Headers Hash"
