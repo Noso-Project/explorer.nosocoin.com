@@ -203,7 +203,7 @@ use Cake\Core\Configure;
                     ['class'=>'flag px-1', 'alt'=>'German']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'de']:['controller'=>$controller, 'action'=>$action, 'lang'=>'de', $pass]),
-                ['title'=>'Deutch','escape'=>false]
+                ['title'=>'Deutsch','escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
