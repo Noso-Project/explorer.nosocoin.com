@@ -6,7 +6,13 @@
 
 Some assumptions are made:
 
-Regarding the LAMP stack: Ubuntu Server 20.04.
+Regarding the LAMP stack: 
+- The `L` - Ubuntu Server 20.04.
+- The `A` - Apache ver 2.4.46
+- The `M` - MySQL ver 8.0.25
+- The `P` - PHP ver 7.4.16
+
+These version numbers may differ from your current choice of OS.
 
 Regarding the paths of this deployment:
 
@@ -230,19 +236,15 @@ return [
 
 ## First time install
 
-- `git clone git@github:gcarreno/web-serfs.git`
+- `cd /var/www`
+- `git clone git@github.com:Noso-Project/explorer.nosocoin.com.git explorer`
 - `composer install`
-- Under `/config` rename `app_local.example.php` to `app_local.php`
-- Edit `app_local.php` to reflect your local database
+- Under `/config` create `app_local.php` with the content above
 - Make sure there are no DB issues
 - `bin/cake migrations migrate`
-- If not under `/var/www`, run `bin/cake server`
-- Follow link on browser or refresh
 
 ## Updating from repository
 
 - `git pull`
-- `composer update`
-- `bin/cake migrations migrate`
-- `bin/cake server` if not under `/var/www`
-- Follow link on browser or refresh
+- `composer update` if needed
+- `bin/cake migrations migrate` if any DB changes exist
