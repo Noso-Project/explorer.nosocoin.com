@@ -19,7 +19,7 @@ Regarding the paths of this deployment:
 - GIT cloned folder: `/var/www/explorer`
 - `DocumentRoot` for this Apache virtual host: `/var/www/explorer/webroot`
 
-This deployment depends on having a Noso Wallet node reachable to this Apache instance
+This deployment depends on having a Noso Wallet node reachable to this Apache instance.
 
 ### Necessary Apache modules
 
