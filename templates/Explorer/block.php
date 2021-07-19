@@ -12,9 +12,9 @@
                     <dt><?= __('Hash') ?></dt>
                     <dd class="text-break"><?= h($block->hash) ?></dd>
                     <dt><?= __('Time End') ?></dt>
-                    <dd class="text-break"><?= h($block->timeEnd) ?></dd>
+                    <dd class="text-break"><?= h($block->TimeEnd) ?></dd>
                     <dt><?= __('Time Start') ?></dt>
-                    <dd class="text-break"><?= h($block->timeStart) ?></dd>
+                    <dd class="text-break"><?= h($block->TimeStart) ?></dd>
                     <dt><?= __('Time Total') ?></dt>
                     <dd class="text-break"><?= h($block->timeTotal) ?>s</dd>
                     <dt><?= __('Last 20') ?></dt>
