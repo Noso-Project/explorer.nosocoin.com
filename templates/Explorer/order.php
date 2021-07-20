@@ -10,7 +10,15 @@
                     <dt><?= __('Order') ?></dt>
                     <dd class="text-break"><?= h($order->orderID) ?></dd>
                     <dt><?= __('Block') ?></dt>
-                    <dd class="text-break"><?= ($order->pending)?__('Pending'):h($order->block) ?></dd>
+                    <dd class="text-break"><?= ($order->pending)?__('Pending'):$this->Html->link(
+                        ($order->block),
+                        [
+                            'controller'=>'Explorer',
+                            'action'=>'block',
+                            'lang'=>$lang,
+                            ($order->block)
+                        ]
+                    ) ?></dd>
                     <dt><?= __('Type') ?></dt>
                     <dd class="text-break"><?= h($order->type) ?></dd>
                     <dt><?= __('Transfers') ?></dt>
