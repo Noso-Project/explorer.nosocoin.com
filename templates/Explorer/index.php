@@ -73,7 +73,7 @@
                                     ]
                                 ) ?></td>
                                 <td><?= h($block->TimeEnd) ?></td>
-                                <td><?= h($block->timeTotal) ?>s</td>
+                                <td><?= h($block->TimeTotal) ?></td>
                                 <td><?= ($block->totalTransactions > 0)?$this->Html->link(
                                     $block->totalTransactions,
                                     [
