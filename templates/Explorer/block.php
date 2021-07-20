@@ -16,9 +16,9 @@
                     <dt><?= __('Time Start') ?></dt>
                     <dd class="text-break"><?= h($block->TimeStart) ?></dd>
                     <dt><?= __('Time Total') ?></dt>
-                    <dd class="text-break"><?= h($block->timeTotal) ?>s</dd>
+                    <dd class="text-break"><?= h($block->TimeTotal) ?></dd>
                     <dt><?= __('Last 20') ?></dt>
-                    <dd class="text-break"><?= h($block->last20) ?></dd>
+                    <dd class="text-break"><?= h($block->Last20) ?></dd>
                     <dt><?= __('Total Transactions') ?></dt>
                     <dd class="text-break"><?= ($block->totalTransactions > 0)?$this->Html->link(
                         $block->totalTransactions,

@@ -37,8 +37,12 @@ class Block{
             substr(strval($noso), -8);
     }
 
-    private function FormattedDate(int $timestamp) {
+    private function FormattedDateTime(int $timestamp) {
         return gmdate("Y-m-d H:i:s", $timestamp);
+    }
+
+    private function FormattedTime(int $seconds) {
+        return gmdate("H:i:s", $seconds);
     }
 
     public function __get($name) {
@@ -50,10 +54,16 @@ class Block{
                 return $this->Formatted($this->reward);
                 break;
             case 'TimeStart':
-                return $this->FormattedDate($this->timeStart);
+                return $this->FormattedDateTime($this->timeStart);
                 break;
             case 'TimeEnd':
-                return $this->FormattedDate($this->timeEnd);
+                return $this->FormattedDateTime($this->timeEnd);
+                break;
+            case 'TimeTotal':
+                return $this->FormattedTime($this->timeTotal);
+                break;
+            case 'Last20':
+                return $this->FormattedTime($this->last20);
                 break;
         }
     }
