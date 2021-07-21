@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: 2021-06-24 02:26+0000\n"
-"PO-Revision-Date: 2021-07-20 14:58+0200\n"
+"PO-Revision-Date: 2021-07-21 09:57+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -124,7 +124,7 @@ msgstr "Số dư"
 
 #: Explorer/block.php:9 Explorer/index.php:52
 msgid "Number"
-msgstr "Khối số"
+msgstr "Số khối"
 
 #: Explorer/block.php:11
 msgid "Hash"
@@ -132,19 +132,19 @@ msgstr "Mã băm"
 
 #: Explorer/block.php:13 Explorer/index.php:53
 msgid "Time End"
-msgstr "Hoàn thành khai thác"
+msgstr "Thời gian hoàn thành khai thác"
 
 #: Explorer/block.php:15
 msgid "Time Start"
-msgstr "Bắt đầu khai thác"
+msgstr "Thời gian bắt đầu khai thác"
 
 #: Explorer/block.php:17 Explorer/index.php:54
 msgid "Time Total"
-msgstr "Thời gian khai thác"
+msgstr "Thời lượng khai thác"
 
 #: Explorer/block.php:19
 msgid "Last 20"
-msgstr "Thời gian khai thác trung bình 20 khối mới nhất"
+msgstr "Thời lượng khai thác trung bình 20 khối mới nhất"
 
 #: Explorer/block.php:21
 msgid "Total Transactions"
@@ -188,7 +188,7 @@ msgstr "Không có lệnh nào cho khối này"
 
 #: Explorer/index.php:2 layout/default.php:117
 msgid "Home"
-msgstr "Home"
+msgstr "Trang chủ"
 
 #: Explorer/index.php:10
 msgid "Last Block"
@@ -200,7 +200,7 @@ msgstr "Số lượng lệnh đang xử lý"
 
 #: Explorer/index.php:22
 msgid "Supply"
-msgstr "Cung"
+msgstr "Lượng cung hiện tại"
 
 #: Explorer/index.php:36
 msgid "Headers Hash"
@@ -260,7 +260,7 @@ msgstr "Giá trị"
 
 #: layout/default.php:28
 msgid "NosoCoin Blockchain Explorer"
-msgstr "Nosocoin Blockchain Explorer"
+msgstr "Trình duyệt chuỗi khối Nosocoin"
 
 #: layout/error.php:38
 msgid "Back"
