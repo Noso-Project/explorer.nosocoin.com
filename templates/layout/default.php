@@ -108,6 +108,7 @@ use Cake\Core\Configure;
         French: Fury
         German: Fechi92
         Romanian: niko666
+        Vietnamese: f04ever
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
@@ -182,7 +183,7 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'cn.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Chinese']
+                    ['class'=>'flag px-1', 'alt'=>'中文']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'zh']:['controller'=>$controller, 'action'=>$action, 'lang'=>'zh', $pass]),
                 ['title'=>'中文','escape'=>false]
@@ -191,7 +192,7 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'fr.svg',
-                    ['class'=>'flag px-1', 'alt'=>'French']
+                    ['class'=>'flag px-1', 'alt'=>'Fran&ccedil;ais']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'fr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'fr', $pass]),
                 ['title'=>'Fran&ccedil;ais', 'escape'=>false]
@@ -200,7 +201,7 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'de.svg',
-                    ['class'=>'flag px-1', 'alt'=>'German']
+                    ['class'=>'flag px-1', 'alt'=>'Deutsch']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'de']:['controller'=>$controller, 'action'=>$action, 'lang'=>'de', $pass]),
                 ['title'=>'Deutsch','escape'=>false]
@@ -209,10 +210,19 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'ro.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Romanian']
+                    ['class'=>'flag px-1', 'alt'=>'Română']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'ro']:['controller'=>$controller, 'action'=>$action, 'lang'=>'ro', $pass]),
                 ['title'=>'Română', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'vn.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Vietnamese']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'vn']:['controller'=>$controller, 'action'=>$action, 'lang'=>'vn', $pass]),
+                ['title'=>'Vietnamese', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
