@@ -107,7 +107,7 @@ use Cake\Core\Configure;
     Translation Team:
         Chinese: YZ
         French: Fury
-        German: Fechi92
+        German: Fechi92, Grumpi
         Romanian: niko666
         Vietnamese: f04ever
         Spanish: NosoDevTeam
