@@ -90,7 +90,7 @@ msgstr ""
 #: Explorer/blockorders.php:50
 #: Explorer/index.php:119
 #: Explorer/order.php:32
-msgid "Something went wrong"
+msgid "While using {0} an error occured."
 msgstr ""
 
 #: Api/Explorer/block.php:2

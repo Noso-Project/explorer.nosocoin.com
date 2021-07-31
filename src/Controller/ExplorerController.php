@@ -83,8 +83,11 @@ class ExplorerController extends AppController
     {
         parent::initialize();
 
-        $this->host = Configure::read('RPC.host');
-        $this->port = Configure::read('RPC.port');
+        $nodes = Configure::read('RPC');
+        $node_index = mt_rand(0,count($nodes)-1);
+
+        $this->host = $nodes[$node_index]['host'];
+        $this->port = $nodes[$node_index]['port'];
         $this->table = new BlocksTable();
 
         $lang = $this->request->getParam('lang');
@@ -153,7 +156,8 @@ class ExplorerController extends AppController
             $next = null;
         }
 
-        $this->set(compact('mainnet', 'blocksInfo', 'previous', 'next'));
+        $host = "{$this->host}:{$this->port}";
+        $this->set(compact('host', 'mainnet', 'blocksInfo', 'previous', 'next'));
     }
 
     /**
@@ -202,7 +206,8 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide a block number'));
         }
 
-        $this->set(compact('dbBlock', 'block'));
+        $host = "{$this->host}:{$this->port}";
+        $this->set(compact('host', 'dbBlock', 'block'));
     }
 
     /**
@@ -227,7 +232,8 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an address'));
         }
 
-        $this->set(compact('address'));
+        $host = "{$this->host}:{$this->port}";
+        $this->set(compact('host', 'address'));
     }
 
     /**
@@ -253,7 +259,8 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an order'));
         }
 
-        $this->set(compact('order'));
+        $host = "{$this->host}:{$this->port}";
+        $this->set(compact('host', 'order'));
     }
 
     /**
@@ -285,7 +292,8 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide a block'));
         }
 
-        $this->set(compact('orders'));
+        $host = "{$this->host}:{$this->port}";
+        $this->set(compact('host', 'orders'));
     }
 
     /**

@@ -23,6 +23,7 @@ use Cake\Core\Configure;
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- <?= $host ?> -->
         <?= $this->Html->charset() ?>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">

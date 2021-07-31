@@ -82,8 +82,11 @@ class ExplorerController extends AppController
     {
         parent::initialize();
 
-        $this->host = Configure::read('RPC.host');
-        $this->port = Configure::read('RPC.port');
+        $nodes = Configure::read('RPC');
+        $node_index = mt_rand(0,count($nodes)-1);
+
+        $this->host = $nodes[$node_index]['host'];
+        $this->port = $nodes[$node_index]['port'];
         $this->table = new BlocksTable();
     }
 
@@ -106,11 +109,12 @@ class ExplorerController extends AppController
             $mainnet = null;
         }
 
+        $host = "{$this->host}:{$this->port}";
         if($code == 200) {
-            $this->set(compact('code', 'message', 'mainnet'));
+            $this->set(compact('host', 'code', 'message', 'mainnet'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'mainnet']);
         } else {
-            $this->set(compact('code', 'message'));
+            $this->set(compact('host', 'code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
         }
     }
@@ -175,11 +179,12 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide a block number'));
         }
 
+        $host = "{$this->host}:{$this->port}";
         if ($code == 200) {
-            $this->set(compact('code', 'message', 'block'));
+            $this->set(compact('host', 'code', 'message', 'block'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'block']);
         } else {
-            $this->set(compact('code', 'message'));
+            $this->set(compact('host', 'code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
         }
     }
@@ -212,11 +217,12 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an address'));
         }
 
+        $host = "{$this->host}:{$this->port}";
         if ($code == 200) {
-            $this->set(compact('code', 'message', 'address'));
+            $this->set(compact('host', 'code', 'message', 'address'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'address']);
         } else {
-            $this->set(compact('code', 'message'));
+            $this->set(compact('host', 'code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
         }
     }
@@ -248,11 +254,12 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide an order'));
         }
 
+        $host = "{$this->host}:{$this->port}";
         if($code == 200) {
-            $this->set(compact('code', 'message', 'order'));
+            $this->set(compact('host', 'code', 'message', 'order'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'order']);
         } else {
-            $this->set(compact('code', 'message'));
+            $this->set(compact('host', 'code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
         }
     }
@@ -296,11 +303,12 @@ class ExplorerController extends AppController
             $this->Flash->error(__('Need to provide a block'));
         }
 
+        $host = "{$this->host}:{$this->port}";
         if ($code == 200) {
-            $this->set(compact('code', 'message', 'blockNumber', 'orders'));
+            $this->set(compact('host', 'code', 'message', 'blockNumber', 'orders'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message', 'blockNumber', 'orders']);
         } else {
-            $this->set(compact('code', 'message'));
+            $this->set(compact('host', 'code', 'message'));
             $this->viewBuilder()->setOption('serialize', ['code', 'message']);
         }
     }

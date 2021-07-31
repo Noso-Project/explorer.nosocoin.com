@@ -80,8 +80,8 @@ msgstr "Adresse"
 #: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
 #: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
 #: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
-msgid "Something went wrong"
-msgstr "Quelque chose s'est mal passé"
+msgid "While using {0} an error occured."
+msgstr "Quelque chose s'est mal passé {0}"
 
 #: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
 #: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11

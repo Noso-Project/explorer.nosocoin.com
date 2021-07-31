@@ -21,7 +21,7 @@
                     <dd class="text-break"><?= h($address->Balance) ?></dd>
                 </dl>
                 <?php else: ?>
-                <p><?= __('Something went wrong') ?></p>
+                <p><?= __('While using {0} an error occured.', [$host]) ?></p>
                 <?php endif; ?>
             </div>
         </main>

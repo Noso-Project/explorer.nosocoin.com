@@ -7,7 +7,7 @@
                 <?php if (isset($address)): ?>
                 <p>Please set the header <em>Accept</em> to <code>application/json</code> or append <code>.json</code> to your URL.</p>
                 <?php else: ?>
-                <p><?= __('Something went wrong') ?></p>
+                <p><?= __('While using {0} an error occured.', [$host]) ?></p>
                 <?php endif; ?>
             </div>
         </main>
