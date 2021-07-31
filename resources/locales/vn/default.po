@@ -81,7 +81,7 @@ msgstr "Địa chỉ"
 #: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
 #: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
 msgid "While using {0} an error occured."
-msgstr "Đã xảy ra lỗi {0}"
+msgstr "Lỗi xuất hiện trong khi sử dụng {0}."
 
 #: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
 #: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
