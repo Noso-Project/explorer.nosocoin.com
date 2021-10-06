@@ -111,6 +111,7 @@ use Cake\Core\Configure;
         Romanian: niko666
         Vietnamese: f04ever
         Spanish: NosoDevTeam
+        Greek: Siou
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
@@ -234,6 +235,15 @@ use Cake\Core\Configure;
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'es']:['controller'=>$controller, 'action'=>$action, 'lang'=>'es', $pass]),
                 ['title'=>'Español', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'gr.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Ελληνικά']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'gr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'gr', $pass]),
+                ['title'=>'Ελληνικά', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(

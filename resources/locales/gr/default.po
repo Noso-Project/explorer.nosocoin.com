@@ -1,0 +1,267 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2021-06-24 02:26+0000\n"
+"PO-Revision-Date: 2021-10-05 11:33+0300\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: el\n"
+"X-Generator: Poedit 3.0\n"
+
+#: Controller/Api/ExplorerController.php:151
+#: Controller/ExplorerController.php:170
+msgid "Error while saving block to database"
+msgstr "Σφάλμα κατά την αποθήκευση μπλοκ στη βάση δεδομένων"
+
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181
+#: Controller/ExplorerController.php:260 Controller/ExplorerController.php:264
+msgid "Need to provide a valid block"
+msgstr "Πρέπει να παρέχετε ένα έγκυρο μπλοκ"
+
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
+#: Controller/Api/ExplorerController.php:296
+msgid "Need to provide a block"
+msgstr "Πρέπει να παρέχετε ένα μπλοκ"
+
+#: Controller/Api/ExplorerController.php:175
+#: Controller/ExplorerController.php:185
+msgid "Need to provide a block number"
+msgstr "Πρέπει να δώσετε έναν αριθμό μπλοκ"
+
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
+#: Controller/ExplorerController.php:206
+msgid "Need to provide a valid address"
+msgstr "Πρέπει να δώσετε μια έγκυρη διεύθυνση"
+
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
+#: Controller/ExplorerController.php:210
+msgid "Need to provide an address"
+msgstr "Πρέπει να δώσετε μια διεύθυνση"
+
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
+#: Controller/ExplorerController.php:232
+msgid "Need to provide a valid order"
+msgstr "Ανάγκη παροχής έγκυρης παραγγελίας"
+
+#: Controller/Api/ExplorerController.php:248
+#: Controller/ExplorerController.php:236
+msgid "Need to provide an order"
+msgstr "Πρέπει να δώσετε μια παραγγελία"
+
+#: Controller/ExplorerController.php:301
+msgid "Need to provide a query"
+msgstr "Πρέπει να δώσετε ένα ερώτημα"
+
+#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 Explorer/address.php:2
+#: Explorer/address.php:6 Explorer/address.php:9
+msgid "Address"
+msgstr "Διεύθυνση"
+
+#: Api/Explorer/address.php:10 Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
+#: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
+msgid "While using {0} an error occured."
+msgstr "Κατά τη χρήση {0} ένα λάθος συνέβη."
+
+#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
+#: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
+msgid "Block"
+msgstr "Μπλοκ"
+
+#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
+#: Explorer/blockorders.php:2 Explorer/blockorders.php:6
+msgid "Block Orders"
+msgstr "Παραγγελίες Μπλοκ"
+
+#: Api/Explorer/mainnet.php:2
+msgid "Main Net"
+msgstr "Κύριο Δίκτυο"
+
+#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
+#: Explorer/order.php:6 Explorer/order.php:9
+msgid "Order"
+msgstr "Παραγγελία"
+
+#: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
+msgid "API"
+msgstr "API"
+
+#: Explorer/address.php:12
+msgid "Alias"
+msgstr "Ψευδώνυμο"
+
+#: Explorer/address.php:15
+msgid "Incoming"
+msgstr "Εισερχόμενα"
+
+#: Explorer/address.php:17
+msgid "Outgoing"
+msgstr "Εξερχόμενα"
+
+#: Explorer/address.php:19
+msgid "Balance"
+msgstr "Υπόλοιπο"
+
+#: Explorer/block.php:9 Explorer/index.php:52
+msgid "Number"
+msgstr "Νούμερο"
+
+#: Explorer/block.php:11
+msgid "Hash"
+msgstr "Κατατεμαχισμός"
+
+#: Explorer/block.php:13 Explorer/index.php:53
+msgid "Time End"
+msgstr "Χρόνος Λήξης"
+
+#: Explorer/block.php:15
+msgid "Time Start"
+msgstr "Χρόνος Εκκίνησης"
+
+#: Explorer/block.php:17 Explorer/index.php:54
+msgid "Time Total"
+msgstr "Συνολικός Χρόνος"
+
+#: Explorer/block.php:19
+msgid "Last 20"
+msgstr "Τελευταία 20"
+
+#: Explorer/block.php:21
+msgid "Total Transactions"
+msgstr "Σύνολο Συναλλαγών"
+
+#: Explorer/block.php:30 Explorer/index.php:56
+msgid "Difficulty"
+msgstr "Δυσκολία"
+
+#: Explorer/block.php:32
+msgid "Target"
+msgstr "Στόχος"
+
+#: Explorer/block.php:34
+msgid "Solution"
+msgstr "Λύση"
+
+#: Explorer/block.php:36 Explorer/index.php:30
+msgid "Last Block Hash"
+msgstr "Κατατεμαχισμός Τελευταίου Μπλοκ"
+
+#: Explorer/block.php:38
+msgid "Next Difficulty"
+msgstr "Επόμενη Δυσκολία"
+
+#: Explorer/block.php:40 Explorer/index.php:59
+msgid "Miner"
+msgstr "Εξορυκτής"
+
+#: Explorer/block.php:49 Explorer/index.php:58
+msgid "Fees"
+msgstr "Αμοιβές"
+
+#: Explorer/block.php:51 Explorer/index.php:57
+msgid "Reward"
+msgstr "Ανταμοιβή"
+
+#: Explorer/blockorders.php:47
+msgid "No orders on this block"
+msgstr "Καμία παραγγελία σε αυτό το μπλοκ"
+
+#: Explorer/index.php:2 layout/default.php:117
+msgid "Home"
+msgstr "Αρχική"
+
+#: Explorer/index.php:10
+msgid "Last Block"
+msgstr "Τελευταίο Μπλοκ"
+
+#: Explorer/index.php:16
+msgid "Pending Orders"
+msgstr "Εκκρεμείς Παραγγελίες"
+
+#: Explorer/index.php:22
+msgid "Supply"
+msgstr "Προσφορά"
+
+#: Explorer/index.php:36
+msgid "Headers Hash"
+msgstr "Κεφαλίδες Κατατεμαχισμού"
+
+#: Explorer/index.php:42
+msgid "Summary Hash"
+msgstr "Περίληψη Κατατεμαχισμού"
+
+#: Explorer/index.php:55
+msgid "Orders"
+msgstr "Παραγγελίες"
+
+#: Explorer/index.php:105 Explorer/index.php:107
+msgid "previous"
+msgstr "προηγούμενο"
+
+#: Explorer/index.php:111 Explorer/index.php:113
+msgid "next"
+msgstr "επόμενο"
+
+#: Explorer/index.php:115
+msgid "No blocks"
+msgstr "Κανένα Μπλοκ"
+
+#: Explorer/order.php:12
+msgid "Pending"
+msgstr "Εκκρεμής"
+
+#: Explorer/order.php:13
+msgid "Type"
+msgstr "Τύπος"
+
+#: Explorer/order.php:15
+msgid "Transfers"
+msgstr "Μεταφορές"
+
+#: Explorer/order.php:17
+msgid "Timestamp"
+msgstr "Χρονική Σύμανση"
+
+#: Explorer/order.php:19
+msgid "Reference"
+msgstr "Αναφορά"
+
+#: Explorer/order.php:21
+msgid "Receiver"
+msgstr "Δέκτης"
+
+#: Explorer/order.php:26
+msgid "Fee"
+msgstr "Αμοιβή"
+
+#: Explorer/order.php:28
+msgid "Amount"
+msgstr "Ποσό"
+
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr "Εξερευνητής Αλυσίδας Μπλοκ του NosoCoin"
+
+#: layout/error.php:38
+msgid "Back"
+msgstr "Πίσω"
