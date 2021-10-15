@@ -250,10 +250,10 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'dk.svg',
-                    ['class'=>'flag px-1', 'alt'=>'DANISH']
+                    ['class'=>'flag px-1', 'alt'=>'Dansk']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'dk']:['controller'=>$controller, 'action'=>$action, 'lang'=>'dk', $pass]),
-                ['title'=>'DANISH', 'escape'=>false]
+                ['title'=>'Dansk', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
