@@ -128,12 +128,12 @@ class ExplorerController extends AppController
     {
         if (isset($blockNumber)) {
             if (is_numeric($blockNumber) and intval($blockNumber >= 0)) {
-                $query = $this->table->find(
-                    'all',
-                    [
-                        'conditions'=>['number'=>intval($blockNumber)]
-                    ]
-                );
+                //$query = $this->table->find(
+                //    'all',
+                //    [
+                //        'conditions'=>['number'=>intval($blockNumber)]
+                //    ]
+                //);
                 $dbBlock = null; //$query->first();
 
                 if (is_null($dbBlock)) {
