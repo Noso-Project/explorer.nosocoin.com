@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CakePHP 4.2.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 02:05+0000\n"
+"PO-Revision-Date: 2021-11-16 06:37+0000\n"
+"Last-Translator: Tuns <EMAIL@ADDRESS>\n"
+"Language-Team: Unknown\n"
+"Language: zxx\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: id_ID\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: Error/error400.php:39 Error/error500.php:43
+msgid "Error"
+msgstr "Kesalahan"
+
+#: Error/error400.php:40
+msgid "The requested address {0} was not found on this server."
+msgstr "Alamat yang diminta {0} tidak ditemukan di server ini."
+
+#: Error/error500.php:41
+msgid "An Internal Error Has Occurred."
+msgstr "Kesalahan Internal Telah Terjadi."
