@@ -188,7 +188,7 @@ msgstr "Nincsenek rendelések ezen a blokkon"
 
 #: Explorer/index.php:2 layout/default.php:117
 msgid "Home"
-msgstr "Otthon"
+msgstr "Kezdőlap"
 
 #: Explorer/index.php:10
 msgid "Last Block"
