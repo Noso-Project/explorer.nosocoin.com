@@ -114,6 +114,7 @@ use Cake\Core\Configure;
         Greek: Siou
         Danish: nightraven
         Indonesian: Tuns
+        Hungarian: Hohokam621
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
