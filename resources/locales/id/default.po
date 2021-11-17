@@ -3,66 +3,66 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-06-24 02:26+0000\n"
-"PO-Revision-Date: 2021-11-16 06:35+0000\n"
+"PO-Revision-Date: 2021-11-17 10:06+0700\n"
 "Last-Translator: Tuns <EMAIL@ADDRESS>\n"
-"Language-Team: Unknown\n"
-"Language: zxx\n"
+"Language-Team: Tuns\n"
+"Language: id_ID\n"
 "Plural-Forms: nplurals=2; plural=n!=1;\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Loco-Source-Locale: id_ID\n"
 "X-Loco-Parser: loco_parse_po\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Poedit 3.0\n"
 
-#: Controller/Api/ExplorerController.php:151 
+#: Controller/Api/ExplorerController.php:151
 #: Controller/ExplorerController.php:170
 msgid "Error while saving block to database"
-msgstr "Kesalahan saat menyimpan blok ke database"
+msgstr "Kesalahan saat menyimpan blok ke basis data"
 
-#: Controller/Api/ExplorerController.php:155 
-#: Controller/Api/ExplorerController.php:157 
-#: Controller/Api/ExplorerController.php:167 
-#: Controller/Api/ExplorerController.php:169 
-#: Controller/Api/ExplorerController.php:279 
-#: Controller/Api/ExplorerController.php:282 
-#: Controller/Api/ExplorerController.php:286 
-#: Controller/Api/ExplorerController.php:289 
-#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181 
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181
 #: Controller/ExplorerController.php:260 Controller/ExplorerController.php:264
 msgid "Need to provide a valid block"
 msgstr "Perlu memberikan blok yang valid"
 
-#: Controller/Api/ExplorerController.php:173 
-#: Controller/Api/ExplorerController.php:293 
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
 #: Controller/Api/ExplorerController.php:296
 msgid "Need to provide a block"
-msgstr "Perlu menyediakan blok"
+msgstr "Perlu memberikan blok"
 
-#: Controller/Api/ExplorerController.php:175 
+#: Controller/Api/ExplorerController.php:175
 #: Controller/ExplorerController.php:185
 msgid "Need to provide a block number"
 msgstr "Perlu memberikan nomor blok"
 
-#: Controller/Api/ExplorerController.php:204 
-#: Controller/Api/ExplorerController.php:206 
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
 #: Controller/ExplorerController.php:206
 msgid "Need to provide a valid address"
 msgstr "Perlu memberikan alamat yang valid"
 
-#: Controller/Api/ExplorerController.php:210 
-#: Controller/Api/ExplorerController.php:212 
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
 #: Controller/ExplorerController.php:210
 msgid "Need to provide an address"
 msgstr "Perlu memberikan sebuah alamat"
 
-#: Controller/Api/ExplorerController.php:240 
-#: Controller/Api/ExplorerController.php:242 
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
 #: Controller/ExplorerController.php:232
 msgid "Need to provide a valid order"
 msgstr "Perlu memberikan pesanan yang valid"
 
-#: Controller/Api/ExplorerController.php:248 
+#: Controller/Api/ExplorerController.php:248
 #: Controller/ExplorerController.php:236
 msgid "Need to provide an order"
 msgstr "Perlu memberikan pesanan"
@@ -71,36 +71,36 @@ msgstr "Perlu memberikan pesanan"
 msgid "Need to provide a query"
 msgstr "Perlu memberikan permintaan"
 
-#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 
-#: Explorer/address.php:2 Explorer/address.php:6 Explorer/address.php:9
+#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 Explorer/address.php:2
+#: Explorer/address.php:6 Explorer/address.php:9
 msgid "Address"
 msgstr "Alamat"
 
-#: Api/Explorer/address.php:10 Api/Explorer/block.php:10 
-#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10 
-#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55 
+#: Api/Explorer/address.php:10 Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
 #: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
 msgid "While using {0} an error occured."
 msgstr "Saat menggunakan {0} terjadi kesalahan."
 
-#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2 
+#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
 #: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
 msgid "Block"
-msgstr "Memblokir"
+msgstr "Blok"
 
-#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6 
+#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
 #: Explorer/blockorders.php:2 Explorer/blockorders.php:6
 msgid "Block Orders"
-msgstr "Blokir Pesanan"
+msgstr "Blok Pesanan"
 
 #: Api/Explorer/mainnet.php:2
 msgid "Main Net"
 msgstr "Jaringan Utama"
 
-#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2 
+#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
 #: Explorer/order.php:6 Explorer/order.php:9
 msgid "Order"
-msgstr "Memesan"
+msgstr "Pesanan"
 
 #: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
 msgid "API"
@@ -120,7 +120,7 @@ msgstr "Yang sedang keluar"
 
 #: Explorer/address.php:19
 msgid "Balance"
-msgstr "Keseimbangan"
+msgstr "Saldo"
 
 #: Explorer/block.php:9 Explorer/index.php:52
 msgid "Number"
@@ -188,7 +188,7 @@ msgstr "Tidak ada pesanan di blok ini"
 
 #: Explorer/index.php:2 layout/default.php:117
 msgid "Home"
-msgstr "Rumah"
+msgstr "Beranda"
 
 #: Explorer/index.php:10
 msgid "Last Block"
@@ -204,7 +204,7 @@ msgstr "Suplai"
 
 #: Explorer/index.php:36
 msgid "Headers Hash"
-msgstr "Headers Hash"
+msgstr "Tajuk Hash"
 
 #: Explorer/index.php:42
 msgid "Summary Hash"
@@ -220,7 +220,7 @@ msgstr "sebelumnya"
 
 #: Explorer/index.php:111 Explorer/index.php:113
 msgid "next"
-msgstr "Lanjut"
+msgstr "selanjutnya"
 
 #: Explorer/index.php:115
 msgid "No blocks"
