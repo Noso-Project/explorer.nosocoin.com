@@ -262,10 +262,10 @@ use Cake\Core\Configure;
             <?= $this->Html->link(
                 $this->Html->image(
                     'id.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Indonesian']
+                    ['class'=>'flag px-1', 'alt'=>'Bahasa Indonesia']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'id']:['controller'=>$controller, 'action'=>$action, 'lang'=>'id', $pass]),
-                ['title'=>'Indonesian', 'escape'=>false]
+                ['title'=>'Bahasa Indonesia', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
