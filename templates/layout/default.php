@@ -279,8 +279,17 @@ use Cake\Core\Configure;
 
             <?= $this->Html->link(
                 $this->Html->image(
+                    'in.svg',
+                    ['class'=>'flag px-1', 'alt'=>'हिंदी']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'in']:['controller'=>$controller, 'action'=>$action, 'lang'=>'in', $pass]),
+                ['title'=>'हिंदी', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
                     'pt.svg',
-                    ['class'=>'flag px-1', 'alt'=>'Portuguese']
+                    ['class'=>'flag px-1', 'alt'=>'Portugu&ecirc;s']
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'pt']:['controller'=>$controller, 'action'=>$action, 'lang'=>'pt', $pass]),
                 ['title'=>'Portugu&ecirc;s', 'escape'=>false]

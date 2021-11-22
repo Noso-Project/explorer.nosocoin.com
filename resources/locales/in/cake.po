@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: CakePHP 4.2.7\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 02:05+0000\n"
+"PO-Revision-Date: 2021-11-21 14:11+0530\n"
+"Last-Translator: Tuns <vishnoo.rath@gmail.com>\n"
+"Language-Team: vishnoor\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: en_EN\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Poedit 3.0\n"
+
+#: Error/error400.php:39 Error/error500.php:43
+msgid "Error"
+msgstr "त्रुटि"
+
+#: Error/error400.php:40
+msgid "The requested address {0} was not found on this server."
+msgstr "अनुरोध किया गया पता {0} इस सर्वर पर नहीं मिला।"
+
+#: Error/error500.php:41
+msgid "An Internal Error Has Occurred."
+msgstr "आपके अनुरोध को संसाधित करते समय सर्वर पर एक त्रुटि हुई है।"

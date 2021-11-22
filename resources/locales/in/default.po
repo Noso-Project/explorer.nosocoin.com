@@ -1,0 +1,267 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-24 02:26+0000\n"
+"PO-Revision-Date: 2021-11-21 14:09+0530\n"
+"Last-Translator: Tuns <vishnoo.rath@gmail.com>\n"
+"Language-Team: vishnoor\n"
+"Language: hi_IN\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Loco-Source-Locale: en_EN\n"
+"X-Loco-Parser: loco_parse_po\n"
+"X-Generator: Poedit 3.0\n"
+
+#: Controller/Api/ExplorerController.php:151
+#: Controller/ExplorerController.php:170
+msgid "Error while saving block to database"
+msgstr "डेटाबेस में ब्लॉक बचाते समय त्रुटि"
+
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181
+#: Controller/ExplorerController.php:260 Controller/ExplorerController.php:264
+msgid "Need to provide a valid block"
+msgstr "कृपया एक वैध ब्लॉक प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
+#: Controller/Api/ExplorerController.php:296
+msgid "Need to provide a block"
+msgstr "कृपया एक ब्लॉक प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:175
+#: Controller/ExplorerController.php:185
+msgid "Need to provide a block number"
+msgstr "कृपया एक ब्लॉक नंबर प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
+#: Controller/ExplorerController.php:206
+msgid "Need to provide a valid address"
+msgstr "कृपया एक वैध पता प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
+#: Controller/ExplorerController.php:210
+msgid "Need to provide an address"
+msgstr "कृपया एक पता प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
+#: Controller/ExplorerController.php:232
+msgid "Need to provide a valid order"
+msgstr "कृपया एक वैध ऑर्डर प्रदान करें"
+
+#: Controller/Api/ExplorerController.php:248
+#: Controller/ExplorerController.php:236
+msgid "Need to provide an order"
+msgstr "कृपया एक ऑर्डर प्रदान करें"
+
+#: Controller/ExplorerController.php:301
+msgid "Need to provide a query"
+msgstr "कृपया एक प्रश्न पूछें"
+
+#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 Explorer/address.php:2
+#: Explorer/address.php:6 Explorer/address.php:9
+msgid "Address"
+msgstr "पता"
+
+#: Api/Explorer/address.php:10 Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
+#: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
+msgid "While using {0} an error occured."
+msgstr "{0} का उपयोग करते समय एक त्रुटि हुई।"
+
+#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
+#: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
+msgid "Block"
+msgstr "ब्लॉक"
+
+#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
+#: Explorer/blockorders.php:2 Explorer/blockorders.php:6
+msgid "Block Orders"
+msgstr "ब्लॉक में ऑर्डर्स"
+
+#: Api/Explorer/mainnet.php:2
+msgid "Main Net"
+msgstr "मुख्य नेट"
+
+#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
+#: Explorer/order.php:6 Explorer/order.php:9
+msgid "Order"
+msgstr "ऑर्डर"
+
+#: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
+msgid "API"
+msgstr "एपीआई"
+
+#: Explorer/address.php:12
+msgid "Alias"
+msgstr "उर्फ़"
+
+#: Explorer/address.php:15
+msgid "Incoming"
+msgstr "नवनिर्वाचित"
+
+#: Explorer/address.php:17
+msgid "Outgoing"
+msgstr "निवर्तमान"
+
+#: Explorer/address.php:19
+msgid "Balance"
+msgstr "शेष"
+
+#: Explorer/block.php:9 Explorer/index.php:52
+msgid "Number"
+msgstr "संख्या"
+
+#: Explorer/block.php:11
+msgid "Hash"
+msgstr "हैश"
+
+#: Explorer/block.php:13 Explorer/index.php:53
+msgid "Time End"
+msgstr "समाप्त समय"
+
+#: Explorer/block.php:15
+msgid "Time Start"
+msgstr "शुरू समय"
+
+#: Explorer/block.php:17 Explorer/index.php:54
+msgid "Time Total"
+msgstr "कुल समय"
+
+#: Explorer/block.php:19
+msgid "Last 20"
+msgstr "अंतिम 20"
+
+#: Explorer/block.php:21
+msgid "Total Transactions"
+msgstr "कुल लेन-देन"
+
+#: Explorer/block.php:30 Explorer/index.php:56
+msgid "Difficulty"
+msgstr "कठिनता"
+
+#: Explorer/block.php:32
+msgid "Target"
+msgstr "लक्ष्य"
+
+#: Explorer/block.php:34
+msgid "Solution"
+msgstr "समाधान"
+
+#: Explorer/block.php:36 Explorer/index.php:30
+msgid "Last Block Hash"
+msgstr "अंतिम ब्लॉक हैश"
+
+#: Explorer/block.php:38
+msgid "Next Difficulty"
+msgstr "अगली कठिनाई"
+
+#: Explorer/block.php:40 Explorer/index.php:59
+msgid "Miner"
+msgstr "खनिक"
+
+#: Explorer/block.php:49 Explorer/index.php:58
+msgid "Fees"
+msgstr "शुल्क"
+
+#: Explorer/block.php:51 Explorer/index.php:57
+msgid "Reward"
+msgstr "इनाम"
+
+#: Explorer/blockorders.php:47
+msgid "No orders on this block"
+msgstr "इस ब्लॉक पर कोई ऑर्डर नहीं"
+
+#: Explorer/index.php:2 layout/default.php:117
+msgid "Home"
+msgstr "होम"
+
+#: Explorer/index.php:10
+msgid "Last Block"
+msgstr "अंतिम ब्लॉक"
+
+#: Explorer/index.php:16
+msgid "Pending Orders"
+msgstr "लंबित ऑर्डर"
+
+#: Explorer/index.php:22
+msgid "Supply"
+msgstr "आपूर्ति"
+
+#: Explorer/index.php:36
+msgid "Headers Hash"
+msgstr "हेडर हैश"
+
+#: Explorer/index.php:42
+msgid "Summary Hash"
+msgstr "सारांश हैश"
+
+#: Explorer/index.php:55
+msgid "Orders"
+msgstr "ऑर्डर्स"
+
+#: Explorer/index.php:105 Explorer/index.php:107
+msgid "previous"
+msgstr "पिछला"
+
+#: Explorer/index.php:111 Explorer/index.php:113
+msgid "next"
+msgstr "अगला"
+
+#: Explorer/index.php:115
+msgid "No blocks"
+msgstr "कोई ब्लॉक नहीं"
+
+#: Explorer/order.php:12
+msgid "Pending"
+msgstr "लंबित"
+
+#: Explorer/order.php:13
+msgid "Type"
+msgstr "टाइप करें"
+
+#: Explorer/order.php:15
+msgid "Transfers"
+msgstr "स्थानान्तरण"
+
+#: Explorer/order.php:17
+msgid "Timestamp"
+msgstr "टाइमस्टैम्प"
+
+#: Explorer/order.php:19
+msgid "Reference"
+msgstr "संदर्भ"
+
+#: Explorer/order.php:21
+msgid "Receiver"
+msgstr "प्राप्तकर्ता"
+
+#: Explorer/order.php:26
+msgid "Fee"
+msgstr "प्राप्तकर्ता"
+
+#: Explorer/order.php:28
+msgid "Amount"
+msgstr "राशि"
+
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr "नोसोकॉइन ब्लॉकचेन एक्सप्लोरर"
+
+#: layout/error.php:38
+msgid "Back"
+msgstr "वापस"
