@@ -116,6 +116,7 @@ use Cake\Core\Configure;
         Danish: nightraven
         Indonesian: Tuns
         Hungarian: Hohokam621
+        Hindi(India): vishnoor
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
