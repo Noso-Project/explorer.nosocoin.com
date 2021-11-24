@@ -117,6 +117,7 @@ use Cake\Core\Configure;
         Indonesian: Tuns
         Hungarian: Hohokam621
         Hindi(India): vishnoor
+        Italian: EminDemiri
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
@@ -285,6 +286,15 @@ use Cake\Core\Configure;
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'in']:['controller'=>$controller, 'action'=>$action, 'lang'=>'in', $pass]),
                 ['title'=>'हिंदी', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'it.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Italiano']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'it']:['controller'=>$controller, 'action'=>$action, 'lang'=>'it', $pass]),
+                ['title'=>'Italiano', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
