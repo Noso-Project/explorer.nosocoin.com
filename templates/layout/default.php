@@ -64,6 +64,11 @@ use Cake\Core\Configure;
         <?php if ($prefix == 'Api' && $page == 'home'): ?>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+        <style>
+            pre code {
+                border-left: 2px solid #f28d1a;
+            }
+        </style>
 
         <?php endif; ?>
 

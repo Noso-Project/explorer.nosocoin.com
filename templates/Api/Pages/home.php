@@ -52,7 +52,7 @@
                         <pre><code class="language-shell">$ curl \
 -H 'Accept: application/json' \
 "<?= $url ?>"</code></pre>
-                        <p>Resturns:</p>
+                        <p>Returns:</p>
                         <pre><code class="language-json">{
     "code": 200,
     "message": "Ok",
@@ -84,7 +84,7 @@
                         <pre><code class="language-shell">$ curl \
 -H 'Accept: application/json' \
 "<?= $url ?>"</code></pre>
-                        <p>Resturns:</p>
+                        <p>Returns:</p>
                         <pre><code class="language-json">{
   "code": 200,
   "message": "Ok",
@@ -134,7 +134,7 @@
                         <pre><code class="language-shell">$ curl \
 -H 'Accept: application/json' \
 "<?= $url ?>"</code></pre>
-                        <p>Resturns:</p>
+                        <p>Returns:</p>
                         <pre><code class="language-json">{
   "code": 200,
   "message": "Ok",
@@ -206,7 +206,7 @@
                         <pre><code class="language-shell">$ curl \
 -H 'Accept: application/json' \
 "<?= $url ?>"</code></pre>
-                        <p>Resturns:</p>
+                        <p>Returns:</p>
                         <pre><code class="language-json">{
   "code": 200,
   "message": "Ok",
@@ -251,7 +251,7 @@
                         <pre><code class="language-shell">$ curl \
 -H 'Accept: application/json' \
 "<?= $url ?>"</code></pre>
-                        <p>Resturns:</p>
+                        <p>Returns:</p>
                         <pre><code class="language-json">{
   "code": 200,
   "message": "Ok",
