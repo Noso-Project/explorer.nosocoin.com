@@ -1,0 +1,267 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: NOSO PROJECT\n"
+"POT-Creation-Date: 2021-06-24 02:26+0000\n"
+"PO-Revision-Date: 2021-12-21 19:29+0300\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: türkçe onur2x@gmail.com\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: tr_TR\n"
+"X-Generator: Poedit 2.4.3\n"
+
+#: Controller/Api/ExplorerController.php:151
+#: Controller/ExplorerController.php:170
+msgid "Error while saving block to database"
+msgstr "Blok veritabanına kaydedilirken hata oluştu"
+
+#: Controller/Api/ExplorerController.php:155
+#: Controller/Api/ExplorerController.php:157
+#: Controller/Api/ExplorerController.php:167
+#: Controller/Api/ExplorerController.php:169
+#: Controller/Api/ExplorerController.php:279
+#: Controller/Api/ExplorerController.php:282
+#: Controller/Api/ExplorerController.php:286
+#: Controller/Api/ExplorerController.php:289
+#: Controller/ExplorerController.php:174 Controller/ExplorerController.php:181
+#: Controller/ExplorerController.php:260 Controller/ExplorerController.php:264
+msgid "Need to provide a valid block"
+msgstr "Geçerli bir blok sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:173
+#: Controller/Api/ExplorerController.php:293
+#: Controller/Api/ExplorerController.php:296
+msgid "Need to provide a block"
+msgstr "Bir blok sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:175
+#: Controller/ExplorerController.php:185
+msgid "Need to provide a block number"
+msgstr "Bir blok numarası sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:204
+#: Controller/Api/ExplorerController.php:206
+#: Controller/ExplorerController.php:206
+msgid "Need to provide a valid address"
+msgstr "Geçerli bir adres sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:210
+#: Controller/Api/ExplorerController.php:212
+#: Controller/ExplorerController.php:210
+msgid "Need to provide an address"
+msgstr "Bir adres sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:240
+#: Controller/Api/ExplorerController.php:242
+#: Controller/ExplorerController.php:232
+msgid "Need to provide a valid order"
+msgstr "Geçerli bir sipariş sağlamanız gerekiyor"
+
+#: Controller/Api/ExplorerController.php:248
+#: Controller/ExplorerController.php:236
+msgid "Need to provide an order"
+msgstr "Bir sipariş sağlamanız gerekiyor"
+
+#: Controller/ExplorerController.php:301
+msgid "Need to provide a query"
+msgstr "Bir sorgu sağlamanız gerekiyor"
+
+#: Api/Explorer/address.php:2 Api/Explorer/address.php:6 Explorer/address.php:2
+#: Explorer/address.php:6 Explorer/address.php:9
+msgid "Address"
+msgstr "Adres"
+
+#: Api/Explorer/address.php:10 Api/Explorer/block.php:10
+#: Api/Explorer/blockorders.php:10 Api/Explorer/mainnet.php:10
+#: Api/Explorer/order.php:10 Explorer/address.php:23 Explorer/block.php:55
+#: Explorer/blockorders.php:50 Explorer/index.php:119 Explorer/order.php:32
+msgid "While using {0} an error occured."
+msgstr "{0} kullanılırken bir hata oluştu."
+
+#: Api/Explorer/block.php:2 Api/Explorer/block.php:6 Explorer/block.php:2
+#: Explorer/block.php:6 Explorer/blockorders.php:8 Explorer/order.php:11
+msgid "Block"
+msgstr "Blok"
+
+#: Api/Explorer/blockorders.php:2 Api/Explorer/blockorders.php:6
+#: Explorer/blockorders.php:2 Explorer/blockorders.php:6
+msgid "Block Orders"
+msgstr "Blok Siparişleri"
+
+#: Api/Explorer/mainnet.php:2
+msgid "Main Net"
+msgstr "Ana Ağ"
+
+#: Api/Explorer/order.php:2 Api/Explorer/order.php:6 Explorer/order.php:2
+#: Explorer/order.php:6 Explorer/order.php:9
+msgid "Order"
+msgstr "Sipariş"
+
+#: Api/Pages/home.php:2 Api/Pages/home.php:9 layout/default.php:124
+msgid "API"
+msgstr "API"
+
+#: Explorer/address.php:12
+msgid "Alias"
+msgstr "Takma Ad"
+
+#: Explorer/address.php:15
+msgid "Incoming"
+msgstr "Gelen"
+
+#: Explorer/address.php:17
+msgid "Outgoing"
+msgstr "Giden"
+
+#: Explorer/address.php:19
+msgid "Balance"
+msgstr "Bakiye"
+
+#: Explorer/block.php:9 Explorer/index.php:52
+msgid "Number"
+msgstr "Numara"
+
+#: Explorer/block.php:11
+msgid "Hash"
+msgstr "Karma"
+
+#: Explorer/block.php:13 Explorer/index.php:53
+msgid "Time End"
+msgstr "Bitme saati"
+
+#: Explorer/block.php:15
+msgid "Time Start"
+msgstr "Başlama saati"
+
+#: Explorer/block.php:17 Explorer/index.php:54
+msgid "Time Total"
+msgstr "Toplam süre"
+
+#: Explorer/block.php:19
+msgid "Last 20"
+msgstr "Son 20"
+
+#: Explorer/block.php:21
+msgid "Total Transactions"
+msgstr "Toplam İşlemler"
+
+#: Explorer/block.php:30 Explorer/index.php:56
+msgid "Difficulty"
+msgstr "Zorluk"
+
+#: Explorer/block.php:32
+msgid "Target"
+msgstr "Hedef"
+
+#: Explorer/block.php:34
+msgid "Solution"
+msgstr "Çözüm"
+
+#: Explorer/block.php:36 Explorer/index.php:30
+msgid "Last Block Hash"
+msgstr "Son blok karması"
+
+#: Explorer/block.php:38
+msgid "Next Difficulty"
+msgstr "Sonraki zorluk"
+
+#: Explorer/block.php:40 Explorer/index.php:59
+msgid "Miner"
+msgstr "Madenci"
+
+#: Explorer/block.php:49 Explorer/index.php:58
+msgid "Fees"
+msgstr "Ücretler"
+
+#: Explorer/block.php:51 Explorer/index.php:57
+msgid "Reward"
+msgstr "Ödül"
+
+#: Explorer/blockorders.php:47
+msgid "No orders on this block"
+msgstr "Bu blokta sipariş yok"
+
+#: Explorer/index.php:2 layout/default.php:117
+msgid "Home"
+msgstr "Anasayfa"
+
+#: Explorer/index.php:10
+msgid "Last Block"
+msgstr "Son blok"
+
+#: Explorer/index.php:16
+msgid "Pending Orders"
+msgstr "Bekleyen siparişler"
+
+#: Explorer/index.php:22
+msgid "Supply"
+msgstr "Tedarik"
+
+#: Explorer/index.php:36
+msgid "Headers Hash"
+msgstr "Karma Başlığı"
+
+#: Explorer/index.php:42
+msgid "Summary Hash"
+msgstr "Karma Özeti"
+
+#: Explorer/index.php:55
+msgid "Orders"
+msgstr "Emirler"
+
+#: Explorer/index.php:105 Explorer/index.php:107
+msgid "previous"
+msgstr "önceki"
+
+#: Explorer/index.php:111 Explorer/index.php:113
+msgid "next"
+msgstr "sonraki"
+
+#: Explorer/index.php:115
+msgid "No blocks"
+msgstr "Blok yok"
+
+#: Explorer/order.php:12
+msgid "Pending"
+msgstr "Bekliyor"
+
+#: Explorer/order.php:13
+msgid "Type"
+msgstr "Tip"
+
+#: Explorer/order.php:15
+msgid "Transfers"
+msgstr "Transferler"
+
+#: Explorer/order.php:17
+msgid "Timestamp"
+msgstr "Zaman damgası"
+
+#: Explorer/order.php:19
+msgid "Reference"
+msgstr "Referans"
+
+#: Explorer/order.php:21
+msgid "Receiver"
+msgstr "Alıcı"
+
+#: Explorer/order.php:26
+msgid "Fee"
+msgstr "Ücret"
+
+#: Explorer/order.php:28
+msgid "Amount"
+msgstr "Miktar"
+
+#: layout/default.php:28
+msgid "NosoCoin Blockchain Explorer"
+msgstr "NosoCoin Blockchain Gezgini"
+
+#: layout/error.php:38
+msgid "Back"
+msgstr "Geri"
