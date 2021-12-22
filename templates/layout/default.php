@@ -124,6 +124,7 @@ use Cake\Core\Configure;
         Hindi(India): vishnoor
         Italian: EminDemiri
         Turkish: onur2x
+        Ukrainian: WELS
         Portuguese: Gustavo 'Gus' Carreno
 -->
     <body class="d-flex flex-column">
@@ -310,6 +311,15 @@ use Cake\Core\Configure;
                 ),
                 (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'tr']:['controller'=>$controller, 'action'=>$action, 'lang'=>'tr', $pass]),
                 ['title'=>'Türkçe', 'escape'=>false]
+            ) ?>
+
+            <?= $this->Html->link(
+                $this->Html->image(
+                    'ua.svg',
+                    ['class'=>'flag px-1', 'alt'=>'Українська']
+                ),
+                (empty($pass)?['controller'=>$controller, 'action'=>$action, 'lang'=>'ua']:['controller'=>$controller, 'action'=>$action, 'lang'=>'ua', $pass]),
+                ['title'=>'Українська', 'escape'=>false]
             ) ?>
 
             <?= $this->Html->link(
