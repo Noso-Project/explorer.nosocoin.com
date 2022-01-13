@@ -14,7 +14,7 @@ class Explorer {
     private $rpc_client;
 
     function __construct($host, $port){
-        $this->rpc_client = new RPCClient($host, $port, 300);
+        $this->rpc_client = new RPCClient($host, $port, 5);
     }
 
     private function _fetch(string $method, array $params, int $id){
