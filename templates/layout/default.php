@@ -338,9 +338,9 @@ use Cake\Core\Configure;
 <?php if (Configure::read('Ads.show')): ?>
             <div class="container text-center py-2">
 <?php if ($controller == 'Explorer' && $action == 'index'): ?>
-                <?= Configure::read('Ads.pages.home')."\n" ?>
+                <?= Configure::read('Ads.codes.0')."\n" ?>
 <?php else: ?>
-                <?= Configure::read('Ads.common')."\n" ?>
+                <?= Configure::read('Ads.codes.1')."\n" ?>
 <?php endif; // Switch page ads ?>
             </div>
 <?php endif; // Show Ads ?>
@@ -348,6 +348,16 @@ use Cake\Core\Configure;
 
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
+
+<?php if (Configure::read('Ads.show')): ?>
+            <div class="container text-center py-2">
+<?php if ($controller == 'Explorer' && $action == 'index'): ?>
+                <?= Configure::read('Ads.codes.1')."\n" ?>
+<?php else: ?>
+                <?= Configure::read('Ads.codes.0')."\n" ?>
+<?php endif; // Switch page ads ?>
+            </div>
+<?php endif; // Show Ads ?>
 
         <?php if (!empty($chinese)): ?>
         <div class="container">
