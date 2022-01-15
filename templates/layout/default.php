@@ -337,7 +337,11 @@ use Cake\Core\Configure;
         </div>
 <?php if (Configure::read('Ads.show')): ?>
             <div class="container text-center py-2">
-                <?= Configure::read('Ads.url')."\n" ?>
+<?php if ($controller == 'Explorer' && $action == 'index'): ?>
+                <?= Configure::read('Ads.pages.home')."\n" ?>
+<?php else: ?>
+                <?= Configure::read('Ads.common')."\n" ?>
+<?php endif; // Switch page ads ?>
             </div>
 <?php endif; // Show Ads ?>
 <?php endif; // Prefix != API ?>
