@@ -102,8 +102,11 @@ use Cake\Core\Configure;
                 return false;
             }
 
+<?php if ($prefix == 'Api' && $page == 'home'): ?>
             // Syntax highlighting
             hljs.highlightAll();
+<?php endif; ?>
+
         </script>
 
         <?= $this->fetch('script') ?>
@@ -185,7 +188,7 @@ use Cake\Core\Configure;
                 </div>
             </div>
         </header>
-        <?php if ($prefix != 'Api'): ?>
+<?php if ($prefix != 'Api'): ?>
         <div class="container px-2 py-1 text-end">
             <?= $this->Html->link(
                 $this->Html->image(
@@ -332,13 +335,12 @@ use Cake\Core\Configure;
             ) ?>
 
         </div>
-            <?php if (Configure::read('Ads.show')): ?>
-            <div class="text-center">
+<?php if (Configure::read('Ads.show')): ?>
+            <div class="container text-center py-2">
                 <?= Configure::read('Ads.url')."\n" ?>
             </div>
-
-            <?php endif; ?>
-        <?php endif; // Prefix != API ?>
+<?php endif; // Show Ads ?>
+<?php endif; // Prefix != API ?>
 
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
