@@ -332,7 +332,13 @@ use Cake\Core\Configure;
             ) ?>
 
         </div>
-        <?php endif; ?>
+            <?php if (Configure::read('Ads.show')): ?>
+            <div class="text-center">
+                <?= Configure::read('Ads.url')."\n" ?>
+            </div>
+
+            <?php endif; ?>
+        <?php endif; // Prefix != API ?>
 
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
