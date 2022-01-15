@@ -25,7 +25,7 @@ class Explorer {
     private function _parseBlock($block): Block {
         $blockInfo = new Block();
 
-        $blockInfo->valid =             isset($block['valid'])?$block['valid']:false;
+        $blockInfo->valid =             isset($block['valid'])?($block['valid'] == true):false;
         $blockInfo->number =            isset($block['number'])?$block['number']:-1;
         $blockInfo->timeStart =         isset($block['timestart'])?$block['timestart']:-1;
         $blockInfo->timeEnd =           isset($block['timeend'])?$block['timeend']:-1;
@@ -51,7 +51,7 @@ class Explorer {
         $orderInfo->orderID =   isset($order['orderid'])?$order['orderid']:'';
         $orderInfo->block =     isset($order['block'])?$order['block']:-1;
         $orderInfo->pending =   false;
-        if ($orderInfo->valid && $orderInfo->number == -1){
+        if ($orderInfo->block == -1){
             $orderInfo->pending = true;
         }
         $orderInfo->type =      isset($order['type'])?$order['type']:'';
