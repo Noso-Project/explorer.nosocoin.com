@@ -3,7 +3,7 @@
     $lang=$this->request->getParam('lang');
 ?>
         <main>
-            <div class="container px-4 py-5">
+            <div class="container px-4 py-1">
                 <h2 class="pb-2 border-bottom"><?= __('Address') ?></h2>
                 <?php if ($address): ?>
                 <dl>

@@ -3,7 +3,7 @@
     $lang=$this->request->getParam('lang');
 ?>
         <main>
-            <div class="container px-4 py-5">
+            <div class="container px-4 py-1">
                 <?php if(isset($mainnet)): ?>
                 <div class="row">
                     <div class="col">
