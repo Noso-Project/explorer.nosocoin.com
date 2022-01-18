@@ -137,7 +137,7 @@ use Cake\Core\Configure;
     <body class="d-flex flex-column">
 
 <?php if (Configure::read('Ads.show')): ?>
-        <script src="//oackoubs.com/4/4803412" type="text/javascript"></script>
+        <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://iclickcdn.com/tag.min.js',4803484,document.body||document.documentElement)</script>
 <?php endif; ?>
 
         <header class="p-3 bg-dark text-white">
