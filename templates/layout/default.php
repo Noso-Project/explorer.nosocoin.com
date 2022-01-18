@@ -137,7 +137,7 @@ use Cake\Core\Configure;
     <body class="d-flex flex-column">
 
 <?php if (Configure::read('Ads.show')): ?>
-        <script src="//oackoubs.com/4/4803412" type="text/javascript" />
+        <script src="//oackoubs.com/4/4803412" type="text/javascript"></script>
 <?php endif; ?>
 
         <header class="p-3 bg-dark text-white">
