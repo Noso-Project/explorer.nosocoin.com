@@ -35,7 +35,7 @@ use Cake\Core\Configure;
         <?= $this->Html->meta('icon', 'favicon.png') ?>
 
 
-<?php if Configure::read('Ads.show'): ?>
+<?php if (Configure::read('Ads.show')): ?>
         <meta name="propeller" content="e4172e067d4634521a0aadbd3cdc6510">
 <?php endif; ?>
 
