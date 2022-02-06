@@ -343,6 +343,11 @@ use Cake\Core\Configure;
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
 
+<?php if (Configure::read('Ads.show')): ?>
+            <div class="container text-center py-2">
+                <?= Configure::read('Ads.codes.1')."\n" ?>
+            </div>
+<?php endif; // Show Ads ?><?php endif; // Prefix != API ?>
         <?php if (!empty($chinese)): ?>
         <div class="container">
              <a target="_blank"
