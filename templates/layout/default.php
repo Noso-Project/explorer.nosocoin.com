@@ -338,7 +338,8 @@ use Cake\Core\Configure;
             <div class="container text-center py-2">
                 <?= Configure::read('Ads.codes.0')."\n" ?>
             </div>
-<?php endif; // Show Ads ?><?php endif; // Prefix != API ?>
+<?php endif; // Show Ads ?>
+<?php endif; // Prefix != API ?>
 
         <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
@@ -347,7 +348,7 @@ use Cake\Core\Configure;
             <div class="container text-center py-2">
                 <?= Configure::read('Ads.codes.1')."\n" ?>
             </div>
-<?php endif; // Show Ads ?><?php endif; // Prefix != API ?>
+<?php endif; // Show Ads ?>
         <?php if (!empty($chinese)): ?>
         <div class="container">
              <a target="_blank"
