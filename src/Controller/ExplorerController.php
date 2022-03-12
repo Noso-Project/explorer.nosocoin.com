@@ -246,7 +246,7 @@ class ExplorerController extends AppController
         $explorer = new Explorer($this->host, $this->port);
         if (is_string($orderID)) {
             $orderID = trim($orderID);
-            if (orderID == '') {
+            if ($orderID == '') {
                 $orderID = null;
             }
         }
