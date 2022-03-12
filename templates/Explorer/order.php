@@ -5,7 +5,7 @@
         <main>
             <div class="container px-4 py-1">
                 <h2 class="pb-2 border-bottom"><?= __('Order') ?></h2>
-                <?php if ($order): ?>
+                <?php if (!is_null($order)): ?>
                 <dl>
                     <dt><?= __('Order') ?></dt>
                     <dd class="text-break"><?= h($order->orderID) ?></dd>

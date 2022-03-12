@@ -241,12 +241,14 @@ class ExplorerController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
-    public function order($order = null)
+    public function order($orderID = null)
     {
         $explorer = new Explorer($this->host, $this->port);
-
-        if (isset($order)) {
-            $order = $explorer->getOrder($order);
+        if (is_string($orderID) && trim($orderID) == '') {
+            $orderID = null;
+        }
+        if (!is_null($orderID)) {
+            $order = $explorer->getOrder($orderID);
             if (isset($order)) {
                 // Do nothing
                 // The logic negative of the above conditional is ugly
@@ -260,7 +262,7 @@ class ExplorerController extends AppController
         }
 
         $host = "{$this->host}:{$this->port}";
-        $this->set(compact('host', 'order'));
+        $this->set(compact('host', 'orderID', 'order'));
     }
 
     /**
