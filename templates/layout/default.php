@@ -49,27 +49,9 @@ use Cake\Core\Configure;
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-
-        <?php if ($prefix == 'Api' && $page == 'home'): ?>
-
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
-
-        <?php endif; ?>
-
         <?= $this->Html->css('explorer-nosocoin') ?>
 
         <?= $this->fetch('css') ?>
-
-        <?php if ($prefix == 'Api' && $page == 'home'): ?>
-
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
-        <style>
-            pre code {
-                border-left: 2px solid #f28d1a;
-            }
-        </style>
-
-        <?php endif; ?>
 
         <?php if (!empty($g_analytics)): ?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -100,11 +82,6 @@ use Cake\Core\Configure;
                 }
                 return false;
             }
-
-<?php if ($prefix == 'Api' && $page == 'home'): ?>
-            // Syntax highlighting
-            hljs.highlightAll();
-<?php endif; ?>
 
         </script>
 
@@ -149,13 +126,6 @@ use Cake\Core\Configure;
                             echo $this->Html->link(
                                 __('Home'),
                                 ['controller'=>'Explorer', 'action'=>'index', 'lang'=>$this->request->getParam('lang'), 'prefix'=>false],
-                                ['class'=>'nav-link px-2 '. $css_class]
-                            ) ?></li>
-                        <li class="nav-item"><?php
-                            $css_class = ($page == 'home' || ($controller=='Explorer' && $prefix=='Api' ))?'text-warning':'text-white';
-                            echo $this->Html->link(
-                                __('API'),
-                                ['controller'=>'Pages', 'action'=>'display', 'prefix'=>'Api', 'home'],
                                 ['class'=>'nav-link px-2 '. $css_class]
                             ) ?></li>
                     </ul>

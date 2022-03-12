@@ -88,6 +88,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
      */
     $builder->fallbacks();
 
+    /*
     $builder->prefix('api', function (RouteBuilder $builder) {
         $builder->connect('/', ['controller' => 'Pages', 'action' => 'display', 'home']);
 
@@ -105,6 +106,7 @@ $routes->scope('/', function (RouteBuilder $builder) {
             $builder->fallbacks();
         });
     });
+    */
 });
 
 /*
