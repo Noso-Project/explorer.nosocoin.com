@@ -244,8 +244,11 @@ class ExplorerController extends AppController
     public function order($orderID = null)
     {
         $explorer = new Explorer($this->host, $this->port);
-        if (is_string($orderID) && trim($orderID) == '') {
-            $orderID = null;
+        if (is_string($orderID)) {
+            $orderID = trim($orderID);
+            if (orderID == '') {
+                $orderID = null;
+            }
         }
         if (!is_null($orderID)) {
             $order = $explorer->getOrder($orderID);
