@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Noso Exporer</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
+crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/blocklookup.js"></script>
+    <!---chart-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <!--style-->
+  </head>
+  <body color="#222222">
+    <div id="wrapper">
+      <div id="page-wrapper">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="exprow">
+              <table id="postable" class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Proof os Stake Addresses</th>
+                    <th>Proof of Stake Quantity</th>
+                    <th>Proof of Stake Reward</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="posAddresses"><br>
+                    </td>
+                    <td id="posQ"><br>
+                    </td>
+                    <td id="posRewardInPedro"><br>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="exprow">
+        <div>
+          <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo" title="nosologo"
+
+              style="width: 15px; height: 15px;">&nbsp;<font size="1px" color="#bbb">Powered
+              by NOSO Blockchain&nbsp; | &nbsp; Built by the NOSO Community</font>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+    // Get the block number from the URL query string
+    var urlParams = new URLSearchParams(window.location.search);
+    var blockNumber = urlParams.get('block');
+
+    // Construct the API URL using the block number
+    var apiUrl = "https://nosostats.com:49443/api/blockNumber/" + blockNumber;
+
+    // Make an XMLHttpRequest to fetch the API data
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", apiUrl);
+    xhr.onload = function() {
+      if (xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        var posAddresses = data.pos.posAddresses.join(", ");
+        document.getElementById("posAddresses").textContent = posAddresses;
+
+        document.getElementById("posQ").textContent = data.posQ;
+        var posRewardInPedro = parseFloat(data.pos.posRewardInPedro) * 0.00000001;
+        document.getElementById("posRewardInPedro").textContent = posRewardInPedro.toFixed(8);
+      }
+    };
+    xhr.send();
+
+     </script>
+    
+  </body>
+</html>
