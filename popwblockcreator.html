@@ -29,7 +29,7 @@ crossorigin="anonymous">
   </head>
   <body onload="loadNodeIpAddressCount();loadBestHeight();loadSupply();loadSupply2();loadCirculating();loadPendingOrders();fetchCountdown();loadNodeIpAddressCount();"
 
-    color="#222222" style="                                                                                                                                                                                                                     background-image: url(&quot;&quot;);">
+    color="#222222" style="                                                                                                                                                                                                                      background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -46,15 +46,17 @@ crossorigin="anonymous">
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
-            <li><a href="index.html"><i class="fa fa-dashboard"></i>
-                NosoStats</a></li>
-            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i> Explorer</a></li>
+            <li><a href="index.html"><i class="fa fa-dashboard"></i> NosoStats</a></li>
+            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i>
+                Explorer</a></li>
             <!--  <li><a href="coins.html"> Coin Distribution</a></li>
             <li><a href="addresses.html"> Top Addresses</a></li> -->
-            <li><a href="masternodes.html"><i class="fa fa-globe"></i> Masternodes</a></li>
+            <li><a href="masternodes.html"><i class="fa fa-globe"></i>
+                Masternodes</a></li>
             <li><a href="earn.html"><i class="fa fa-wrench"></i> PoPW </a></li>
-            <!-- <li><a href="charts.html">Charts</a></li>
-            <!-- <li><a href="market.html">&nbsp;Markets</a></li> -->
+            <!-- <li><a href="charts.html">Charts</a></li>  -->
+            <li><a href="market.html"><i class="fa fa-money"></i>
+                Market</a></li>
           </ul>
           <!-- /.navbar-top-right -->
           <div class="toprow">
@@ -86,7 +88,6 @@ crossorigin="anonymous">
         <div class="row">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
-
             <!-- Alias Search  --> </div>
           <!-- /.row --> </div>
         <!-- /.row -->
@@ -149,7 +150,7 @@ fetch(apiUrl)
     document.getElementById("powRewardInPedro").innerHTML = powRewardInPedro.toFixed(8);
   })
   .catch(error => console.error(error));
-    </script>
- </div> </div>
+    </script> </div>
+    </div>
   </body>
 </html>
