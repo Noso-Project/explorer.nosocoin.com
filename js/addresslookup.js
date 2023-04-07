@@ -43,7 +43,7 @@ fetch(apiUrl)
         // Create a hyperlink to the desired page for the "addresscreatedatblock" and "NosoAddress" fields
         const link = document.createElement('a');
         link.textContent = value;
-        link.href = (key === 'addresscreatedatblock') ? `blocklookup.html?blocknumber=${value}` : `addresshistory.html?input-field=${encodeURIComponent(value)}`;
+        link.href = (key === 'addresscreatedatblock') ? `blocklookup.html?blocknumber=${value}` : `addresslookup.html?addresslookup=${encodeURIComponent(value)}`;
         valueCell.appendChild(link);
       } else if (/^\d{1,10}$/.test(value)) {
         // Check if the value is a number with 10 or fewer digits
@@ -90,7 +90,7 @@ fetch(apiUrl)
 
     // Create a hyperlink to "addresshistory.html" for the NosoAddress value
     const link = document.createElement('a');
-    link.href = `addresshistory.html?input-field=${encodeURIComponent(inputAddresslookup)}`;
+    link.href = `addresslookup.html?addresslookup=${encodeURIComponent(inputAddresslookup)}`;
     link.textContent = inputAddresslookup;
     nosoAddressValueCell.appendChild(link);
 
