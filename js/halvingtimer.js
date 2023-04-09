@@ -33,7 +33,7 @@ function updateHalvingTimer() {
         timeRemaining = halvingTimer * 600; // Convert to seconds
         const timeRemainingDays = Math.ceil(timeRemaining / (60 * 60 * 24)); // Convert to days
         const timeRemainingMinutes = timeRemaining % (60 * 24); // Get remaining minutes
-        const timeRemainingText = `${timeRemainingDays} Days until Next Halving`;
+        const timeRemainingText = `${timeRemainingDays} `;
         document.getElementById('halving-timer').textContent = halvingTimer;
         document.getElementById('halving-timer-days').textContent = timeRemainingText;
       }
