@@ -146,6 +146,14 @@ div {
 
 }
 
+.panel-head-tiles2 {
+  margin: 0;
+  padding: 2.5px;
+  background-color: #222222;
+  border: 0px solid darkgrey;
+
+}
+
 .panel-head {
   margin: 0;
   padding: 10px;
@@ -153,6 +161,10 @@ div {
   border: 0px solid darkgrey;
 
 }
+
+
+  
+  
 .panel-footer {
   margin: 0;
   padding: 10px;
@@ -257,7 +269,15 @@ div {
   justify-content: left;
   
 }
-
+.announcement-text2 {
+  font-size: 12px;
+  margin: 0;
+   color: darkgrey;
+   display: flex;
+  align-items: left;
+  justify-content: left;
+  
+}
 .announcement-bottom {
   margin: 0;
    color: #fbe04d;
