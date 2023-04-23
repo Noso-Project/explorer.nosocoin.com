@@ -73,9 +73,9 @@ am5.ready(function() {
             target: circleTemplate,
             dataField: "value",
             min: 10,
-            max: 50,
+            max: 150,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 4000,
             key: "radius"
           }
         ]);
