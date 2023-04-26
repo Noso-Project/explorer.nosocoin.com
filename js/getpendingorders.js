@@ -25,11 +25,11 @@
 	
 	const row = `
 	  <tr>
-	    <td>${orderType}</td>
-	    <td>${senderLink}</td>
-	    <td>${receiverLink}</td>
-	    <td>${orderAmountFormatted}</td>
-	    <td>${orderFeeFormatted}</td>
+	    <td class="priority-7">${orderType}</td>
+	    <td class="priority-1">${senderLink}</td>
+	    <td class="priority-1">${receiverLink}</td>
+	    <td class="priority-1">${orderAmountFormatted}</td>
+	    <td class="priority-1">${orderFeeFormatted}</td>
 	  </tr>
 	`;
           tableBody.insertAdjacentHTML('beforeend', row);

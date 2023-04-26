@@ -14,6 +14,8 @@ integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6h
 crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
     <script src="js/blocklookup.js"></script>
     <!---chart-->
     <!-- Bootstrap core CSS -->
@@ -23,11 +25,40 @@ crossorigin="anonymous">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <style>
+      #orderschart {
+        font-size: 8px;
+        color: #bbb;
+        background-color: black;
+        top: 0;
+        left: 0;
+        
+        max-width: 300px; /* set maximum width */
+        min-width: 440px;
+        width: 100%; /* set initial width to 100% */
+      }
+      #orderschart svg {
+        max-width: 100%;
+      }
+      .bar {
+        fill: #fbe04d;
+      }
+
+      .axis text {
+        font-size: 8px;
+        color: gray;
+      }
+
+      /* set width to 100% when screen size is less than 600px */
+      @media (max-width: 600px) {
+        #orderschart {
+          width: 100%;
+        }
+      }
+    </style>
     <!--style-->
   </head>
-  <body onload="loadBestHeight();loadSupply();loadSupply2();loadCirculating();loadPendingOrders();fetchCountdown();loadNodeIpAddressCount();updateTable();"
-
-    color="#222222" style="                                                                                                                                                                                   background-image: url(&quot;&quot;);">
+  <body onload="updateTable();" color="#222222" style="                                                                                                                                                                                        background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -63,10 +94,9 @@ crossorigin="anonymous">
                     src="img/twitter_bird.png" style="width: 20px; height: 16px;"
 
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank">
-                  <img src="img/discord.png" style="width: 24px; height: 22px;"
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
 
-                    alt="Noso on Discord"></a></li>
+                    src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
               <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
 
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
@@ -124,16 +154,15 @@ crossorigin="anonymous">
           <thead>
             <tr>
               <th class="priority-1">Height</th>
-              <th class="priority-2">Date-Time UTC+2</th>
-              <th class="priority-3">Creator</th>
-              <th class="priority-4">Hash</th>
-              <th class="priority-5">Orders</th>
+              <th class="priority-1">Date-Time UTC+2</th>
+              <th class="priority-1">Creator</th>
+              <th class="priority-6">Orders</th>
               <th class="priority-6">Reward</th>
-              <th class="priority-7">Sent</th>
-              <th class="priority-8">Fees</th>
-              <th class="priority-8">PoPW Reward</th>
-              <th class="priority-8">Noso Node Addresses</th>
-              <th class="priority-8">Noso Node Reward</th>
+              <th class="priority-3">Sent</th>
+              <th class="priority-4">Fees</th>
+              <th class="priority-6">PoPW Reward</th>
+              <th class="priority-4">Noso Node Addresses</th>
+              <th class="priority-6">Noso Node Reward</th>
             </tr>
           </thead>
           <tbody>
@@ -158,10 +187,8 @@ crossorigin="anonymous">
       <!-- /#wrapper -->
       <!-- JavaScript -->
       <script src="js/jquery-1.10.2.js"></script>
-      <script src="js/bootstrap.js"></script>
-      <!-- Page Specific Plugins --> </font>
-    <script src="js/tablesorter/jquery.tablesorter.js"></script>
-    <script src="js/tablesorter/tables.js"></script>
+      <script src="js/bootstrap.js"></script> <!-- Page Specific Plugins -->
+    </font>
     <script src="js/nosochain.js"></script>
     <style>
     @media only screen and (max-width: 400px) {
