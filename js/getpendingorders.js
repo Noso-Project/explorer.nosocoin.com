@@ -19,11 +19,11 @@ function refreshTable() {
     
     const tableHeaders = `
       <tr>
-        <th class="priority-7"><font color="yellow">Order Type</font></th>
-        <th class="priority-1"><font color="yellow">Sender</font></th>
-        <th class="priority-1"><font color="yellow">Receiver</font></th>
-        <th class="priority-1"><font color="yellow">Order Amount</font></th>
-        <th class="priority-1"><font color="yellow">Order Fee</font></th>
+        <th class="priority-7"><font color="#fbe04d">Order Type</font></th>
+        <th class="priority-1"><font color="#fbe04d">Sender</font></th>
+        <th class="priority-1"><font color="#fbe04d">Receiver</font></th>
+        <th class="priority-1"><font color="#fbe04d">Order Amount</font></th>
+        <th class="priority-1"><font color="#fbe04d">Order Fee</font></th>
       </tr>
     `;
     tableBody.insertAdjacentHTML('beforeend', tableHeaders);
