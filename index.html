@@ -41,32 +41,10 @@ crossorigin="anonymous">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <!--style-->
-    <style>
-		.marquee {
-			overflow: hidden;
-			height: 30px;
-      color: yellow;
-			background-color: black;
-			padding: 1px;
-			width: 100%;
-		}
-
-		.marquee span {
-			display: inline-block;
-			transform: translateX(0);
-			animation: marquee 50s linear infinite;
-			white-space: nowrap;
-		}
-
-		@keyframes marquee {
-			0% { transform: translateX(0); }
-			100% { transform: translateX(-100%); }
-		}
-	</style>
   </head>
   <body onload="loadBestHeight();loadSupply();loadSupply2();loadCirculating();loadPendingOrders();fetchCountdown();loadNodeIpAddressCount();createPieChart();"
 
-    color="#222222" style="                                                                                                                                                                                                                                                                                                                             background-image: url(&quot;&quot;);">
+    color="#222222" style="                                                                                                                                                                                                                                                                                                              background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -102,9 +80,10 @@ crossorigin="anonymous">
                     src="img/twitter_bird.png" style="width: 20px; height: 16px;"
 
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank">
+                  <img src="img/discord.png" style="width: 24px; height: 22px;"
 
-                    src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
+                    alt="Noso on Discord"></a></li>
               <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
 
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
@@ -125,11 +104,6 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <div class="marquee"> <span><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Explorer
-                    is currently under maintenance. Please utilize
-                    the alternate explorer <a href="https://stevengez.github.io/Noso-explorer-react/">(here)</a>
-                    until maintenance is complete. </b></span> </div>
-              <br>
               <form id="block-form" action="blocklookup.html?blocknumber" method="get"
 
                 style="display: none;"> <input id="block-search" name="blocknumber"
