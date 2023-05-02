@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -12,10 +11,8 @@
     <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-
-integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
 crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -33,15 +30,14 @@ crossorigin="anonymous">
     <!--style-->
   </head>
   <body color="#222222" style="                                                                                                                                                                background-image: url(&quot;&quot;);">
-    <div id="wrapper"> <!-- Sidebar -->
+    <div id="wrapper">
+      <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"> <button type="button" class="navbar-toggle"
-
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
             data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
               navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </button><a class="navbar-brand" href="index.html"><img
-
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="index.html"><img
               src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
             NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
           </a> </div>
@@ -62,24 +58,17 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
-
-                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
-
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/PktseKHJH5" target="_blank"> <img
-
+              <li><a href="https://discord.gg/PktseKHJH5" target="_blank"> <img
                     src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
-              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
-
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
-              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
-
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
                     alt="Noso Website"></a></li>
-              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
-
-                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
-
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
                     alt="Noso Developers"></a></li>
             </ul>
           </div>
@@ -90,31 +79,22 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <form id="block-form" action="blocklookup.html?blocknumber" method="get"
-
-                style="display: none;"> <input id="block-search" name="blocknumber"
-
+              <form id="block-form" action="blocklookup.html?blocknumber" method="get"
+                style="display: none;"> <input id="block-search" name="blocknumber"
                   placeholder="Search Block Number" type="search"> <button type="submit">Search
                   Block</button> </form>
-              <form id="address-form" action="addresslookup.html?addresslookup"
-
-                method="get" style="display: none;"> <input id="address-search"
-
+              <form id="address-form" action="addresslookup.html?addresslookup"
+                method="get" style="display: none;"> <input id="address-search"
                   name="addresslookup" placeholder="Search Address" type="search">
                 <button type="submit">Search Address</button> </form>
-              <form id="alias-form" action="aliaslookup.html?alias" method="get"
-
-                style="display: none;"> <input id="alias-search" name="alias" placeholder="Search Alias"
-
+              <form id="alias-form" action="aliaslookup.html?alias" method="get"
+                style="display: none;"> <input id="alias-search" name="alias" placeholder="Search Alias"
                   type="search"> <button type="submit">Search Alias</button> </form>
-              <form id="order-form" action="orderlookup.html?orderid" method="get"
-
-                style="display: none;"> <input id="order-search" name="orderid"
-
+              <form id="order-form" action="orderlookup.html?orderid" method="get"
+                style="display: none;"> <input id="order-search" name="orderid"
                   placeholder="Search Order ID" type="search"> <button type="submit">Search
                   Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
-
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
                   type="search"> <button type="submit1" onclick="search()"></button>
               </div>
               <!-- Results will be displayed on Explorer page --> </div>
@@ -143,17 +123,17 @@ crossorigin="anonymous">
                 </div>
                 <div>
                   <div>
-                    <p class="col-xs-6">PoPW POOLS</p>
+                    <p class="col-xs-6">PoPW VALIDATORS</p>
                   </div>
                   <div>&nbsp;</div>
                   <br>
                   <table id="poolStats" class="styled-table">
                     <thead>
                       <tr>
-                        <th class="priority-1">Pool Name</th>
+                        <th class="priority-1">Validator Name</th>
                         <th class="priority-2">Last Found</th>
                         <th class="priority-3">Participants</th>
-                        <th class="priority-4">Pool Fee %</th>
+                        <th class="priority-4">Validator Fee %</th>
                         <th class="priority-5">PoP Hash</th>
                       </tr>
                     </thead>
@@ -168,10 +148,8 @@ crossorigin="anonymous">
           <br>
           <div class="exprow">
             <div>
-              <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo"
-
-                  title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
-
+              <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo"
+                  title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
                   size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
                   &nbsp; Built by the NOSO Community</font> </div>
             </div>
