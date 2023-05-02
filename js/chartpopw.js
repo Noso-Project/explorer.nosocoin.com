@@ -10,7 +10,7 @@ am5.ready(function() {
         );
         chart.children.unshift(am5.Label.new(root, {
           text: "",
-          fontSize: 25,
+          fontSize: 12,
           fontWeight: "500",
           textAlign: "center",
           x: am5.percent(70),
@@ -43,7 +43,7 @@ am5.ready(function() {
               paddingLeft: 5,
               populateText: true,
               fontWeight: "bold",
-              fontSize: 13,
+              fontSize: 12,
               centerY: am5.p50
             })
           );
@@ -63,7 +63,8 @@ am5.ready(function() {
               populateText: true,
               centerX: am5.p50,
               centerY: am5.p50,
-              textAlign: "center"
+              textAlign: "center",
+	      fontSize: "14"
             }),
             dynamic: true
           });
@@ -72,8 +73,8 @@ am5.ready(function() {
           {
             target: circleTemplate,
             dataField: "value",
-            min: 10,
-            max: 150,
+	    min: 5,
+            max: 100,
             minValue: 0,
             maxValue: 4000,
             key: "radius"
