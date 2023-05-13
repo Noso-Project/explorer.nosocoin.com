@@ -1,48 +1,37 @@
-let halvingTimer;
-let timeRemaining;
+fetch('https://api.nosostats.com:8078', {
+  method: 'POST',
+  headers: {
+    'Origin': 'https://api.nosostats.com'
+  },
+  body: JSON.stringify({
+    "jsonrpc": "2.0",
+    "method": "getmainnetinfo",
+    "params": [],
+    "id": 9
+  })
+})
+.then(response => response.json())
+.then(data => {
+  const result = data.result[0];
+  const getBlockInfo = document.getElementById('getblockinfo');
+  const getPendingOrders = document.getElementById('getpendingorders2');
+  const getSupply = document.getElementById('getsupply');
 
-function updateHalvingTimer() {
-  fetch('https://nosostats.com:49443/api/dBheightS')
-    .then(response => response.json())
-    .then(data => {
-      if (data.code === 200) {
-        const blockHeight = data.data.bestHeight;
-        if (blockHeight < 210000) {
-          halvingTimer = 210000 - blockHeight;
-        } else if (blockHeight < 420000) {
-          halvingTimer = 420000 - blockHeight;
-        } else if (blockHeight < 630000) {
-          halvingTimer = 630000 - blockHeight;
-        } else if (blockHeight < 840000) {
-          halvingTimer = 840000 - blockHeight;
-        } else if (blockHeight < 1050000) {
-          halvingTimer = 1050000 - blockHeight;
-        } else if (blockHeight < 1260000) {
-          halvingTimer = 1260000 - blockHeight;
-        } else if (blockHeight < 1470000) {
-          halvingTimer = 1470000 - blockHeight;
-        } else if (blockHeight < 1680000) {
-          halvingTimer = 1680000 - blockHeight;
-        } else if (blockHeight < 1890000) {
-          halvingTimer = 1890000 - blockHeight;
-        } else if (blockHeight < 2100000) {
-          halvingTimer = 2100000 - blockHeight;
-        } else {
-          halvingTimer = 0;
-        }
-        timeRemaining = halvingTimer * 600; // Convert to seconds
-        const timeRemainingDays = Math.ceil(timeRemaining / (60 * 60 * 24)); // Convert to days
-        const timeRemainingMinutes = timeRemaining % (60 * 24); // Get remaining minutes
-        const timeRemainingText = `${timeRemainingDays} `;
-        document.getElementById('halving-timer').textContent = halvingTimer;
-        document.getElementById('halving-timer-days').textContent = timeRemainingText;
-      }
-    })
-    .catch(error => console.error(error));
-}
+  // Format the supply value as a decimal with millions represented as '5.4M'
+  const supplyInMillions = (parseFloat(result.supply) * 0.00000000000001).toFixed(2);
 
-// Call updateHalvingTimer() initially
-updateHalvingTimer();
+  // Add 1 to the lastblock value
+  const lastBlockPlusOne = parseInt(result.lastblock) + 1;
 
-// Call updateHalvingTimer() every 10 minutes (600,000 milliseconds)
-setInterval(updateHalvingTimer, 600000);
+  // Set the values of each variable to the corresponding data element
+  getBlockInfo.innerText = lastBlockPlusOne;
+  getPendingOrders.innerText = result.pending;
+  getSupply.innerText = supplyInMillions + 'M /';
+
+  // Get a reference to the getsupply2 element
+  const getSupply2 = document.getElementById('getsupply2');
+
+  // Set its innerText property to the same value as getSupply, without the '/'
+  getSupply2.innerText = getSupply.innerText.replace(' /', '');
+})
+.catch(error => console.error(error));

@@ -16,7 +16,7 @@
         const pendings = data.result[0].pendings;
         const tableBody = document.getElementById('getpendingorders');
         tableBody.innerHTML = ''; // clear existing rows
-        pendings.slice(0, 5).forEach(pending => {
+        pendings.forEach(pending => {
           const [orderType, sender, receiver, orderAmount, orderFee] = pending.split(',');
           const senderLink = `<a href="getaddressbalance.html?address=${sender}">${sender}</a>`;
           const receiverLink = `<a href="getaddressbalance.html?address=${receiver}">${receiver}</a>`;
@@ -25,9 +25,10 @@
 	
 	const row = `
 	  <tr>
-	    <td>&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/logo_clearbg.png" width="15px">&nbsp;${orderType}</td>
-	    <td colspan="3"><span>Sender&nbsp;&nbsp;${senderLink}<br>Receiver&nbsp;&nbsp;${receiverLink}</span></td>
-	    <td><span><b>Sent</b>&nbsp;&nbsp;${orderAmountFormatted}<br><b>Fee</b>&nbsp;&nbsp;${orderFeeFormatted}</span></td>
+	    <td width="80px">&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/logo_clearbg.png" width="15px">&nbsp;${orderType}</td>
+	    <td width="300px"><span>&nbsp;&nbsp;&nbsp;NOSO sent:&nbsp;&nbsp;<font color="gray">${orderAmountFormatted}</font><b>&nbsp;&nbsp;&nbsp;Tx Fee:</b>&nbsp;&nbsp;<font color="gray">${orderFeeFormatted}</font></span></td>
+	    <td width="300px"><span>Sender:&nbsp;&nbsp;${senderLink}</span></td>
+	    <td><span>Receiver:&nbsp;&nbsp;${receiverLink}</span></td>
 	  </tr>
 	`;
           tableBody.insertAdjacentHTML('beforeend', row);

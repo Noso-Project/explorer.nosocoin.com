@@ -135,13 +135,13 @@ div {
 .panel-info {
   margin: 0;
   background-color: black;
-  border: 1px solid #222222;
+  border: 5px solid black;
 
 }
 .panel-head-tiles {
   margin: 0;
   padding: 10px;
-  background-color: black;
+  background-color: #222222;
   border: 0px solid darkgrey;
 
 }
@@ -149,7 +149,7 @@ div {
 .panel-head-tiles2 {
   margin: 0;
   padding: 2.5px;
-  background-color: black;
+  background-color: #222222;
   border: 0px solid darkgrey;
 
 }
@@ -168,8 +168,8 @@ div {
 .panel-footer {
   margin: 0;
   padding: 10px;
-  background-color: black;
-  border: 1px solid #222222;
+  background-color: #222222;
+  border: 0px solid darkgrey;
 
 }
 /* Nav Panel circle arrows */
@@ -201,29 +201,23 @@ div {
 .toprow {
   margin: 0;
   border: 0px solid black;
+  border: 0px solid black;
     max-width:1450px;
 
 }
 
+/* Nav row */
+.row {
+  margin: 0;
+  border: 0px solid black;
+  max-width:1300x;
 
+}
 /* Table Nav row */
 .row {
   margin: 0;
   border: 0px solid black;
   max-width:1300px;
-
-}
-.row2 {
-  margin: 0;
-  border: 0px solid black;
-  max-width:1150px;
-
-}
-/* Table Nav row */
-.rowsearch {
-  margin: 0;
-  border: 0px solid black;
-  max-width:1120px;
 
 }
 
@@ -247,7 +241,7 @@ div {
  }
 .announcement-subheading
 {
-  font-size: 12px;
+  font-size: 12px;S
   margin: 0;
   color: darkgrey;
   display: flex;
@@ -269,7 +263,6 @@ div {
 }
 .announcement-text {
   margin: 0;
-    font-size: 12px;
    color: darkgrey;
    display: flex;
   align-items: left;
@@ -277,7 +270,7 @@ div {
   
 }
 .announcement-text2 {
- 
+  font-size: 12px;
   margin: 0;
    color: darkgrey;
    display: flex;
@@ -373,7 +366,7 @@ table.tablesorter thead tr th:hover {
 
 .styled-table thead tr {
     background-color: #222222;
-    color: white;
+    color: #fbe04d;
         border-spacing: 0px;
         table-layout: fixed;
         margin-left: auto;
@@ -386,19 +379,23 @@ table.tablesorter thead tr th:hover {
 .styled-table td {
 	  margin-left: auto; 
 	  margin-right: auto;
- 	  overflow: hidden;
-
+	   
+	  padding: 6px 20px; 
+	  overflow: hidden; 
 	  text-overflow: ellipsis; 
 	  word-wrap: break-all;
 	  table-layout:fixed;
+	  width:20px;
 	  overflow:hidden;
+
+
 }
-	/*  width:20px; */
-	/*  padding: 6px 20px; */
+
+
 
 .styled-table tbody tr {
     border-bottom: 1px solid black;
-    color: white;
+    color: white
 }
 
 .styled-table tbody tr:nth-of-type(even) {
@@ -411,193 +408,9 @@ table.tablesorter thead tr th:hover {
     border-bottom: 2px solid #222222;
 }
 .styled-table tbody tr.active-row {
-    -weight: bold;
-    color: #fbe04d;
-}
-
-.styled-table1 {
-    background-color: black;
-    color: #fbe04d;
-        border-spacing: 0px;
-        table-layout: fixed;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height:100%;
-
-}
-
-.styled-table1 thead tr {
-    background-color: black;
-    color: white;
-  border-bottom: 2px solid #222222;
-        border-spacing: 0px;
-        table-layout: fixed;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-
-}
-
-.styled-table1 th,
-.styled-table1 td {
-
-	  margin-left: auto; 
-	  margin-right: auto;
- 	  overflow: hidden;
-          font-size: 12px;
-	  text-overflow: ellipsis; 
-	  word-wrap: break-all;
-	  table-layout:fixed;
-	  overflow:hidden;
-}
-	/*  width:20px; */
-	/*  padding: 6px 20px; */
-
-	
-/*  explorer page table */
-.styled-table1 tbody tr {
-    border-bottom: 1px solid #222222;
-    color: lightgrey;
-}
-
-.styled-table1 tbody tr:nth-of-type(even) {
-    background-color: black;
-    color: lightgrey;
-    padding: 6px 20px; 
-}
-
-.styled-table1 tbody tr:last-of-type {
-    border-bottom: 2px solid #222222;
-}
-.styled-table1 tbody tr.active-row {
     font-weight: bold;
     color: #fbe04d;
 }
-  .my-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 150px;
-  }
-    .my-grid-container2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 75px;
-  }
-  .my-grid-child2 {
-    width: 100%;
-  }
-
-  .my-grid-child {
-    width: 100%;
-  }
-
-  @media (max-width: 980px) {
-    .my-grid-container {
-      grid-template-columns: 1fr;
-    }
-  }
-
-.button-container {
-display: flex;
-justify-content: center;
-align-items: center;
-margin-top: 20px;
-margin-bottom: 20px;
-}
-.button-container button {
-margin: 0 10px;
-color: #fbe04d;
-padding: 10px 20px;
-background-color: #222222;
-border-radius: 5px;
-border: none;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-/*  explorer orders page table */
-.styled-table2 {
-    background-color: black;
-    color: #fbe04d;
-        border-spacing: 0px;
-        table-layout: fixed;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        height:100%;
-
-}
-
-.styled-table2 thead tr {
-    background-color: black;
-    color: white;
-  border-bottom: 1px solid #222222;
-        border-spacing: 0px;
-        table-layout: fixed;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-
-}
-
-.styled-table2 th,
-.styled-table2 td {
-	  margin-left: auto; 
-	  margin-right: auto;
- 	  overflow: hidden;
-          font-size: 12px;
-	  text-overflow: ellipsis; 
-	  word-wrap: break-all;
-	  table-layout:fixed;
-	  overflow:hidden;
-}
-	/*  width:20px; */
-	/*  padding: 6px 20px; */
-
-	
-
-.styled-table2 tbody tr {
-    border-bottom: 1px solid #222222;
-    color: lightgrey;
-}
-
-.styled-table2 tbody tr:nth-of-type(even) {
-    background-color: black;
-    color: lightgrey;
-    padding: 6px 20px; 
-}
-
-.styled-table2 tbody tr:last-of-type {
-    border-bottom: 2px solid #222222;
-}
-.styled-table2 tbody tr.active-row {
-    font-weight: bold;
-    color: #fbe04d;
-}
-
-/*block search */
-.button-container1 {
-display: flex;
-justify-content: left;
-align-items: center;
-margin-top: 20px;
-margin-bottom: 20px;
-}
-.button-container1 button {
-margin: 0 10px;
-color: #fbe04d;
-padding: 10px 20px;
-background-color: #222222;
-border-radius: 5px;
-border: none;
-cursor: pointer;
-font-size: 16px;
-font-weight: bold;
-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
 /*  .styled-table automatic resizing based on screensize*/
 
 @media screen and (max-width: 600px) {
