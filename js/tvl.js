@@ -43,7 +43,7 @@
 
               // Calculate locked MN coins
               const mnCoinsLocked = nodeCount * 10500;
-              mnCoinsLockedElement.textContent = (mnCoinsLocked / 1000000).toFixed(2) + " M";
+              mnCoinsLockedElement.textContent = (mnCoinsLocked / 1000000).toFixed(2) + "M /";
 
               // Fetch current supply
               fetch('https://nosostats.com:8079', {
@@ -72,11 +72,11 @@
                  
  	      // Calculate total value locked
                   const totalValueLocked = (mnCoinsLocked * lastPrice) * .000001;
-                  totalValueLockedElement.textContent = totalValueLocked.toFixed(2) + " M";
+                  totalValueLockedElement.textContent = "$" + totalValueLocked.toFixed(2) + " M";
 
                       // Calculate NOSOMCAP
                       const nosomcap = currentSupply * lastPrice;
-                      nosomcapElement.textContent = (nosomcap / 100000000000000).toFixed(2) + " M";
+                      nosomcapElement.textContent = "$" + (nosomcap / 100000000000000).toFixed(2) + " M";
 
                       // Calculate TVL percentage
                       const tvlPercentage = (mnCoinsLocked / currentSupply) * 10000000000;
