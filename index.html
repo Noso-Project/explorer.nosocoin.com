@@ -25,7 +25,7 @@ crossorigin="anonymous">
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <!--style-->
   </head>
-  <body onload="loadNodeIpAddressCount();" color="#222222" style="                             background-image: url();">
+  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                      background-image: url();">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -180,8 +180,8 @@ crossorigin="anonymous">
                         <font size="2">
                           <p class="announcement-text" style="width: 176px;"><font
 
-                              &gt;="" color="white"><span id="circulating">10%</span>
-                            </font>&nbsp; Circulating<font size="2"></font></p>
+                              color="white"><span id="circulating">0%</span> </font>&nbsp;
+                            Circulating<font size="2"></font></p>
                           <p class="announcement-text2" style="width: 176px;">NOSO
                             Marketcap:&nbsp;<font color="white"><span id="nosomcap">0</span></font>
                           </p>
@@ -207,16 +207,16 @@ crossorigin="anonymous">
                       <div class="col-xs-6 text-right">
                         <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
 
-                            id="nodelockedfunds">0</span><font class="announcement-subheading"><span
+                            id="mncoinslocked">0</span><font class="announcement-subheading"><span
 
                               id="getsupply2">0</span></font></p>
                         <p class="announcement-text2" style="width: 176px;"><font
 
-                            color="white"><span id="percentcoinslocked">0</span></font>&nbsp;
+                            color="white"><span id="tvlpercentage">0</span></font>&nbsp;
                           Masternode Coins Locked<br>
                         </p>
                         <p class="announcement-text2" style="width: 176px;">TVL
-                          (Total Value Locked):&nbsp;<font color="white"><span id="nodeTVL">0</span></font>
+                          (Total Value Locked):&nbsp;<font color="white"><span id="totalvaluelocked">0</span></font>
                         </p>
                       </div>
                     </div>
@@ -289,7 +289,7 @@ crossorigin="anonymous">
                   <div class="panel-head-tiles">
                     <div class="row">
                       <div class="col-xs-6 text-right">
-                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+                        <p class="announcement-heading" style="margin-left: 0px; width: 164px;"><span
 
                             id="halving-timer">0</span><font class="announcement-subheading">Blocks
                             Remaining</font></p>
@@ -423,10 +423,9 @@ crossorigin="anonymous">
       <script src="js/getpendingorders.js"></script>
       <script src="js/getmainnetinfo.js"></script>
       <script src="js/getblockmns2.js"></script>
-      <!-- <script src="js/gm1.js"></script> -->
+      <script src="js/tvl.js"></script>
       <!--mongo api -->
       <script src="js/countdown.js"></script>
-      <script src="js/nodelockfunds.js"></script>
       <!--external api -->
       <script src="js/sevenseas.js"></script>
       <style>
@@ -491,6 +490,5 @@ document.getElementById('search').addEventListener('keypress', function (e) {
   }
 });
 </script> </div>
-    
   </body>
 </html>
