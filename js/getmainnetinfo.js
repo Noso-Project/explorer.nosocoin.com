@@ -45,37 +45,39 @@ function updateData() {
       "id": 9
     })
   })
-  .then(response => response.json())
-  .then(data => {
-    const result = data.result[0];
-    const getBlockInfo = document.getElementById('getblockinfo');
-    const getPendingOrders = document.getElementById('getpendingorders2');
-    const getSupply = document.getElementById('getsupply');
+    .then(response => response.json())
+    .then(data => {
+      const result = data.result[0];
+      const getBlockInfo = document.getElementById('getblockinfo');
+      const getPendingOrders = document.getElementById('getpendingorders2');
+      const getSupply = document.getElementById('getsupply');
 
-    // Format the supply value as a decimal with millions represented as '5.4M'
-    const supplyInMillions = (parseFloat(result.supply) * 0.00000000000001).toFixed(2);
+      // Format the supply value as a decimal with millions represented as '5.4M'
+      const supplyInMillions = (parseFloat(result.supply) * 0.00000000000001).toFixed(2);
 
-    // Add 1 to the lastblock value
-    const lastBlockPlusOne = parseInt(result.lastblock) + 1;
+      // Add 1 to the lastblock value
+      const lastBlockPlusOne = parseInt(result.lastblock) + 1;
 
-    // Set the values of each variable to the corresponding data element
-    getBlockInfo.innerText = lastBlockPlusOne;
-    getPendingOrders.innerText = result.pending;
-    getSupply.innerText = supplyInMillions + 'M /';
+      // Set the values of each variable to the corresponding data element
+      getBlockInfo.innerText = lastBlockPlusOne;
+      getPendingOrders.innerText = result.pending;
+      getSupply.innerText = supplyInMillions + 'M /';
 
-    // Get a reference to the getsupply2 element
-    const getSupply2 = document.getElementById('getsupply2');
+      // Get a reference to the getsupply2 element
+      const getSupply2 = document.getElementById('getsupply2');
 
-    // Set its innerText property to the same value as getSupply, without the '/'
-    getSupply2.innerText = getSupply.innerText.replace(' /', '');
+      // Set its innerText property to the same value as getSupply, without the '/'
+      getSupply2.innerText = getSupply.innerText.replace(' /', '');
 
-    // Update halving timer
-    updateHalvingTimer(result.lastblock);
-  })
-  .catch(error => console.error(error));
+      // Update halving timer
+      updateHalvingTimer(result.lastblock);
+    })
+    .catch(error => console.error(error));
 }
 
 // Call updateData() initially
 updateData();
 
-// Call updateData() every 10
+// Call updateData() every 30 seconds
+setInterval(updateData, 30000);
+
