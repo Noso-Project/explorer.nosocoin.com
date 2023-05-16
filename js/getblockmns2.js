@@ -25,10 +25,10 @@ fetch('https://api.nosostats.com:8078', {
 
     const tableContainer = document.getElementById('mns-rewards-table');
     if (tableContainer) {
-      fetch('https://nosostats.com:8079', {
+      fetch('https://api.nosostats.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://nosostats.com'
+          'Origin': 'https://api.nosostats.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",
