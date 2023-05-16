@@ -24,10 +24,10 @@
           const currentHeight = data.result[0].lastblock;
 
           // Fetch node count for the current block height
-          fetch('https://nosostats.com:8079', {
+          fetch('https://api.nosostats.com:8078', {
             method: 'POST',
             headers: {
-              'Origin': 'https://nosostats.com'
+              'Origin': 'https://api.nosostats.com'
             },
             body: JSON.stringify({
               "jsonrpc": "2.0",
@@ -46,10 +46,10 @@
               mnCoinsLockedElement.textContent = (mnCoinsLocked / 1000000).toFixed(2) + "M /";
 
               // Fetch current supply
-              fetch('https://nosostats.com:8079', {
+              fetch('https://api.nosostats.com:8078', {
                 method: 'POST',
                 headers: {
-                  'Origin': 'https://nosostats.com'
+                  'Origin': 'https://api.nosostats.com'
                 },
                 body: JSON.stringify({
                   "jsonrpc": "2.0",
