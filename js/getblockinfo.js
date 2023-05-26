@@ -40,7 +40,7 @@ fetch('https://api.nosostats.com:8078', {
       { label: "Target", value: result.target },
       { label: "Solution", value: result.solution },
       { label: "Hash", value: result.hash },
-      { label: "Block Creator", value: `<a href="getaddressbalance.html?address=${result.miner}">${result.miner}</a>` },
+      { label: "Noso Mint Address", value: `<a href="getaddressbalance.html?address=${result.miner}">${result.miner}</a>` },
       { label: "Coins Minted", value: (result.reward * 0.00000001).toFixed(8) },
       { label: "Fees Paid", value: (result.feespaid * 0.00000001).toFixed(8) }
     ];

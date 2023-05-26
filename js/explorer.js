@@ -51,7 +51,7 @@ fetch('https://api.nosostats.com:8078', {
       <tr>
         <td><img src="img/cube.gif" width="70px"></td>
         <td><span>Block <a href="getblockinfo.html?blockheight=${block.number}">${block.number}</a><br>${getTimeAgo(block.timeend)}</span></td>
-        <td>Block Creator <a href="getaddressbalance.html?address=${block.miner}">${block.miner}</a><br><a href="getblockorders.html?blockheight=${block.number}">${block.totaltransactions}</a>
+        <td>Hash <a href="getblockorders.html?blockheight=${block.number}">${block.hash}</a><br><a href="getblockorders.html?blockheight=${block.number}">${block.totaltransactions}</a>
         Transactions in 599 seconds</td>
 
       </tr>
