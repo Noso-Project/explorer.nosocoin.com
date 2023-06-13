@@ -1,6 +1,6 @@
 function fetchMarketData() {
   // NOSO-USDT
-  const usdtApiUrl = 'http://api.nosocoin.com:3001/api/public/getticker?market=NOSO/USDT';
+  const usdtApiUrl = 'https://api.nosocoin.com:3001/api/public/getticker?market=NOSO/USDT';
 
   fetch(usdtApiUrl)
     .then(response => response.json())
