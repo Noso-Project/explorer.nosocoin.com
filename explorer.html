@@ -25,8 +25,9 @@ crossorigin="anonymous">
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <!--style-->
   </head>
-  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                          background-image: url();">
-    <div id="wrapper"> <!-- Sidebar -->
+  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                                          background-image: url();">
+    <div id="wrapper">
+      <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header"> <button type="button" class="navbar-toggle"
@@ -238,211 +239,223 @@ crossorigin="anonymous">
           <div class="row2">
             <div class="col-lg-3">
               <div class="panel panel-info">
-                <div class="panel-head-tiles">
+                <div class="panel-head-tiles2">
                   <div class="row">
-                    <div class="col-xs-6">
-                      <p class="announcement-heading" style="margin-left: 26px; width: 164px;">
-                        <span id="node-count">0</span> <br>
-                        <font class="announcement-subheading"></font></p>
-                      <p class="announcement-text" style="width: 176px;"><font color="white">
-                        </font>&nbsp; Active Masternodes<font size="2"></font></p>
-                    </div>
-                  </div>
-                </div>
-                <a href="masternodes.html">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-6">Masternodes</div>
-                      <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
-                      </div>
-                    </div>
-                  </div>
-                </a> </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="panel panel-info">
-                <div class="panel-head-tiles">
-                  <div class="row" id="refresh">
-                    <div class="col-xs-6 text-right" id="divrefresh">
-                      <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+                    <div class="col-xs-6 text-right">
+                      <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
 
-                          id="getpendingorders2">0</span></p>
-                      <p class="announcement-text" style="width: 176px;">Current
-                        Block Pending Transactions</p>
-                    </div>
+                          id="node-count">0</span><font class="announcement-subheading2">&nbsp;&nbsp;&nbsp;Active
+                          Nodes</font></p>
+                      <p class="announcement-text2" style="width: 176px;"><font
+
+                          size="2"> Current AROI&nbsp;<font color="white"><span
+
+                              id="node-aroi">0</span></font><font color="white">%
+                          </font>&nbsp;<font color="white">/ $<span id="node-aroi-usdt"></span></font>&nbsp;/yr<br>
+                        </font></p>
+                      <font size="2">
+                        <p class="announcement-text2" style="width: 176px;">Reward
+                          last block:&nbsp;<font color="white"><span id="node-reward">0</span>&nbsp;Noso</font>
+                        </p>
+                      </font></div>
                   </div>
-                </div>
-                <a href="getpendingorders.html">
-                  <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                      <div class="col-xs-6">Pending Transactions</div>
-                      <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
+                  <font size="2"> </font></div>
+                <font size="2"> <a href="masternodes.html">
+                    <div class="panel-footer announcement-bottom">
+                      <div class="row">
+                        <div class="col-xs-6">Masternodes</div>
+                        <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </a> </div>
-            </div>
+                  </a> </font></div>
+              <font size="2"> </font></div>
             <font size="2">
               <div class="col-lg-3">
                 <div class="panel panel-info">
                   <div class="panel-head-tiles">
-                    <div class="row">
-                      <div class="col-xs-6 text-right">
-                        <p class="announcement-heading" style="margin-left: 0px; width: 164px;"><span
+                    <div class="row" id="refresh">
+                      <div class="col-xs-6 text-right" id="divrefresh">
+                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
 
-                            id="halving-timer">0</span><font class="announcement-subheading">Blocks
-                            Remaining</font></p>
-                        <p class="announcement-text" style="width: 176px;"><font
-
-                            color="white"><span id="halving-timer-days">0</span></font>&nbsp;
-                          Days until Next Halving</p>
+                            id="getpendingorders2">0</span></p>
+                        <p class="announcement-text" style="width: 176px;">Current
+                          Block Pending Transactions</p>
                       </div>
                     </div>
                   </div>
-                  <a href="explorer.html">
+                  <a href="getpendingorders.html">
                     <div class="panel-footer announcement-bottom">
                       <div class="row">
-                        <div class="col-xs-6">NOSO Explorer</div>
+                        <div class="col-xs-6">Pending Transactions</div>
                         <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
                         </div>
                       </div>
                     </div>
                   </a> </div>
               </div>
-              <div class="col-lg-3">
-                <div class="panel panel-info">
-                  <div class="panel-head-tiles">
-                    <div class="row">
-                      <div class="col-xs-6 text-right">
-                        <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
-
-                            id="noso-usdt-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
-                            NOSO-USDT </font></p>
-                        <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
-
-                            id="noso-btc-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
-                            NOSO-BTC </font></p>
-                      </div>
-                    </div>
-                  </div>
-                  <a target="_blank" href="https://coinpaprika.com/coin/noso-noso/">
-                    <div class="panel-footer announcement-bottom">
+              <font size="2">
+                <div class="col-lg-3">
+                  <div class="panel panel-info">
+                    <div class="panel-head-tiles">
                       <div class="row">
-                        <div class="col-xs-6">NOSO Market</div>
-                        <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
+                        <div class="col-xs-6 text-right">
+                          <p class="announcement-heading" style="margin-left: 0px; width: 164px;"><span
+
+                              id="halving-timer">0</span><font class="announcement-subheading">Blocks
+                              Remaining</font></p>
+                          <p class="announcement-text" style="width: 176px;"><font
+
+                              color="white"><span id="halving-timer-days">0</span></font>&nbsp;
+                            Days until Next Halving</p>
                         </div>
                       </div>
                     </div>
-                  </a> </div>
+                    <a href="explorer.html">
+                      <div class="panel-footer announcement-bottom">
+                        <div class="row">
+                          <div class="col-xs-6">NOSO Explorer</div>
+                          <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a> </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="panel panel-info">
+                    <div class="panel-head-tiles">
+                      <div class="row">
+                        <div class="col-xs-6 text-right">
+                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+
+                              id="noso-usdt-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
+                              NOSO-USDT </font></p>
+                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+
+                              id="noso-btc-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
+                              NOSO-BTC </font></p>
+                        </div>
+                      </div>
+                    </div>
+                    <a target="_blank" href="https://coinpaprika.com/coin/noso-noso/">
+                      <div class="panel-footer announcement-bottom">
+                        <div class="row">
+                          <div class="col-xs-6">NOSO Market</div>
+                          <div class="col-xs-6 text-right"> <i class="fa fa-arrow-circle-right"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </a> </div>
+                </div>
+              </font> </font></div>
+          <font size="2"> </font></div>
+        <font size="2"> </font></div>
+      <font size="2">
+        <div class="row">
+          <div class="row"> <br>
+            <div class="my-grid-container">
+              <div class="my-grid-child" style="min-width: 300px" ;="">
+                <center>
+                  <h3>Latest Blocks</h3>
+                </center>
+                <table class="styled-table1">
+                  <thead>
+                    <tr>
+                      <th width="80px"><br>
+                      </th>
+                      <th width="100px"><br>
+                      </th>
+                      <th width="200px"> <br>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="block-table">
+                  </tbody>
+                </table>
+                <br>
+                <center>
+                  <div class="button-container"> <button id="backward-btn">Previous</button>
+                    <button id="forward-btn">Next</button> </div>
+                </center>
               </div>
-            </font> </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="row"> <br>
-          <div class="my-grid-container">
-            <div class="my-grid-child" style="min-width: 300px" ;="">
-              <center>
-                <h3>Latest Blocks</h3>
-              </center>
-              <table class="styled-table1">
-                <thead>
-                  <tr>
-                    <th width="80px"><br>
-                    </th>
-                    <th width="100px"><br>
-                    </th>
-                    <th width="200px"> <br>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody id="block-table">
-                </tbody>
-              </table>
-              <br>
-              <center>
-                <div class="button-container"> <button id="backward-btn">Previous</button>
-                  <button id="forward-btn">Next</button> </div>
-              </center>
-            </div>
-            <div class="my-grid-child" style="min-width: 300px" ;="">
-              <center>
-                <h3> Pending Transactions</h3>
-              </center>
-              <table class="styled-table1">
-                <thead>
-                  <tr>
-                    <th colspan="5"><font size="3"> </font> <br>
-                    </th>
-                    <th> <br>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody id="getpendingorders">
-                </tbody>
-              </table>
-              <br>
-              <center>
-                <div class="button-container"><button id="pendingordersbutton">More
-                    Transactions</button></div>
-              </center>
-              <div id="mns-rewards-table"></div>
+              <div class="my-grid-child" style="min-width: 300px" ;="">
+                <center>
+                  <h3> Pending Transactions</h3>
+                </center>
+                <table class="styled-table1">
+                  <thead>
+                    <tr>
+                      <th colspan="5"><font size="3"> </font> <br>
+                      </th>
+                      <th> <br>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody id="getpendingorders">
+                  </tbody>
+                </table>
+                <br>
+                <center>
+                  <div class="button-container"><button id="pendingordersbutton">More
+                      Transactions</button></div>
+                </center>
+                <div id="mns-rewards-table"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <br>
-      <br>
-      <div class="exprow">
-        <div><br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
+        <br>
+        <br>
+        <div class="exprow">
+          <div><br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
 
-              alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
+                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
 
-              size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; | &nbsp;
-              Built by the NOSO Community</font> </div>
+                size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
+                &nbsp; Built by the NOSO Community</font> </div>
+          </div>
         </div>
-      </div>
-      <!-- /.row -->
-      <!-- /.row --> <font size="2">
-        <!-- /#page-wrapper -->
-        <!-- /#wrapper -->
-        <!-- JavaScript -->
-        <script src="js/jquery-1.10.2.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <!-- Page Specific Plugins --> </font>
-      <!-- rpc api -->
-      <script src="js/explorer.js"></script>
-      <script src="js/getpendingorders.js"></script>
-      <script src="js/getmainnetinfo.js"></script>
-      <script src="js/getblockmns2.js"></script>
-      <script src="js/countdown2.js"></script>
-      <script src="js/tvl.js"></script>
-      <!--mongo api -->
-      <!--<script src="js/countdown.js"></script>-->
-      <!--external api -->
-      <script src="js/getprice.js"></script>
-      <style>
+        <!-- /.row -->
+        <!-- /.row --> <font size="2">
+          <!-- /#page-wrapper -->
+          <!-- /#wrapper -->
+          <!-- JavaScript -->
+          <script src="js/jquery-1.10.2.js"></script>
+          <script src="js/bootstrap.js"></script>
+          <!-- Page Specific Plugins --> </font>
+        <!-- rpc api -->
+        <script src="js/explorer.js"></script>
+        <script src="js/getpendingorders.js"></script>
+        <script src="js/getmainnetinfo.js"></script>
+        <!-- <script src="js/getblockmns2.js"></script> -->
+        <script src="js/countdown2.js"></script>
+        <script src="js/tvl.js"></script>
+        <!--mongo api -->
+        <!--<script src="js/countdown.js"></script>-->
+        <!--external api -->
+        <script src="js/getprice.js"></script>
+        <style>
     @media only screen and (max-width: 400px) {
       tr:nth-child(n+5) {
         display: none;
       }
     }
   </style>
-      <script>
+        <script>
       function refreshPage() {
         if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
           location.reload();
         }
       }
     </script>
-      <script>
+        <script>
 const pendingordersbutton = document.getElementById('pendingordersbutton');
 pendingordersbutton.addEventListener('click', () => {
   window.location.href = 'getpendingorders.html';
@@ -489,6 +502,6 @@ document.getElementById('search').addEventListener('keypress', function (e) {
     search();
   }
 });
-</script> </div>
+</script> </font></div><font size="2"> </font>
   </body>
 </html>
