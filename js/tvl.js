@@ -70,18 +70,37 @@ document.addEventListener('DOMContentLoaded', function() {
               const totalValueLocked = (mnCoinsLocked * lastPrice) * .000001;
               totalValueLockedElement.textContent = "$" + totalValueLocked.toFixed(2) + " M";
 
-              // Calculate NOSOMCAP
-              const currentSupply = data.result[0].supply;
-              const nosomcap = currentSupply * lastPrice;
-              nosomcapElement.textContent = "$" + (nosomcap / 100000000000000).toFixed(2) + " M";
+              // Fetch current supply
+              fetch('https://api.nosostats.com:8078', {
+                method: 'POST',
+                headers: {
+                  'Origin': 'https://api.nosostats.com'
+                },
+                body: JSON.stringify({
+                  "jsonrpc": "2.0",
+                  "method": "getmainnetinfo",
+                  "params": [],
+                  "id": 11
+                })
+              })
+                .then(response => response.json())
+                .then(data => {
+                  const currentSupply = data.result[0].supply;
 
-              // Calculate TVL percentage
-              const tvlPercentage = (mnCoinsLocked / currentSupply) * 10000000000;
-              tvlPercentageElement.textContent = tvlPercentage.toFixed(0) + "%"; // Round to the nearest whole number
+                  // Calculate NOSOMCAP
+                  const nosomcap = currentSupply * lastPrice;
+                  nosomcapElement.textContent = "$" + (nosomcap / 100000000000000).toFixed(2) + " M";
 
-              // Calculate Circulating
-              const circulating = (currentSupply / 21000000) * .000001;
-              circulatingElement.textContent = circulating.toFixed(2) + "%";
+                  // Calculate Circulating
+                  const circulating = ((currentSupply / 2100000000000000) * 100).toFixed(2);
+                  const circulatingFormatted = Math.floor(circulating) + "." + (circulating % 1 * 100).toFixed(0);
+                  circulatingElement.textContent = circulatingFormatted + "%";
+
+                  // Calculate TVL percentage
+                  const tvlPercentage = (mnCoinsLocked / currentSupply) * 10000000000;
+                  tvlPercentageElement.textContent = Math.round(tvlPercentage).toFixed(0) + "%"; // Round to the nearest whole number
+                })
+                .catch(error => console.error(error));
             })
             .catch(error => console.error(error));
         })
