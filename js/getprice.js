@@ -52,8 +52,7 @@ async function displayData() {
 
     const btcValue = await fetchBTCValue();
     if (btcValue) {
-      // Calculate Noso to BTC value
-      const nosoValueInUsdt = 0.08; // Replace with the actual Noso value
+      const nosoValueInUsdt = livecoinWatchData.rate; // Use the obtained Noso value
       const nosoToBtcValue = (nosoValueInUsdt / btcValue).toFixed(8); // Round to eight decimal places
       nosoBtcLastPriceElement.textContent = nosoToBtcValue;
     } else {
