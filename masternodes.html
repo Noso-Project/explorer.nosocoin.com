@@ -18,7 +18,6 @@ crossorigin="anonymous">
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
-
     <!--style-->
     <style>
     .column {
@@ -34,7 +33,7 @@ crossorigin="anonymous">
 }
     </style>
   </head>
-  <body color="#222222" style="                                                                                                                                                                                                                                                        background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                                                                                                                                                                                                                                                                                           background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -109,50 +108,145 @@ crossorigin="anonymous">
           </div>
         </div>
         <!-- /.row --> </div>
+      <!--------------MN Block Height----------------------->
       <div class="row">
-        <div class="row" style="max-width: 300px"> <br>
-          <div class="my-grid-container2">
-            <div class="my-grid-child2" style="min-width: 100px" ;="">
-              <center>
-                <h3>Masternodes</h3>
-              </center>
-              <br>
-              <p class="announcement-text" style="width: 300px;">Block
-                Height:&nbsp;<br>
-                Active nodes: &nbsp;<font size="2px" color="white"><font size="2px"
-                    color="white"><span id="blockheight"></span><br>
-                    <span id="node-count">0</span></font>&nbsp; </font> <br>
-                <font class="announcement-subheading"></font></p>
-            </div>
-            <div class="my-grid-child" style="min-width: 300px" ;="">
-              <center> <br>
-              </center>
-              <br>
-              <br>
-              <br>
-              <div class="column">
-                <p class="announcement-text" style="width: 300px;">Block
-                  Reward:&nbsp; <br>
-                  24 hour:&nbsp;<font color="white"><span id="node-reward"></span><br>
-                    <span id="node-24hr-reward"></span><br>
-                  </font> </p>
-                <p></p>
+        <div class="col-lg-12">
+          <div class="row2">
+            <div class="col-lg-3">
+              <div class="panel panel-info">
+                <div class="panel-head-tiles">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <p class="announcement-text" style="width: 300px;">Block
+                        Height:&nbsp;<font size="2px" color="white"> <span id="blockheight">0</span></font>
+                        <br>
+                        <font class="announcement-subheading"></font></p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+            <!--------------Active Nodes----------------------->
+            <div class="col-lg-3">
+              <div class="panel panel-info">
+                <div class="panel-head-tiles">
+                  <div class="row" id="refresh">
+                    <div class="col-xs-6 text-right" id="divrefresh">
+                      <p class="announcement-text" style="width: 300px;">Total
+                        MasterNode Reward:&nbsp; <font color="white"> <span id="total-reward">0</span><br>
+                        </font> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <font size="2">
+              <!--------------Node block reward----------------------->
+              <div class="col-lg-3">
+                <div class="panel panel-info">
+                  <div class="panel-head-tiles">
+                    <div class="row" id="refresh">
+                      <div class="col-xs-6 text-right" id="divrefresh">
+                        <p class="announcement-text" style="width: 300px;">Node
+                          Block Reward:&nbsp;<font color="white"><span id="node-reward">0</span><br>
+                          </font> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--------------Node 7 day reward----------------------->
+              <div class="col-lg-3">
+                <div class="panel panel-info">
+                  <div class="panel-head-tiles">
+                    <div class="row" id="refresh">
+                      <div class="col-xs-6 text-right" id="divrefresh">
+                        <p class="announcement-text" style="width: 300px;"> Node
+                          7 day Reward:&nbsp;<font color="white"> <span id="node-7day-reward">0</span><br>
+                          </font> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </font></div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row2">
+              <!--------------Node 7 day reward----------------------->
+            <div class="col-lg-3">
+              <div class="panel panel-info">
+                <div class="panel-head-tiles">
+                  <div class="row">
+                    <div class="col-xs-6">
+                      <p class="announcement-text" style="width: 300px;">Active
+                        nodes: &nbsp;<font size="2px" color="white"><font size="2px"
+                            color="white"><span id="node-count">0</span></font>&nbsp;
+                          </font> <br> <font class="announcement-subheading"></font></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!--------------Total Node funds locked----------------------->
+            <div class="col-lg-3">
+              <div class="panel panel-info">
+                <div class="panel-head-tiles">
+                  <div class="row" id="refresh">
+                    <div class="col-xs-6 text-right" id="divrefresh">
+                      <p class="announcement-text" style="width: 300px;"> Total
+                        Funds Locked:&nbsp;<font color="white"> <span id="node-funds-locked">0</span><br>
+                        </font> </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <font size="2">
+              <!--------------Node 24hr reward----------------------->
+              <div class="col-lg-3">
+                <div class="panel panel-info">
+                  <div class="panel-head-tiles">
+                    <div class="row" id="refresh">
+                      <div class="col-xs-6 text-right" id="divrefresh">
+                        <p class="announcement-text" style="width: 300px;">Node
+                          24hr Reward:&nbsp; <font color="white"><span id="node-24hr-reward">0</span><br>
+                          </font> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--------------Node 30 day reward----------------------->
+              <div class="col-lg-3">
+                <div class="panel panel-info">
+                  <div class="panel-head-tiles">
+                    <div class="row" id="refresh">
+                      <div class="col-xs-6 text-right" id="divrefresh">
+                        <p class="announcement-text" style="width: 300px;">Node
+                          30 day Reward:&nbsp;<font color="white"> <span id="node-30day-reward">0</span><br>
+                          </font> </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </font></div>
+        </div>
+      </div>
+      <!------------------------------------->
       <div class="styled-table1">
         <div class="panel-head-tiles">
           <div class="row">
             <div class="row">
-              <div class="column"> </div>
+              <div class="button-container"> <button id="backButton">Previous
+                  Block</button> <button id="forwardButton">Next Block</button></div>
             </div>
           </div>
         </div>
-        <p><font size="3px" color="white">Masternode Total Block Reward: </font>
-          <span id="total-reward"></span></p>
-        <p><font size="2px" color="white">The following addresses were paid in
+        <p><font size="2px" color="white">Masternodes paid in this
             block:</font></p>
         <div id="mns-rewards-table"><br>
           <br>
