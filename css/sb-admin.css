@@ -355,7 +355,43 @@ table.tablesorter thead tr th:hover {
     transform: rotate(360deg);
   }
 }
+#api-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #222222;
+}
+.table-header {
+    display: flex;
+    border-bottom: 2px solid #333; /* Add a border between header and body */
+    font-weight: bold; /* Make header text bold */
+}
 
+.header-cell {
+    flex: 1;
+    padding: 8px;
+    text-align: center;
+    color: white; 
+}
+.table-row {
+    display: flex;
+    border-bottom: 1px solid black;
+
+}
+
+.cell {
+    flex: 1;
+    padding: 8px;
+    word-break: break-all;
+    color: white;
+    text-align: center;
+}
+
+.cell:nth-child(2),
+.cell:nth-child(5),
+.cell:nth-child(6) {
+    text-align: center;
+}
 
 /* Node styled table */
 
@@ -460,6 +496,7 @@ table.tablesorter thead tr th:hover {
     border-bottom: 1px solid #222222;
     color: lightgrey;
 }
+
 
 .styled-table1 tbody tr:nth-of-type(even) {
     background-color: black;
@@ -882,6 +919,28 @@ input[type="search"]::placeholder {
   padding: 2px;
   border: 1px solid currentColor;
   border-radius: 5px;
+}
+.search2-wrapper {
+  position: relative;
+  display: inline-block;
+background-color:black;
+  color: #555;
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid currentColor;
+  border-radius: 5px;
+}
+input[type="text"] {
+  border: none;
+  background: #222222;
+  margin: 0;
+  padding: 7px 8px;
+  font-size: 14px;
+  color: #bbb;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  width: 100%;
+  
 }
 
 input[type="search1"] {

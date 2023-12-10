@@ -48,7 +48,7 @@ fetch('https://api.nosostats.com:8078', {
     // Create an array of objects containing the table data
     const tableData = [
       { label: "Exists in Blockchain", value: result.valid },
-      { label: "Noso Address", value: result.address },
+      { label: "Noso Address", value: `<a href="getaddresshistory.html?address=${result.address}">${result.address}</a>` },
       { label: "Address Alias", value: result.alias },
       { label: "Current Balance", value: currentBalance.toFixed(8) }, // Specify 8 decimal places
       { label: "Incoming Noso in Current Block", value: (result.incoming * 0.00000001).toFixed(8) }, // Specify 8 decimal places
