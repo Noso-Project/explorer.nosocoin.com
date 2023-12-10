@@ -26,13 +26,13 @@ $(document).ready(function () {
 
                     function appendTransaction(transaction, type) {
                         const transactionDiv = $('<div class="table-row"></div>');
-                        transactionDiv.append($('<div class="cell"></div>').html('<a href="getordersinfo.html?orderid=' + transaction.order_id + '">' + transaction.order_id + '</a>'));
-                        transactionDiv.append($('<div class="cell"></div>').text(transaction.amount));
-                        transactionDiv.append($('<div class="cell"></div>').html('<a href="getblockinfo.html?blockheight=' + transaction.block_id + '">' + transaction.block_id + '</a>'));
-                        transactionDiv.append($('<div class="cell"></div>').text(type));
-                        transactionDiv.append($('<div class="cell"></div>').html('<a href="getaddressbalance.html?address=' + (type === 'Inbound' ? transaction.sender : transaction.receiver) + '">' + (type === 'Inbound' ? transaction.sender : transaction.receiver) + '</a>'));
+                        transactionDiv.append($('<div class="cell priority-1"></div>').html('<a href="getordersinfo.html?orderid=' + transaction.order_id + '">' + transaction.order_id + '</a>'));
+                        transactionDiv.append($('<div class="cell priority-1"></div>').text(transaction.amount));
+                        transactionDiv.append($('<div class="cell priority-4"></div>').html('<a href="getblockinfo.html?blockheight=' + transaction.block_id + '">' + transaction.block_id + '</a>'));
+                        transactionDiv.append($('<div class="cell priority-4"></div>').text(type));
+                        transactionDiv.append($('<div class="cell priority-4"></div>').html('<a href="getaddressbalance.html?address=' + (type === 'Inbound' ? transaction.sender : transaction.receiver) + '">' + (type === 'Inbound' ? transaction.sender : transaction.receiver) + '</a>'));
 
-                        transactionDiv.append($('<div class="cell"></div>').text(transaction.timestamp));
+                        transactionDiv.append($('<div class="cell priority-1"></div>').text(transaction.timestamp));
 
                         tableBody.append(transactionDiv);
                     }
