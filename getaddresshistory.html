@@ -11,7 +11,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-80%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,14 +19,13 @@
 }
 
 .spinner-container {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Use the full height of the viewport */
 }
 
 .spinner {
-  position: absolute;
-  top: 60%;
-  left: 40%;
-  transform: translate(-50%, -50%);
   border: 4px solid rgba(0, 0, 0, 0.1);
   border-top-color: transparent;
   border-right-color: #7988a3;
@@ -43,6 +42,14 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 768px) {
+  .spinner {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 
     </style>
     <!-- Include Highcharts library -->
