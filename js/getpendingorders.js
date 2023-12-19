@@ -16,7 +16,16 @@ function refreshTable() {
     const pendings = data.result[0].pendings;
     const container = document.getElementById('getpendingorders');
     container.innerHTML = ''; // clear existing content
+
+    // Add a counter to limit the number of displayed orders
+    let orderCounter = 0;
+
     pendings.forEach(pending => {
+      // Continue the loop even if the maximum number of orders has been reached
+      if (orderCounter >= 3) {
+        return; // Skip the current iteration if the maximum number is reached
+      }
+
       const [orderID, orderTimestamp, orderType, sender, receiver, orderAmount, orderFee, orderReference] = pending.split(',');
       const senderLink = `<a href="getaddressbalance.html?address=${sender}" style="color: #428bca;">${sender}</a>`;
       const receiverLink = `<a href="getaddressbalance.html?address=${receiver}" style="color: #428bca;">${receiver}</a>`;
@@ -52,6 +61,9 @@ function refreshTable() {
       divContainer.appendChild(divRight);
 
       container.appendChild(divContainer);
+
+      // Increment the order counter
+      orderCounter++;
     });
   })
   .catch(error => console.error(error));
