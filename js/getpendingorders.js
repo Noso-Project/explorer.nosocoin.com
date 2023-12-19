@@ -42,8 +42,8 @@ function refreshTable() {
       const divLeft = document.createElement('div');
       divLeft.classList.add('left-column');
       divLeft.innerHTML = `
-        <br><img src="img/logo_clearbg.png" width="15px">&nbsp;<span style="color: lightgray;">${orderType}</span><br>
-        ${timestampDisplay}
+        <br><span style="white-space:nowrap; color: lightgray;"><img src="img/logo_clearbg.png" width="14px">&nbsp;&nbsp;${orderType}&nbsp;&nbsp;${minutesAgo}&nbsp;minute(s)&nbsp;ago</span><br>
+        
       `;
       divContainer.appendChild(divLeft);
 
@@ -51,8 +51,7 @@ function refreshTable() {
       divRight.classList.add('right-column');
       divRight.innerHTML = `
         <span style="color: lightgray;">OrderID:&nbsp;&nbsp;${orderIDLink}</span>
-        <span style="color: lightgray;">Amount:&nbsp;&nbsp;<b>${orderAmountFormatted}</b></span>
-        <span style="color: lightgray;">TxFee:&nbsp;&nbsp;<b>${orderFeeFormatted}</b></span>
+        <span style="color: lightgray;">Amount:&nbsp;&nbsp;<b>${orderAmountFormatted}&nbsp;&nbsp;TxFee:&nbsp;&nbsp;<b>${orderFeeFormatted}</b></b></span>
         <span style="color: lightgray;">Sender:&nbsp;&nbsp;${senderLink}</span>
         <span style="color: lightgray;">Receiver:&nbsp;&nbsp;${receiverLink}</span>
         <span style="color: lightgray;">Reference:&nbsp;&nbsp;${orderReference}</span><br>        

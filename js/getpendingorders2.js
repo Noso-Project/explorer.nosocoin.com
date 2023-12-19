@@ -27,9 +27,8 @@ function refreshTable() {
 
       const row = `
         <tr>
-          <td width="300px"><img src="img/logo_clearbg.png" width="15px">&nbsp;${orderType}<span><br>
+          <td width="300px"><span style="white-space:nowrap; color: lightgray;"><img src="img/logo_clearbg.png" width="15px">&nbsp;${orderType}&nbsp;&nbsp;${minutesAgo}&nbsp;ago</span><br>
           <span>Order ID:&nbsp;&nbsp;${orderIDLink}</span><br>
-          <span>Timestamp:&nbsp;&nbsp;${minutesAgo} ago</span><br>
           <span>NOSO sent:&nbsp;&nbsp;<font color="gray">${orderAmountFormatted}</font><b>&nbsp;&nbsp;&nbsp;Tx Fee:</b>&nbsp;&nbsp;<font color="gray">${orderFeeFormatted}</font></span><br>
           <span>Sender:&nbsp;&nbsp;${senderLink}</span><br>
           <span>Receiver:&nbsp;&nbsp;${receiverLink}</span><br>
