@@ -49,7 +49,7 @@ async function displayData() {
       nosoBtcLastPriceElement.textContent = "Failed to calculate Noso to BTC value.";
     }
   } else {
-    nosoUsdtLastPriceElement.textContent = "Failed to fetch data from NosoCoin API.";
+    nosoUsdtLastPriceElement.textContent = "API Unavailable.";
     nosoBtcLastPriceElement.textContent = "";
   }
 }
