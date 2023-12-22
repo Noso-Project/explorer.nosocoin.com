@@ -8,13 +8,13 @@
     <meta name="author" content="">
     <title>Noso Explorer</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-    integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-    crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
+crossorigin="anonymous">
 </script>
-
-<script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!---chart-->
     <!-- Bootstrap core CSS -->
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+
     <!--style-->
   </head>
   <body color="#222222" style="                                                                                                                                                                                        background-image: url(&quot;&quot;);">
@@ -45,13 +46,13 @@
           <ul class="nav navbar-nav side-nav">
             <!--  <li><a href="explorer.html"><i class="fa fa-dashboard"></i>
                 NosoStats</a></li> -->
-            <li  class="active"><a href="explorer.html"><i class="fa fa-search"></i> Explorer</a></li>
+            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i>
+                Explorer</a></li>
             <!--  <li><a href="coins.html"> Coin Distribution</a></li>
             <li><a href="addresses.html"> Top Addresses</a></li> -->
             <li><a href="masternodes.html"><i class="fa fa-globe"></i>
                 Masternodes</a></li>
-            <li><a href="api.html"><i class="fa fa-wrench"></i>
-                API </a></li>
+            <li><a href="api.html"><i class="fa fa-wrench"></i> API </a></li>
             <!--<li><a href="charts.html">Charts</a></li> -->
             <!-- <li><a href="market.html"><i class="fa fa-money"></i>
                 Market</a></li> -->
@@ -86,35 +87,7 @@
         <div class="col-lg-12"><br>
           <div class="rowsearch">
             <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
 
-                style="display: none;"> <input id="block-search" name="blockheight"
-
-                  placeholder="Search Block Number" type="search"> <button type="submit">Search
-                  Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-
-                style="display: none;"> <input id="address-search" name="address"
-
-                  placeholder="Search Address" type="search"> <button type="submit">Search
-                  Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-
-                style="display: none;"> <input id="alias-search" name="address"
-
-                  placeholder="Search Alias" type="search"> <button type="submit">Search
-                  Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-
-                style="display: none;"> <input id="order-search" name="orderid"
-
-                  placeholder="Search Order ID" type="search"> <button type="submit">Search
-                  Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
-
-                  type="search"> <button type="submit1" onclick="search()"></button>
-              </div>
-              <!-- Results will be displayed on Explorer page --> </div>
             <br>
             <!-- / .Multi Search form -->
             <!-- / .Hidden block search-form --> <br>
@@ -125,21 +98,20 @@
 
                   type="submit">Search</button> </form>
             </div>
-            <!-- / .Hidden block search-form --> 
-          </div>
+            <!-- / .Hidden block search-form --> </div>
           <div class="row">
-<div class="exprow">
-  <center>
-    <h3>Scan Your Wallet Address</h3>
-  </center>
-  <div class="button-container">
-    <button onclick="startScanning()">Start Scanning</button>
-    <p id="result"></p>
-  </div>
-  <!-- Add the following video element with the ID "preview" -->
-  <video id="preview" style="width: 100%;"></video>
-</div>
+            <div class="exprow">
+              <center>
+                <h3>Scan Your Wallet Address</h3>
+              </center>
+              <div class="button-container"> <button onclick="startScanning()">Start
+                  Scanning</button>
+                <p id="result"></p>
+              </div>
+              <!-- Add the following video element with the ID "preview" --> <video
 
+                id="preview" style="width: 100%;"></video>
+            </div>
           </div>
         </div>
         <div><br>
@@ -201,8 +173,8 @@
                 resultContainer.innerHTML = 'Error initializing scanner. Please try again.';
             }
         }
-    </script>    
-<script>
+    </script>
+    <script>
 function search() {
   const input = document.getElementById('search').value.trim();
 if (/^\d{1,10}$/.test(input)) {

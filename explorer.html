@@ -22,9 +22,22 @@ crossorigin="anonymous">
     <link href="css/sb-admin.css" rel="stylesheet">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
+    <style> 
+    @media only screen and (min-width: 600px) {
+  .button-container {
+    display: none;
+  }
+}
+
+/* Add this media query to show buttons on screens up to 600px */
+@media only screen and (max-width: 600px) {
+  .button-container {
+    display: block;
+  }
+    </style>
     <!--style-->
   </head>
-  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                                                        background-image: url();">
+  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                                                           background-image: url();">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -57,9 +70,9 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li> <a href="qr.html" target="_blank"><img class="priority-9"
+              <li> <a href="qr.html" target="_blank"><img class="button-container"
 
-                    src="img/qr.png" style="padding-left: 9px; width: 40px; height: 30px;"></a></li>
+                    src="img/qr.png" style="padding-right: 30px; width: 70px; height: 35px;"></a></li>
               <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
 
                     src="img/twitter_bird.png" style="width: 20px; height: 16px;"
