@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Wallet Address</title>
+    <!-- Include instascan library -->
+    <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+<body>
+    <h1>Scan Your Wallet Address</h1>
+    <button onclick="startScanning()">Start Scanning</button>
+    <p id="result"></p>
+
+    <script>
+        async function startScanning() {
+            const resultContainer = document.getElementById('result');
+
+            try {
+                // Create a scanner instance
+                const scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+
+                // Add a callback for successful scans
+                scanner.addListener('scan', function(content) {
+                    resultContainer.innerHTML = `Scanned Address: ${content}`;
+                    // Redirect or perform any other action with the scanned address
+                    window.location.href = `https://explorer.nosocoin.com/getaddressbalance.html?address=${content}`;
+                });
+
+                // Start scanning
+                Instascan.Camera.getCameras()
+                    .then(cameras => {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                        } else {
+                            throw new Error('No cameras found.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        resultContainer.innerHTML = 'Error accessing camera or no camera found.';
+                    });
+            } catch (error) {
+                console.error(error);
+                resultContainer.innerHTML = 'Error initializing scanner. Please try again.';
+            }
+        }
+    </script>
+    <video id="preview"></video>
+</body>
+</html>
