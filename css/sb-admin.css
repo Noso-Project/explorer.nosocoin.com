@@ -638,7 +638,9 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 /*  .styled-table automatic resizing based on screensize*/
 
 @media screen and (max-width: 600px) {
-
+	.priority-9 {
+		display:block;
+	}
 	.priority-8{
 		display:none;
 	}
@@ -665,7 +667,9 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 }
 @media screen and (max-width: 1000px) {
-
+	.priority-9 {
+		display:none;
+	}
 	.priority-8{
 		display:none;
 	}
@@ -686,7 +690,9 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 	
 @media screen and (max-width: 1300px) {
-
+	.priority-9 {
+		display:none;
+	}
 	.priority-8{
 		display:none;
 	}
