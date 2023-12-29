@@ -81,11 +81,27 @@ fetch('https://api.nosostats.com:8078', {
     };
     tableData.push(row8Data);
 
-    const row9Data = {
-      label: "Sender",
-      value: `<a href="getaddressbalance.html?address=${order.sender}">${order.sender}</a>`
-    };
-    tableData.push(row9Data);
+const senderInfoArray = order.sender.split('][');
+
+const row9Data = {
+  label: "Sender",
+  value: senderInfoArray.map(senderInfo => {
+    const [sender, amount, fee] = senderInfo.replace(/[\[\]]/g, '').split(',');
+    const adjustedAmount = amount * 0.00000001;
+    const adjustedFee = fee * 0.00000001;
+
+    // Include Amount and Fee only when there are multiple sender addresses
+    const amountFeeInfo = senderInfoArray.length > 1 ? ` (Amount: ${adjustedAmount}, Fee: ${adjustedFee})` : '';
+
+    return `<a href="getaddressbalance.html?address=${sender}">${sender}</a>${amountFeeInfo}`;
+  }).join('<br>')
+};
+
+tableData.push(row9Data);
+
+
+
+
 
     const row10Data = {
       label: "",
