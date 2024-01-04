@@ -1,3 +1,40 @@
+// Function to make the API call and update the DOM for mn-lock-funds
+async function fetchLockFunds() {
+  try {
+    const response = await fetch('https://api.nosocoin.com/info/locked_supply');
+    const mnLockFunds = await response.text();
+
+    if (!isNaN(mnLockFunds)) {
+      document.getElementById('mn-lock-funds').innerText = mnLockFunds;
+      return mnLockFunds;
+    } else {
+      throw new Error('mn-lock-funds data not a valid number.');
+    }
+  } catch (error) {
+    console.error('Error fetching mn-lock-funds:', error);
+  }
+}
+
+// Function to calculate and display mn-lock-count
+function displayLockCount(mnLockFunds) {
+  const mnLockCount = mnLockFunds / 10500;
+  document.getElementById('mn-lock-count').innerText = mnLockCount;
+}
+
+// Function to calculate and display mn-inactive-nodes
+function calculateInactiveNodes(mnLockCount, nodeCount) {
+  const mnInactiveNodes = mnLockCount - nodeCount;
+  document.getElementById('mn-inactive-nodes').innerText = mnInactiveNodes;
+}
+
+// Call the functions when the page loads
+fetchLockFunds().then(mnLockFunds => {
+  // Call the lock count function after fetching mn-lock-funds
+  if (!isNaN(mnLockFunds)) {
+    displayLockCount(mnLockFunds);
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   let blockHeight = urlParams.get('blockheight');
@@ -93,6 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const activeNodes = parseInt(data.result[0].count);
         const earningPercentage = (totalReward / (totalReward * activeNodes)) * 100;
         document.getElementById('earning-percentage').textContent = earningPercentage.toFixed(2) + '%';
+
+        // Call the function to calculate and display mn-inactive-nodes
+        const mnLockCount = parseFloat(document.getElementById('mn-lock-count').innerText);
+        calculateInactiveNodes(mnLockCount, nodeCount);
 
         // Call the function to fetch data for the line chart
         fetchBlockDataForChart();
@@ -263,4 +304,11 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => console.error(error));
   }
+});
+
+// Function to calculate and display mn-inactive-nodes
+document.addEventListener("DOMContentLoaded", function () {
+  const mnLockCount = parseFloat(document.getElementById('mn-lock-count').innerText);
+  const nodeCount = parseFloat(document.getElementById('node-count').innerText);
+  calculateInactiveNodes(mnLockCount, nodeCount);
 });
