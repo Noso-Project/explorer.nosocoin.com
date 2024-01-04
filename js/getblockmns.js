@@ -1,45 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-// Initial fetch to get the currentHeight
-fetch('https://api.nosostats.com:8078', {
-  method: 'POST',
-  headers: {
-    'Origin': 'https://api.nosostats.com'
-  },
-  body: JSON.stringify({
-    "jsonrpc": "2.0",
-    "method": "getmainnetinfo",
-    "params": [],
-    "id": 9
-  })
-})
-  .then(response => response.json())
-  .then(data => {
-    const currentHeight = data.result[0].lastblock;
-    if (!blockHeight) {
-      blockHeight = currentHeight;
-      urlParams.set('blockheight', blockHeight);
-      const newUrl = `${window.location.origin}${window.location.pathname}?${urlParams.toString()}`;
-      window.history.replaceState(null, '', newUrl);
-    }
+  const urlParams = new URLSearchParams(window.location.search);
+  let blockHeight = urlParams.get('blockheight');
 
-    fetchDataForBlockHeight(blockHeight);
-  })
-  .catch(error => console.error(error));
-
-
-const urlParams = new URLSearchParams(window.location.search);
-let blockHeight = urlParams.get('blockheight');
-
-// Function to update the URL with the new blockHeight value
-function updateURL(newBlockHeight) {
-  urlParams.set('blockheight', newBlockHeight);
-  const newUrl = `${window.location.origin}${window.location.pathname}?${urlParams.toString()}`;
-  window.history.replaceState(null, '', newUrl);
-}
+  // Function to update the URL with the new blockHeight value
+  function updateURL(newBlockHeight) {
+    urlParams.set('blockheight', newBlockHeight);
+    const newUrl = `${window.location.origin}${window.location.pathname}?${urlParams.toString()}`;
+    window.history.replaceState(null, '', newUrl);
+  }
 
   // Function to fetch data for a specific blockHeight
   function fetchDataForBlockHeight(blockHeight) {
-   const getsupply = document.getElementById('getsupply');
+    const getsupply = document.getElementById('getsupply');
     fetch('https://api.nosostats.com:8078', {
       method: 'POST',
       headers: {
@@ -104,42 +76,32 @@ function updateURL(newBlockHeight) {
         document.getElementById('node-24hr-reward').textContent = (data.result[0].reward * 0.00000001 * 144).toFixed(8);
         document.getElementById('node-7day-reward').textContent = (data.result[0].reward * 0.00000001 * 1008).toFixed(8);
         document.getElementById('node-30day-reward').textContent = (data.result[0].reward * 0.00000001 * 4320).toFixed(8);
- 
-	 // Blockheight
-	   var blockheightElement = document.getElementById('blockheight');
-	  var blockheightLink = document.createElement("a");
-	  blockheightLink.href = "getblockinfo.html?blockheight=" + blockHeight;
-	  blockheightLink.textContent = blockHeight;
-	  blockheightElement.appendChild(blockheightLink);
 
-	// Node Locked Funds
+        // Blockheight
+        var blockheightElement = document.getElementById('blockheight');
+        var blockheightLink = document.createElement("a");
+        blockheightLink.href = "getblockinfo.html?blockheight=" + blockHeight;
+        blockheightLink.textContent = blockHeight;
+        blockheightElement.appendChild(blockheightLink);
+
+        // Node Locked Funds
         const nodeCount = data.result[0].count;
         document.getElementById('node-funds-locked').textContent = parseInt(nodeCount * 10500);
-	
 
         // Calculate and set the earning-percentage
         const totalReward = parseFloat(data.result[0].total * 0.00000001);
         const activeNodes = parseInt(data.result[0].count);
         const earningPercentage = (totalReward / (totalReward * activeNodes)) * 100;
         document.getElementById('earning-percentage').textContent = earningPercentage.toFixed(2) + '%';
+
+        // Call the function to fetch data for the line chart
+        fetchBlockDataForChart();
       })
       .catch(error => console.error(error));
   }
 
-// Handle the "Back" button click
-document.getElementById('backButton').addEventListener('click', () => {
-  if (blockHeight) {
-    blockHeight = Math.max(1, parseInt(blockHeight) - 1); // Ensure it doesn't go lower than 1
-    updateURL(blockHeight);
-    fetchDataForBlockHeight(blockHeight);
-    location.reload();
-  }
-});
-
-// Handle the "Forward" button click
-document.getElementById('forwardButton').addEventListener('click', () => {
-  if (blockHeight) {
-    // Fetch the current height
+  // Fetch the currentHeight if blockHeight is not available
+  if (!blockHeight) {
     fetch('https://api.nosostats.com:8078', {
       method: 'POST',
       headers: {
@@ -155,17 +117,62 @@ document.getElementById('forwardButton').addEventListener('click', () => {
       .then(response => response.json())
       .then(data => {
         const currentHeight = data.result[0].lastblock;
-
-        if (blockHeight < currentHeight) {
-          blockHeight = parseInt(blockHeight) + 1;
-          updateURL(blockHeight);
-          fetchDataForBlockHeight(blockHeight);
-          location.reload();
-        }
+        blockHeight = currentHeight;
+        updateURL(blockHeight);
+        fetchDataForBlockHeight(blockHeight);
       })
       .catch(error => console.error(error));
+  } else {
+    // If blockHeight is available in the URL, directly fetch data
+    fetchDataForBlockHeight(blockHeight);
   }
-});
+
+  // Handle the "Back" button click
+  document.getElementById('backButton').addEventListener('click', () => {
+    if (blockHeight) {
+      blockHeight = Math.max(1, parseInt(blockHeight) - 1); // Ensure it doesn't go lower than 1
+      updateURL(blockHeight);
+      fetchDataForBlockHeight(blockHeight);
+      location.reload();
+    }
+  });
+
+  // Handle the "Forward" button click
+  document.getElementById('forwardButton').addEventListener('click', () => {
+    if (blockHeight) {
+      // Fetch the current height
+      fetch('https://api.nosostats.com:8078', {
+        method: 'POST',
+        headers: {
+          'Origin': 'https://api.nosostats.com'
+        },
+        body: JSON.stringify({
+          "jsonrpc": "2.0",
+          "method": "getmainnetinfo",
+          "params": [],
+          "id": 9
+        })
+      })
+        .then(response => response.json())
+        .then(data => {
+          const currentHeight = data.result[0].lastblock;
+
+          if (blockHeight < currentHeight) {
+            blockHeight = parseInt(blockHeight) + 1;
+            updateURL(blockHeight);
+            fetchDataForBlockHeight(blockHeight);
+            location.reload();
+          }
+        })
+        .catch(error => console.error(error));
+    }
+  });
+
+  // Handle popstate event to fetch and update data when the back/forward button is clicked
+  window.addEventListener('popstate', function () {
+    blockHeight = urlParams.get('blockheight');
+    fetchDataForBlockHeight(blockHeight);
+  });
 
   // Function to fetch data for the past 150 blocks in increments of 10
   function fetchBlockDataForChart() {
@@ -256,7 +263,4 @@ document.getElementById('forwardButton').addEventListener('click', () => {
       })
       .catch(error => console.error(error));
   }
-
-  // Call the function to fetch data for the line chart
-  fetchBlockDataForChart();
 });
