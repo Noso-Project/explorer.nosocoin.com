@@ -121,10 +121,28 @@ div {
 .col-lg-12 {
   margin: 0;
   background-color: black;
+}
 
-
+.mn-announcement-text {
+   display: flex;
+   font-size: 12px;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0;
+   color: darkgrey;  
+}
 
 }
+.mn-labels {
+    text-align: left;
+
+  }
+.mn-values { 
+    text-align: right;
+
+  }
+  
+  
 /* Nav Panel */
 .panel {
   margin: 0;
@@ -631,6 +649,26 @@ border-radius: 5px;
 border: none;
 cursor: pointer;
 font-size: 16px;
+font-weight: bold;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-container2 {
+display: flex;
+justify-content: left;
+align-items: center;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+.button-container2 button {
+margin: 0 10px;
+color: #fbe04d;
+padding: 1px 10px;
+background-color: #222222;
+border-radius: 5px;
+border: none;
+cursor: pointer;
+font-size: 12px;
 font-weight: bold;
 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
