@@ -37,7 +37,7 @@ crossorigin="anonymous">
 }
     </style>
   </head>
-  <body color="#222222" style="                                     background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                        background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -142,14 +142,16 @@ crossorigin="anonymous">
                   <div class="row" id="refresh">
                     <div class="row">
                       <div class="button-container2">
-                        <p class="mn-announcement-text" style="width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font
+                        <div class="col-xs-6">
+                          <p class="mn-announcement-text" style="width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;<strong><font
 
-                              size="3px" color="fbe04d">Block&nbsp;Height:</font></strong><font size="3px"
+                                size="3px" color="fbe04d">Block&nbsp;Height:</font></strong><font
 
-                            color="white"><strong><span id="blockheight">&nbsp;</span></strong></font></p>
-                        &nbsp;<button id="backButton">Previous Block </button><button
+                              size="3px" color="white"><strong> <span id="blockheight">&nbsp;</span></strong></font></p>
+                          &nbsp;<br><button id="backButton">Previous Block </button><button
 
-                          id="forwardButton">Next Block</button></div>
+                            id="forwardButton">Next Block</button></div>
+                      </div>
                       <div class="col-lg-6">
                         <div class="panel panel-info">
                           <div class="panel-head-tiles">
