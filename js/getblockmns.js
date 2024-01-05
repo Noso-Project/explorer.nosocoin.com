@@ -19,6 +19,12 @@ async function fetchLockFunds() {
 function displayLockCount(mnLockFunds) {
   const mnLockCount = mnLockFunds / 10500;
   document.getElementById('mn-lock-count').innerText = mnLockCount;
+
+  // Call the function to calculate and display mn-inactive-nodes with a delay
+  setTimeout(() => {
+    const nodeCount = parseFloat(document.getElementById('node-count').innerText);
+    calculateInactiveNodes(mnLockCount, nodeCount);
+  }, 500); // You can adjust the delay time (in milliseconds) as needed
 }
 
 // Function to calculate and display mn-inactive-nodes
