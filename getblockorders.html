@@ -172,7 +172,7 @@ if (/^\d{1,10}$/.test(input)) {
   document.getElementById('alias-form').style.display = 'none';
   document.getElementById('block-search').value = input;
   document.getElementById('block-form').submit();
-} else if (/^A-.*$/.test(input)) {
+} else if (/^[aA]-.*$/.test(input)) {
   // Show alias form and hide other forms
   document.getElementById('alias-form').style.display = '';
   document.getElementById('block-form').style.display = 'none';
