@@ -221,10 +221,10 @@ document.addEventListener("DOMContentLoaded", function () {
     fetchDataForBlockHeight(blockHeight);
   });
 
-  // Function to fetch data for the past 150 blocks in increments of 10
+  // Function to fetch data for the past (10x150 = 24hrs) (120x4200 = 30 days) (1200X50400 = 1yr) (2400x100800 = 2yr)
   function fetchBlockDataForChart() {
-    const blockIncrement = 10;
-    const totalBlocks = 150;
+    const blockIncrement = 3000;
+    const totalBlocks = 102800;
     const promises = [];
 
     // Start fetching from the current block and subtract in increments of 10 until 150 blocks are fetched
