@@ -4,10 +4,10 @@
         if (livecoinWatchData) {
           const nosoUsdtLastPrice = parseFloat(livecoinWatchData.rate).toFixed(2);
 
-          const responseHeight = await fetch('https://api.nosostats.com:8078', {
+          const responseHeight = await fetch('https://rpc.nosocoin.com:8078', {
             method: 'POST',
             headers: {
-              'Origin': 'https://api.nosostats.com'
+              'Origin': 'https://rpc.nosocoin.com'
             },
             body: JSON.stringify({
               "jsonrpc": "2.0",
@@ -20,10 +20,10 @@
           const dataHeight = await responseHeight.json();
           const currentHeight = dataHeight.result[0].lastblock;
 
-          const responseNodeCount = await fetch('https://api.nosostats.com:8078', {
+          const responseNodeCount = await fetch('https://rpc.nosocoin.com:8078', {
             method: 'POST',
             headers: {
-              'Origin': 'https://api.nosostats.com'
+              'Origin': 'https://rpc.nosocoin.com'
             },
             body: JSON.stringify({
               "jsonrpc": "2.0",
@@ -39,10 +39,10 @@
           const mnCoinsLocked = nodeCount * 10500;
           const nodeReward = dataNodeCount.result[0].reward * 0.00000001;
 
-          const responseSupply = await fetch('https://api.nosostats.com:8078', {
+          const responseSupply = await fetch('https://rpc.nosocoin.com:8078', {
             method: 'POST',
             headers: {
-              'Origin': 'https://api.nosostats.com'
+              'Origin': 'https://rpc.nosocoin.com'
             },
             body: JSON.stringify({
               "jsonrpc": "2.0",

@@ -1,8 +1,8 @@
     const fetchMainnetInfo = () => {
-      return fetch('https://api.nosostats.com:8078', {
+      return fetch('https://rpc.nosocoin.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://api.nosostats.com'
+          'Origin': 'https://rpc.nosocoin.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",
@@ -20,10 +20,10 @@
     };
 
     const fetchBlock = async (blockNumber) => {
-      const response = await fetch('https://api.nosostats.com:8078', {
+      const response = await fetch('https://rpc.nosocoin.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://api.nosostats.com'
+          'Origin': 'https://rpc.nosocoin.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",

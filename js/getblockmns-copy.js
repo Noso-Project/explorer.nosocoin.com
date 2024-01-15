@@ -1,8 +1,8 @@
 // Initial fetch to get the currentHeight
-fetch('https://api.nosostats.com:8078', {
+fetch('https://rpc.nosocoin.com:8078', {
   method: 'POST',
   headers: {
-    'Origin': 'https://api.nosostats.com'
+    'Origin': 'https://rpc.nosocoin.com'
   },
   body: JSON.stringify({
     "jsonrpc": "2.0",
@@ -38,10 +38,10 @@ function updateURL(newBlockHeight) {
 
 // Function to fetch data for a specific blockHeight
 function fetchDataForBlockHeight(blockHeight) {
-  fetch('https://api.nosostats.com:8078', {
+  fetch('https://rpc.nosocoin.com:8078', {
     method: 'POST',
     headers: {
-      'Origin': 'https://api.nosostats.com'
+      'Origin': 'https://rpc.nosocoin.com'
     },
     body: JSON.stringify({
       "jsonrpc": "2.0",
@@ -124,10 +124,10 @@ document.getElementById('backButton').addEventListener('click', () => {
 document.getElementById('forwardButton').addEventListener('click', () => {
   if (blockHeight) {
     // Fetch the current height
-    fetch('https://api.nosostats.com:8078', {
+    fetch('https://rpc.nosocoin.com:8078', {
       method: 'POST',
       headers: {
-        'Origin': 'https://api.nosostats.com'
+        'Origin': 'https://rpc.nosocoin.com'
       },
       body: JSON.stringify({
         "jsonrpc": "2.0",

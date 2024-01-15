@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
 let blockHeight = urlParams.get('blockheight');
 
-fetch('https://api.nosostats.com:8078', {
+fetch('https://rpc.nosocoin.com:8078', {
   method: 'POST',
   headers: {
-    'Origin': 'https://api.nosostats.com'
+    'Origin': 'https://rpc.nosocoin.com'
   },
   body: JSON.stringify({
     "jsonrpc": "2.0",
@@ -25,10 +25,10 @@ fetch('https://api.nosostats.com:8078', {
 
     const tableContainer = document.getElementById('mns-rewards-table');
     if (tableContainer) {
-      fetch('https://api.nosostats.com:8078', {
+      fetch('https://rpc.nosocoin.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://api.nosostats.com'
+          'Origin': 'https://rpc.nosocoin.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",

@@ -1,7 +1,7 @@
-fetch('https://api.nosostats.com:8078', {
+fetch('https://rpc.nosocoin.com:8078', {
   method: 'POST',
   headers: {
-    'Origin': 'https://api.nosostats.com'
+    'Origin': 'https://rpc.nosocoin.com'
   },
   body: JSON.stringify({
     "jsonrpc": "2.0",
@@ -32,10 +32,10 @@ fetch('https://api.nosostats.com:8078', {
   };
 
   const fetchBlockInfo = async (blockHeight) => {
-    const response = await fetch('https://api.nosostats.com:8078', {
+    const response = await fetch('https://rpc.nosocoin.com:8078', {
       method: 'POST',
       headers: {
-        'Origin': 'https://api.nosostats.com'
+        'Origin': 'https://rpc.nosocoin.com'
       },
       body: JSON.stringify({
         "jsonrpc": "2.0",
@@ -96,10 +96,10 @@ document.getElementById('countdown-timer').innerHTML = 'EXPIRED';
 };
 
 const fetchBlockInfo = async () => {
-const response = await fetch('https://api.nosostats.com:8078', {
+const response = await fetch('https://rpc.nosocoin.com:8078', {
 method: 'POST',
 headers: {
-'Origin': 'https://api.nosostats.com'
+'Origin': 'https://rpc.nosocoin.com'
 },
 body: JSON.stringify({
 "jsonrpc": "2.0",
@@ -111,10 +111,10 @@ body: JSON.stringify({
 const data = await response.json();
 const blockInfo = data.result[0];
 const startBlock = blockInfo.lastblock - 1; // get the previous block to the latest one
-const blockResponse = await fetch('https://api.nosostats.com:8078', {
+const blockResponse = await fetch('https://rpc.nosocoin.com:8078', {
 method: 'POST',
 headers: {
-'Origin': 'https://api.nosostats.com'
+'Origin': 'https://rpc.nosocoin.com'
 },
 body: JSON.stringify({
 "jsonrpc": "2.0",

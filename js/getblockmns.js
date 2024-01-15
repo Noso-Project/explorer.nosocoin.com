@@ -112,10 +112,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to fetch data for a specific blockHeight
   function fetchDataForBlockHeight(blockHeight) {
     const getsupply = document.getElementById('getsupply');
-    fetch('https://api.nosostats.com:8078', {
+    fetch('https://rpc.nosocoin.com:8078', {
       method: 'POST',
       headers: {
-        'Origin': 'https://api.nosostats.com'
+        'Origin': 'https://rpc.nosocoin.com'
       },
       body: JSON.stringify({
         "jsonrpc": "2.0",
@@ -234,10 +234,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Fetch the currentHeight if blockHeight is not available
   if (!blockHeight) {
-    fetch('https://api.nosostats.com:8078', {
+    fetch('https://rpc.nosocoin.com:8078', {
       method: 'POST',
       headers: {
-        'Origin': 'https://api.nosostats.com'
+        'Origin': 'https://rpc.nosocoin.com'
       },
       body: JSON.stringify({
         "jsonrpc": "2.0",
@@ -273,10 +273,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById('forwardButton').addEventListener('click', () => {
     if (blockHeight) {
       // Fetch the current height
-      fetch('https://api.nosostats.com:8078', {
+      fetch('https://rpc.nosocoin.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://api.nosostats.com'
+          'Origin': 'https://rpc.nosocoin.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",
@@ -316,10 +316,10 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let i = 0; i < totalBlocks; i += blockIncrement) {
       const currentBlock = blockHeight - i;
 
-      const promise = fetch('https://api.nosostats.com:8078', {
+      const promise = fetch('https://rpc.nosocoin.com:8078', {
         method: 'POST',
         headers: {
-          'Origin': 'https://api.nosostats.com'
+          'Origin': 'https://rpc.nosocoin.com'
         },
         body: JSON.stringify({
           "jsonrpc": "2.0",
