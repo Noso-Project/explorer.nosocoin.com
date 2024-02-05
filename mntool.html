@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Noso Exporer MNtool</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Include Highcharts library -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/stock.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/search.js"></script>
+    <!---chart-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <style>
+          .save-button {
+            display: none;
+            margin-top: 0px;
+        }
+    </style>
+    <!--style-->
+  </head>
+  <body color="#222222">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
+            data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
+              navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+
+              src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
+            NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
+          </a> </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <!--  <li><a href="explorer.html"><i class="fa fa-dashboard"></i>
+                NosoStats</a></li> -->
+            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i>
+                Explorer</a></li>
+            <!--  <li><a href="masternodes.html"> Coin Distribution</a></li>
+            <li><a href="masternodes.html"> Top Addresses</a></li> -->
+            <li><a href="masternodes.html"><i class="fa fa-globe"></i>
+                Masternodes</a></li>
+            <li><a href="api.html"><i class="fa fa-wrench"></i> API </a></li>
+            <li class="priority-9"><a href="qr.html"><img src="img/qr.png" height="30px">
+                QR</a></li>
+            <!-- <li><a href="masternodes.html"><i class="fa fa-money"></i>
+                Market</a></li> -->
+          </ul>
+          <!-- /.navbar-top-right -->
+          <div class="toprow">
+            <ul class="nav navbar-nav navbar-right navbar-user">
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+
+                    alt="Noso on Twitter"></a> </li>
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+
+                    src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+
+                    style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+
+                    alt="Noso Website"></a></li>
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+
+                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
+
+                    alt="Noso Developers"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.navbar-collapse --> </nav>
+      <br>
+      <div class="row2">
+        <h3>Noso Node Monitor</h3>
+        <br>
+        <form id="addressForm"><br>
+          <textarea id="addresses" name="addresses" placeholder="&nbsp;Enter Your Noso Node addresses (comma-separated)"></textarea><br>
+          <button type="submit2"></button> </form>
+        <br>
+        <label for="csvFile" class="page-action-button" title="Import from CSV File | address1,description1,address2,description2">Import
+          from CSV File</label><input id="csvFile" name="csvFile" type="file">
+        <strong><a id="customUrlLink" class="bookmark-link page-action-button" title="1: Save your addresses and custom description to CSV using the save icon below....  2: Import your custom CSV using the import from CSV File button....  3: Click Bookmark This Page to refresh the address URL.... 4: Bookmark this page in your browser.. "
+
+            href="javascript:void(0)" onclick="bookmarkPage()">Bookmark This
+            Page</a></strong> <button id="clearFormButton" type="button" class="page-action-button"><b>Clear
+            Form</b></button> <br>
+        <br>
+        <div id="statusTable" class="custom-table">
+          <div class="custom-row header">
+            <div class="custom-cell priority-1">Address</div>
+            <div class="custom-cell priority-5">Status</div>
+            <div class="custom-cell priority-1">Description <button id="saveButton"
+
+                class="save-button fa fa-save" alt="save-button" title="Save changes to CSV File">
+              </button></div>
+            <div class="custom-cell priority-5">Consecutive Payments</div>
+            <div class="custom-cell priority-5">Uptime Percent</div>
+            <div class="custom-cell priority-5">Monthly Earning</div>
+            <div class="custom-cell priority-5">Monthly Earning USDT</div>
+          </div>
+        </div>
+      </div>
+      <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
+        <script>
+        function bookmarkPage() {
+            var pageTitle = document.title;
+            var pageURL = window.location.href;
+
+            if (window.sidebar && window.sidebar.addPanel) { // Firefox
+                window.sidebar.addPanel(pageTitle, pageURL, '');
+            } else if (window.external && ('AddFavorite' in window.external)) { // Internet Explorer
+                window.external.AddFavorite(pageURL, pageTitle);
+            } else if (window.opera && window.print) { // Opera
+                var elem = document.createElement('a');
+                elem.setAttribute('href', pageURL);
+                elem.setAttribute('title', pageTitle);
+                elem.setAttribute('rel', 'sidebar');
+                elem.click();
+            } else { // Other browsers
+                alert('Please use your browser\'s bookmark feature to bookmark this page.');
+            }
+        }
+
+        let changesMade = false; // Flag to track changes made to the table
+
+        // Function to copy custom URL
+        function copyCustomUrl() {
+            const customUrl = generateCustomUrl();
+            const input = document.createElement('input');
+            input.setAttribute('value', customUrl);
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand('copy');
+            document.body.removeChild(input);
+            alert('Custom URL copied to clipboard!');
+        }
+
+        // Function to generate custom URL
+        function generateCustomUrl() {
+            const rows = document.querySelectorAll('.custom-row:not(.header)');
+            let customUrl = window.location.href.split('?')[0]; // Get the base URL without parameters
+            customUrl += '?mynodes=';
+            rows.forEach(row => {
+                const address = row.children[0].textContent.trim();
+                const description = row.querySelector('.description').value.trim();
+                customUrl += `${address}:${description},`;
+            });
+            // Remove trailing comma
+            customUrl = customUrl.slice(0, -1);
+            return customUrl;
+        }
+
+        document.getElementById('addressForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const addressesInput = document.getElementById('addresses').value.trim();
+            const csvFile = document.getElementById('csvFile').files[0];
+
+            // Check if there are addresses or a CSV file
+            if (addressesInput || csvFile) {
+                if (csvFile) {
+                    // Read the CSV file
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const csvData = event.target.result;
+                        // Process CSV data
+                        processCSV(csvData);
+                    };
+                    reader.readAsText(csvFile);
+                } else {
+                    // Clear the table before adding new data
+                    clearTable();
+                    // Fetch data for each address from manual input
+                    const addresses = addressesInput.split(',').map(address => address.trim());
+                    addresses.forEach(address => {
+                        fetchDataForAddress(address);
+                    });
+                }
+            } else {
+                alert('Please enter at least one address or upload a CSV file.');
+            }
+        });
+
+        // Fetch data for addresses provided in the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('mynodes')) {
+            const nodeAddresses = urlParams.get('mynodes').split(',');
+            nodeAddresses.forEach(pair => {
+                const [address, description] = pair.split(':');
+                fetchDataForAddress(address.trim(), description ? description.trim() : '');
+            });
+        }
+
+        function clearTable() {
+            const statusTable = document.getElementById('statusTable');
+            // Keep the header row and remove other rows
+            const rows = document.querySelectorAll('.custom-row:not(.header)');
+            rows.forEach(row => {
+                statusTable.removeChild(row);
+            });
+        }
+
+        function appendDataToTable(data) {
+            const statusTable = document.getElementById('statusTable');
+
+            // Create data row
+            const row = document.createElement('div');
+            row.classList.add('custom-row');
+            row.innerHTML = `
+                <div class="custom-cell-address ${data.status === 'online' ? 'online-address' : 'offline-address'}  priority-1">${data.address}</div>
+                <div class="custom-cell  priority-5">${data.status}</div>
+                <div class="custom-cell  priority-1">
+                    <textarea class="description" contenteditable="true">${data.description}</textarea>
+                </div>
+                <div class="custom-cell priority-5">${data.consecutive_payments}</div>
+                <div class="custom-cell priority-5">${data.uptime_percent}%</div>
+                <div class="custom-cell priority-5">${data.monthly_earning}</div>
+                <div class="custom-cell priority-5">$${data.monthly_earning_usdt}</div>
+            `;
+
+            // Insert offline rows under the header
+            if (data.status === 'offline') {
+                const headerRow = statusTable.querySelector('.header');
+                statusTable.insertBefore(row, headerRow.nextSibling);
+            } else {
+                // For online rows, find the insertion index based on consecutive payments
+                const rows = Array.from(document.querySelectorAll('.custom-row:not(.header)'));
+                let insertionIndex = rows.findIndex(existingRow => {
+                    if (existingRow.classList.contains('offline-address')) return false; // Skip offline rows
+                    const existingConsecutivePayments = parseInt(existingRow.children[3].textContent);
+                    const newConsecutivePayments = parseInt(row.children[3].textContent);
+                    return newConsecutivePayments < existingConsecutivePayments;
+                });
+                if (insertionIndex === -1) insertionIndex = rows.length; // Insert at the end if no smaller value found
+                statusTable.insertBefore(row, rows[insertionIndex]);
+            }
+
+            // Attach event listener to track changes in the description cell
+            const descriptionCell = row.querySelector('.description');
+            descriptionCell.addEventListener('input', function() {
+                changesMade = true;
+                document.getElementById('saveButton').style.display = 'inline';
+            });
+        }
+
+        function processCSV(csvData) {
+            // Parse CSV data
+            const lines = csvData.split('\n');
+            const addresses = [];
+
+            lines.forEach(line => {
+                const parts = line.split(',');
+                const address = parts[0].trim(); // Assuming address is the first column
+                const description = parts.length > 1 ? parts[1].trim() : ''; // Check if description exists
+
+                addresses.push({ address, description });
+            });
+
+            // Clear the table before adding new data
+            clearTable();
+
+            // Fetch data for each address
+            addresses.forEach(addressData => {
+                fetchDataForAddress(addressData.address, addressData.description);
+            });
+        }
+
+        function fetchDataForAddress(address, description = '') {
+            fetch(`https://api.nosocoin.com/nodes/status?address=${address}`)
+            .then(response => response.json())
+            .then(data => {
+                // Append data to the table
+                appendDataToTable({ ...data, description });
+                countOfflineStatus();
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+        }
+
+        function countOfflineStatus() {
+            const offlineCount = document.querySelectorAll('.offline-address').length;
+            const totalCount = document.querySelectorAll('.custom-row:not(.header)').length;
+            const addressHeader = document.querySelector('.header .custom-cell:nth-child(1)');
+            addressHeader.textContent = `Address (${totalCount}) ${offlineCount} offline`;
+
+            // Update custom URL link when status changes
+            document.getElementById('customUrlLink').setAttribute('href', generateCustomUrl());
+        }
+
+        document.getElementById('saveButton').addEventListener('click', function() {
+            saveToCSV();
+        });
+
+        function saveToCSV() {
+            const rows = Array.from(document.querySelectorAll('.custom-row')).slice(1); // Exclude the header row
+            let csvContent = '';
+
+            rows.forEach(row => {
+                const address = row.children[0].textContent.trim();
+                const description = row.querySelector('.description').value.trim();
+                csvContent += `${address},${description},\n`;
+            });
+
+            // Create a blob with the CSV data
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            if (link.download !== undefined) {
+                // Create a link element, hide it, direct it towards the blob, and then 'click' it programmatically
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'nodes.csv');
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                // Reset changes made flag
+                changesMade = false;
+                document.getElementById('saveButton').style.display = 'none'; // Hide the Save button
+            }
+        }
+              // Add an event listener to the file input element
+          document.getElementById('csvFile').addEventListener('change', function(event) {
+              const file = event.target.files[0]; // Get the selected file
+              const reader = new FileReader(); // Create a new FileReader object
+              reader.onload = function(event) {
+                  const csvData = event.target.result; // Get the CSV data from the FileReader
+                  processCSV(csvData); // Process the CSV data
+              };
+              reader.readAsText(file); // Read the selected file as text
+          });
+
+          // Submit event listener for the form
+          document.getElementById('addressForm').addEventListener('submit', function(event) {
+              event.preventDefault(); // Prevent form submission
+
+
+          }); 
+        // Add event listener for the clear form button
+        document.getElementById('clearFormButton').addEventListener('click', function() {
+            clearForm();
+        });
+
+        // Function to clear the form
+        function clearForm() {
+            // Reset the form elements to their initial state
+            document.getElementById('addressForm').reset();
+            // Redirect to the base URL without any query parameters
+            window.location.href = window.location.href.split('?')[0];
+        }
+        // Function to calculate time until the next 10-minute interval
+        function calculateRefreshTime() {
+            const now = new Date();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+            const remainingSeconds = (10 - (minutes % 10) - 1) * 60 + (60 - seconds) + 30;
+            return remainingSeconds * 1000; // Convert to milliseconds
+        }
+
+        // Function to refresh the page after a calculated interval
+        function refreshPage() {
+            setTimeout(function() {
+                location.reload();
+            }, calculateRefreshTime());
+        }
+
+        // Call the function to refresh the page initially
+        refreshPage();
+    </script> </a></div>
+    <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
+    </a>
+  </body>
+</html>

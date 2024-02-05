@@ -8,8 +8,10 @@
     <meta name="author" content="">
     <title>Noso Explorer</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
 crossorigin="anonymous">
     </script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -40,10 +42,12 @@ crossorigin="anonymous">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
             data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
               navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </button><a class="navbar-brand" href="index.html"><img
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="index.html"><img
+
               src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
             NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
           </a> </div>
@@ -67,17 +71,24 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
-                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+
                     src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
-              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
-              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+
                     alt="Noso Website"></a></li>
-              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
-                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+
+                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
+
                     alt="Noso Developers"></a></li>
             </ul>
           </div>
@@ -88,23 +99,32 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
-                style="display: none;"> <input id="block-search" name="blockheight"
+              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+
+                style="display: none;"> <input id="block-search" name="blockheight"
+
                   placeholder="Search Block Number" type="search"> <button type="submit">Search
                   Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-                style="display: none;"> <input id="address-search" name="address"
+              <form id="address-form" action="getaddressbalance.html?address" method="get"
+
+                style="display: none;"> <input id="address-search" name="address"
+
                   placeholder="Search Address" type="search"> <button type="submit">Search
                   Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-                style="display: none;"> <input id="alias-search" name="address"
+              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
+
+                style="display: none;"> <input id="alias-search" name="address"
+
                   placeholder="Search Alias" type="search"> <button type="submit">Search
                   Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-                style="display: none;"> <input id="order-search" name="orderid"
+              <form id="order-form" action="getordersinfo.html?orderid" method="get"
+
+                style="display: none;"> <input id="order-search" name="orderid"
+
                   placeholder="Search Order ID" type="search"> <button type="submit">Search
                   Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+
                   type="search"> <button type="submit1" onclick="search()"></button>
               </div>
               <!-- Results will be displayed on Explorer page --> </div>
@@ -123,11 +143,14 @@ crossorigin="anonymous">
                       <div class="row">
                         <div class="button-container2">
                           <div class="col-xs-6">
-                            <p class="mn-announcement-text" style="width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;<strong><font
-                                  size="3px" color="fbe04d">Block&nbsp;Height:</font></strong><font
+                            <p class="mn-announcement-text" style="width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;<strong><font
+
+                                  size="3px" color="fbe04d">Block&nbsp;Height:</font></strong><font
+
                                 size="3px" color="white"><strong> <span id="blockheight">&nbsp;</span></strong></font></p>
                             &nbsp;<br>
-                            <button id="backButton">Previous Block </button><button
+                            <button id="backButton">Previous Block </button><button
+
                               id="forwardButton">Next Block</button></div>
                         </div>
                         <div class="col-lg-6">
@@ -142,9 +165,11 @@ crossorigin="anonymous">
                                     Reward:&nbsp;<font size="2px" color="white">
                                       <span id="node-reward">0</span></font> </p>
                                   <p class="mn-announcement-text" style="width: 200px;">Earning
-                                    Percentage:&nbsp;<font size="2px" color="white"><span
+                                    Percentage:&nbsp;<font size="2px" color="white"><span
+
                                         id="earning-percentage">0</span> </font></p>
-                                  <p class="mn-announcement-text" style="width: 200px;">&nbsp;<font
+                                  <p class="mn-announcement-text" style="width: 200px;">&nbsp;<font
+
                                       size="2px" color="black"><span id="mn-lock-count">0</span></font></p>
                                 </div>
                               </div>
@@ -156,21 +181,28 @@ crossorigin="anonymous">
                             <div class="panel-head-tiles">
                               <div class="row" id="refresh">
                                 <div class="col-xs-6">
-                                  <p class="mn-announcement-text" style="width: 200px;"><span
+                                  <p class="mn-announcement-text" style="width: 200px;"><span
+
                                       class="mn-labels">Active
-                                      Masternodes:&nbsp;</span><font size="2px"
+                                      Masternodes:&nbsp;</span><font size="2px"
+
                                       color="green"><b> <span id="node-count" class="mn-values">0</span></b></font></p>
-                                  <p class="mn-announcement-text" style="width: 200px;"><span
+                                  <p class="mn-announcement-text" style="width: 200px;"><span
+
                                       class="mn-labels">Inactive
-                                      Masternodes:&nbsp;</span><font size="2px"
-                                      color="red"> <span id="mn-inactive-nodes"
+                                      Masternodes:&nbsp;</span><font size="2px"
+
+                                      color="red"> <span id="mn-inactive-nodes"
+
                                         class="mn-values"></span></font></p>
                                   <p class="mn-announcement-text" style="width: 200px;">Funds
-                                    in 14 Day Lock:<font size="2px" color="white"><span
+                                    in 14 Day Lock:<font size="2px" color="white"><span
+
                                         id="mn-lock-funds" class="mn-values"></span></font>
                                   </p>
                                   <p class="mn-announcement-text" style="width: 200px;">Funds
-                                    in Active Nodes:&nbsp;<font size="2px" color="white"><span
+                                    in Active Nodes:&nbsp;<font size="2px" color="white"><span
+
                                         id="node-funds-locked" class="mn-values">0</span></font></p>
                                 </div>
                               </div>
@@ -178,14 +210,17 @@ crossorigin="anonymous">
                           </div>
                         </div>
                       </div>
-                      <!---chart--><br><br>
+                      <!---chart--><br>
+                      <br>
                       <div class="col-lg-12">
                         <div class="panel panel-info">
                           <div class="panel-head-tiles">
                             <div class="row" id="refresh">
-                              <p class="announcement-text" style="width: 300px;"><font
+                              <p class="announcement-text" style="width: 300px;"><font
+
                                   size="2px" color="white"> <br>
-                                  Active Nodes Over Time <br><br>
+                                  Active Nodes Over Time <br>
+                                  <br>
                                 </font> </p>
                             </div>
                             <div><canvas id="lineChart"></canvas> </div>
@@ -204,31 +239,94 @@ crossorigin="anonymous">
                         <div class="panel panel-info">
                           <div class="panel-head-tiles">
                             <div class="row">
+                              <p class="mn-announcement-text"><strong><font size="2px"
 
-			<p class="mn-announcement-text" ><strong><font size="2px" color="#fbe04d">Price: $<span id="noso-usdt-lastPrice">0</span>&nbsp;/&nbsp;<span id="noso-btc-lastPrice">0</span> BTC</font></strong>
-			<p class="mn-announcement-text"  style="width: 250px;><strong><font size="2px" color="grey">Node reward frequency: </font><font size="2px" color="grey">10&nbsp;Minutes</font></strong>
-			<p class="mn-announcement-text" style="width: 250px;><strong><font size="2px" color="gray">Required Coins for Node: </font><font size="2px" color="grey">10,500 NOSO</font></strong>
-			<p class="mn-announcement-text" style="width: 250px;> <strong><font size="2px" color="grey">Node Value:</font><font size="2px" color="grey">$<span id="node-value-usdt">0</span>&nbsp;/&nbsp;<span id="node-value-btc">0</span> BTC</font></strong>
+                                    color="#fbe04d">Price: $<span id="noso-usdt-lastPrice">0</span>&nbsp;/&nbsp;<span
 
-			<hr style="border: 1px solid #222222; size="2" width="100%" noshade  align="left" /></p>
+                                      id="noso-btc-lastPrice">0</span> BTC</font></strong>
+                              </p>
+                              <p class="mn-announcement-text" style="width: 250px;&gt;&lt;strong&gt;&lt;font size="
 
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="#fbe04d">Estimated Daily Income&nbsp;</strong></font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey">$<span id="node-24hr-reward-usdt">0</span>&nbsp;</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey"><span id="node-24hr-reward-btc">0</span>&nbsp;BTC</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="grey"><span id="node-24hr-reward">0</span></font><font size="2px" color="grey">&nbsp;NOSO</font></strong></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="#fbe04d">Estimated Weekly Income&nbsp;</strong></font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey">$<span id="node-7day-reward-usdt">0</span>&nbsp;</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey"><span id="node-7day-reward-btc">0</span>&nbsp;BTC</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="grey"><span id="node-7day-reward">0</span></font><font size="2px" color="grey">&nbsp;NOSO</font></strong></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="#fbe04d">Estimated Monthly Income&nbsp;</strong></font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey">$<span id="node-30day-reward-usdt">0</span>&nbsp;</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey"><span id="node-30day-reward-btc">0</span>&nbsp;BTC</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="grey"><span   id="node-30day-reward">0</span></font><font size="2px" color="grey">&nbsp;NOSO</font></strong></p>
-                             <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="#fbe04d">Estimated Yearly Income&nbsp;</strong></font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey">$<span id="node-365day-reward-usdt">0</span>&nbsp;</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><font size="2px" color="grey"><span id="node-365day-reward-btc">0</span>&nbsp;BTC</font></p>
-                              <p class="mn-announcement-text" style="width: 250px;"><strong><font size="2px" color="grey"><span   id="node-365day-reward">0</span></font><font size="2px" color="grey">&nbsp;NOSO</font></strong></p>
-                           
+                                2px"="" color="grey">Node reward frequency: <font
+
+                                  size="2px" color="grey">10&nbsp;Minutes</font>
+                              </p>
+                              <p class="mn-announcement-text" style="width: 250px;&gt;&lt;strong&gt;&lt;font size="
+
+                                2px"="" color="gray">Required Coins for Node: <font
+
+                                  size="2px" color="grey">10,500 NOSO</font> </p>
+                              <p class="mn-announcement-text" style="width: 250px;&gt; &lt;strong&gt;&lt;font size="
+
+                                2px"="" color="grey">Node Value:<font size="2px"
+
+                                  color="grey">$<span id="node-value-usdt">0</span>&nbsp;/&nbsp;<span
+
+                                    id="node-value-btc">0</span> BTC</font> </p>
+                              <hr style="border: 1px solid #222222; size=" 2"=""
+
+                                align="left" width="100%" noshade="noshade">
+                              <p></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="#fbe04d">Estimated Daily
+                                    Income&nbsp;</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey">$<span id="node-24hr-reward-usdt">0</span>&nbsp;</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey"><span id="node-24hr-reward-btc">0</span>&nbsp;BTC</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="grey"><span id="node-24hr-reward">0</span></font><font
+
+                                    size="2px" color="grey">&nbsp;NOSO</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="#fbe04d">Estimated Weekly
+                                    Income&nbsp;</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey">$<span id="node-7day-reward-usdt">0</span>&nbsp;</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey"><span id="node-7day-reward-btc">0</span>&nbsp;BTC</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="grey"><span id="node-7day-reward">0</span></font><font
+
+                                    size="2px" color="grey">&nbsp;NOSO</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="#fbe04d">Estimated Monthly
+                                    Income&nbsp;</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey">$<span id="node-30day-reward-usdt">0</span>&nbsp;</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey"><span id="node-30day-reward-btc">0</span>&nbsp;BTC</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="grey"><span id="node-30day-reward">0</span></font><font
+
+                                    size="2px" color="grey">&nbsp;NOSO</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="#fbe04d">Estimated Yearly
+                                    Income&nbsp;</font></strong></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey">$<span id="node-365day-reward-usdt">0</span>&nbsp;</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><font
+
+                                  size="2px" color="grey"><span id="node-365day-reward-btc">0</span>&nbsp;BTC</font></p>
+                              <p class="mn-announcement-text" style="width: 250px;"><strong><font
+
+                                    size="2px" color="grey"><span id="node-365day-reward">0</span></font><font
+
+                                    size="2px" color="grey">&nbsp;NOSO</font></strong></p>
                             </div>
                           </div>
                         </div>
@@ -245,16 +343,33 @@ crossorigin="anonymous">
                         <div class="panel panel-info">
                           <div class="panel-head-tiles">
                             <div class="row">
-                              <p class="announcement-text" style="width: 100px;"><img
-                                  src="img/node.png" style="width: 24px; height: 18px;">&nbsp;<a
-                                  href="getearnings.html">Check&nbsp;your&nbsp;MasterNode&nbsp;Earnings</a>&nbsp;<img
+                              <p class="announcement-text" style="width: 100px;"><img
+
+                                  src="img/node.png" style="width: 24px; height: 18px;">&nbsp;<a
+
+                                  href="getearnings.html">Check&nbsp;your&nbsp;MasterNode&nbsp;Earnings</a>&nbsp;<img
+
                                   src="img/mbag.png" style="width: 24px; height: 18px;"></p>
                               <br>
-                              <p class="announcement-text" style="width: 200px;"><font
-                                  class="fa fa-wrench" size="2px"></font>&nbsp;&nbsp;&nbsp;<a
-                                  href="https://docs.nosocoin.com/noso-documentation/faqs-and-troubleshooting"
-                                  target="_blank">Common&nbsp;NosoNode&nbsp;Issues</a>&nbsp;&nbsp;<font
+                              <p class="announcement-text" style="width: 200px;"><font
+
+                                  class="fa fa-wrench" size="2px"></font>&nbsp;&nbsp;&nbsp;<a
+
+                                  href="https://docs.nosocoin.com/noso-documentation/faqs-and-troubleshooting"
+
+                                  target="_blank">Common&nbsp;NosoNode&nbsp;Issues</a>&nbsp;&nbsp;<font
+
                                   class="fa fa-wrench" size="2px"></font></p>
+                                                            <br>
+                              <p class="announcement-text" style="width: 200px;"><font
+
+                                  class="fa fa-eye" size="2px"></font>&nbsp;&nbsp;&nbsp;<a
+
+                                  href="mntool.html"
+
+                                  target="_blank">Monitor&nbsp;Your&nbsp;Masternode</a>&nbsp;&nbsp;<font
+
+                                  class="fa fa-eye" size="2px"></font></p>
                               <br>
                             </div>
                           </div>
@@ -275,7 +390,8 @@ crossorigin="anonymous">
                       <div class="panel-head-tiles">
                         <div class="row" id="refresh">
                           <div class="row2">
-                            <p class="announcement-text" style="width: 200px;"><font
+                            <p class="announcement-text" style="width: 200px;"><font
+
                                 size="2px" color="white"> <br>
                                 Masternodes paid in this block: <br>
                               </font> </p>
@@ -291,7 +407,8 @@ crossorigin="anonymous">
           </div>
         </div>
         <div>
-          <p> <img src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
+          <p> <img src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
+
               size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; | &nbsp;
               Built by the NOSO Community</font> </p>
         </div>
@@ -349,5 +466,6 @@ document.getElementById('search').addEventListener('keypress', function (e) {
     search();
   }
 });
-</script> </body>
+</script>
+  </body>
 </html>
