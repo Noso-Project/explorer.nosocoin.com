@@ -466,7 +466,10 @@ table.tablesorter thead tr th:hover {
             background-color: black;
             box-sizing: border-box; /* Added for proper width calculation */
         }
-
+        .save-button {
+            display: none;
+            margin-top: 0px;
+        }
         .bookmark-link {
             display: block;
             margin-top: 10px;
@@ -757,7 +760,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 
 /*  .styled-table automatic resizing based on screensize*/
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
 	.priority-9 {
 		display:block;
 	}
@@ -782,9 +785,10 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 		}
 	
 
+	
+	
 
-
-
+}
 @media screen and (max-width: 1000px) {
 	.priority-9 {
 		display:none;
