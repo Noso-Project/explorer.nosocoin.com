@@ -90,24 +90,23 @@
           <button type="submit2"></button> </form>
         <br>
         <label for="csvFile" class="page-action-button" title="Import from CSV File | address1,description1,address2,description2">Import
-          from CSV File</label><input id="csvFile" name="csvFile" type="file"> <strong><a
+          CSV File</label><input id="csvFile" name="csvFile" type="file"> <strong><a
 
             id="customUrlLink" class="bookmark-link page-action-button" title="1: Save your addresses and custom description to CSV using the save icon below....  2: Import your custom CSV using the import from CSV File button....  3: Click Bookmark This Page to refresh the address URL.... 4: Bookmark this page in your browser.. "
 
-            href="javascript:void(0)" onclick="bookmarkPage()">Bookmark This
-            Page</a></strong> <button id="clearFormButton" type="button" class="page-action-button"><b>Clear
+            href="javascript:void(0)" onclick="bookmarkPage()">Bookmark Page</a></strong>
+        <button id="clearFormButton" type="button" class="page-action-button"><b>Reset
             Form</b></button> <br>
         <br>
         <div id="statusTable" class="custom-table">
           <div class="custom-row header">
             <div class="custom-cell priority-1">Address</div>
             <div class="custom-cell priority-6">Status</div>
-            <div class="custom-cell priority-1">Description <button
+            <div class="custom-cell priority-1">Description <button id="saveButton"
 
-                id="saveButton" class="save-button fa fa-save" alt="save-button"
-
-                title="Save changes to CSV File"> </button></div>
-            <div class="custom-cell priority-5">Consecutive Payments</div>
+                class="save-button fa fa-save" alt="save-button" title="Save changes to CSV File">
+              </button></div>
+            <div class="custom-cell priority-6">Consecutive Payments</div>
             <div class="custom-cell priority-5">Uptime</div>
             <div class="custom-cell priority-6">Monthly NOSO</div>
             <div class="custom-cell priority-6">Monthly USDT</div>
@@ -226,7 +225,7 @@ function appendDataToTable(data) {
         <div class="custom-cell  priority-1">
             <textarea class="description" contenteditable="true">&nbsp;&nbsp;${data.description}</textarea>
         </div>
-        <div class="custom-cell priority-5">&nbsp;${data.consecutive_payments}</div>
+        <div class="custom-cell priority-6">&nbsp;${data.consecutive_payments}</div>
         <div class="custom-cell priority-5">&nbsp;${data.uptime_percent}%</div>
         <div class="custom-cell priority-6">&nbsp;${data.monthly_earning}</div>
         <div class="custom-cell priority-6">&nbsp;$${data.monthly_earning_usdt}</div>
@@ -451,7 +450,9 @@ function updateTitleWithCountdown() {
 // Call the function to update the browser tab title with countdown time
 updateTitleWithCountdown();
 
-    </script> </a></div>
+    </script>
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.js"></script> </a></div>
     <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
     </a>
   </body>

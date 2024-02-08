@@ -783,10 +783,23 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 	.contentchart {
 		flex-basis:100%;
 		}
-	
-
-	
-	
+}
+@media screen and (max-width: 650px) {
+	.priority-9 {
+		display:none;
+	}
+	.priority-8{
+		display:none;
+	}
+	.priority-7{
+		display:none;
+	}
+	.priority-6{
+		display:none;
+	}
+	.priority-5{
+		display:none;
+	}	
 
 }
 @media screen and (max-width: 1000px) {
@@ -802,13 +815,6 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 	.priority-6{
 		display:none;
 	}
-	.priority-5{
-		display:none;
-	}
-
-	
-
-
 
 }
 	
@@ -819,12 +825,7 @@ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 	.priority-8{
 		display:none;
 	}
-	.priority-7{
-		display:none;
-	}
-	.priority-6{
-		display:none;
-	}
+
 
 
 
