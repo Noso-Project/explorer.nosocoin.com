@@ -8,10 +8,6 @@
     <meta name="author" content="">
     <title>Noso Exporer MNtool</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <!-- Include Highcharts library -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/stock.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/search.js"></script>
     <!---chart-->
     <!-- Bootstrap core CSS -->
@@ -87,15 +83,16 @@
         <!-- /.navbar-collapse --> </nav>
       <br>
       <div class="row2">
-        <h3>Noso Node Monitor</h3>
+        <h3>Noso Node Monitor (MNTool)</h3>
         <br>
         <form id="addressForm"><br>
           <textarea id="addresses" name="addresses" placeholder="&nbsp;Enter Your Noso Node addresses (comma-separated)"></textarea><br>
           <button type="submit2"></button> </form>
         <br>
         <label for="csvFile" class="page-action-button" title="Import from CSV File | address1,description1,address2,description2">Import
-          from CSV File</label><input id="csvFile" name="csvFile" type="file">
-        <strong><a id="customUrlLink" class="bookmark-link page-action-button" title="1: Save your addresses and custom description to CSV using the save icon below....  2: Import your custom CSV using the import from CSV File button....  3: Click Bookmark This Page to refresh the address URL.... 4: Bookmark this page in your browser.. "
+          from CSV File</label><input id="csvFile" name="csvFile" type="file"> <strong><a
+
+            id="customUrlLink" class="bookmark-link page-action-button" title="1: Save your addresses and custom description to CSV using the save icon below....  2: Import your custom CSV using the import from CSV File button....  3: Click Bookmark This Page to refresh the address URL.... 4: Bookmark this page in your browser.. "
 
             href="javascript:void(0)" onclick="bookmarkPage()">Bookmark This
             Page</a></strong> <button id="clearFormButton" type="button" class="page-action-button"><b>Clear
@@ -104,99 +101,308 @@
         <div id="statusTable" class="custom-table">
           <div class="custom-row header">
             <div class="custom-cell priority-1">Address</div>
-            <div class="custom-cell priority-5">Status</div>
-            <div class="custom-cell priority-1">Description <button id="saveButton"
+            <div class="custom-cell priority-8">Status</div>
+            <div class="custom-cell priority-1">Description <button
 
-                class="save-button fa fa-save" alt="save-button" title="Save changes to CSV File">
-              </button></div>
+                id="saveButton" class="save-button fa fa-save" alt="save-button"
+
+                title="Save changes to CSV File"> </button></div>
             <div class="custom-cell priority-5">Consecutive Payments</div>
-            <div class="custom-cell priority-5">Uptime Percent</div>
-            <div class="custom-cell priority-5">Monthly Earning</div>
-            <div class="custom-cell priority-5">Monthly Earning USDT</div>
+            <div class="custom-cell priority-5">Uptime</div>
+            <div class="custom-cell priority-5">Monthly NOSO</div>
+            <div class="custom-cell priority-5">Monthly USDT</div>
           </div>
         </div>
       </div>
       <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
         <script>
-        function bookmarkPage() {
-            var pageTitle = document.title;
-            var pageURL = window.location.href;
+ function bookmarkPage() {
+    var pageTitle = document.title;
+    var pageURL = window.location.href;
 
-            if (window.sidebar && window.sidebar.addPanel) { // Firefox
-                window.sidebar.addPanel(pageTitle, pageURL, '');
-            } else if (window.external && ('AddFavorite' in window.external)) { // Internet Explorer
-                window.external.AddFavorite(pageURL, pageTitle);
-            } else if (window.opera && window.print) { // Opera
-                var elem = document.createElement('a');
-                elem.setAttribute('href', pageURL);
-                elem.setAttribute('title', pageTitle);
-                elem.setAttribute('rel', 'sidebar');
-                elem.click();
-            } else { // Other browsers
-                alert('Please use your browser\'s bookmark feature to bookmark this page.');
-            }
-        }
+    if (window.sidebar && window.sidebar.addPanel) { // Firefox
+        window.sidebar.addPanel(pageTitle, pageURL, '');
+    } else if (window.external && ('AddFavorite' in window.external)) { // Internet Explorer
+        window.external.AddFavorite(pageURL, pageTitle);
+    } else if (window.opera && window.print) { // Opera
+        var elem = document.createElement('a');
+        elem.setAttribute('href', pageURL);
+        elem.setAttribute('title', pageTitle);
+        elem.setAttribute('rel', 'sidebar');
+        elem.click();
+    } else { // Other browsers
+        alert('Please use your browser\'s bookmark feature to bookmark this page.');
+    }
+}
 
-        let changesMade = false; // Flag to track changes made to the table
+let changesMade = false; // Flag to track changes made to the table
 
-        // Function to copy custom URL
-        function copyCustomUrl() {
-            const customUrl = generateCustomUrl();
-            const input = document.createElement('input');
-            input.setAttribute('value', customUrl);
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand('copy');
-            document.body.removeChild(input);
-            alert('Custom URL copied to clipboard!');
-        }
+// Function to copy custom URL
+function copyCustomUrl() {
+    const customUrl = generateCustomUrl();
+    const input = document.createElement('input');
+    input.setAttribute('value', customUrl);
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    alert('Custom URL copied to clipboard!');
+}
 
-        // Function to generate custom URL
-        function generateCustomUrl() {
-            const rows = document.querySelectorAll('.custom-row:not(.header)');
-            let customUrl = window.location.href.split('?')[0]; // Get the base URL without parameters
-            customUrl += '?mynodes=';
-            rows.forEach(row => {
-                const address = row.children[0].textContent.trim();
-                const description = row.querySelector('.description').value.trim();
-                customUrl += `${address}:${description},`;
+// Function to generate custom URL
+function generateCustomUrl() {
+    const rows = document.querySelectorAll('.custom-row:not(.header)');
+    let customUrl = window.location.href.split('?')[0]; // Get the base URL without parameters
+    customUrl += '?mynodes=';
+    rows.forEach(row => {
+        const address = row.children[0].textContent.trim();
+        const description = row.querySelector('.description').value.trim();
+        customUrl += `${address}:${description},`;
+    });
+    // Remove trailing comma
+    customUrl = customUrl.slice(0, -1);
+    return customUrl;
+}
+
+document.getElementById('addressForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const addressesInput = document.getElementById('addresses').value.trim();
+    const csvFile = document.getElementById('csvFile').files[0];
+
+    // Check if there are addresses or a CSV file
+    if (addressesInput || csvFile) {
+        if (csvFile) {
+            // Read the CSV file
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const csvData = event.target.result;
+                // Process CSV data
+                processCSV(csvData);
+            };
+            reader.readAsText(csvFile);
+        } else {
+            // Clear the table before adding new data
+            clearTable();
+            // Fetch data for each address from manual input
+            const addresses = addressesInput.split(',').map(address => address.trim());
+            addresses.forEach(address => {
+                fetchDataForAddress(address);
             });
-            // Remove trailing comma
-            customUrl = customUrl.slice(0, -1);
-            return customUrl;
         }
+    } else {
+        alert('Please enter at least one address or upload a CSV file.');
+    }
+});
 
-        document.getElementById('addressForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form submission
+// Fetch data for addresses provided in the URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.has('mynodes')) {
+    const nodeAddresses = urlParams.get('mynodes').split(',');
+    nodeAddresses.forEach(pair => {
+        const [address, description] = pair.split(':');
+        fetchDataForAddress(address.trim(), description ? description.trim() : '');
+    });
+}
 
-            const addressesInput = document.getElementById('addresses').value.trim();
-            const csvFile = document.getElementById('csvFile').files[0];
+function clearTable() {
+    const statusTable = document.getElementById('statusTable');
+    // Keep the header row and remove other rows
+    const rows = document.querySelectorAll('.custom-row:not(.header)');
+    rows.forEach(row => {
+        statusTable.removeChild(row);
+    });
+}
 
-            // Check if there are addresses or a CSV file
-            if (addressesInput || csvFile) {
-                if (csvFile) {
-                    // Read the CSV file
-                    const reader = new FileReader();
-                    reader.onload = function(event) {
-                        const csvData = event.target.result;
-                        // Process CSV data
-                        processCSV(csvData);
-                    };
-                    reader.readAsText(csvFile);
-                } else {
-                    // Clear the table before adding new data
-                    clearTable();
-                    // Fetch data for each address from manual input
-                    const addresses = addressesInput.split(',').map(address => address.trim());
-                    addresses.forEach(address => {
-                        fetchDataForAddress(address);
-                    });
-                }
-            } else {
-                alert('Please enter at least one address or upload a CSV file.');
-            }
+function appendDataToTable(data) {
+    const statusTable = document.getElementById('statusTable');
+
+    // Create data row
+    const row = document.createElement('div');
+    row.classList.add('custom-row');
+    row.innerHTML = `
+        <div class="custom-cell-address ${data.status === 'online' ? 'online-address' : 'offline-address'}  priority-1">${data.address}</div>
+        <div class="custom-cell  priority-5">${data.status}</div>
+        <div class="custom-cell  priority-1">
+            <textarea class="description" contenteditable="true">${data.description}</textarea>
+        </div>
+        <div class="custom-cell priority-5">${data.consecutive_payments}</div>
+        <div class="custom-cell priority-5">${data.uptime_percent}%</div>
+        <div class="custom-cell priority-5">${data.monthly_earning}</div>
+        <div class="custom-cell priority-5">$${data.monthly_earning_usdt}</div>
+    `;
+
+    // Get the uptime element
+    const uptimeElement = row.querySelector('.custom-cell.priority-5:nth-child(5)');
+
+    // Determine font color based on uptime percentage range
+    const uptimePercent = parseInt(data.uptime_percent);
+    if (!isNaN(uptimePercent)) { // Check if uptimePercent is a valid number
+        if (uptimePercent >= 90) {
+            // Green for 90% and above
+            uptimeElement.style.color = '#16B13D';
+        } else if (uptimePercent >= 80) {
+            // Light green for 80-89%
+            uptimeElement.style.color = '#7BB11B';
+        } else if (uptimePercent >= 70) {
+            // Yellow for 70-79%
+            uptimeElement.style.color = '#B19719';
+        } else if (uptimePercent >= 60) {
+            // Red for 60-69%
+            uptimeElement.style.color = '#B1671E';
+        } else {
+            // Dark red for below 60%
+            uptimeElement.style.color = 'darkred';
+        }
+    } else {
+        // Handle the case where uptime_percent is not a valid number
+        // You can set a default color or handle the error as needed
+        uptimeElement.style.color = 'black'; // Default color
+    }
+
+    // Insert offline rows under the header
+    if (data.status === 'offline') {
+        const headerRow = statusTable.querySelector('.header');
+        statusTable.insertBefore(row, headerRow.nextSibling);
+    } else {
+        // For online rows, find the insertion index based on consecutive payments
+        const rows = Array.from(document.querySelectorAll('.custom-row:not(.header)'));
+        let insertionIndex = rows.findIndex(existingRow => {
+            if (existingRow.classList.contains('offline-address')) return false; // Skip offline rows
+            const existingConsecutivePayments = parseInt(existingRow.children[3].textContent);
+            const newConsecutivePayments = parseInt(row.children[3].textContent);
+            return newConsecutivePayments < existingConsecutivePayments;
         });
+        if (insertionIndex === -1) insertionIndex = rows.length; // Insert at the end if no smaller value found
+        statusTable.insertBefore(row, rows[insertionIndex]);
+    }
 
+    // Attach event listener to track changes in the description cell
+    const descriptionCell = row.querySelector('.description');
+    descriptionCell.addEventListener('input', function() {
+        changesMade = true;
+        document.getElementById('saveButton').style.display = 'inline';
+    });
+}
+
+function processCSV(csvData) {
+    // Parse CSV data
+    const lines = csvData.split('\n');
+    const addresses = [];
+
+    lines.forEach(line => {
+        const parts = line.split(',');
+        const address = parts[0].trim(); // Assuming address is the first column
+        const description = parts.length > 1 ? parts[1].trim() : ''; // Check if description exists
+
+        addresses.push({ address, description });
+    });
+
+    // Clear the table before adding new data
+    clearTable();
+
+    // Fetch data for each address
+    addresses.forEach(addressData => {
+        fetchDataForAddress(addressData.address, addressData.description);
+    });
+}
+
+function fetchDataForAddress(address, description = '') {
+    fetch(`https://api.nosocoin.com/nodes/status?address=${address}`)
+    .then(response => response.json())
+    .then(data => {
+        // Append data to the table
+        appendDataToTable({ ...data, description });
+        countOfflineStatus();
+    })
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+}
+
+function countOfflineStatus() {
+    const offlineCount = document.querySelectorAll('.offline-address').length;
+    const totalCount = document.querySelectorAll('.custom-row:not(.header)').length;
+    const addressHeader = document.querySelector('.header .custom-cell:nth-child(1)');
+    addressHeader.textContent = `Address (${totalCount}) ${offlineCount} offline`;
+
+    // Update custom URL link when status changes
+    document.getElementById('customUrlLink').setAttribute('href', generateCustomUrl());
+}
+
+document.getElementById('saveButton').addEventListener('click', function() {
+    saveToCSV();
+});
+
+function saveToCSV() {
+    const rows = Array.from(document.querySelectorAll('.custom-row')).slice(1); // Exclude the header row
+    let csvContent = '';
+
+    rows.forEach(row => {
+        const address = row.children[0].textContent.trim();
+        const description = row.querySelector('.description').value.trim();
+        csvContent += `${address},${description},\n`;
+    });
+
+    // Create a blob with the CSV data
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    if (link.download !== undefined) {
+        // Create a link element, hide it, direct it towards the blob, and then 'click' it programmatically
+        const url = URL.createObjectURL(blob);
+        link.setAttribute('href', url);
+        link.setAttribute('download', 'nodes.csv');
+        link.style.visibility = 'hidden';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        // Reset changes made flag
+        changesMade = false;
+        document.getElementById('saveButton').style.display = 'none'; // Hide the Save button
+    }
+}
+
+// Add an event listener to the file input element
+document.getElementById('csvFile').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Get the selected file
+    const reader = new FileReader(); // Create a new FileReader object
+    reader.onload = function(event) {
+        const csvData = event.target.result; // Get the CSV data from the FileReader
+        processCSV(csvData); // Process the CSV data
+    };
+    reader.readAsText(file); // Read the selected file as text
+});
+
+// Add event listener for the clear form button
+document.getElementById('clearFormButton').addEventListener('click', function() {
+    clearForm();
+});
+
+// Function to clear the form
+function clearForm() {
+    // Reset the form elements to their initial state
+    document.getElementById('addressForm').reset();
+    // Redirect to the base URL without any query parameters
+    window.location.href = window.location.href.split('?')[0];
+}
+
+// Function to calculate time until the next 10-minute interval
+function calculateRefreshTime() {
+    const now = new Date();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+    const remainingSeconds = (10 - (minutes % 10)) * 60 - seconds + 30;
+    return remainingSeconds * 1000; // Convert to milliseconds
+}
+
+
+
+// Function to refresh the data periodically
+function refreshData() {
+    setInterval(function () {
+        // Clear the table before fetching new data
+        clearTable();
+        
         // Fetch data for addresses provided in the URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('mynodes')) {
@@ -207,181 +413,44 @@
             });
         }
 
-        function clearTable() {
-            const statusTable = document.getElementById('statusTable');
-            // Keep the header row and remove other rows
-            const rows = document.querySelectorAll('.custom-row:not(.header)');
-            rows.forEach(row => {
-                statusTable.removeChild(row);
+        // Check if there is data from the CSV file
+        const csvFile = document.getElementById('csvFile').files[0];
+        if (csvFile) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const csvData = event.target.result;
+                processCSV(csvData); // Process the CSV data
+            };
+            reader.readAsText(csvFile);
+        }
+
+        // Check if there is data from the form entry
+        const addressesInput = document.getElementById('addresses').value.trim();
+        if (addressesInput) {
+            const addresses = addressesInput.split(',').map(address => address.trim());
+            addresses.forEach(address => {
+                fetchDataForAddress(address);
             });
         }
-
-        function appendDataToTable(data) {
-            const statusTable = document.getElementById('statusTable');
-
-            // Create data row
-            const row = document.createElement('div');
-            row.classList.add('custom-row');
-            row.innerHTML = `
-                <div class="custom-cell-address ${data.status === 'online' ? 'online-address' : 'offline-address'}  priority-1">${data.address}</div>
-                <div class="custom-cell  priority-5">${data.status}</div>
-                <div class="custom-cell  priority-1">
-                    <textarea class="description" contenteditable="true">${data.description}</textarea>
-                </div>
-                <div class="custom-cell priority-5">${data.consecutive_payments}</div>
-                <div class="custom-cell priority-5">${data.uptime_percent}%</div>
-                <div class="custom-cell priority-5">${data.monthly_earning}</div>
-                <div class="custom-cell priority-5">$${data.monthly_earning_usdt}</div>
-            `;
-
-            // Insert offline rows under the header
-            if (data.status === 'offline') {
-                const headerRow = statusTable.querySelector('.header');
-                statusTable.insertBefore(row, headerRow.nextSibling);
-            } else {
-                // For online rows, find the insertion index based on consecutive payments
-                const rows = Array.from(document.querySelectorAll('.custom-row:not(.header)'));
-                let insertionIndex = rows.findIndex(existingRow => {
-                    if (existingRow.classList.contains('offline-address')) return false; // Skip offline rows
-                    const existingConsecutivePayments = parseInt(existingRow.children[3].textContent);
-                    const newConsecutivePayments = parseInt(row.children[3].textContent);
-                    return newConsecutivePayments < existingConsecutivePayments;
-                });
-                if (insertionIndex === -1) insertionIndex = rows.length; // Insert at the end if no smaller value found
-                statusTable.insertBefore(row, rows[insertionIndex]);
-            }
-
-            // Attach event listener to track changes in the description cell
-            const descriptionCell = row.querySelector('.description');
-            descriptionCell.addEventListener('input', function() {
-                changesMade = true;
-                document.getElementById('saveButton').style.display = 'inline';
-            });
-        }
-
-        function processCSV(csvData) {
-            // Parse CSV data
-            const lines = csvData.split('\n');
-            const addresses = [];
-
-            lines.forEach(line => {
-                const parts = line.split(',');
-                const address = parts[0].trim(); // Assuming address is the first column
-                const description = parts.length > 1 ? parts[1].trim() : ''; // Check if description exists
-
-                addresses.push({ address, description });
-            });
-
-            // Clear the table before adding new data
-            clearTable();
-
-            // Fetch data for each address
-            addresses.forEach(addressData => {
-                fetchDataForAddress(addressData.address, addressData.description);
-            });
-        }
-
-        function fetchDataForAddress(address, description = '') {
-            fetch(`https://api.nosocoin.com/nodes/status?address=${address}`)
-            .then(response => response.json())
-            .then(data => {
-                // Append data to the table
-                appendDataToTable({ ...data, description });
-                countOfflineStatus();
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-        }
-
-        function countOfflineStatus() {
-            const offlineCount = document.querySelectorAll('.offline-address').length;
-            const totalCount = document.querySelectorAll('.custom-row:not(.header)').length;
-            const addressHeader = document.querySelector('.header .custom-cell:nth-child(1)');
-            addressHeader.textContent = `Address (${totalCount}) ${offlineCount} offline`;
-
-            // Update custom URL link when status changes
-            document.getElementById('customUrlLink').setAttribute('href', generateCustomUrl());
-        }
-
-        document.getElementById('saveButton').addEventListener('click', function() {
-            saveToCSV();
-        });
-
-        function saveToCSV() {
-            const rows = Array.from(document.querySelectorAll('.custom-row')).slice(1); // Exclude the header row
-            let csvContent = '';
-
-            rows.forEach(row => {
-                const address = row.children[0].textContent.trim();
-                const description = row.querySelector('.description').value.trim();
-                csvContent += `${address},${description},\n`;
-            });
-
-            // Create a blob with the CSV data
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement('a');
-            if (link.download !== undefined) {
-                // Create a link element, hide it, direct it towards the blob, and then 'click' it programmatically
-                const url = URL.createObjectURL(blob);
-                link.setAttribute('href', url);
-                link.setAttribute('download', 'nodes.csv');
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                // Reset changes made flag
-                changesMade = false;
-                document.getElementById('saveButton').style.display = 'none'; // Hide the Save button
-            }
-        }
-              // Add an event listener to the file input element
-          document.getElementById('csvFile').addEventListener('change', function(event) {
-              const file = event.target.files[0]; // Get the selected file
-              const reader = new FileReader(); // Create a new FileReader object
-              reader.onload = function(event) {
-                  const csvData = event.target.result; // Get the CSV data from the FileReader
-                  processCSV(csvData); // Process the CSV data
-              };
-              reader.readAsText(file); // Read the selected file as text
-          });
-
-          // Submit event listener for the form
-          document.getElementById('addressForm').addEventListener('submit', function(event) {
-              event.preventDefault(); // Prevent form submission
+    }, calculateRefreshTime());
+}
 
 
-          }); 
-        // Add event listener for the clear form button
-        document.getElementById('clearFormButton').addEventListener('click', function() {
-            clearForm();
-        });
+// Call the function to refresh the data periodically
+refreshData();
 
-        // Function to clear the form
-        function clearForm() {
-            // Reset the form elements to their initial state
-            document.getElementById('addressForm').reset();
-            // Redirect to the base URL without any query parameters
-            window.location.href = window.location.href.split('?')[0];
-        }
-        // Function to calculate time until the next 10-minute interval
-        function calculateRefreshTime() {
-            const now = new Date();
-            const minutes = now.getMinutes();
-            const seconds = now.getSeconds();
-            const remainingSeconds = (10 - (minutes % 10) - 1) * 60 + (60 - seconds) + 30;
-            return remainingSeconds * 1000; // Convert to milliseconds
-        }
+// Function to update the browser tab title with countdown time
+function updateTitleWithCountdown() {
+    setInterval(function() {
+        const remainingTime = calculateRefreshTime();
+        const seconds = Math.floor(remainingTime / 1000); // Calculate remaining seconds
+        document.title = `MNtool Refresh (${seconds}s) `; // Update the browser tab title with seconds
+    }, 1000);
+}
 
-        // Function to refresh the page after a calculated interval
-        function refreshPage() {
-            setTimeout(function() {
-                location.reload();
-            }, calculateRefreshTime());
-        }
+// Call the function to update the browser tab title with countdown time
+updateTitleWithCountdown();
 
-        // Call the function to refresh the page initially
-        refreshPage();
     </script> </a></div>
     <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
     </a>
