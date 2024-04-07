@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Noso Exporer</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        width: 80%;
+        margin: 50px auto;
+    }
+    .table {
+        display: table;
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+    .row {
+        display: table-row;
+    }
+    .cell {
+        display: table-cell;
+        padding: 10px;
+        border-bottom: 1px solid #ccc;
+    }
+    .cell:first-child {
+        font-weight: bold;
+    }
+</style> <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <!-- Include Highcharts library -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/stock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/search.js"></script>
+    <!---chart-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <!--style-->
+  </head>
+  <body color="#222222" style="                                                                                                                                                                                                                                       background-image: url(&quot;&quot;);">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+            data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
+              navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+              src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
+            NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
+          </a> </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <!--  <li><a href="explorer.html"><i class="fa fa-dashboard"></i>
+                NosoStats</a></li> -->
+            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i>
+                Explorer</a></li>
+            <!--  <li><a href="masternodes.html"> Coin Distribution</a></li>
+            <li><a href="masternodes.html"> Top Addresses</a></li> -->
+            <li><a href="masternodes.html"><i class="fa fa-globe"></i>
+                Masternodes</a></li>
+            <li><a href="api.html"><i class="fa fa-wrench"></i> API </a></li>
+            <li class="priority-9"><a href="qr.html"><img src="img/qr.png" height="30px">
+                QR</a></li>
+            <!-- <li><a href="masternodes.html"><i class="fa fa-money"></i>
+                Market</a></li> -->
+          </ul>
+          <!-- /.navbar-top-right -->
+          <div class="toprow">
+            <ul class="nav navbar-nav navbar-right navbar-user">
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+                    alt="Noso on Twitter"></a> </li>
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+                    src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+                    style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+                    alt="Noso Website"></a></li>
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
+                    alt="Noso Developers"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.navbar-collapse --> </nav>
+      <div id="page-wrapper" ;="">
+        <div class="row"> <font color="#fbe04d"><b>
+              <h3><img src="img/gvt.png" alt="nosogvt" title="nosologo" style="width: 40px; height: 40px;">
+                Noso Governance Tokens</h3>
+              <p> </p>
+            </b></font>
+          <div class="container">
+            <div class="table">
+              <div class="row">
+                <div class="cell">GVT Tokens Available</div>
+                <div class="cell" id="available">Loading...</div>
+              </div>
+              <div class="row">
+                <div class="cell">GVT Buy Value</div>
+                <div class="cell" id="buy">Loading...</div>
+              </div>
+              <div class="row">
+                <div class="cell">GVT Sell Value</div>
+                <div class="cell" id="sell">Loading...</div>
+              </div>
+            </div>
+          </div>
+          <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo" title="nosologo"
+              style="width: 15px; height: 15px;">&nbsp;<font size="1px" color="#bbb">Powered
+              by NOSO Blockchain&nbsp; | &nbsp; Built by the NOSO Community</font>
+          </div>
+        </div>
+        <font color="#fbe04d"><b> <font size="3px" color="#bbb"> </font></b></font></div>
+      <font color="#fbe04d"><b> <font size="3px" color="#bbb">
+            <!-- /#page-wrapper -->
+            <!-- /#wrapper -->
+            <!-- JavaScript -->
+            <script src="js/jquery-1.10.2.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <!-- Page Specific Plugins -->
+            <script src="js/getpendingorders2.js"></script>
+            <script>
+    function fetchData() {
+        fetch('https://api.nosostats.com:8078', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                "jsonrpc": "2.0",
+                "method":"getgvtinfo",
+                "params": [],
+                "id": 1
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            const result = data.result[0];
+            document.getElementById('available').textContent = result.available;
+            document.getElementById('buy').textContent = (result.buy * 0.00000001).toFixed(8) + ' NOSO';
+            document.getElementById('sell').textContent = (result.sell * 0.00000001).toFixed(8) + ' NOSO';
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+    }
+
+    fetchData();
+</script></font> </b></font> </div>
+  </body>
+</html>

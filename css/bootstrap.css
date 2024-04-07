@@ -322,7 +322,7 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: #fbe04d;
   text-decoration: none;
 }
 
@@ -5190,13 +5190,14 @@ textarea.input-group-sm > .input-group-btn > .btn {
   font-size: 12px;
   font-weight: bold;
   line-height: 1;
-  color: #ffffff;
+  color: #999999;
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  background-color: #999999;
+  background-color: transparent;
   border-radius: 10px;
 }
+
 
 .badge:empty {
   display: none;
@@ -5549,10 +5550,11 @@ a.thumbnail.active {
 .list-group-item {
   position: relative;
   display: block;
-  padding: 10px 15px;
+  padding: 5px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  color: darkgray;   /* font color*/
+  background-color: black; /* panel color*/
+  border: 1px solid #222222;  /* panel borders*/
 }
 
 .list-group-item:first-child {
@@ -5621,15 +5623,19 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: #dddddd;
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  /* min-width: 768px;   /* panel width*/
 }
 
 .panel-body {
-  padding: 15px;
+  padding: 1px;
+  
+background-color: transparent;
+  
 }
 
 .panel-body:before,
@@ -5734,10 +5740,14 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-heading {
-  padding: 10px 15px;
-  border-bottom: 1px solid transparent;
+  padding: 8px 15px;
+  border-bottom: 1px solid  transparent;  /* Head text background */
   border-top-right-radius: 3px;
   border-top-left-radius: 3px;
+  min-width: 330px;
+  background-color: #333333;
+
+
 }
 
 .panel-heading > .dropdown .dropdown-toggle {
@@ -5745,9 +5755,11 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-title {
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 0;
   font-size: 16px;
+  background-color: inherit;
+  color: darkgrey;
 }
 
 .panel-title > a {
@@ -5812,12 +5824,13 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel-primary {
   border-color: #428bca;
+    /* min-width: 768px;   /* panel width*/
 }
 
 .panel-primary > .panel-heading {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  color: #ffffff ;
+  background-color: #222222;
+  border-color: #222222;
 }
 
 .panel-primary > .panel-heading + .panel-collapse .panel-body {
