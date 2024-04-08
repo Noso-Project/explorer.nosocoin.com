@@ -141,7 +141,20 @@
          .mn-block {
           color: darkgrey;
          
-        }      
+        } 
+   .mn-spinner {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    animation: spin 0.6s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
     </style>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Include Highcharts library -->
@@ -162,7 +175,7 @@ crossorigin="anonymous">
     <!-- Page Specific CSS -->
     <!--style-->
   </head>
-  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                     background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                                background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -228,12 +241,15 @@ crossorigin="anonymous">
           <div class="panel-body">
             <div class="list-group"> <span class="list-group-item">Enabled <span
 
-                  class="mn-block"> [Block <span id="mn-block">0</span>]</span>
-                <span class="badge"><span class="mn-total" id="mn-total">0</span></span></span>
-              <span class="list-group-item">Active <span class="badge"><span class="mn-active"
+                  class="mn-block"> [Block <span id="mn-block"></span>]</span>
+                <span class="badge"><span class="mn-total" id="mn-total">
+                    <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
+                  </span></span></span> <span class="list-group-item">Active <span
 
-                    id="mn-active">0</span></span></span> <span class="list-group-item">Inactive
-                <span class="badge"> <span class="mn-inactive" id="mn-inactive">0</span></span></span>
+                  class="badge"><span class="mn-active" id="mn-active">
+                    <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
+                  </span></span></span> <span class="list-group-item">Inactive
+                <span class="badge"> <span class="mn-inactive" id="mn-inactive"><div class="mn-spinner" style="width: 15px; height: 15px;"></div></span></span></span>
               <br>
               <b><font color="darkgray">Rewards</font></b><br>
               <span class="list-group-item">Total Reward <span class="badge"><span
@@ -291,7 +307,6 @@ crossorigin="anonymous">
           <font color="white"> </font></div>
         <font color="white"> </font></div>
       <font color="white">
-
         <div class="row">
           <div class="col-lg-12 ">
             <div class="panel panel-default">
