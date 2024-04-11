@@ -21,6 +21,19 @@
             display: none;
             margin-top: 0px;
         }
+         .mntool-spinner {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3498db;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    animation: spin 0.6s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
     </style>
     <!--style-->
   </head>
@@ -43,21 +56,24 @@
           <ul class="nav navbar-nav side-nav">
             <!--  <li><a href="explorer.html"><i class="fa fa-dashboard"></i>
                 NosoStats</a></li> -->
-            <li class="active"><a href="explorer.html"><i class="fa fa-search"></i>
-                Explorer</a></li>
-            <!--  <li><a href="masternodes.html"> Coin Distribution</a></li>
-            <li><a href="masternodes.html"> Top Addresses</a></li> -->
+            <li><a href="index.html"><i class="fa fa-tachometer"></i> Overview</a></li>
+            <li><a href="blocks.html"> <i class="fa fa-th-large"></i> Blocks</a></li>
+            <li><a href="movements.html"><i class="fa fa-exchange"></i> Coin
+                Movements</a></li>
+            <!--<li><a href="addresses.html"><i class="fa fa-star"></i> Top
+                Addresses </a></li> -->
             <li><a href="masternodes.html"><i class="fa fa-globe"></i>
                 Masternodes</a></li>
-            <li><a href="api.html"><i class="fa fa-wrench"></i> API </a></li>
-            <li class="priority-9"><a href="qr.html"><img src="img/qr.png" height="30px">
-                QR</a></li>
-            <!-- <li><a href="masternodes.html"><i class="fa fa-money"></i>
-                Market</a></li> -->
+            <!-- <li><a href="chainstats.html"><i class="fa fa-bar-chart"></i>
+                Chain Statistics </a></li> -->
+            <li><a href="gvt.html"><i class="fa fa-gavel"></i> Governance</a></li>
           </ul>
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
+              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+
+                    alt="QR Scanner"></a> </li>
               <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
 
                     src="img/twitter_bird.png" style="width: 20px; height: 16px;"
@@ -69,14 +85,20 @@
               <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
 
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
+              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+
+                    src="img/gh.png" style="width: 28px; height: 17px;" alt="Noso on Github"></a></li>
               <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
 
                     alt="Noso Website"></a></li>
               <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
 
-                  target="_blank"> <img src="img/api.png" style="width: 28px; height: 24px;"
+                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
 
                     alt="Noso Developers"></a></li>
+              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+
+                    style="width: 28px; height: 24px;" alt="Noso API"></a></li>
             </ul>
           </div>
         </div>
@@ -115,6 +137,7 @@
       </div>
       <a id="customUrlLink" class="bookmark-link" href="javascript:void(0)" onclick="bookmarkPage()">
         <script>
+
  function bookmarkPage() {
     var pageTitle = document.title;
     var pageURL = window.location.href;
@@ -399,10 +422,70 @@ function calculateRefreshTime() {
 // Function to refresh the data periodically
 function refreshData() {
     setInterval(function () {
-        // Clear the table before fetching new data
-        clearTable();
-        
         // Fetch data for addresses provided in the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const existingAddresses = new Set(); // Keep track of existing addresses
+        if (urlParams.has('mynodes')) {
+            const nodeAddresses = urlParams.get('mynodes').split(',');
+            nodeAddresses.forEach(pair => {
+                const [address, description] = pair.split(':');
+                fetchDataForAddress(address.trim(), description ? description.trim() : '');
+                existingAddresses.add(address.trim());
+            });
+        }
+
+        // Check if there is data from the CSV file
+        const csvFile = document.getElementById('csvFile').files[0];
+        if (csvFile) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const csvData = event.target.result;
+                processCSV(csvData); // Process the CSV data
+            };
+            reader.readAsText(csvFile);
+        }
+
+        // Check if there is data from the form entry
+        const addressesInput = document.getElementById('addresses').value.trim();
+        if (addressesInput) {
+            const addresses = addressesInput.split(',').map(address => address.trim());
+            addresses.forEach(address => {
+                // Fetch data only if the address is not already in the table
+                if (!existingAddresses.has(address)) {
+                    fetchDataForAddress(address);
+                }
+            });
+        }
+    }, calculateRefreshTime());
+}
+
+
+
+// Call the function to refresh the data periodically
+refreshData();
+
+// Function to update the browser tab title with countdown time
+function updateTitleWithCountdown() {
+    setInterval(function() {
+        const remainingTime = calculateRefreshTime();
+        const seconds = Math.floor(remainingTime / 1000); // Calculate remaining seconds
+        document.title = `MNtool Refresh (${seconds}s) `; // Update the browser tab title with seconds
+    }, 1000);
+}
+
+// Call the function to update the browser tab title with countdown time
+updateTitleWithCountdown();
+function fetchDataAndPopulateTable() {
+    // Check if data exists in sessionStorage
+    const storedData = sessionStorage.getItem('nodeData');
+    if (storedData) {
+        // If data exists, parse it and populate the table
+        const parsedData = JSON.parse(storedData);
+        parsedData.forEach(data => {
+            appendDataToTable(data);
+        });
+    } else {
+        // If data doesn't exist, fetch it and populate the table
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('mynodes')) {
             const nodeAddresses = urlParams.get('mynodes').split(',');
@@ -428,27 +511,12 @@ function refreshData() {
         if (addressesInput) {
             const addresses = addressesInput.split(',').map(address => address.trim());
             addresses.forEach(address => {
+                // Fetch data only if the address is not already in the table
                 fetchDataForAddress(address);
             });
         }
-    }, calculateRefreshTime());
+    }
 }
-
-
-// Call the function to refresh the data periodically
-refreshData();
-
-// Function to update the browser tab title with countdown time
-function updateTitleWithCountdown() {
-    setInterval(function() {
-        const remainingTime = calculateRefreshTime();
-        const seconds = Math.floor(remainingTime / 1000); // Calculate remaining seconds
-        document.title = `MNtool Refresh (${seconds}s) `; // Update the browser tab title with seconds
-    }, 1000);
-}
-
-// Call the function to update the browser tab title with countdown time
-updateTitleWithCountdown();
 
     </script>
         <script src="js/jquery-1.10.2.js"></script>
