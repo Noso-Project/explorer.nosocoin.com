@@ -9,18 +9,20 @@
     <style>
 
    .mn-spinner {
-    border: 2px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #3498db;
-    border-radius: 50%;
-    width: 8px;
-    height: 8px;
-    animation: spin 0.6s linear infinite;
-  }
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #3498db;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
+      animation: spin 0.6s linear infinite;
+     width: 15px;
+     height: 15px;
+    }
   
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 /* Styles for header row */
 .header-row {
   display: flex;
@@ -149,10 +151,10 @@
 /* Custom spinner icons */
 #blockSearchForm input[type="number"]::before {
     content: "\25B2"; /* Unicode for an upwards arrow */
-    font-size: 0.8em; /* Adjust size as needed */
+    font-size: 0.8em; /* size  */
     position: absolute;
-    right: 5px; /* Adjust position as needed */
-    top: 0.3em; /* Adjust position as needed */
+    right: 5px; /* position */
+    top: 0.3em; /*  position  */
 }
 
 #blockSearchForm input[type="number"]::after {
@@ -199,12 +201,14 @@
   table {
     width: 100%;
     border-collapse: collapse;
+    
   }
 
   th, td {
     padding: 2px;
     border-bottom: 0px solid #ddd;
     text-align: left;
+    font-size: 12px;
   }
 
   th {
@@ -227,9 +231,10 @@
     </style>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Include Highcharts library -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
 crossorigin="anonymous">
     </script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -242,15 +247,17 @@ crossorigin="anonymous">
     <!-- Page Specific CSS -->
     <!--style-->
   </head>
-  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
             data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
               navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+
               src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
             NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
           </a> </div>
@@ -274,23 +281,33 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+
                     alt="QR Scanner"></a> </li>
-              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
-                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+
                     src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
-              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
-              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+
                     src="img/gh.png" style="width: 28px; height: 17px;" alt="Noso on Github"></a></li>
-              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+
                     alt="Noso Website"></a></li>
-              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
-                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+
+                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
+
                     alt="Noso Developers"></a></li>
-              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+
                     style="width: 28px; height: 24px;" alt="Noso API"></a></li>
             </ul>
           </div>
@@ -301,23 +318,32 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
-                style="display: none;"> <input id="block-search" name="blockheight"
+              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+
+                style="display: none;"> <input id="block-search" name="blockheight"
+
                   placeholder="Search Block Number" type="search"> <button type="submit">Search
                   Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-                style="display: none;"> <input id="address-search" name="address"
+              <form id="address-form" action="getaddressbalance.html?address" method="get"
+
+                style="display: none;"> <input id="address-search" name="address"
+
                   placeholder="Search Address" type="search"> <button type="submit">Search
                   Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-                style="display: none;"> <input id="alias-search" name="address"
+              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
+
+                style="display: none;"> <input id="alias-search" name="address"
+
                   placeholder="Search Alias" type="search"> <button type="submit">Search
                   Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-                style="display: none;"> <input id="order-search" name="orderid"
+              <form id="order-form" action="getordersinfo.html?orderid" method="get"
+
+                style="display: none;"> <input id="order-search" name="orderid"
+
                   placeholder="Search Order ID" type="search"> <button type="submit">Search
                   Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+
                   type="search"> <button type="submit1" onclick="search()"></button>
               </div>
               <!-- Results will be displayed on Explorer page --> </div>
@@ -480,7 +506,8 @@ crossorigin="anonymous">
               Over Time</h3>
           </div>
           <div class="panel-body">
-            <div class="list-group"> <span class="list-group-item"> <canvas id="myChart"
+            <div class="list-group"> <span class="list-group-item"> <canvas id="myChart"
+
                   width="400" height="200"></canvas> </span> </div>
           </div>
         </div>
@@ -498,7 +525,8 @@ crossorigin="anonymous">
                   <option value="week">Week</option>
                 </select>
                 <form id="blockSearchForm"> <label for="blockNumberInput"></label>
-                  <input id="blockNumberInput" name="blockNumberInput" required=""
+                  <input id="blockNumberInput" name="blockNumberInput" required=""
+
                     type="number"> <button type="submit">Search</button> </form>
                 <br>
                 Larger intervals can take up to 40 seconds to show results.
@@ -509,11 +537,13 @@ crossorigin="anonymous">
       <div class="row">
         <center>
           <div class="col-lg-12"> <font color="grey"> Top Orders for Interval<br>
-              <br>
+              <div id="mn-spinner" class="mn-spinner" style="display: none;">
+                <!-- Initially hidden -->
+                <!-- No text content necessary --> </div>
             </font>
-            <div id="orders-chart">
-              <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
-            </div>
+            <div id="orders-chart"><div class="mn-spinner" style="width: 15px; height: 15px;"></div> </div>
+            <br>
+            
             <!-- Results will be displayed here --> </div>
         </center>
         <div class="exprow">
@@ -521,8 +551,10 @@ crossorigin="anonymous">
             <br>
             <br>
             <br>
-            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
-                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
+            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
+
+                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
+
                 size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
                 &nbsp; Built by the NOSO Community</font> </div>
           </div>
@@ -570,52 +602,92 @@ document.getElementById('search').addEventListener('keypress', function (e) {
     search();
   }
 });
-</script> <script>
-        
-   // Data from the provided table
-  var blocks = [1, 209999, 420000, 630000, 840000, 1050000, 1260000, 1470000, 1680000, 1890000, 2100000];
-  var totalSupply = [10303.9073, 10510253.9073, 15760253.9073, 18385253.9073, 19697753.9073, 20354003.9073, 20682128.9073, 20846191.4073, 20928222.6573, 20969238.2823, 20969746.0948];
+</script> <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+ //Script for line chart
+// Data from the provided table
+var blocks = [1, 209999, 420000, 630000, 840000, 1050000, 1260000, 1470000, 1680000, 1890000, 2100000];
+var totalSupply = [10303.9073, 10510253.9073, 15760253.9073, 18385253.9073, 19697753.9073, 20354003.9073, 20682128.9073, 20846191.4073, 20928222.6573, 20969238.2823, 21000000.00000000];
 
-  // Convert blocks to years
-  var blocksYears = blocks.map(block => {
-    // Assuming block 0 happened in 2021
-    var year = 2021 + (block * 10 / (365 * 24 * 6));
-    return Math.floor(year);
-  });
 
-  // Chart configuration
-  var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: blocksYears,
-      datasets: [{
-        label: 'Total Supply Over Time',
-        data: totalSupply,
-        fill: false,
-        borderColor: 'rgb(75, 192, 192)',
-        tension: 0.1
-      }]
-    },
-    options: {
-      scales: {
-        x: {
-          title: {
-            display: true,
-            text: 'Years'
-          }
+// Convert blocks to years
+var blocksYears = blocks.map(block => {
+  var year = 2021 + ((block * 6) / (365 * 24 * 60));
+  return Math.floor(year);
+});
+
+// Chart configuration
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: blocksYears,
+    datasets: [{
+      label: 'Total Supply Over Time',
+      data: totalSupply,
+      fill: false,
+      borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1
+    }]
+  },
+  options: {
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: 'Years'
+        }
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Total Supply'
         },
-        y: {
-          title: {
-            display: true,
-            text: 'Total Supply'
-          },
-          beginAtZero: true
+        beginAtZero: true,
+        ticks: {
+          callback: function(value, index, values) {
+            return (value / 1000000).toFixed(0) + 'M';
+          }
         }
       }
+    },
+    plugins: {
+      legend: {
+        display: false // Hides the legend
+      }
     }
-  });
-</script><!-- JavaScript -->
+  }
+});
+
+</script> <script>
+         // Script for spinner timer
+    document.getElementById('blockSearchForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get the selected value from the dropdown
+      const timeRange = document.getElementById('timeRange').value;
+      
+      // Calculate the duration based on the selected value
+      let duration;
+      if (timeRange === 'hour') {
+        duration = 2 * 1000; // 2 seconds
+      } else if (timeRange === 'day') {
+        duration = 6 * 1000; // 6 seconds
+      } else if (timeRange === 'week') {
+        duration = 37 * 1000; // 40 seconds
+      }
+
+      // Show spinner
+      const spinner = document.getElementById('mn-spinner');
+      spinner.style.display = 'block';
+
+      // Hide spinner after duration
+      setTimeout(function() {
+        spinner.style.display = 'none';
+      }, duration);
+    });
+  </script>
+        <!-- JavaScript -->
         <!-- JavaScript -->
         <!--scripts for navbar hamburger below-->
         <script src="js/jquery-1.10.2.js"></script>

@@ -63,9 +63,12 @@ async function fetchBlockOrders(blockHeight) {
     return response.json();
 }
 
+
 async function compileOrdersChart(startingBlockHeight, blockInterval) {
+
     return new Promise(async (resolve, reject) => {
         try {
+        
             // Fetch orders for the specified block interval
             const blockOrderPromises = [];
             for (let i = 0; i < blockInterval; i++) {
@@ -139,6 +142,7 @@ if (order.fee > 0) {
             if (allOrders.length === 0) {
                 const noResultsRow = document.createElement('tr');
                 const noResultsCell = document.createElement('td');
+                
                 noResultsCell.textContent = 'No coin movements found';
                 noResultsCell.colSpan = 10; // Span across all columns
                 noResultsRow.appendChild(noResultsCell);
@@ -222,6 +226,7 @@ async function handleTimeRangeChange(selectedTimeRange) {
             break;
         case 'day':
             blockInterval = 144; // 144 blocks in a day
+            
             break;
         case 'week':
             blockInterval = 1008; // 1008 blocks in a week
@@ -246,6 +251,7 @@ async function handleTimeRangeChange(selectedTimeRange) {
 
 // Function to handle the search by block number
 async function handleBlockSearch(event) {
+
     event.preventDefault();
     const blockNumberInput = document.getElementById('blockNumberInput');
     const blockNumber = parseInt(blockNumberInput.value);
