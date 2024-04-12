@@ -1,11 +1,5 @@
-// Function to parse block height from URL parameters
-function parseBlockHeightFromURL() {
-  const urlParams = new URLSearchParams(window.location.search);
-  return parseInt(urlParams.get('blockheight'));
-}
-
-// Function to make RPC call to retrieve current block height
-async function getCurrentBlockHeight() {
+// Function to make RPC call to retrieve current block height and pending transactions
+async function getCurrentBlockInfo() {
   const response = await fetch('https://rpc.nosocoin.com:8078', {
     method: 'POST',
     headers: {
@@ -21,16 +15,28 @@ async function getCurrentBlockHeight() {
 
   const data = await response.json();
   if (data.result && data.result.length > 0) {
-    return data.result[0].lastblock;
+    return {
+      lastBlock: data.result[0].lastblock,
+      pendingTransactions: data.result[0].pending
+    };
   } else {
     throw new Error('Unable to retrieve current block height');
   }
 }
 
+// Function to parse block height from URL parameters
+function parseBlockHeightFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return parseInt(urlParams.get('blockheight'));
+}
+
 // Function to fetch block orders for the last 144 blocks
 async function fetchBlockOrdersForLast144Blocks() {
   try {
-    const currentBlockHeight = await getCurrentBlockHeight();
+    const currentBlockInfo = await getCurrentBlockInfo();
+    const currentBlockHeight = currentBlockInfo.lastBlock;
+    const pendingTransactions = currentBlockInfo.pendingTransactions;
+    
     const startingBlockHeight = currentBlockHeight - 144;
     const blockOrderPromises = [];
     for (let i = 0; i < 144; i++) {
@@ -39,7 +45,7 @@ async function fetchBlockOrdersForLast144Blocks() {
       blockOrderPromises.push(orderPromise);
     }
     const blockOrders = await Promise.all(blockOrderPromises);
-    return blockOrders;
+    return { blockOrders, pendingTransactions };
   } catch (error) {
     console.error('Error fetching block orders for the last 144 blocks:', error);
     throw error;
@@ -64,10 +70,10 @@ async function fetchBlockOrders(blockHeight) {
   return response.json();
 }
 
-/// Function to calculate movements over 100, 1000, and 10000 based on the last 144 blocks
+// Function to calculate movements over 100, 1000, and 10000 based on the last 144 blocks
 async function calculateAllMovements() {
   try {
-    const blockOrders = await fetchBlockOrdersForLast144Blocks();
+    const { blockOrders, pendingTransactions } = await fetchBlockOrdersForLast144Blocks();
 
     let movements100 = 0;
     let movements1000 = 0;
@@ -102,6 +108,7 @@ async function calculateAllMovements() {
     document.getElementById('movements10000').textContent = movements10000;
     document.getElementById('movements1').textContent = movements1;
     document.getElementById('movementssum').textContent = movementssum.toFixed(8);
+    document.getElementById('m-pendings').textContent = pendingTransactions;
 
   } catch (error) {
     console.error('Error calculating movements:', error);
