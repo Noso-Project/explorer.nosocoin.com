@@ -7,8 +7,10 @@
     <meta name="author" content="">
     <title>Noso Explorer</title>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
 crossorigin="anonymous">
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -21,8 +23,73 @@ crossorigin="anonymous">
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Page Specific CSS -->
     <!--style-->
+    <style>       /* CSS to style the table header cells */
+        .order-table th {
+            background-color: #222222 ;
+            color: darkgray; /* Dark grey color */
+            padding: 4px;
+            text-align: center;
+            border: 0px solid #ddd;
+            max-width: 3048px; /* Set max-width for header cells */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Display ellipsis for overflow text */
+        }
+
+        /* CSS to style the table data cells */
+        .order-table td {
+            padding: 8px;
+            color:  #ccc;
+            text-align: left;
+            border: 0px solid #ddd;
+            max-width: 3048px; /* Set max-width for data cells */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Display ellipsis for overflow text */
+        }
+
+        /* Change the background color of even rows */
+        .order-table tr:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        /* Change the background color of odd rows */
+        .order-table tr:nth-child(even) {
+            background-color: transparent;
+        }
+      
+      
+       /* Styling for the table */     
+        table {
+          width: 100%;
+          border-collapse: collapse;
+
+        }
+
+        th, td {
+          padding: 2px;
+          border-bottom: 0px solid #ddd;
+          text-align: left;
+          font-size: 12px;
+        }
+
+        th {
+          background-color: black;
+          border-bottom: 0px solid #ddd;
+        }
+        #orders-chart-container {
+            height: 300px; /* Adjust height as needed */
+            overflow: auto;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        #orders-chart-container::-webkit-scrollbar {
+            display: none; /* WebKit (Chrome, Safari, etc.) */
+        }    
+    </style>
   </head>
-  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                                                   background-image: url();">
+  <body onload="loadNodeIpAddressCount();" color="#222222" style="                                                                                 background-image: url();">
     <div id="wrapper">
       <!-- PLACE IMPORTANT ANNOUNCEMENTS BELOW -->
       <!--    <div id="TxWarn" style="position:fixed;left:20px;top:65px;background-color:#C30000;color:#fff;border-radius:20px;max-width:350px;padding:8px;z-index:999999;display:none;text-align:center;opacity:.9;font-size:20px"><img
@@ -33,10 +100,12 @@ crossorigin="anonymous">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
             data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
               navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+
               src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
             NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
           </a> </div>
@@ -61,23 +130,33 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+
                     alt="QR Scanner"></a> </li>
-              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
-                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+
                     src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
-              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
-              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+
                     src="img/gh.png" style="width: 28px; height: 17px;" alt="Noso on Github"></a></li>
-              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+
                     alt="Noso Website"></a></li>
-              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
-                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+
+                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
+
                     alt="Noso Developers"></a></li>
-              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+
                     style="width: 28px; height: 24px;" alt="Noso API"></a></li>
             </ul>
           </div>
@@ -88,23 +167,32 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
-                style="display: none;"> <input id="block-search" name="blockheight"
+              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+
+                style="display: none;"> <input id="block-search" name="blockheight"
+
                   placeholder="Search Block Number" type="search"> <button type="submit">Search
                   Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-                style="display: none;"> <input id="address-search" name="address"
+              <form id="address-form" action="getaddressbalance.html?address" method="get"
+
+                style="display: none;"> <input id="address-search" name="address"
+
                   placeholder="Search Address" type="search"> <button type="submit">Search
                   Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-                style="display: none;"> <input id="alias-search" name="address"
+              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
+
+                style="display: none;"> <input id="alias-search" name="address"
+
                   placeholder="Search Alias" type="search"> <button type="submit">Search
                   Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-                style="display: none;"> <input id="order-search" name="orderid"
+              <form id="order-form" action="getordersinfo.html?orderid" method="get"
+
+                style="display: none;"> <input id="order-search" name="orderid"
+
                   placeholder="Search Order ID" type="search"> <button type="submit">Search
                   Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+
                   type="search"> <button type="submit1" onclick="search()"></button>
               </div>
               <!-- Results will be displayed on Explorer page --> </div>
@@ -143,7 +231,8 @@ crossorigin="anonymous">
                 <div class="panel-head-tiles">
                   <div class="row" id="refresh">
                     <div class="col-xs-6 text-right" id="divrefresh">
-                      <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+                      <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+
                           id="countdown">0</span></p>
                       <p class="announcement-text" style="width: 176px;">Current
                         Block Time Remaining</p>
@@ -170,7 +259,8 @@ crossorigin="anonymous">
                           <span id="getsupply">0</span> <br>
                           <font class="announcement-subheading">21M</font> </p>
                         <font size="2">
-                          <p class="announcement-text" style="width: 176px;"><font
+                          <p class="announcement-text" style="width: 176px;"><font
+
                               color="white"><span id="circulating">0%</span> </font>&nbsp;
                             Circulating Supply<font size="2"></font></p>
                           <p class="announcement-text2" style="width: 176px;">NOSO
@@ -180,7 +270,8 @@ crossorigin="anonymous">
                     </div>
                   </div>
                   <font size="2"> <a href="explorer.html"> </a>
-                    <div class="panel-footer announcement-bottom"><a href="#"> </a><a
+                    <div class="panel-footer announcement-bottom"><a href="#"> </a><a
+
                         href="explorer.html">
                         <div class="row">
                           <div class="col-xs-6">NOSO Explorer</div>
@@ -195,10 +286,13 @@ crossorigin="anonymous">
                   <div class="panel-head-tiles2">
                     <div class="row">
                       <div class="col-xs-6 text-right">
-                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
-                            id="mncoinslocked">0</span><font class="announcement-subheading"><span
+                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+
+                            id="mncoinslocked">0</span><font class="announcement-subheading"><span
+
                               id="getsupply2">0</span></font></p>
-                        <p class="announcement-text2" style="width: 176px;"><font
+                        <p class="announcement-text2" style="width: 176px;"><font
+
                             color="white"><span id="tvlpercentage">0</span></font>&nbsp;
                           Masternode Coins Locked<br>
                         </p>
@@ -229,11 +323,14 @@ crossorigin="anonymous">
                 <div class="panel-head-tiles2">
                   <div class="row">
                     <div class="col-xs-6 text-right">
-                      <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+                      <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+
                           id="node-count">0</span><font class="announcement-subheading2">&nbsp;&nbsp;&nbsp;Active
                           Nodes</font></p>
-                      <p class="announcement-text2" style="width: 176px;"><font
-                          size="2"> Current ROI&nbsp;<font color="white"><span id="node-aroi">0</span></font><font
+                      <p class="announcement-text2" style="width: 176px;"><font
+
+                          size="2"> Current ROI&nbsp;<font color="white"><span id="node-aroi">0</span></font><font
+
                             color="white">% </font>&nbsp;<font color="white">/
                             $<span id="node-aroi-usdt"></span></font>&nbsp;/yr<br>
                         </font></p>
@@ -260,7 +357,8 @@ crossorigin="anonymous">
                   <div class="panel-head-tiles">
                     <div class="row" id="refresh">
                       <div class="col-xs-6 text-right" id="divrefresh">
-                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+                        <p class="announcement-heading" style="margin-left: 26px; width: 164px;"><span
+
                             id="getpendingorders2">0</span></p>
                         <p class="announcement-text" style="width: 176px;">Current
                           Block Pending Transactions</p>
@@ -283,10 +381,12 @@ crossorigin="anonymous">
                     <div class="panel-head-tiles">
                       <div class="row">
                         <div class="col-xs-6 text-right">
-                          <p class="announcement-heading" style="margin-left: 0px; width: 164px;"><span
+                          <p class="announcement-heading" style="margin-left: 0px; width: 164px;"><span
+
                               id="halving-timer">0</span><font class="announcement-subheading">Blocks
                               Remaining</font></p>
-                          <p class="announcement-text" style="width: 176px;"><font
+                          <p class="announcement-text" style="width: 176px;"><font
+
                               color="white"><span id="halving-timer-days">0</span></font>&nbsp;
                             Days until Next Halving</p>
                         </div>
@@ -307,10 +407,12 @@ crossorigin="anonymous">
                     <div class="panel-head-tiles">
                       <div class="row">
                         <div class="col-xs-6 text-right">
-                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+
                               id="noso-usdt-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
                               NOSO-USDT </font></p>
-                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+                          <p class="announcement-heading2" style="margin-left: 26px; width: 164px;"><span
+
                               id="noso-btc-lastPrice">0</span><font class="announcement-subheading2">&nbsp;
                               NOSO-BTC </font></p>
                         </div>
@@ -329,11 +431,11 @@ crossorigin="anonymous">
               </font> </font></div>
           <font size="2"> </font></div>
         <font size="2"> </font></div>
-      <font size="2">
-        <div class="row">
+      <font size="2"> </font>
+      <div class="row"><font size="2">
           <div class="row"> <br>
             <div class="my-grid-container">
-              <div class="my-grid-child" style="min-width: 300px" ;="">
+              <div class="my-grid-child" style="min-width: 300px">
                 <center>
                   <h3>Latest Blocks</h3>
                 </center>
@@ -357,85 +459,78 @@ crossorigin="anonymous">
                     <button id="forward-btn">Next</button> </div>
                 </center>
               </div>
-              <div class="my-grid-child" style="min-width: 300px" ;="">
+              <div class="my-grid-child" style="min-width: 600px">
                 <center>
-                  <h3> Pending Transactions</h3>
+                  <h3> Recent Transactions</h3>
                 </center>
-                <table class="styled-table1">
-                  <thead>
-                    <tr>
-                      <th colspan="5"><font size="3"> </font> <br>
-                      </th>
-                      <th> <br>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody id="getpendingorders">
-                  </tbody>
-                </table>
                 <br>
+                <div id="orders-chart-container" style="height: 400px; overflow: auto;">
+                  <div id="orders-chart"></div>
+                  <br>
+                </div>
                 <center>
-                  <div class="button-container"><button id="pendingordersbutton">More
+                  <div class="button-container"><button id="ordersbutton">More
                       Transactions</button></div>
                 </center>
-                <div id="mns-rewards-table"></div>
               </div>
             </div>
           </div>
-        </div>
-        <br>
-        <br>
-        <div class="exprow">
-          <div><br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
-                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
-                size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
-                &nbsp; Built by the NOSO Community</font> </div>
+          <br>
+          <br>
+          <div class="exprow">
+            <div><br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <br>
+              <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
+
+                  alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
+
+                  size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
+                  &nbsp; Built by the NOSO Community</font> </div>
+            </div>
           </div>
-        </div>
-        <!-- /.row -->
-        <!-- /.row --> <font size="2">
-          <!-- /#page-wrapper -->
-          <!-- /#wrapper -->
-          <!-- JavaScript -->
-          <script src="js/jquery-1.10.2.js"></script>
-          <script src="js/bootstrap.js"></script>
-          <!-- Page Specific Plugins --> </font>
-        <!-- rpc api -->
-        <script src="js/explorer.js"></script>
-        <script src="js/getpendingorders.js"></script>
-        <script src="js/getmainnetinfo.js"></script>
-        <!-- <script src="js/getblockmns2.js"></script> -->
-        <script src="js/countdown2.js"></script>
-        <script src="js/tvl.js"></script>
-        <!--mongo api -->
-        <!--<script src="js/countdown.js"></script>-->
-        <!--external api -->
-        <script src="js/getprice.js"></script>
-        <style>
+          <!-- /.row -->
+          <!-- /.row --> <font size="2">
+            <!-- /#page-wrapper -->
+            <!-- /#wrapper -->
+            <!-- JavaScript -->
+            <script src="js/jquery-1.10.2.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <!-- Page Specific Plugins --> </font>
+          <!-- rpc api -->
+          <script src="js/explorer.js"></script>
+          <!--<script src="js/getpendingorders.js"></script>-->
+          <script src="js/getmainnetinfo.js"></script>
+          <script src="js/gbo-ordersbrief.js"></script>
+          <!-- <script src="js/getblockmns2.js"></script> -->
+          <script src="js/countdown2.js"></script>
+          <script src="js/tvl.js"></script>
+          <!--mongo api -->
+          <!--<script src="js/countdown.js"></script>-->
+          <!--external api -->
+          <script src="js/getprice.js"></script>
+          <style>
     @media only screen and (max-width: 400px) {
       tr:nth-child(n+5) {
         display: none;
       }
     }
   </style>
-        <script>
+          <script>
       function refreshPage() {
         if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD) {
           location.reload();
         }
       }
     </script>
-        <script>
-const pendingordersbutton = document.getElementById('pendingordersbutton');
+          <script>
+const pendingordersbutton = document.getElementById('ordersbutton');
 pendingordersbutton.addEventListener('click', () => {
-  window.location.href = 'getpendingorders.html';
+  window.location.href = 'getblocksorders.html';
 });
 </script> <script>
 function search() {
@@ -479,6 +574,7 @@ document.getElementById('search').addEventListener('keypress', function (e) {
     search();
   }
 });
-</script> </font></div><font size="2"> </font>
+</script> </font></div><font size="2"> </font> </div>
+    
   </body>
 </html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="refresh" content="600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Noso Explorer</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+
+crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!---chart-->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Add custom CSS here -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+    <style>
+       /* CSS to style the table header cells */
+        .order-table th {
+            background-color: #222222 ;
+            color: gray; /* Dark grey color */
+            padding: 4px;
+            text-align: center;
+            border: 0px solid #ddd;
+            max-width: 3048px; /* Set max-width for header cells */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Display ellipsis for overflow text */
+        }
+
+        /* CSS to style the table data cells */
+        .order-table td {
+            padding: 4px;
+            color: gray;
+            text-align: center;
+            border: 0px solid #ddd;
+            max-width: 3048px; /* Set max-width for data cells */
+            white-space: nowrap; /* Prevent wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Display ellipsis for overflow text */
+        }
+
+        /* Change the background color of even rows */
+        .order-table tr:nth-child(odd) {
+            background-color: transparent;
+        }
+
+        /* Change the background color of odd rows */
+        .order-table tr:nth-child(even) {
+            background-color: #222222;
+        }
+       /* Styling for the table */     
+        table {
+          width: 100%;
+          border-collapse: collapse;
+
+        }
+
+        th, td {
+          padding: 2px;
+          border-bottom: 0px solid #ddd;
+          text-align: left;
+          font-size: 12px;
+        }
+
+        th {
+          background-color: black;
+          border-bottom: 0px solid #ddd;
+        }
+</style> <!--style-->
+  </head>
+  <body color="#222222" style="                                                                                                                                                                                                         background-image: url(&quot;&quot;);">
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
+
+            data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
+              navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
+
+              src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
+            NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
+          </a> </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <!--  <li><a href="explorer.html"><i class="fa fa-dashboard"></i>
+                NosoStats</a></li> -->
+            <li><a href="index.html"><i class="fa fa-tachometer"></i> Overview</a></li>
+            <li><a href="blocks.html"> <i class="fa fa-th-large"></i> Blocks</a></li>
+            <li><a href="movements.html"><i class="fa fa-exchange"></i> Coin
+                Movements</a></li>
+            <!-- <li><a href="addresses.html"><i class="fa fa-star"></i> Top
+                Addresses </a></li>-->
+            <li><a href="masternodes.html"><i class="fa fa-globe"></i>
+                Masternodes</a></li>
+            <!-- <li><a href="chainstats.html"><i class="fa fa-bar-chart"></i>
+                Chain Statistics </a></li> -->
+            <li><a href="gvt.html"><i class="fa fa-gavel"></i> Governance</a></li>
+          </ul>
+          <!-- /.navbar-top-right -->
+          <div class="toprow">
+            <ul class="nav navbar-nav navbar-right navbar-user">
+              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
+
+                    alt="QR Scanner"></a> </li>
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
+
+                    alt="Noso on Twitter"></a> </li>
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
+
+                    src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
+
+                    style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
+              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
+
+                    src="img/gh.png" style="width: 28px; height: 17px;" alt="Noso on Github"></a></li>
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
+
+                    alt="Noso Website"></a></li>
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+
+                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
+
+                    alt="Noso Developers"></a></li>
+              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
+
+                    style="width: 28px; height: 24px;" alt="Noso API"></a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- /.navbar-collapse --> </nav>
+      <div id="page-wrapper">
+        <div class="col-lg-12"><br>
+          <div class="rowsearch">
+            <div class="exprow">
+              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+
+                style="display: none;"> <input id="block-search" name="blockheight"
+
+                  placeholder="Search Block Number" type="search"> <button type="submit">Search
+                  Block</button> </form>
+              <form id="address-form" action="getaddressbalance.html?address" method="get"
+
+                style="display: none;"> <input id="address-search" name="address"
+
+                  placeholder="Search Address" type="search"> <button type="submit">Search
+                  Address</button> </form>
+              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
+
+                style="display: none;"> <input id="alias-search" name="address"
+
+                  placeholder="Search Alias" type="search"> <button type="submit">Search
+                  Alias</button> </form>
+              <form id="order-form" action="getordersinfo.html?orderid" method="get"
+
+                style="display: none;"> <input id="order-search" name="orderid"
+
+                  placeholder="Search Order ID" type="search"> <button type="submit">Search
+                  Order</button></form>
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
+
+                  type="search"> <button type="submit1" onclick="search()"></button>
+              </div>
+              <!-- Results will be displayed on Explorer page --> </div>
+            <br>
+          </div>
+          <div class="rowsearch">
+            <div class="exprow">
+              <h3 id="blockHeading">Masternode Rewards on Block</h3>
+              <table class="order-table" id="blockInfoTable">
+                <thead>
+                  <tr>
+                    <th>Block</th>
+                    <th>Timestamp</th>
+                    <th>Sender</th>
+                    <th>Receiver</th>
+                    <th>Reward Amount</th>
+                    <th>Reference</th>
+                    <th>Type</th>
+                  </tr>
+                </thead>
+                <tbody id="blockInfoBody">
+                </tbody>
+              </table>
+              <!-- Results will be displayed here --> </div>
+          </div>
+        </div>
+        <div><br>
+          <br>
+          <div class="exprow">
+            <div>
+              <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo"
+
+                  title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
+
+                  size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
+                  &nbsp; Built by the NOSO Community</font> </div>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+      <!-- /.row -->
+      <!-- /.row --> <font size="2">
+        <!-- /#page-wrapper -->
+        <!-- /#wrapper -->
+        <!-- JavaScript -->
+        <!--scripts for navbar hamburger below-->
+        <script src="js/jquery-1.10.2.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/getblockmnstx.js"></script>
+        <!--scripts for navbar hamburger above-->
+        <!-- Page Specific Plugins --> </font>
+      <script>
+function search() {
+  const input = document.getElementById('search').value.trim();
+if (/^\d{1,10}$/.test(input)) {
+  // Show block form and hide other forms
+  document.getElementById('block-form').style.display = '';
+  document.getElementById('address-form').style.display = 'none';
+  document.getElementById('alias-form').style.display = 'none';
+  document.getElementById('block-search').value = input;
+  document.getElementById('block-form').submit();
+} else if (/^[aA]-.*$/.test(input)) {
+  // Show alias form and hide other forms
+  document.getElementById('alias-form').style.display = '';
+  document.getElementById('block-form').style.display = 'none';
+  document.getElementById('address-form').style.display = 'none';
+  document.getElementById('alias-search').value = input.substring(2);
+  document.getElementById('alias-form').submit();
+} else if (/^[a-zA-Z0-9]{1,31}$/.test(input)) {
+  // Show address form and hide other forms
+  document.getElementById('address-form').style.display = '';
+  document.getElementById('block-form').style.display = 'none';
+  document.getElementById('alias-form').style.display = 'none';
+  document.getElementById('address-search').value = input;
+  document.getElementById('address-form').submit();
+} else {
+  // Invalid input, hide all forms except for the new order form
+  document.getElementById('block-form').style.display = 'none';
+  document.getElementById('address-form').style.display = 'none';
+  document.getElementById('alias-form').style.display = 'none';
+  document.getElementById('order-form').style.display = '';
+  document.getElementById('order-search').value = input;
+  document.getElementById('order-form').submit();
+}
+}
+
+
+// Add event listener to search field to listen for "Enter" keypress
+document.getElementById('search').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    search();
+  }
+});
+</script> </div>
+    
+  </body>
+</html>

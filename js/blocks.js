@@ -105,26 +105,57 @@ async function goForward() {
 // Function to update the additional information based on the latest block
 async function updateAdditionalInfo(block) {
   document.getElementById('b-blockheight').textContent = block.number;
-  document.getElementById('b-transactions').textContent = block.totaltransactions;
 
-  // Calculate b-fees24 and b-coinsminted
-  let fees24 = 0;
-  let coinsMinted = 0;
-  let transactions24 = 0; // Total transactions for the last 144 blocks
-  for (let i = 0; i < 144; i++) {
-    fees24 += block.feespaid * 0.00000001;
-    coinsMinted += block.reward * 0.00000001;
-    transactions24 += block.totaltransactions;
+
+  // Calculate b-blockreward based on block height
+  let blockReward;
+  // Calculate b-halving based on block height
+  let halving;
+  if (block.number >= 1 && block.number <= 209999) {
+    blockReward = 50;
+    halving = 209999 - block.number;
+  } else if (block.number >= 210000 && block.number <= 419999) {
+    blockReward = 25;
+    halving = 419999 - block.number;
+  } else if (block.number >= 420000 && block.number <= 629999) {
+    blockReward = 12.50000000;
+    halving = 629999 - block.number;
+  } else if (block.number >= 630000 && block.number <= 839999) {
+    blockReward = 6.2500;
+    halving = 839999 - block.number;
+  } else if (block.number >= 840000 && block.number <= 1049999) {
+    blockReward = 3.12500000;
+    halving = 1049999 - block.number;
+  } else if (block.number >= 1050000 && block.number <= 1259999) {
+    blockReward = 1.56250000;
+    halving = 1259999 - block.number;
+  } else if (block.number >= 1260000 && block.number <= 1469999) {
+    blockReward = 0.78125000;
+    halving = 1469999 - block.number;
+  } else if (block.number >= 1470000 && block.number <= 1679999) {
+    blockReward = 0.39062500;
+    halving = 1679999 - block.number;
+  } else if (block.number >= 1680000 && block.number <= 1889999) {
+    blockReward = 0.19531250;
+    halving = 1889999 - block.number;
+  } else if (block.number >= 1890000 && block.number <= 2099999) {
+    blockReward = 0.09765625;
+    halving = 2099999 - block.number;
+  } else if (block.number >= 2100000 && block.number <= 2309999) {
+    blockReward = 0.04882812;
+    halving = 2309999 - block.number;
+  } else {
+    blockReward = "Unknown";
+    halving = "Unknown";
   }
-  document.getElementById('b-fees24').textContent = fees24.toFixed(8);
-  document.getElementById('b-coinsminted').textContent = coinsMinted.toFixed(8);
-  document.getElementById('b-transactions24').textContent = transactions24;
+  document.getElementById('b-blockreward').textContent = blockReward + " N"; // Adding N after blockReward
+  document.getElementById('b-halving').textContent = halving;
 
   // Calculate time elapsed since the latest block end time
   const latestBlockEndTime = new Date(block.timeend * 1000);
   const currentTime = new Date();
   const timeElapsed = Math.round((currentTime - latestBlockEndTime) / (1000 * 60)); // Convert to minutes and round
-  document.getElementById('b-timeelapsed').textContent = timeElapsed + " minutes";
+  document.getElementById('b-timeelapsed').textContent = timeElapsed + " Minutes";
 }
 
 // Function to handle fetching block info and populating the table

@@ -23,40 +23,40 @@
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-/* Styles for header row */
-.header-row {
-  display: flex;
-  background-color: #222222;
-  color: white;
-}
+      /* Styles for header row */
+      .header-row {
+        display: flex;
+        background-color: #222222;
+        color: white;
+      }
 
-/* Styles for header items */
-.header {
-  flex: 1;
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
+      /* Styles for header items */
+      .header {
+        flex: 1;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
 
-/* Styles for values */
-.mn-row {
-  display: flex;
-}
+      /* Styles for values */
+      .mn-row {
+        display: flex;
+      }
 
-/* Styles for value cells */
-.mn-cell {
-  flex: 1;
-  padding: 8px;
-  text-align: center;
-  border: 1px solid #ccc;
-}
+      /* Styles for value cells */
+      .mn-cell {
+        flex: 1;
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
 
-@media screen and (max-width: 900px) {
-    .row {
-        flex-direction: column; /* Stack items vertically on small screens */
-    }
+      @media screen and (max-width: 900px) {
+          .row {
+              flex-direction: column; /* Stack items vertically on small screens */
+          }
 
-}
+      }
         .header .mn-cell {
             font-weight: bold;
             background-color: #222222;
@@ -231,10 +231,8 @@
     </style>
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <!-- Include Highcharts library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
-
-integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
 crossorigin="anonymous">
     </script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -247,17 +245,15 @@ crossorigin="anonymous">
     <!-- Page Specific CSS -->
     <!--style-->
   </head>
-  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header"> <button type="button" class="navbar-toggle"
-
+        <div class="navbar-header"> <button type="button" class="navbar-toggle"
             data-toggle="collapse" data-target=".navbar-ex1-collapse"> <span class="sr-only">Toggle
               navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
-
+            <span class="icon-bar"></span> </button><a class="navbar-brand" href="explorer.html"><img
               src="img/logo_clearbg.png" alt="nosologo" title="nosologo" style="width: 20px; height: 20px;">&nbsp;
             NOSO <span class="navbar-logo">Explorer</span> <font size="1px">Beta</font>
           </a> </div>
@@ -281,33 +277,23 @@ crossorigin="anonymous">
           <!-- /.navbar-top-right -->
           <div class="toprow">
             <ul class="nav navbar-nav navbar-right navbar-user">
-              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
-
+              <li><a href="qr.html"> <img src="img/qr.png" style="width: 17px; height: 16px;"
                     alt="QR Scanner"></a> </li>
-              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
-
-                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
-
+              <li><a href="https://twitter.com/NosoCoin" target="_blank"> <img
+                    src="img/twitter_bird.png" style="width: 20px; height: 16px;"
                     alt="Noso on Twitter"></a> </li>
-              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
-
+              <li><a href="https://discord.gg/weed5ePmfY" target="_blank"> <img
                     src="img/discord.png" style="width: 24px; height: 22px;" alt="Noso on Discord"></a></li>
-              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
-
+              <li><a href="https://t.me/nosocoin" target="_blank"> <img src="img/telegram.png"
                     style="width: 24px; height: 23px;" alt="Noso on telegram"></a></li>
-              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
-
+              <li><a href="https://github.com/Noso-Project/" target="_blank"> <img
                     src="img/gh.png" style="width: 28px; height: 17px;" alt="Noso on Github"></a></li>
-              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
-
+              <li><a href="https://nosocoin.com/"> <img src="img/nosoN.png" style="width: 24px; height: 23px;"
                     alt="Noso Website"></a></li>
-              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
-
-                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
-
+              <li><a href="https://docs.nosocoin.com/noso-developers-portal/rpc-connection/running-a-noso-json-rpc-node-for-development-utilizing-nosos-rest-api"
+                  target="_blank"> <img src="img/doc.png" style="width: 14px; height: 16px;"
                     alt="Noso Developers"></a></li>
-              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
-
+              <li><a href="https://api.nosocoin.com/" target="_blank"> <img src="img/api.png"
                     style="width: 28px; height: 24px;" alt="Noso API"></a></li>
             </ul>
           </div>
@@ -318,32 +304,23 @@ crossorigin="anonymous">
           <div class="col-lg-12">
             <!-- /.Top row search --> <br>
             <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
-
-                style="display: none;"> <input id="block-search" name="blockheight"
-
+              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+                style="display: none;"> <input id="block-search" name="blockheight"
                   placeholder="Search Block Number" type="search"> <button type="submit">Search
                   Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-
-                style="display: none;"> <input id="address-search" name="address"
-
+              <form id="address-form" action="getaddressbalance.html?address" method="get"
+                style="display: none;"> <input id="address-search" name="address"
                   placeholder="Search Address" type="search"> <button type="submit">Search
                   Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-
-                style="display: none;"> <input id="alias-search" name="address"
-
+              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
+                style="display: none;"> <input id="alias-search" name="address"
                   placeholder="Search Alias" type="search"> <button type="submit">Search
                   Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-
-                style="display: none;"> <input id="order-search" name="orderid"
-
+              <form id="order-form" action="getordersinfo.html?orderid" method="get"
+                style="display: none;"> <input id="order-search" name="orderid"
                   placeholder="Search Order ID" type="search"> <button type="submit">Search
                   Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
-
+              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
                   type="search"> <button type="submit1" onclick="search()"></button>
               </div>
               <!-- Results will be displayed on Explorer page --> </div>
@@ -374,17 +351,17 @@ crossorigin="anonymous">
                 coins moved in 24H<span class="badge"><span id="movementssum">
                     <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
                   </span></span> </span><br>
-              <span class="list-group-item">Pending Movements In Block <span class="badge"><a
-
-                    href="getpendingorders.html" "target_blank"=""><span id="m-pendings">
+              <span class="list-group-item">Pending Movements In Current Block
+                (TRFR) <span class="badge"><a href="getpendingorders.html" "target_blank"=""><span
+                      id="m-pendings">
                       <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
                     </span></a></span> </span> <span class="list-group-item">Coinbase
-                Movements in Block (MN) <span class="badge"><span id="placeholder">
-                    <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
-                  </span></span> </span><span class="list-group-item">Coinbase
-                Movements in Block (PF) <span class="badge"><span id="placeholder">
-                    <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
-                  </span></span> </span> </div>
+                Movements in Previous Block (MNS) <span class="badge"><a href="getblockmns.html"><span
+                      id="mns-totalCount">
+                      <div class="mn-spinner" style="width: 15px; height: 15px;"></div>
+                    </span></a></span> </span><span class="list-group-item">Coinbase
+                Movements in Previous Block (PROJCT) <span class="badge"><span
+                    id="placeholder"> 1 </span></span> </span> </div>
           </div>
         </div>
         <div class="col-lg-6 ">
@@ -517,8 +494,7 @@ crossorigin="anonymous">
               Over Time</h3>
           </div>
           <div class="panel-body">
-            <div class="list-group"> <span class="list-group-item"> <canvas id="myChart"
-
+            <div class="list-group"> <span class="list-group-item"> <canvas id="myChart"
                   width="400" height="200"></canvas> </span> </div>
           </div>
         </div>
@@ -536,8 +512,7 @@ crossorigin="anonymous">
                   <option value="week">Week</option>
                 </select>
                 <form id="blockSearchForm"> <label for="blockNumberInput"></label>
-                  <input id="blockNumberInput" name="blockNumberInput" required=""
-
+                  <input id="blockNumberInput" name="blockNumberInput" required=""
                     type="number"> <button type="submit">Search</button> </form>
                 <br>
                 Larger intervals can take up to 40 seconds to show results.
@@ -563,14 +538,13 @@ crossorigin="anonymous">
             <br>
             <br>
             <br>
-            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
-
-                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
-
+            <div class="row">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="img/logo_clearbg.png"
+                alt="nosologo" title="nosologo" style="width: 15px; height: 15px;">&nbsp;;<font
                 size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
                 &nbsp; Built by the NOSO Community</font> </div>
           </div>
         </div>
+        <p id="mns-lastBlock">Last Block: Loading...</p>
         <script>
 
 function search() {
@@ -618,15 +592,17 @@ document.getElementById('search').addEventListener('keypress', function (e) {
         <script>
  //Script for line chart
 // Data from the provided table
-var blocks = [1, 209999, 420000, 630000, 840000, 1050000, 1260000, 1470000, 1680000, 1890000, 2100000];
+var blocks = [209999, 420000, 630000, 840000, 1050000, 1260000, 1470000, 1680000, 1890000, 2100000];
 var totalSupply = [10303.9073, 10510253.9073, 15760253.9073, 18385253.9073, 19697753.9073, 20354003.9073, 20682128.9073, 20846191.4073, 20928222.6573, 20969238.2823, 21000000.00000000];
-
 
 // Convert blocks to years
 var blocksYears = blocks.map(block => {
   var year = 2021 + ((block * 6) / (365 * 24 * 60));
   return Math.floor(year);
 });
+
+// Change the label for the first year to "2021"
+blocksYears[0] = "2021";
 
 // Chart configuration
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -671,6 +647,7 @@ var myChart = new Chart(ctx, {
   }
 });
 
+
 </script> <script>
          // Script for spinner timer
     document.getElementById('blockSearchForm').addEventListener('submit', function(event) {
@@ -697,8 +674,82 @@ var myChart = new Chart(ctx, {
       setTimeout(function() {
         spinner.style.display = 'none';
       }, duration);
-    });
-  </script>
+    });</script>
+        <script>
+        // Function to make RPC call to retrieve current block height
+        async function mnsGetCurrentBlockHeight() {
+            const response = await fetch('https://rpc.nosocoin.com:8078', {
+                method: 'POST',
+                headers: {
+                    'Origin': 'https://rpc.nosocoin.com',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "jsonrpc": "2.0",
+                    "method": "getmainnetinfo",
+                    "params": [],
+                    "id": 1
+                })
+            });
+
+            const data = await response.json();
+            if (data.result && data.result.length > 0) {
+                return data.result[0].lastblock;
+            } else {
+                throw new Error('Unable to retrieve current block height');
+            }
+        }
+
+        // Function to fetch block information
+        async function mnsFetchBlockInfo(blockHeight) {
+            const response = await fetch('https://rpc.nosocoin.com:8078', {
+                method: 'POST',
+                headers: {
+                    'Origin': 'https://rpc.nosocoin.com',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "jsonrpc": "2.0",
+                    "method": "getblockmns",
+                    "params": [blockHeight],
+                    "id": 18
+                })
+            });
+            const data = await response.json();
+            if (data.result && data.result.length > 0) {
+                return data.result[0].count; // Change to retrieve the count value
+            } else {
+                throw new Error('Unable to fetch block information');
+            }
+        }
+
+        // Function to update Last Block DOM
+        async function mnsUpdateLastBlock() {
+            try {
+                const blockHeight = await mnsGetCurrentBlockHeight();
+                document.getElementById('mns-lastBlock').textContent = 'Last Block: ' + blockHeight;
+            } catch (error) {
+                console.error('Error updating Last Block:', error);
+            }
+        }
+
+        // Function to update Total Count DOM
+        async function mnsUpdateTotalCount() {
+            try {
+                const blockHeight = await mnsGetCurrentBlockHeight();
+                const totalCount = await mnsFetchBlockInfo(blockHeight);
+                document.getElementById('mns-totalCount').textContent = totalCount;
+            } catch (error) {
+                console.error('Error updating Total Count:', error);
+            }
+        }
+
+        // Initial update of Last Block DOM
+        mnsUpdateLastBlock();
+
+        // Initial update of Total Count DOM
+        mnsUpdateTotalCount();
+    </script>
         <!-- JavaScript -->
         <!-- JavaScript -->
         <!--scripts for navbar hamburger below-->
