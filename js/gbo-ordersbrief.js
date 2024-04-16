@@ -81,7 +81,7 @@ async function compileOrdersChart(startingBlockHeight, blockInterval) {
                 orders.forEach(order => {
                     const truncatedSender = order.sender.length > MAX_LENGTH ? order.sender.substring(0, 12) + '..' + order.sender.substring(order.sender.length - 5) : order.sender;
                     const truncatedReceiver = order.receiver.length > MAX_LENGTH ? order.receiver.substring(0, 12) + '..' + order.receiver.substring(order.receiver.length - 5) : order.receiver;
-                    const truncatedOrderID = order.orderid.length > MAX_LENGTH ? order.orderid.substring(0, 20) + '..' + order.orderid.substring(order.orderid.length - 5) : order.orderid;
+                    const truncatedOrderID = order.orderid.length > MAX_LENGTH ? order.orderid.substring(0, 12) + '..' + order.orderid.substring(order.orderid.length - 5) : order.orderid;
                     allOrders.push({
                         blockNumber,
                         orderIDDefault: order.orderid,
