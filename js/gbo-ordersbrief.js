@@ -57,7 +57,7 @@ async function compileOrdersChart(startingBlockHeight, blockInterval) {
                 blockOrderPromises.push(orderPromise);
             }
 
-            const blockOrders = await Promise.all(blockOrderPromises);
+            const blockOrders = await Promise.all(blockOrderPromises); 
 
             const ordersChart = document.getElementById('orders-chart');
             const existingTable = document.querySelector('.order-table');
