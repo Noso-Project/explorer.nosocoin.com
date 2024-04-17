@@ -16,15 +16,23 @@ body {
 }
 h1 {
   background-color: black; 
-  color: white;
+  color: #ccc;;
 }
 h3 {
   background-color: black;
-  color: white;
+  color: #ccc;;
 }
 h3 {
   background-color: black;
-  color: white;
+  color: #ccc;;
+}
+h4 {
+  background-color: black;
+  color: #ccc;;
+}
+h5 {
+  background-color: black;
+  color: #ccc;;
 }
 div {
   color: #222222;
@@ -630,6 +638,7 @@ table.tablesorter thead tr th:hover {
 
   .my-grid-child {
     width: 100%;
+    height: 400px;
   }
 
   @media (max-width: 980px) {
