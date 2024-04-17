@@ -1,7 +1,7 @@
-fetch('http://rpc.nosocoin.com:8078', {
+fetch('https://rpc.nosocoin.com:8078', {
   method: 'POST',
   headers: {
-    'Origin': 'http://rpc.nosocoin.com'
+    'Origin': 'https://rpc.nosocoin.com'
   },
   body: JSON.stringify({
     "jsonrpc": "2.0",
@@ -49,7 +49,7 @@ fetch('http://rpc.nosocoin.com:8078', {
     const block = data.result[0];
     const row = `
       <tr>
-        <td><img src="img/cube.gif" width="70px"></td>
+        <td><img src="img/cube.gif" width="50px"></td>
         <td><span>Block <a href="getblockinfo.html?blockheight=${block.number}">${block.number}</a><br>${getTimeAgo(block.timeend)}</span></td>
         <td>Block Creator <a href="getaddressbalance.html?address=${block.miner}">${block.miner}</a><br><a href="getblockorders.html?blockheight=${block.number}">${block.totaltransactions}</a>
         Transactions in 599 seconds</td>
