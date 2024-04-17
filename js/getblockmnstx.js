@@ -79,15 +79,27 @@ async function createTableFromBlockInfo(blockNumber) {
         const cellRewardAmount = row.insertCell(4);
         const cellReference = row.insertCell(5);
         const cellType = row.insertCell(6);
-
+        
+        cellBlock.classList.add('priority-6');
+        cellTimestamp.classList.add('priority-1');
+        cellSender.classList.add('priority-6');
+        cellReceiver.classList.add('priority-1');
+        cellRewardAmount.classList.add('priority-1');
+        cellReference.classList.add('priority-6');
+        cellType.classList.add('priority-6');
+        
         cellBlock.innerHTML = `<a href="getblockinfo.html?blockheight=${blockInfo.number}" class="block-link">${blockInfo.number}</a>`;
         cellBlock.classList.add('order-table-cell'); // Add class to cell
         cellTimestamp.textContent = formatTimestamp(timestamp);
         cellTimestamp.classList.add('order-table-cell'); // Add class to cell
         cellSender.textContent = "COINBASE";
         cellSender.classList.add('order-table-cell'); // Add class to cell
-        cellReceiver.innerHTML = `<a href="getaddressbalance.html?address=${address}" class="address-link">${address}</a>`;
+        
+        // Truncate receiver address for display
+        const truncatedAddress = `${address.substring(0, 6)}...${address.substring(address.length - 6)}`;
+        cellReceiver.innerHTML = `<a href="getaddressbalance.html?address=${address}" class="address-link">${truncatedAddress}</a>`;
         cellReceiver.classList.add('order-table-cell'); // Add class to cell
+        
         cellRewardAmount.textContent = (blockMNS.reward * 0.00000001).toFixed(8);
         cellRewardAmount.classList.add('order-table-cell'); // Add class to cell
         cellReference.textContent = "Masternode Reward";
@@ -109,6 +121,21 @@ function formatTimestamp(timestamp) {
     };
     return timestamp.toLocaleString('en-US', options);
 }
+
+// Function to parse block height from URL
+function getBlockHeightFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const blockHeight = urlParams.get('blockheight');
+    return blockHeight ? parseInt(blockHeight) : null;
+}
+
+(async () => {
+    const defaultBlockNumber = await fetchMainnetInfo(); // Replace with default block number
+    const blockNumberFromUrl = getBlockHeightFromUrl();
+    const blockNumberToUse = blockNumberFromUrl || defaultBlockNumber;
+    createTableFromBlockInfo(blockNumberToUse);
+})();
+
 
 // Function to parse block height from URL
 function getBlockHeightFromUrl() {

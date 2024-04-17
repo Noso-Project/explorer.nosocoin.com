@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
     <meta http-equiv="refresh" content="600">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -13,7 +13,7 @@
 integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
 
 crossorigin="anonymous">
-    </script>
+</script> <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!---chart-->
     <!-- Bootstrap core CSS -->
@@ -24,61 +24,12 @@ crossorigin="anonymous">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
     <style>
-       /* CSS to style the table header cells */
-        .order-table th {
-            background-color: #222222 ;
-            color: gray; /* Dark grey color */
-            padding: 4px;
-            text-align: center;
-            border: 0px solid #ddd;
-            max-width: 3048px; /* Set max-width for header cells */
-            white-space: nowrap; /* Prevent wrapping */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Display ellipsis for overflow text */
-        }
-
-        /* CSS to style the table data cells */
-        .order-table td {
-            padding: 4px;
-            color: gray;
-            text-align: center;
-            border: 0px solid #ddd;
-            max-width: 3048px; /* Set max-width for data cells */
-            white-space: nowrap; /* Prevent wrapping */
-            overflow: hidden; /* Hide overflow */
-            text-overflow: ellipsis; /* Display ellipsis for overflow text */
-        }
-
-        /* Change the background color of even rows */
-        .order-table tr:nth-child(odd) {
-            background-color: transparent;
-        }
-
-        /* Change the background color of odd rows */
-        .order-table tr:nth-child(even) {
-            background-color: #222222;
-        }
-       /* Styling for the table */     
-        table {
-          width: 100%;
-          border-collapse: collapse;
-
-        }
-
-        th, td {
-          padding: 2px;
-          border-bottom: 0px solid #ddd;
-          text-align: left;
-          font-size: 12px;
-        }
-
-        th {
-          background-color: black;
-          border-bottom: 0px solid #ddd;
-        }
+			.cb {
+			color: lightgrey;
+      }
 </style> <!--style-->
   </head>
-  <body color="#222222" style="                                                                                                                                                                                                           background-image: url(&quot;&quot;);">
+  <body color="#222222" style="                                                                                                                                                                                                 background-image: url(&quot;&quot;);">
     <div id="wrapper">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -101,8 +52,8 @@ crossorigin="anonymous">
             <li><a href="blocks.html"> <i class="fa fa-th-large"></i> Blocks</a></li>
             <li><a href="movements.html"><i class="fa fa-exchange"></i> Coin
                 Movements</a></li>
-            <!-- <li><a href="addresses.html"><i class="fa fa-star"></i> Top
-                Addresses </a></li>-->
+            <!--<li><a href="addresses.html"><i class="fa fa-star"></i> Top
+                Addresses </a></li> -->
             <li><a href="masternodes.html"><i class="fa fa-globe"></i>
                 Masternodes</a></li>
             <!-- <li><a href="chainstats.html"><i class="fa fa-bar-chart"></i>
@@ -147,85 +98,96 @@ crossorigin="anonymous">
       <div id="page-wrapper">
         <div class="col-lg-12"><br>
           <div class="rowsearch">
-            <div class="exprow">
-              <form id="block-form" action="getblockinfo.html?blockheight" method="get"
+            <div class="exprow"> <br>
+              <!-- / .Multi Search form -->
+              <!-- / .Hidden block search-form --> <br>
+              <div class="hidden">
+                <form id="block-number-form"> <input id="block-number-input" name="blocknumber"
 
-                style="display: none;"> <input id="block-search" name="blockheight"
-
-                  placeholder="Search Block Number" type="search"> <button type="submit">Search
-                  Block</button> </form>
-              <form id="address-form" action="getaddressbalance.html?address" method="get"
-
-                style="display: none;"> <input id="address-search" name="address"
-
-                  placeholder="Search Address" type="search"> <button type="submit">Search
-                  Address</button> </form>
-              <form id="alias-form" action="getaddressbalance.html?alias" method="get"
-
-                style="display: none;"> <input id="alias-search" name="address"
-
-                  placeholder="Search Alias" type="search"> <button type="submit">Search
-                  Alias</button> </form>
-              <form id="order-form" action="getordersinfo.html?orderid" method="get"
-
-                style="display: none;"> <input id="order-search" name="orderid"
-
-                  placeholder="Search Order ID" type="search"> <button type="submit">Search
-                  Order</button></form>
-              <div class="search1-wrapper"> <input id="search" placeholder="Block, Address, OrderId, or A-Alias "
-
-                  type="search"> <button type="submit1" onclick="search()"></button>
+                    required="" placeholder="Search Block Number" type="hidden">
+                  <button type="submit">Search</button> </form>
               </div>
-              <!-- Results will be displayed on Explorer page --> </div>
-            <br>
-          </div>
-          <div class="rowsearch">
-            <div class="exprow">
-              <h3 id="blockHeading">Masternode Rewards on Block</h3>
-              <table class="order-table" id="blockInfoTable">
-                <thead>
-                  <tr>
-                    <th class="priority-6">Block Height</th>
-                    <th class="priority-1">Timestamp</th>
-                    <th class="priority-6">From</th>
-                    <th class="priority-1">Receiver</th>
-                    <th class="priority-1">Reward Amount</th>
-                    <th class="priority-6">Reference</th>
-                    <th class="priority-6">Type</th>
-                  </tr>
-                </thead>
-                <tbody id="blockInfoBody">
-                </tbody>
-              </table>
-              <!-- Results will be displayed here --> </div>
-          </div>
-        </div>
-        <div><br>
-          <br>
-          <div class="exprow">
-            <div>
-              <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo"
-
-                  title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
-
-                  size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
-                  &nbsp; Built by the NOSO Community</font> </div>
+              <!-- / .Hidden block search-form --> </div>
+            <div class="row">
+              <div class="exprow">
+                
+                <div  class="col-lg-6">
+                  
+                  <p class="cb"> <center>
+                  <h3>Coinbase Transactions</h3>
+                    </center> </p><p class="cb">A coinbase transaction is the first
+                    transaction in each block. The coinbase
+                    transaction distributes the block subsidy (the defined
+                    reward for the block), and also collects the cumulative fees
+                    of all transactions in the block. Since this transaction is
+                    creating new Noso, the coinbase transaction is valid without
+                    any inputs. In Noso, Masternode rewards and project funds
+                    dispersment are examples of Coinbase transctions.</p>
+                  <p></p>
+                </div>
+              </div>
             </div>
           </div>
-          <br>
+          <div><br>
+            <br>
+            <div class="exprow">
+              <div>
+                <div class="row"> <img src="img/logo_clearbg.png" alt="nosologo"
+
+                    title="nosologo" style="width: 15px; height: 15px;">&nbsp;<font
+
+                    size="1px" color="#bbb">Powered by NOSO Blockchain&nbsp; |
+                    &nbsp; Built by the NOSO Community</font> </div>
+              </div>
+            </div>
+            <br>
+          </div>
         </div>
-      </div>
-      <!-- /.row -->
-      <!-- /.row --> <font size="2">
-        <!-- /#page-wrapper -->
-        <!-- /#wrapper -->
-        <!-- JavaScript -->
-        <!--scripts for navbar hamburger below-->
-        <script src="js/jquery-1.10.2.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/getblockmnstx.js"></script>
-        <!--scripts for navbar hamburger above-->
-        <!-- Page Specific Plugins --> </font>
+        <!-- /.row -->
+        <!-- /.row --> <font size="2">
+          <!-- /#page-wrapper -->
+          <!-- /#wrapper -->
+          <!-- JavaScript -->
+          <!--scripts for navbar hamburger below-->
+          <script src="js/jquery-1.10.2.js"></script>
+          <script src="js/bootstrap.js"></script>
+          <script src="js/getaddressbalance.js"></script>
+          <!--scripts for navbar hamburger above-->
+          <!-- Page Specific Plugins --> </font> </div>
+      <script>
+        async function startScanning() {
+            const resultContainer = document.getElementById('result');
+
+            try {
+                // Create a scanner instance
+                const scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+
+                // Add a callback for successful scans
+                scanner.addListener('scan', function(content) {
+                    resultContainer.innerHTML = `Scanned Address: ${content}`;
+                    // Redirect or perform any other action with the scanned address
+                    window.location.href = `https://explorer.nosocoin.com/getaddressbalance.html?address=${content}`;
+                });
+
+                // Start scanning
+                Instascan.Camera.getCameras()
+                    .then(cameras => {
+                        if (cameras.length > 0) {
+                            scanner.start(cameras[0]);
+                        } else {
+                            throw new Error('No cameras found.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        resultContainer.innerHTML = 'Error accessing camera or no camera found.';
+                    });
+            } catch (error) {
+                console.error(error);
+                resultContainer.innerHTML = 'Error initializing scanner. Please try again.';
+            }
+        }
+    </script>
       <script>
 function search() {
   const input = document.getElementById('search').value.trim();
@@ -269,6 +231,5 @@ document.getElementById('search').addEventListener('keypress', function (e) {
   }
 });
 </script> </div>
-    
   </body>
 </html>
