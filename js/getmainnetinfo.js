@@ -28,8 +28,13 @@ function updateHalvingTimer(lastBlock) {
   timeRemaining = halvingTimer * 600; // Convert to seconds
   const timeRemainingDays = Math.ceil(timeRemaining / (60 * 60 * 24)); // Convert to days
   const timeRemainingText = `${timeRemainingDays} `;
+  document.getElementById('halving-timer-days').textContent = timeRemainingText; // Update HTML element with days remaining
+  const targetDate = new Date(Date.now() + timeRemaining * 1000); // Calculate target date
+  console.log("Target Date:", targetDate); // Log target date
+  const targetDateFormat = targetDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }); // Format target date
+  console.log("Formatted Date:", targetDateFormat); // Log formatted date
+  document.getElementById('halvingtimerdate').textContent = targetDateFormat; // Update HTML element
   document.getElementById('halving-timer').textContent = halvingTimer;
-  document.getElementById('halving-timer-days').textContent = timeRemainingText;
 }
 
 function updateData() {
@@ -80,4 +85,3 @@ updateData();
 
 // Call updateData() every 30 seconds
 setInterval(updateData, 30000);
-
