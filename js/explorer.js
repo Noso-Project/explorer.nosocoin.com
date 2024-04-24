@@ -58,7 +58,7 @@ const fetchBlocks = async (i) => {
     const shortHash = shortenHash(block.hash); // Shorten the block hash
     const row = `
       <tr>
-        <td><img src="img/cube.gif" width="70px"></td>
+        <td><img src="img/cube.gif" width="50px"></td>
         <td><span>Block <a href="getblockinfo.html?blockheight=${block.number}">${block.number}</a><br>${getTimeAgo(block.timeend)}</span></td>
         <td>Hash <a href="getblockorders.html?blockheight=${block.number}">${shortHash}</a><br><a href="getblockorders.html?blockheight=${block.number}">${block.totaltransactions}</a>
         Transactions in 599 seconds</td>
@@ -70,20 +70,20 @@ const fetchBlocks = async (i) => {
 
   const fetchBlocksLoop = async (direction) => {
     if (direction === 'backward') {
-      if (startBlock > 5) {
-        startBlock = startBlock - 5;
+      if (startBlock > 7) {
+        startBlock = startBlock - 7;
       } else {
         startBlock = 1;
       }
     } else {
-      if (startBlock + 5 <= blockInfo.lastblock) {
-        startBlock = startBlock + 5;
+      if (startBlock + 7 <= blockInfo.lastblock) {
+        startBlock = startBlock + 7;
       } else {
         startBlock = blockInfo.lastblock;
       }
     }
     const blocks = [];
-    for (let i = startBlock; i > startBlock - 5; i--) {
+    for (let i = startBlock; i > startBlock - 7; i--) {
       if (i <= blockInfo.lastblock) { // Check if block number is valid
         blocks.push(fetchBlocks(i));
       }

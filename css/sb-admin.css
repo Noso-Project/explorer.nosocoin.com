@@ -235,14 +235,21 @@ div {
 /* Table Nav row */
 .row {
   margin: 0;
-  border: 0px solid black;
+  border: 1px solid black;
   max-width:1300px;
 
 }
 .row2 {
   margin: 0;
   border: 0px solid black;
-  max-width:1250x;
+  max-width:1250px;
+
+}
+/* overview page tables row */
+.row3 {
+  margin: 12px;
+  border: 1px solid black;
+  max-width:1280px;
 
 }
 /* Table Nav row */
@@ -601,6 +608,10 @@ table.tablesorter thead tr th:hover {
 	/*  width:20px; */
 	/*  padding: 6px 20px; */
 
+
+
+
+
 	
 /*  explorer page table */
 .styled-table1 tbody tr {
@@ -608,6 +619,10 @@ table.tablesorter thead tr th:hover {
     color: lightgrey;
 }
 
+/* Alternate row background color */
+.styled-table1 tr:nth-child(odd) {
+  background-color: black; /* Dark background color */
+}
 
 .styled-table1 tbody tr:nth-of-type(even) {
     background-color: black;
