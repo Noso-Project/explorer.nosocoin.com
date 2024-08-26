@@ -229,24 +229,33 @@
             }
         }
 
-        function searchTable() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("tableContainer");
-            tr = table.getElementsByClassName("row");
+function searchTable() {
+    var input, filter, table, tr, i, j, txtValueIpAddress, txtValueNodeAddress, match;
+    input = document.getElementById("searchInput").value;
+    filter = input.toUpperCase().split(',').map(item => item.trim()); // Split by comma and trim spaces
+    table = document.getElementById("tableContainer");
+    tr = table.getElementsByClassName("row");
 
-            for (i = 0; i < tr.length; i++) {
-                tdIpAddress = tr[i].getElementsByTagName("div")[2];
-                tdNodeAddress = tr[i].getElementsByTagName("div")[0];
-                if (tdIpAddress || tdNodeAddress) {
-                    txtValueIpAddress = tdIpAddress.textContent || tdIpAddress.innerText;
-                    txtValueNodeAddress = tdNodeAddress.textContent || tdNodeAddress.innerText;
-                    if (txtValueIpAddress.toUpperCase().indexOf(filter) > -1 || txtValueNodeAddress.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
+    for (i = 0; i < tr.length; i++) {
+        tdIpAddress = tr[i].getElementsByTagName("div")[2];
+        tdNodeAddress = tr[i].getElementsByTagName("div")[0];
+        if (tdIpAddress || tdNodeAddress) {
+            txtValueIpAddress = tdIpAddress.textContent || tdIpAddress.innerText;
+            txtValueNodeAddress = tdNodeAddress.textContent || tdNodeAddress.innerText;
+            match = false;
+
+            for (j = 0; j < filter.length; j++) {
+                if (txtValueIpAddress.toUpperCase().indexOf(filter[j]) > -1 || txtValueNodeAddress.toUpperCase().indexOf(filter[j]) > -1) {
+                    match = true;
+                    break;
                 }
             }
+
+            if (match) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
         }
+    }
+}
