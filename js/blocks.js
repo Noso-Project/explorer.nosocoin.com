@@ -6,10 +6,10 @@ function parseBlockHeightFromURL() {
 
 // Function to make RPC call to retrieve current block height
 async function getCurrentBlockHeight() {
-  const response = await fetch('173.212.222.226:8078', {
+  const response = await fetch('http://173.212.222.226:8078', {
     method: 'POST',
     headers: {
-      'Origin': '173.212.222.226'
+      'Origin': 'http://173.212.222.226'
     },
     body: JSON.stringify({
       "jsonrpc": "2.0",
@@ -29,10 +29,10 @@ async function getCurrentBlockHeight() {
 
 // Function to fetch block information
 async function fetchBlockInfo(blockHeight) {
-  const response = await fetch('173.212.222.226:8078', {
+  const response = await fetch('http://173.212.222.226:8078', {
     method: 'POST',
     headers: {
-      'Origin': '173.212.222.226'
+      'Origin': 'http://173.212.222.226'
     },
     body: JSON.stringify({
       "jsonrpc": "2.0",
